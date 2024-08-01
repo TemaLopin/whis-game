@@ -1,0 +1,25 @@
+.header {
+
+  max-height: 200px;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 2;
+
+  img {
+    z-index: 4;
+    width: 240px;
+    height: 180px;
+  }
+
+  @media (max-width: 600px) {
+    justify-content: space-between;
+    img {
+      height: 82px;
+      width: 110px;
+    }
+  }
+}

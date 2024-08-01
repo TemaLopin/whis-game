@@ -1,0 +1,279 @@
+$--purple-gradient: linear-gradient(180deg, #d700ae 0%, #85026c 100%);
+$--gray-color: #929394;
+$--products: url('../../../shared/assets/images/products.png');
+$--robot: url('../../../shared/assets/images/robot.png');
+
+.echo_bg {
+  background-image: var(--purple-echo), var(--yellow-echo);
+  background-repeat: no-repeat;
+  background-position: left center, right bottom;
+  background-size: 170px, 300px;
+}
+
+.main_block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+
+  padding-top: 200px;
+  margin-bottom: 200px;
+}
+
+.main_block::after {
+  content: '';
+
+  height: 200px;
+  width: 200px;
+
+  position: absolute;
+
+  top: 50px;
+
+  background-image: $--robot;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.main_body {
+  padding: 40px 50px;
+  border-radius: 40px;
+
+  width: fit-content;
+
+  box-sizing: border-box;
+  background-color: var(--white-color);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  @media (max-width: 600px) {
+    padding-top: 50px;
+  }
+}
+
+.main_text {
+  text-align: center;
+  text-transform: uppercase;
+
+  color: var(--purple-color);
+
+  font-size: var(--font-size-48);
+  font-weight: 800;
+  line-height: var(--line-height-52-8);
+
+  margin: 0px;
+}
+
+.main_text p {
+  margin: 0px;
+}
+
+.main_text span {
+  color: var(--orange-color);
+}
+
+.sub_text {
+  text-align: center;
+
+  color: $--gray-color;
+
+  font-size: var(--font-size-20);
+  font-weight: 400;
+  line-height: var(--line-height-28-6);
+
+  margin-bottom: 20px;
+}
+
+.sub_text p {
+  margin: 0px;
+}
+
+.sub_text span {
+  font-weight: 700;
+}
+
+.start_button {
+  cursor: pointer;
+
+  font-size: var(--font-size-18);
+  font-weight: 700;
+  line-height: var(--line-height-18);
+
+  padding: 30px 70px;
+
+  border-radius: 11px;
+  border: none;
+
+  color: var(--white-color);
+  background: $--purple-gradient;
+
+  @media (max-width: 600px) {
+    padding: 18px 40px;
+  }
+}
+
+.about_block {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+
+  position: relative;
+
+  height: fit-content;
+
+  padding-bottom: 50px;
+}
+
+.right_arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  rotate: -90deg;
+
+  svg path {
+    fill: var(--purple-color);
+  }
+}
+
+.right_arrow::after {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  content: var(--down-arrow);
+
+  background-color: var(--white-color);
+  border-radius: 50%;
+
+  width: 40px;
+  height: 40px;
+
+  fill: var(--purple-color);
+}
+
+.about_block > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 50%;
+  max-width: 360px;
+
+
+  position: relative;
+
+  padding: 50px 36px 10px 36px;
+
+  margin-left: 10px;
+  margin-right: 10px;
+
+  box-sizing: border-box;
+  border-radius: 40px;
+
+  background-color: var(--white-color);
+
+  @media (max-width: 1000px) {
+    padding: 50px 12px 10px 12px;
+  }
+}
+
+.about_block span {
+  display: block;
+  font-size: var(--font-size-20);
+  font-weight: 400;
+  line-height: var(--line-height-28-6);
+
+  text-align: center;
+
+  color: $--gray-color;
+}
+
+.about_block > div::after {
+  content: '';
+
+  height: 140px;
+  width: 140px;
+
+  position: absolute;
+
+  top: -100px;
+
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  @media (max-width: 600px) {
+    top: -60px;
+
+    width: 80px;
+    height: 80px;
+  }
+}
+
+.about_bye_block::after {
+  background-image: $--products;
+}
+
+.get_block::after {
+  background-image: $--products;
+}
+
+.block_title {
+  font-size: var(--font-size-38);
+  font-weight: 800;
+  line-height: var(--line-height-34-2);
+
+  margin: 10px 0px;
+  text-transform: uppercase;
+
+  color: var(--purple-color);
+}
+
+.ruble {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  padding: 0px 10px;
+
+  box-sizing: border-box;
+
+  height: 70px;
+  width: 70px;
+
+  margin: 10px 0px;
+
+  background-color: var(--orange-color);
+
+  @media (max-width: 600px) {
+    height: 40px;
+    width: 40px;
+  }
+}
+
+.ruble svg {
+  height: 30px;
+  width: 30px;
+
+  @media (max-width: 600px) {
+    height: 13px;
+    width: 13px;
+  }
+}
+
+.sber {
+  height: 60px;
+  width: 170px;
+
+  @media (max-width: 600px) {
+    width: 103px;
+    height: 30px;
+  }
+}
