@@ -1,3 +1,6 @@
+$--purple-echo: url('../../assets/images/purple-figure.png');
+$--yellow-echo: url('../../assets/images/purple-figure.png');
+
 .pulse {
   position: relative;
 
@@ -158,7 +161,7 @@
 
 .echo::after,
 .echo::before {
-  content: url('../../assets/images/purple-figure.png');
+  content: $--purple-echo;
 
   display: flex;
   align-items: center;
@@ -180,13 +183,13 @@
 .purple_color::after,
 .purple_color::before {
   border-color: var(--purple-color);
-  box-shadow: inset 0px 0px 17px 4px var(--purple-color);
+  box-shadow: inset 0px 0px 5px 4px var(--purple-color);
 }
 
 .yellow_color::after,
 .yellow_color::before {
-  border-color: var(--yellow-color);
-  box-shadow: inset 0px 0px 17px 4px var(--yellow-color);
+  border-color: var(--orange-color);
+  box-shadow: inset 0px 0px 5px 4px var(--orange-color);
 }
 
 .white_color::after,

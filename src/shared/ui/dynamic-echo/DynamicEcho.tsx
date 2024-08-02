@@ -14,6 +14,7 @@ const DynamicEcho = ({
     [s.echo]: type === 'echo',
     [s.circle]: type === 'circle',
     [s.square]: type === 'square',
+    [s.yellow_color]: color === 'yellow',
     [s.purple_color]: color === 'purple',
     [s.white_color]: color === 'white',
   })
