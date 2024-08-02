@@ -2,8 +2,8 @@
 import clsx from 'clsx'
 import s from './style.module.scss'
 import { Image } from 'react-bootstrap'
-import BankRus from '../../../shared/assets/images/bank-rus.png'
-import useWindowDimensions from '../../../shared/hooks/useWindowDimensions'
+import BankRus from '../../../../shared/assets/images/bank-rus.png'
+import useWindowDimensions from '../../../../shared/hooks/useWindowDimensions'
 
 const Footer = () => {
   const { width } = useWindowDimensions()

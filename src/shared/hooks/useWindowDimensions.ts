@@ -5,13 +5,12 @@ const getWindowDimensions = () => {
   return {
     width,
     height,
+    isMobile: width <= 1300,
   }
 }
 
 const useWindowDimensions = () => {
-  const [windowDimensions, setWindowDimensions] = useState(
-    getWindowDimensions()
-  )
+  const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions())
 
   useEffect(() => {
     function handleResize() {

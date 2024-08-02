@@ -16,8 +16,8 @@ body {
   --sber-thank: url('./shared/assets/images/sber-thank.png');
   --down-arrow: url('./shared/assets/icons/DownArrow.svg');
   --main-heart-with-text: url('./shared/assets/images/main-heart-with-text.png');
-  --purple-echo: url('./shared/assets/images/purple-echo.png');
-  --yellow-echo: url('./shared/assets/images/yellow-echo.png');
+  --purple-echo-1: url('./shared/assets/images/echo/purple-echo-1.png');
+  --yellow-echo-1: url('./shared/assets/images/echo/yellow-echo-1.png');
 
   --font-size-56: 56px;
   --font-size-48: 48px;

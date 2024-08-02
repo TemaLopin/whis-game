@@ -1,6 +1,6 @@
 import { Image } from 'react-bootstrap'
 import s from './style.module.scss'
-import BoxWithMoney from '../../../shared/assets/images/box-with-money.png'
+import BoxWithMoney from '../../../../shared/assets/images/box-with-money.png'
 
 const GetSource = () => {
   return (

@@ -1,14 +1,14 @@
-import { ReactComponent as RubleIcon } from '../../../shared/assets/icons/Ruble.svg'
-import { ReactComponent as OneNumberIcon } from '../../../shared/assets/icons/OneNumber.svg'
+import { ReactComponent as RubleIcon } from '../../../../shared/assets/icons/Ruble.svg'
+import { ReactComponent as OneNumberIcon } from '../../../../shared/assets/icons/OneNumber.svg'
 
-import ManWithCatImg from '../../../shared/assets/images/man-with-cat.png'
-import WomanWithCat from '../../../shared/assets/images/woman-with-dog.png'
-import SberThank from '../../../shared/assets/images/sber-thank.png'
+import ManWithCatImg from '../../../../shared/assets/images/man-with-cat.png'
+import WomanWithCat from '../../../../shared/assets/images/woman-with-dog.png'
+import SberThank from '../../../../shared/assets/images/sber-thank.png'
 
 import s from './style.module.scss'
 import clsx from 'clsx'
 import { Image } from 'react-bootstrap'
-import useWindowDimensions from '../../../shared/hooks/useWindowDimensions'
+import useWindowDimensions from '../../../../shared/hooks/useWindowDimensions'
 import Header from '../header'
 
 const Footer = () => {

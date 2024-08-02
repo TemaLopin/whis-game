@@ -1,12 +1,12 @@
 $--purple-gradient: linear-gradient(180deg, #d700ae 0%, #85026c 100%);
 $--gray-color: #929394;
-$--products: url('../../../shared/assets/images/products.png');
-$--robot: url('../../../shared/assets/images/robot.png');
+$--products: url('../../../../shared/assets/images/products.png');
+$--robot: url('../../../../shared/assets/images/robot.png');
 
 .echo_bg {
-  background-image: var(--purple-echo), var(--yellow-echo);
+  background-image: var(--purple-echo-1), var(--yellow-echo-1);
   background-repeat: no-repeat;
-  background-position: left center, right bottom;
+  background-position: left top, right bottom;
   background-size: 170px, 300px;
 }
 
@@ -19,6 +19,7 @@ $--robot: url('../../../shared/assets/images/robot.png');
 
   padding-top: 200px;
   margin-bottom: 200px;
+  margin-top: 50px;
 }
 
 .main_block::after {
@@ -30,6 +31,8 @@ $--robot: url('../../../shared/assets/images/robot.png');
   position: absolute;
 
   top: 50px;
+
+  z-index: 3;
 
   background-image: $--robot;
   background-repeat: no-repeat;
@@ -122,11 +125,15 @@ $--robot: url('../../../shared/assets/images/robot.png');
   align-items: stretch;
   justify-content: space-between;
 
+  // display: grid;
+  // grid-template-columns: 45% 10% 45%;
+  // justify-items: center;
+
   position: relative;
 
   height: fit-content;
 
-  padding-bottom: 50px;
+  margin-bottom: 200px;
 }
 
 .right_arrow {
@@ -163,9 +170,9 @@ $--robot: url('../../../shared/assets/images/robot.png');
   justify-content: space-between;
   align-items: center;
 
-  width: 50%;
+  width: 45%;
   max-width: 360px;
-
+  min-width: 170px;
 
   position: relative;
 
@@ -269,7 +276,13 @@ $--robot: url('../../../shared/assets/images/robot.png');
 }
 
 .sber {
-  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sber img {
+  height: 50px;
   width: 170px;
 
   @media (max-width: 600px) {

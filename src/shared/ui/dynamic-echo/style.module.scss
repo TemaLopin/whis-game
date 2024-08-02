@@ -1,0 +1,122 @@
+.pulse {
+  position: relative;
+
+  width: fit-content;
+  height: fit-content;
+
+  z-index: 1;
+}
+
+.pulse > div,
+.pulse > ::after,
+.pulse > ::before {
+  z-index: 10;
+}
+
+.circle::after,
+.circle::before {
+  border: 2px solid;
+  border-radius: 50%;
+}
+
+.echo::after,
+.echo::before {
+  content: url('../../assets/images/purple-figure.png');
+}
+
+.square::after,
+.square::before {
+  border: 2px solid #fff;
+  border-radius: 20px;
+}
+
+.pulse::after,
+.pulse::before {
+  content: '';
+
+  height: 100%;
+  width: 100%;
+
+  position: absolute;
+
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+
+  z-index: 2;
+
+  opacity: 0;
+  animation: pulse 3s linear infinite;
+}
+
+.pulse::after {
+  animation-delay: 1s;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1.1);
+    opacity: 0;
+  }
+}
+
+.second_puls {
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+}
+
+.second_puls::after,
+.second_puls::before {
+  content: '';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 100%;
+  width: 100%;
+
+  position: absolute;
+
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+
+  z-index: 2;
+
+  opacity: 0;
+  animation: pulse1 5s linear infinite;
+}
+
+.second_puls::after {
+  animation-delay: 5s;
+}
+
+.second_puls::before {
+  animation-delay: 7s;
+}
+
+@keyframes pulse1 {
+  0% {
+    transform: scale(1);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
