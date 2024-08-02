@@ -16,12 +16,14 @@ const Promotion = () => {
   const brands = [Whiskas, Sheba, PerfectFit, Pedigree, NatureTable, KiteKat, Dreamies, Chappi, Cesar]
 
   return (
-    <div className={clsx('container', s.promotion_container)}>
-      <p>в акции участвуют:</p>
-      <div>
-        {brands.map((brand, index) => (
-          <Image key={index} src={brand} />
-        ))}
+    <div className={s.echo}>
+      <div className={clsx('container', s.promotion_container)}>
+        <p>в акции участвуют:</p>
+        <div>
+          {brands.map((brand, index) => (
+            <Image key={index} src={brand} />
+          ))}
+        </div>
       </div>
     </div>
   )

@@ -48,9 +48,9 @@ const FindYourPets = () => {
               <span>с каждой упаковки отправится в приюты для кошек и собак</span>
             </div>
 
-            <p className={s.right_arrow}>
+            {/* <p className={s.right_arrow}>
               <DownArrow />
-            </p>
+            </p> */}
 
             <div className={s.get_block}>
               <p className={s.block_title}>получите</p>

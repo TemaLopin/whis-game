@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: 'Tisa Sans Pro Regular';
@@ -65,7 +69,6 @@ button {
   max-width: 1400px;
   margin: 0px auto;
   padding: 0px 15px;
-  /* box-sizing: border-box; */
 }
 
 .background {

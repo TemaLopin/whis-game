@@ -17,13 +17,15 @@ const WhereBye = () => {
   const arr = [Magnite, Pyaterichka, Kuper, Auchan, Perecrestok, Lenta, Diksi, Metro, Samokat, Megamarket]
 
   return (
-    <div className={clsx(s.body, 'container')}>
-      <p className={s.main_text}>Где купить?</p>
-      <p className={s.sub_text}>Покупайте онлайн и в магазинах своего города</p>
-      <div className={clsx('container', s.brands)}>
-        {arr.map((store) => (
-          <Image className={s.brand_logo} src={store} />
-        ))}
+    <div className={s.echo}>
+      <div className={clsx(s.body, 'container')}>
+        <p className={s.main_text}>Где купить?</p>
+        <p className={s.sub_text}>Покупайте онлайн и в магазинах своего города</p>
+        <div className={clsx('container', s.brands)}>
+          {arr.map((store) => (
+            <Image className={s.brand_logo} src={store} />
+          ))}
+        </div>
       </div>
     </div>
   )

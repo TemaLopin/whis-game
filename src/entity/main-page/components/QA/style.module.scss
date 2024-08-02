@@ -1,3 +1,12 @@
+$--echo: url('../../../../shared/assets/images/echo/purple-echo-2.png');
+
+.echo {
+  background-image: $--echo;
+  background-position: bottom left;
+  background-size: 20% 100%;
+  background-repeat: no-repeat;
+}
+
 .body {
   display: flex;
   flex-direction: column;

@@ -5,32 +5,28 @@
   height: fit-content;
 
   z-index: 1;
+  max-width: 100%;
 }
 
-.pulse > div,
-.pulse > ::after,
-.pulse > ::before {
-  z-index: 10;
+.pulse::after {
+  content: '';
+
+  height: 100%;
+  width: 100%;
+
+  position: absolute;
+
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+
+  z-index: 2;
+
+  opacity: 0;
+  animation: pulse-after 5s ease-in-out infinite;
 }
 
-.circle::after,
-.circle::before {
-  border: 2px solid;
-  border-radius: 50%;
-}
-
-.echo::after,
-.echo::before {
-  content: url('../../assets/images/purple-figure.png');
-}
-
-.square::after,
-.square::before {
-  border: 2px solid #fff;
-  border-radius: 20px;
-}
-
-.pulse::after,
 .pulse::before {
   content: '';
 
@@ -47,40 +43,45 @@
   z-index: 2;
 
   opacity: 0;
-  animation: pulse 3s linear infinite;
+  animation-duration: 1s;
+  animation: pulse-before 5s ease-in-out infinite;
 }
 
-.pulse::after {
-  animation-delay: 1s;
-}
-
-@keyframes pulse {
+@keyframes pulse-after {
   0% {
     transform: scale(1);
     opacity: 0;
   }
-  40% {
-    opacity: 1;
+  50% {
+    transform: scale(1.05);
+  }
+  80% {
+    opacity: 0.2;
   }
 
   100% {
-    transform: scale(1.1);
-    opacity: 0;
+    transform: scale(1);
   }
 }
 
-.second_puls {
-  position: relative;
-  width: fit-content;
-  height: fit-content;
+@keyframes pulse-before {
+  0% {
+    transform: scale(1.05);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  80% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(1.05);
+  }
 }
 
-.second_puls::after,
-.second_puls::before {
+.second_pulse::after {
   content: '';
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
   height: 100%;
   width: 100%;
@@ -95,28 +96,96 @@
   z-index: 2;
 
   opacity: 0;
-  animation: pulse1 5s linear infinite;
+
+  animation-duration: 2s;
+  animation: second_pulse-after 5s ease-in-out infinite;
 }
 
-.second_puls::after {
-  animation-delay: 5s;
+.second_pulse::before {
+  content: '';
+
+  height: 100%;
+  width: 100%;
+
+  position: absolute;
+
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+
+  z-index: 2;
+
+  opacity: 0;
+
+  animation-duration: 3s;
+  animation: second_pulse-before 5s ease-in-out infinite;
 }
 
-.second_puls::before {
-  animation-delay: 7s;
-}
-
-@keyframes pulse1 {
+@keyframes second_pulse-after {
   0% {
-    transform: scale(1);
+    transform: scale(1.1);
     opacity: 0;
   }
   50% {
-    opacity: 1;
+    transform: scale(1.15);
   }
-
+  80% {
+    opacity: 0.6;
+  }
   100% {
-    transform: scale(1.4);
+    transform: scale(1.1);
+  }
+}
+
+@keyframes second_pulse-before {
+  0% {
+    transform: scale(1.15);
     opacity: 0;
   }
+  50% {
+    transform: scale(1.2);
+  }
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.15);
+  }
+}
+
+.echo::after,
+.echo::before {
+  content: url('../../assets/images/purple-figure.png');
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle::after,
+.circle::before {
+  border: 2px solid;
+  border-radius: 50%;
+}
+
+.square::after,
+.square::before {
+  border: 2px solid #fff;
+  border-radius: 50px;
+}
+
+.purple_color::after,
+.purple_color::before {
+  border-color: var(--purple-color);
+}
+
+.yellow_color::after,
+.yellow_color::before {
+  border-color: var(--yellow-color);
+}
+
+.white_color::after,
+.white_color::before {
+  border-color: var(--white-color);
 }
