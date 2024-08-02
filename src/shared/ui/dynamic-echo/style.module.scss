@@ -1,11 +1,7 @@
 .pulse {
   position: relative;
 
-  width: fit-content;
-  height: fit-content;
-
   z-index: 1;
-  max-width: 100%;
 }
 
 .pulse::after {
@@ -43,7 +39,7 @@
   z-index: 2;
 
   opacity: 0;
-  animation-duration: 1s;
+  animation-duration: 2s;
   animation: pulse-before 5s ease-in-out infinite;
 }
 
@@ -53,7 +49,7 @@
     opacity: 0;
   }
   50% {
-    transform: scale(1.05);
+    transform: scale(1.1);
   }
   80% {
     opacity: 0.2;
@@ -66,18 +62,24 @@
 
 @keyframes pulse-before {
   0% {
-    transform: scale(1.05);
+    transform: scale(1);
     opacity: 0;
   }
   50% {
-    transform: scale(1.1);
+    transform: scale(1.15);
   }
   80% {
     opacity: 0.4;
   }
   100% {
-    transform: scale(1.05);
+    transform: scale(1);
   }
+}
+
+.second_pulse {
+  position: relative;
+
+  z-index: 1;
 }
 
 .second_pulse::after {
@@ -124,33 +126,33 @@
 
 @keyframes second_pulse-after {
   0% {
-    transform: scale(1.1);
-    opacity: 0;
-  }
-  50% {
-    transform: scale(1.15);
-  }
-  80% {
-    opacity: 0.6;
-  }
-  100% {
-    transform: scale(1.1);
-  }
-}
-
-@keyframes second_pulse-before {
-  0% {
-    transform: scale(1.15);
+    transform: scale(1);
     opacity: 0;
   }
   50% {
     transform: scale(1.2);
   }
   80% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes second_pulse-before {
+  0% {
+    transform: scale(1);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.25);
+  }
+  80% {
     opacity: 0.8;
   }
   100% {
-    transform: scale(1.15);
+    transform: scale(1);
   }
 }
 
@@ -165,27 +167,31 @@
 
 .circle::after,
 .circle::before {
-  border: 2px solid;
+  border: 1px solid;
   border-radius: 50%;
 }
 
 .square::after,
 .square::before {
-  border: 2px solid #fff;
+  border: 1px solid;
   border-radius: 50px;
 }
 
 .purple_color::after,
 .purple_color::before {
   border-color: var(--purple-color);
+  box-shadow: inset 0px 0px 17px 4px var(--purple-color);
 }
 
 .yellow_color::after,
 .yellow_color::before {
   border-color: var(--yellow-color);
+  box-shadow: inset 0px 0px 17px 4px var(--yellow-color);
 }
 
 .white_color::after,
 .white_color::before {
   border-color: var(--white-color);
+
+  box-shadow: inset 0px 0px 5px 4px var(--white-color);
 }

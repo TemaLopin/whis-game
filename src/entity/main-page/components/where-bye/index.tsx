@@ -13,6 +13,7 @@ import Pyaterichka from '../../../../shared/assets/images/stores/pyaterichka.png
 import Samokat from '../../../../shared/assets/images/stores/samokat.png'
 import clsx from 'clsx'
 
+
 const WhereBye = () => {
   const arr = [Magnite, Pyaterichka, Kuper, Auchan, Perecrestok, Lenta, Diksi, Metro, Samokat, Megamarket]
 

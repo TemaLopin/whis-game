@@ -3,13 +3,13 @@ import s from './style.module.scss'
 
 import { ReactComponent as RubleIcon } from '../../../../shared/assets/icons/Ruble.svg'
 import { ReactComponent as OneNumberIcon } from '../../../../shared/assets/icons/OneNumber.svg'
-import { ReactComponent as DownArrow } from '../../../../shared/assets/icons/DownArrow.svg'
 
 import SberThank from '../../../../shared/assets/images/sber-thank.png'
 import { Image } from 'react-bootstrap'
-import DynamicEcho from '../../../../shared/ui/dynamic-echo/DynamicEchoCirle'
+import DynamicEcho from '../../../../shared/ui/dynamic-echo/DynamicEcho'
 
 const FindYourPets = () => {
+
   return (
     <div className={clsx('background')}>
       <div className={s.echo_bg}>
@@ -47,10 +47,6 @@ const FindYourPets = () => {
               </div>
               <span>с каждой упаковки отправится в приюты для кошек и собак</span>
             </div>
-
-            {/* <p className={s.right_arrow}>
-              <DownArrow />
-            </p> */}
 
             <div className={s.get_block}>
               <p className={s.block_title}>получите</p>

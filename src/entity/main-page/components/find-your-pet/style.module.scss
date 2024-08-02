@@ -1,7 +1,9 @@
 $--purple-gradient: linear-gradient(180deg, #d700ae 0%, #85026c 100%);
 $--gray-color: #929394;
 $--products: url('../../../../shared/assets/images/products.png');
+$--pets: url('../../../../shared/assets/images/pets-circle.png');
 $--robot: url('../../../../shared/assets/images/robot.png');
+$--chevron-bg-white: url('../../../../shared/assets/images/chevron-bg-white.png');
 
 .echo_bg {
   background-image: var(--purple-echo-1), var(--yellow-echo-1);
@@ -125,15 +127,16 @@ $--robot: url('../../../../shared/assets/images/robot.png');
   align-items: stretch;
   justify-content: space-between;
 
-  // display: grid;
-  // grid-template-columns: 45% 10% 45%;
-  // justify-items: center;
-
   position: relative;
 
   height: fit-content;
 
-  margin-bottom: 200px;
+  margin-bottom: 100px;
+
+  background-image: $--chevron-bg-white;
+  background-size: 5%;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 .right_arrow {
@@ -228,7 +231,7 @@ $--robot: url('../../../../shared/assets/images/robot.png');
 }
 
 .get_block::after {
-  background-image: $--products;
+  background-image: $--pets;
 }
 
 .block_title {
