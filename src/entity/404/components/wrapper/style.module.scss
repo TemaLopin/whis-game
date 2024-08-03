@@ -1,0 +1,56 @@
+$--echo: url('../../../../shared/assets/images/echo/purple-echo-2.png');
+$--echo-2: url('../../../../shared/assets/images/echo/yellow-echo-2.png');
+
+.wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 85%;
+    background-image: $--echo;
+    background-position: top left;
+    background-size: contain;
+    background-repeat: no-repeat;
+    @media (max-width: 769px) {
+      content: none;
+    }
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 85%;
+    background-image: $--echo-2;
+    background-position: bottom right;
+    background-size: contain;
+    background-repeat: no-repeat;
+    @media (max-width: 769px) {
+      content: none;
+    }
+  }
+
+  @media (max-width: 769px) {
+    & > div {
+      justify-content: center;
+      padding-top: 15px;
+    }
+  }
+}
+
+.wrapper_height {
+  height: 100%;
+  overflow: hidden;
+  @media (max-width: 769px) {
+    & > div {
+      justify-content: center;
+      padding-top: 15px;
+    }
+  }
+}

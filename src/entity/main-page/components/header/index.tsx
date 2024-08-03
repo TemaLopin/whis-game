@@ -6,7 +6,7 @@ import { Image } from 'react-bootstrap'
 
 const Header = () => {
   return (
-    <div className={s.header}>
+    <div className={s.header} >
       <Image src={Whiskas} />
       burfer
       <Image src={Pedigree} />

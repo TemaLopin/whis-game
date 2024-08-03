@@ -4,6 +4,12 @@ import './index.css'
 import './shared/fonts/style.css'
 import MainPage from './pages/main'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import {BrowserRouter} from "react-router-dom";
+import App from "./App";
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
-root.render(<React.StrictMode><MainPage/></React.StrictMode>)
+root.render(<React.StrictMode>
+    <BrowserRouter>
+        <App />
+    </BrowserRouter>
+</React.StrictMode>)
