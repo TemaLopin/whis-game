@@ -1,10 +1,10 @@
 * {
   box-sizing: border-box;
 }
-
+@import "./shared/fonts/style.css";
 body {
   margin: 0;
-  font-family: 'Tisa Sans Pro Regular';
+  font-family: 'TisaSansPro';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
@@ -62,7 +62,7 @@ body {
 p,
 span,
 button {
-  font-family: 'Tisa Sans Pro Regular';
+  font-family: 'TisaSansPro';
 }
 
 .container {

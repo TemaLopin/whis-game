@@ -1,0 +1,27 @@
+
+.block_image {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 46px 27px;
+  background: url("../../../../shared/assets/icons/love.svg") 0 0 /cover no-repeat;
+  margin-bottom: 25px;
+  &::after {
+    position: absolute;
+    content: '';
+    background: url("../../../../shared/assets/icons/love-pulse.svg") 0 0 / cover no-repeat;
+    width: 361px;
+    height: 250px;
+  }
+}
+
+.title {
+  color: rgb(167, 38, 142);
+  font-size: 19px;
+  font-weight: 800;
+  line-height: 1.2;
+  text-align: center;
+  text-transform: uppercase;
+  max-width: 227px;
+}

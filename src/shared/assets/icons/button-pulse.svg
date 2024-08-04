@@ -1,0 +1,42 @@
+<svg width="288.000000" height="140.000000" viewBox="0 0 288 140" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs/>
+	<g opacity="0.500000">
+		<mask id="mask788_3645" mask-type="alpha" maskUnits="userSpaceOnUse" x="147.516113" y="13.000000" width="130.628174" height="114.000000">
+			<rect id="Rectangle 14" x="147.516113" y="13.000000" rx="5.000000" width="130.628128" height="114.000000" fill="#D9D9D9" fill-opacity="1.000000"/>
+			<rect id="Rectangle 14" x="148.516113" y="14.000000" rx="5.000000" width="128.628128" height="112.000000" stroke="#FFFF22" stroke-opacity="1.000000" stroke-width="2.000000"/>
+		</mask>
+		<g mask="url(#mask788_3645)">
+			<rect id="Rectangle 4" x="32.256104" y="31.396362" rx="5.000000" width="231.702377" height="70.957466" fill="#62196D" fill-opacity="0"/>
+			<rect id="Rectangle 4" x="33.256104" y="32.396362" rx="5.000000" width="229.702377" height="68.957466" stroke="#FFFF22" stroke-opacity="1.000000" stroke-width="2.000000"/>
+		</g>
+		<mask id="mask788_3648" mask-type="alpha" maskUnits="userSpaceOnUse" x="10.950317" y="13.000000" width="136.565796" height="114.000000">
+			<rect id="Rectangle 14" rx="5.000000" width="136.565781" height="114.000000" transform="matrix(-1 0 0 1 147.516 13)" fill="#D9D9D9" fill-opacity="1.000000"/>
+			<rect id="Rectangle 14" rx="5.000000" width="134.565781" height="112.000000" transform="matrix(-1 0 0 1 147.516 13)" stroke="#FFFF22" stroke-opacity="1.000000" stroke-width="2.000000"/>
+		</mask>
+		<g mask="url(#mask788_3648)">
+			<rect id="Rectangle 4" rx="5.000000" width="238.143646" height="70.799995" transform="matrix(-1 0 0 1 269.208 31.3964)" fill="#62196D" fill-opacity="0"/>
+			<rect id="Rectangle 4" rx="5.000000" width="236.143646" height="68.799995" transform="matrix(-1 0 0 1 269.208 31.3964)" stroke="#FF51FF" stroke-opacity="1.000000" stroke-width="2.000000"/>
+		</g>
+	</g>
+	<g opacity="0.100000">
+		<mask id="mask788_3652" mask-type="alpha" maskUnits="userSpaceOnUse" x="147.199951" y="0.000000" width="140.799988" height="140.000000">
+			<rect id="Rectangle 14" x="147.199951" rx="10.000000" width="140.800003" height="140.000000" fill="#D9D9D9" fill-opacity="1.000000"/>
+			<rect id="Rectangle 14" x="148.199951" y="1.000000" rx="10.000000" width="138.800003" height="138.000000" stroke="#FFFF22" stroke-opacity="1.000000" stroke-width="2.000000"/>
+		</mask>
+		<g mask="url(#mask788_3652)">
+			<rect id="Rectangle 4" x="22.964600" y="22.592041" rx="10.000000" width="249.744766" height="87.140755" fill="#62196D" fill-opacity="0"/>
+			<rect id="Rectangle 4" x="23.964600" y="23.592041" rx="10.000000" width="247.744766" height="85.140755" stroke="#FFFF22" stroke-opacity="1.000000" stroke-width="2.000000"/>
+		</g>
+		<mask id="mask788_3655" mask-type="alpha" maskUnits="userSpaceOnUse" x="0.000000" y="0.000000" width="147.199951" height="140.000000">
+			<rect id="Rectangle 14" rx="10.000000" width="147.199997" height="140.000000" transform="matrix(-1 0 0 1 147.2 0)" fill="#D9D9D9" fill-opacity="1.000000"/>
+			<rect id="Rectangle 14" rx="10.000000" width="145.199997" height="138.000000" transform="matrix(-1 0 0 1 147.2 0)" stroke="#FFFF22" stroke-opacity="1.000000" stroke-width="2.000000"/>
+		</mask>
+		<g mask="url(#mask788_3655)">
+			<rect id="Rectangle 4" rx="10.000000" width="256.687622" height="86.947365" transform="matrix(-1 0 0 1 278.368 22.592)" fill="#62196D" fill-opacity="0"/>
+			<rect id="Rectangle 4" rx="10.000000" width="254.687622" height="84.947365" transform="matrix(-1 0 0 1 278.368 22.592)" stroke="#FF51FF" stroke-opacity="1.000000" stroke-width="2.000000"/>
+		</g>
+	</g>
+</svg>

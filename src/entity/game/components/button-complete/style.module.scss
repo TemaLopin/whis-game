@@ -1,0 +1,38 @@
+.button{
+  position: relative;
+  color: rgb(143, 49, 157);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: calc(15px / 10);
+  text-align: center;
+  padding: 19px 56px 19px 19px;
+  margin-bottom: 38px;
+  background: rgb(98, 25, 109);
+  border: none;
+
+  &::after{
+    content: '';
+    position: absolute;
+    right: 15px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 29px;
+    background: url("../../../../shared/assets/images/robot-icon.png") 0 0 / cover no-repeat;
+    height: 28px;
+    opacity: 0.4;
+  }
+
+  &::before{
+    content: '';
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 136%;
+    left: -42px;
+    top: 9px;
+    height: 268%;
+    background: url("../../../../shared/assets/icons/button-pulse.svg") 0 0 / cover no-repeat;
+  }
+}
