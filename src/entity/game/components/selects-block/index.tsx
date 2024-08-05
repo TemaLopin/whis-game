@@ -6,7 +6,7 @@ const SelectsBlock = () => {
     return (
         <div className={s.wrapper}>
             {selects.map((select: string, ind: number) => {
-                return <SelectCharacteristic key={ind} select={select} />
+                return <SelectCharacteristic key={ind} select={select} bg="rgb(98, 25, 109)" />
             })}
         </div>
     )

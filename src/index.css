@@ -60,7 +60,9 @@ body {
     --line-height-19-8: 14.3px;
   }
 }
-
+body.noscroll{
+  overflow: hidden;
+}
 p,
 span,
 button,

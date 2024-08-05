@@ -1,0 +1,168 @@
+.modal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  top: 0;
+  left: 0;
+  padding: 16px;
+  transition: all .5s ease 0s;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+  z-index: 222;
+}
+
+.body {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.content {
+  position: relative;
+  border-radius: 40px;
+  background: rgb(255, 255, 255);
+  color: #000;
+  max-width: 100%;
+  width: 436px;
+  padding: 48px;
+  min-height: 185px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  @media (max-width: 769px){
+    padding: 40px 32px 32px;
+    border-radius: 24px;
+  }
+  & > input {
+    color: rgb(146, 147, 148);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4;
+    padding: 18px 22px;
+    border-radius: 40px;
+    outline: none;
+    background: rgb(231, 231, 231);
+    margin-bottom: 6px;
+    border: none;
+    @media (max-width: 768px) {
+      font-size: 12px;
+      margin-bottom: 2px;
+      padding: 16px 22px;
+    }
+  }
+}
+
+.close {
+  position: absolute;
+  right: 32px;
+  background: transparent;
+  border: none;
+  top: 32px;
+
+  @media (max-width: 769px){
+    top: 24px;
+    right: 24px;
+    img{
+      width: 20px;
+      height: 16px;
+    }
+  }
+}
+
+.title {
+  color: rgb(167, 38, 142);
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 0.9;
+  text-align: left;
+  text-transform: uppercase;
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
+}
+
+.description {
+  color: rgb(146, 147, 148);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  margin-bottom: 0;
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
+}
+
+.wrapper {
+  display: flex;
+  gap: 25px;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    width: 22px;
+    height: 22px;
+
+    &:checked {
+      & + label {
+        &::before {
+          border-radius: 6px;
+          background-color: rgb(167, 38, 142);
+          background-image: url("../../../../shared/assets/icons/checked.svg");
+        }
+      }
+    }
+
+    & + label {
+      display: inline-flex;
+      user-select: none;
+
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 22px;
+        height: 22px;
+        flex-shrink: 0;
+        flex-grow: 0;
+        border-radius: 8px;
+        background-color: rgb(231, 231, 231);
+        margin-right: 16px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 50% 50%;
+      }
+    }
+  }
+
+  label {
+    color: rgb(146, 147, 148);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.4;
+    @media (max-width: 768px) {
+      font-size: 10px;
+    }
+  }
+}
+
+.button {
+  margin-top: 9px;
+  border-radius: 8px;
+  background: linear-gradient(180.00deg, rgb(215, 0, 174), rgb(133, 2, 108) 100%);
+  padding: 20px;
+  color: rgb(255, 255, 255);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: calc(12px / 10);
+  text-align: center;
+  text-transform: uppercase;
+  border: none;
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
+}

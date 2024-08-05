@@ -1,10 +1,10 @@
 import s from './style.module.scss';
 import LoveIcon from "./love-icon";
-const SelectCharacteristic = ({select}: any) => {
+const SelectCharacteristic = ({select, bg = '#fff'}: any) => {
     return (
         <div className={s.select_item}>
-            <LoveIcon color="rgb(98, 25, 109)"/>
-            <p className={s.title}>{select}</p>
+            <LoveIcon color={bg}/>
+            <p className={bg !== '#fff' ? s.title : s.title_ask}>{select}</p>
         </div>
     )
 }

@@ -10,7 +10,8 @@
   margin-bottom: 38px;
   background: rgb(98, 25, 109);
   border: none;
-
+  z-index: 2;
+  transition: all .3s ease 0s;
   &::after{
     content: '';
     position: absolute;

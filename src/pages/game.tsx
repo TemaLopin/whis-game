@@ -6,6 +6,7 @@ import SelectsBlock from "../entity/game/components/selects-block";
 import QuantityText from "../entity/game/components/quantity-text";
 import ButtonStart from "../entity/game/components/button-start";
 import ButtonComplete from "../entity/game/components/button-complete";
+import Characteristics from "../entity/game/components/characteristics";
 
 const Game = () => {
 
@@ -20,6 +21,7 @@ const Game = () => {
                 <SelectsBlock />
                 <QuantityText text="ЕЩЁ четыре СЕРДЕЧка!" />
                 <ButtonComplete />
+                <Characteristics />
             </BodyInfoStart>
         </GameWrapper>
     )

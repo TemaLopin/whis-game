@@ -1,4 +1,4 @@
-const LoveIcon = ({color = '#fff'}) => {
+const LoveIcon = ({color}) => {
     return <svg width="114.668335" height="77.197433" viewBox="0 0 114.668 77.1974" fill="none" xmlnsSvg="http://www.w3.org/2000/svg">
         <defs/>
         <mask id="mask_788_3575" fill="white">
