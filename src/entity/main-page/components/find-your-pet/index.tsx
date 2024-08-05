@@ -4,34 +4,70 @@ import s from './style.module.scss'
 import { ReactComponent as RubleIcon } from '../../../../shared/assets/icons/Ruble.svg'
 import { ReactComponent as OneNumberIcon } from '../../../../shared/assets/icons/OneNumber.svg'
 
+import Robot from '../../../../shared/assets/images/robot.png'
 import SberThank from '../../../../shared/assets/images/sber-thank.png'
+
 import { Image } from 'react-bootstrap'
 import DynamicEcho from '../../../../shared/ui/dynamic-echo/DynamicEcho'
+import useWindowDimensions from '../../../../shared/hooks/useWindowDimensions'
+
+const ModalBlockPulse = () => {
+  const { isMobile, width } = useWindowDimensions()
+  console.log("🚀  !@#$ ~ ModalBlockPulse ~ width:", width)
+
+  return isMobile ? (
+    <div className={s.main_body}>
+      <div className={s.robot_img}>
+        <DynamicEcho type='circle'>
+          <Image src={Robot} />
+        </DynamicEcho>
+      </div>
+      <div className={s.main_text}>
+        <p>найдите питомца</p>
+        <p>по характеру с помощью</p>
+        <span> искусственного интеллекта</span>
+      </div>
+      <div className={s.sub_text}>
+        <p>Подберите питомца со схожими чертами характера вместе </p>
+        <p>
+          с <span>искусственным интеллектом </span>
+          или узнайте, как сблизиться со своим любимцем
+        </p>
+      </div>
+
+      <button className={s.start_button}>НАЧАТЬ*</button>
+    </div>
+  ) : (
+    <DynamicEcho>
+      <div className={s.main_body}>
+        <div className={s.robot_img}>
+          <Image src={Robot} />
+        </div>
+        <div className={s.main_text}>
+          <p>найдите питомца</p>
+          <p>по характеру с помощью</p>
+          <span> искусственного интеллекта</span>
+        </div>
+        <div className={s.sub_text}>
+          <p>Подберите питомца со схожими чертами характера вместе </p>
+          <p>
+            с <span>искусственным интеллектом </span>
+            или узнайте, как сблизиться со своим любимцем
+          </p>
+        </div>
+
+        <button className={s.start_button}>НАЧАТЬ*</button>
+      </div>
+    </DynamicEcho>
+  )
+}
 
 const FindYourPets = () => {
-
   return (
     <div className={clsx('background')}>
       <div className={s.echo_bg}>
         <div className={clsx('container', s.main_block)}>
-          <DynamicEcho>
-            <div className={s.main_body}>
-              <div className={s.main_text}>
-                <p>найдите питомца</p>
-                <p>по характеру с помощью</p>
-                <span> искусственного интеллекта</span>
-              </div>
-              <div className={s.sub_text}>
-                <p>Подберите питомца со схожими чертами характера вместе </p>
-                <p>
-                  с <span>искусственным интеллектом </span>
-                  или узнайте, как сблизиться со своим любимцем
-                </p>
-              </div>
-
-              <button className={s.start_button}>НАЧАТЬ*</button>
-            </div>
-          </DynamicEcho>
+          <ModalBlockPulse />
         </div>
         <div className='container'>
           <div className={clsx(s.about_block)}>

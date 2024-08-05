@@ -1,5 +1,4 @@
 .main {
-  height: 100vh;
   width: 100%;
 
   display: flex;
@@ -7,6 +6,7 @@
   justify-content: space-between;
 
   padding-bottom: 30px;
+  margin-bottom: 50px;
 
   z-index: 1;
 }
@@ -53,6 +53,7 @@
 
   p {
     margin: 0px;
+    text-wrap: nowrap;
   }
 }
 
@@ -197,35 +198,4 @@
 
   bottom: 20px;
   text-align: center;
-}
-
-.main_middle {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-
-  height: 100%;
-
-  position: relative;
-}
-
-.main_middle::before {
-  content: '';
-  position: absolute;
-
-  top: 10%;
-
-  height: 75%;
-  width: 500%;
-
-  background-image: var(--main-heart-with-text);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: 70%;
-
-  @media (max-width: 600px) {
-    top: 5%;
-    background-size: 40% 40%;
-  }
 }

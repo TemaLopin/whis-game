@@ -6,10 +6,12 @@ $--robot: url('../../../../shared/assets/images/robot.png');
 $--chevron-bg-white: url('../../../../shared/assets/images/chevron-bg-white.png');
 
 .echo_bg {
+  padding-bottom: 50px;
+
   background-image: var(--purple-echo-1), var(--yellow-echo-1);
   background-repeat: no-repeat;
   background-position: left top, right bottom;
-  background-size: 170px, 300px;
+  background-size: contain;
 }
 
 .main_block {
@@ -17,29 +19,12 @@ $--chevron-bg-white: url('../../../../shared/assets/images/chevron-bg-white.png'
   align-items: center;
   justify-content: center;
 
-  position: relative;
-
   padding-top: 200px;
   margin-bottom: 200px;
-  margin-top: 50px;
-}
 
-.main_block::after {
-  content: '';
-
-  height: 200px;
-  width: 200px;
-
-  position: absolute;
-
-  top: 50px;
-
-  z-index: 3;
-
-  background-image: $--robot;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
+  @media (max-width: 600px) {
+    padding-top: 100px;
+  }
 }
 
 .main_body {
@@ -51,6 +36,9 @@ $--chevron-bg-white: url('../../../../shared/assets/images/chevron-bg-white.png'
   box-sizing: border-box;
   background-color: var(--white-color);
 
+  position: relative;
+  z-index: 3;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -58,6 +46,41 @@ $--chevron-bg-white: url('../../../../shared/assets/images/chevron-bg-white.png'
 
   @media (max-width: 600px) {
     padding-top: 50px;
+    padding: 30px;
+  }
+}
+
+.robot_img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+
+  position: absolute;
+  top: -160px;
+
+  img {
+    height: 200px;
+    width: 200px;
+  }
+
+  @media (max-width: 1300px) {
+    img {
+      width: 200px;
+      height: 200px;
+    }
+
+    margin-top: 50px;
+    top: -225px;
+  }
+  @media (max-width: 600px) {
+    img {
+      width: 100px;
+      height: 100px;
+    }
+
+    top: -125px;
   }
 }
 
@@ -71,6 +94,7 @@ $--chevron-bg-white: url('../../../../shared/assets/images/chevron-bg-white.png'
   font-weight: 800;
   line-height: var(--line-height-52-8);
 
+  z-index: 2;
   margin: 0px;
 }
 
@@ -131,8 +155,6 @@ $--chevron-bg-white: url('../../../../shared/assets/images/chevron-bg-white.png'
 
   height: fit-content;
 
-  margin-bottom: 100px;
-
   background-image: $--chevron-bg-white;
   background-size: 5%;
   background-position: center center;
@@ -175,7 +197,6 @@ $--chevron-bg-white: url('../../../../shared/assets/images/chevron-bg-white.png'
 
   width: 45%;
   max-width: 360px;
-  min-width: 170px;
 
   position: relative;
 

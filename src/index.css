@@ -1,7 +1,9 @@
+@import './shared/fonts/style.css';
+
 * {
+  font-family: 'TisaSansPro';
   box-sizing: border-box;
 }
-@import "./shared/fonts/style.css";
 body {
   margin: 0;
   font-family: 'TisaSansPro';
@@ -27,9 +29,9 @@ body {
   --font-size-48: 48px;
   --font-size-38: 38px;
   --font-size-30: 30px;
-  --font-size-26: 26px;
+  --font-size-26: calc(18px + 8 * (100vw / 1440));
   --font-size-20: 20px;
-  --font-size-18: 18px;
+  --font-size-18: calc(13px + 5 * (100vw / 1440));
   --font-size-16: 16px;
   --font-size-14: 14px;
   --font-size-12: 12px;
@@ -46,9 +48,9 @@ body {
     --font-size-56: 22px;
     --font-size-48: 18px;
     --font-size-38: 20px;
-    --font-size-26: 18px;
+    --font-size-26: calc(18px + (8 + 8 * 0.7) * ((100vw - 320px) / 1440));
     --font-size-20: 12px;
-    --font-size-18: 13px;
+    --font-size-18: calc(13px + (5 + 5 * 0.7) * ((100vw - 320px) / 1440));
     --font-size-32: 13px;
     --font-size-38: 18px;
 
@@ -61,18 +63,17 @@ body {
 
 p,
 span,
-button {
+button,
+a {
   font-family: 'TisaSansPro';
 }
 
 .container {
-  max-width: 1400px;
+  max-width: 1300px;
   margin: 0px auto;
-  padding: 0px 15px;
+  /* padding: 0px 15px; */
 }
 
 .background {
   background: var(--background);
 }
-
-

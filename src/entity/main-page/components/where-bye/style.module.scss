@@ -16,11 +16,14 @@ $--echo-2: url('../../../../shared/assets/images/echo/yellow-echo-1.png');
   width: 100%;
   height: 65%;
 
+  z-index: 1;
+
   background-image: $--echo;
   background-position: top left;
   background-size: contain;
   background-repeat: no-repeat;
 }
+
 .echo::before {
   content: '';
   position: absolute;
@@ -30,6 +33,8 @@ $--echo-2: url('../../../../shared/assets/images/echo/yellow-echo-1.png');
 
   width: 100%;
   height: 65%;
+
+  z-index: 1;
 
   background-image: $--echo-2;
   background-position: bottom right;
@@ -43,7 +48,9 @@ $--echo-2: url('../../../../shared/assets/images/echo/yellow-echo-1.png');
   justify-content: center;
   align-items: center;
 
-  margin-bottom: 100px;
+  z-index: 2;
+
+  margin-bottom: 50px;
 }
 
 .brands {
@@ -53,6 +60,7 @@ $--echo-2: url('../../../../shared/assets/images/echo/yellow-echo-1.png');
   justify-content: center;
 
   gap: 20px;
+  z-index: 2;
 
   padding: 10px 0px 50px 0px;
 

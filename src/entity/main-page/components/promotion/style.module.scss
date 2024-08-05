@@ -3,6 +3,8 @@ $--echo: url('../../../../shared/assets/images/echo/purple-echo-2.png');
 .echo {
   z-index: 1;
   position: relative;
+
+  padding: 100px 0px;
 }
 
 .echo::after {
@@ -30,9 +32,8 @@ $--echo: url('../../../../shared/assets/images/echo/purple-echo-2.png');
   position: relative;
   z-index: 3;
 
-  padding-top: 100px;
-  padding-bottom: 100px;
-  margin-bottom: 50px;
+  // margin-bottom: 50px;
+  margin-bottom: 150px;
 }
 
 .promotion_container p {
