@@ -14,6 +14,9 @@ $--echo: url('../../../../shared/assets/images/echo/yellow-echo-2.png');
   align-items: center;
 
   margin-bottom: 50px;
+  @media (max-width: 600px){
+    margin-bottom: -35px;
+  }
 }
 
 .source {
@@ -33,6 +36,7 @@ $--echo: url('../../../../shared/assets/images/echo/yellow-echo-2.png');
   @media (max-width: 600px) {
     width: 300px;
     height: 300px;
+    object-fit: cover;
   }
 }
 

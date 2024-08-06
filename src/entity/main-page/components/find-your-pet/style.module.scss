@@ -12,6 +12,9 @@ $--chevron-bg-white: url('../../../../shared/assets/images/chevron-bg-white.png'
   background-repeat: no-repeat;
   background-position: right bottom;
   background-size: 30%, 300px;
+  @media (max-width: 620px){
+    padding-bottom: 20px;
+  }
 }
 
 .main_block {
@@ -21,6 +24,10 @@ $--chevron-bg-white: url('../../../../shared/assets/images/chevron-bg-white.png'
 
   padding-top: 100px;
   margin-bottom: 200px;
+  @media (max-width: 600px){
+    padding-top: 84px;
+    margin-bottom: 105px;
+  }
 }
 
 .main_body {

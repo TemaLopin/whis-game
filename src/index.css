@@ -1,81 +1,160 @@
 @import './shared/fonts/style.css';
 
 * {
-  font-family: 'TisaSansPro';
-  box-sizing: border-box;
+    font-family: 'TisaSansPro';
+    box-sizing: border-box;
 }
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-  margin: 0;
-  font-family: 'TisaSansPro';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    font-family: 'TisaSansPro';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 
-  --orange-color: #f8b403;
-  --purple-color: #a7268e;
-  --white-color: #fff;
-  --background: linear-gradient(90deg, var(--purple-color) 50%, var(--orange-color) 50%);
+    --orange-color: #f8b403;
+    --purple-color: #a7268e;
+    --white-color: #fff;
+    --background: linear-gradient(90deg, var(--purple-color) 50%, var(--orange-color) 50%);
 
-  --man-with-cat-img: url('./shared/assets/images/man-with-cat.png');
-  --woman-with-dog-img: url('./shared/assets/images/woman-with-dog.png');
-  --pedigree: url('./shared/assets/images/pedigree-logo.png');
-  --whiskas: url('./shared/assets/images/whiskas-logo.png');
-  --sber-thank: url('./shared/assets/images/sber-thank.png');
-  --down-arrow: url('./shared/assets/icons/DownArrow.svg');
-  --main-heart-with-text: url('./shared/assets/images/main-heart-with-text.png');
-  --purple-echo-1: url('./shared/assets/images/echo/purple-echo-1.png');
-  --yellow-echo-1: url('./shared/assets/images/echo/yellow-echo-1.png');
+    --man-with-cat-img: url('./shared/assets/images/man-with-cat.png');
+    --woman-with-dog-img: url('./shared/assets/images/woman-with-dog.png');
+    --pedigree: url('./shared/assets/images/pedigree-logo.png');
+    --whiskas: url('./shared/assets/images/whiskas-logo.png');
+    --sber-thank: url('./shared/assets/images/sber-thank.png');
+    --down-arrow: url('./shared/assets/icons/DownArrow.svg');
+    --main-heart-with-text: url('./shared/assets/images/main-heart-with-text.png');
+    --purple-echo-1: url('./shared/assets/images/echo/purple-echo-1.png');
+    --yellow-echo-1: url('./shared/assets/images/echo/yellow-echo-1.png');
 
-  --font-size-56: 56px;
-  --font-size-48: 48px;
-  --font-size-38: 38px;
-  --font-size-30: 30px;
-  --font-size-26: calc(18px + 8 * (100vw / 1440));
-  --font-size-20: 20px;
-  --font-size-18: calc(13px + 5 * (100vw / 1440));
-  --font-size-16: 16px;
-  --font-size-14: 14px;
-  --font-size-12: 12px;
+    --font-size-56: 56px;
+    --font-size-48: 48px;
+    --font-size-38: 38px;
+    --font-size-30: 30px;
+    --font-size-26: calc(18px + 8 * (100vw / 1440));
+    --font-size-20: 20px;
+    --font-size-18: calc(13px + 5 * (100vw / 1440));
+    --font-size-16: 16px;
+    --font-size-14: 14px;
+    --font-size-12: 12px;
 
-  --line-height-50-4: 50.4px;
-  --line-height-52-8: 52.8px;
-  --line-height-34-2: 34.2px;
-  --line-height-28-6: 28.6px;
-  --line-height-19-8: 19px;
-  --line-height-18: 18px;
-  --line-height-26: 26px;
+    --line-height-50-4: 50.4px;
+    --line-height-52-8: 52.8px;
+    --line-height-34-2: 34.2px;
+    --line-height-28-6: 28.6px;
+    --line-height-19-8: 19px;
+    --line-height-18: 18px;
+    --line-height-26: 26px;
 
-  @media (max-width: 600px) {
-    --font-size-56: 22px;
-    --font-size-48: 18px;
-    --font-size-38: 20px;
-    --font-size-26: calc(18px + (8 + 8 * 0.7) * ((100vw - 320px) / 1440));
-    --font-size-20: 12px;
-    --font-size-18: calc(13px + (5 + 5 * 0.7) * ((100vw - 320px) / 1440));
-    --font-size-32: 13px;
-    --font-size-38: 18px;
+@media (max-width: 600px) {
+    --font-size-56:
 
-    --line-height-50-4: 24.2px;
-    --line-height-52-8: 19.8px;
-    --line-height-28-6: 19.8px;
-    --line-height-19-8: 14.3px;
-  }
+22px
+
+;
+    --font-size-48:
+
+18px
+
+;
+    --font-size-38:
+
+20px
+
+;
+    --font-size-26:
+
+calc(18px +
+
+(8 +
+
+8 *
+
+0.7) *
+
+((100vw
+
+- 320px
+
+) / 1440));
+    --font-size-20:
+
+12px
+
+;
+    --font-size-18:
+
+calc(13px +
+
+(5 +
+
+5 *
+
+0.7) *
+
+((100vw
+
+- 320px
+
+) / 1440));
+    --font-size-32:
+
+13px
+
+;
+    --font-size-38:
+
+18px
+
+;
+
+    --line-height-50-4:
+
+24.2px
+
+;
+    --line-height-52-8:
+
+19.8px
+
+;
+    --line-height-28-6:
+
+19.8px
+
+;
+    --line-height-19-8:
+
+14.3px
+
+;
 }
-body.noscroll{
-  overflow: hidden;
+
 }
+body.noscroll {
+    overflow: hidden;
+}
+
 p,
 span,
 button,
 a {
-  font-family: 'TisaSansPro';
+    font-family: 'TisaSansPro';
 }
 
 .container {
-  max-width: 1300px;
-  margin: 0px auto;
-  /* padding: 0px 15px; */
+    max-width: 1300px;
+    margin: 0px auto;
+    /* padding: 0px 15px; */
 }
 
 .background {
-  background: var(--background);
+    background: var(--background);
+}
+
+.home{
+    overflow: hidden;
 }

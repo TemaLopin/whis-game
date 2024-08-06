@@ -1,15 +1,17 @@
 import s from './style.module.scss';
 import {EventHandler, useRef, useState} from "react";
-import {Link} from "react-router-dom";
+//@ts-ignore
+import { HashLink as Link } from 'react-router-hash-link';
+
 
 const Navigation = () => {
     const refNav = useRef<HTMLUListElement>(null);
     const refBurger = useRef<HTMLButtonElement>(null);
     const nav = [
-        {link: '#', title: 'главная'},
-        {link: '#', title: 'об акции'},
+        {link: '/', title: 'главная'},
+        {link: '#aktie', title: 'об акции'},
         {link: '#', title: 'Помогли вместе'},
-        {link: '#', title: 'где купить?'}
+        {link: '#buy', title: 'где купить?'}
     ];
     const burgerHandler = () => {
         if(refNav.current){

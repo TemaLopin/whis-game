@@ -1,0 +1,68 @@
+<svg width="131.232422" height="38.000000" viewBox="0 0 131.232 38" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<clipPath id="clip1023_455">
+			<rect id="SberSpasibo_New 1" rx="-0.220930" width="130.790695" height="37.558140" transform="translate(0.220930 0.220930)" fill="white" fill-opacity="0"/>
+		</clipPath>
+		<radialGradient gradientTransform="translate(14.5785 7.3075) rotate(0) scale(36.4535 36.5385)" cx="0.000000" cy="0.000000" r="1.000000" id="paint_radial_1023_461_0" gradientUnits="userSpaceOnUse">
+			<stop offset="0.150000" stop-color="#42E3B4"/>
+			<stop offset="1.000000" stop-color="#42E3B4" stop-opacity="0.000000"/>
+		</radialGradient>
+		<radialGradient gradientTransform="translate(40.098 34.3461) rotate(0) scale(36.4535 36.5385)" cx="0.000000" cy="0.000000" r="1.000000" id="paint_radial_1023_462_0" gradientUnits="userSpaceOnUse">
+			<stop offset="0.010000" stop-color="#A0E720"/>
+			<stop offset="1.000000" stop-color="#A0E720" stop-opacity="0.000000"/>
+		</radialGradient>
+		<radialGradient gradientTransform="translate(3.64344 36.5384) rotate(0) scale(47.3895 36.5385)" cx="0.000000" cy="0.000000" r="1.000000" id="paint_radial_1023_463_0" gradientUnits="userSpaceOnUse">
+			<stop offset="0.100000" stop-color="#FAED00"/>
+			<stop offset="1.000000" stop-color="#FAED00" stop-opacity="0.000000"/>
+		</radialGradient>
+		<radialGradient gradientTransform="translate(80.1957 36.5384) rotate(0) scale(36.4535 36.5385)" cx="0.000000" cy="0.000000" r="1.000000" id="paint_radial_1023_464_0" gradientUnits="userSpaceOnUse">
+			<stop offset="0.150000" stop-color="#00D900"/>
+			<stop offset="1.000000" stop-color="#00D900" stop-opacity="0.000000"/>
+		</radialGradient>
+		<radialGradient gradientTransform="translate(109.36 36.5385) rotate(0) scale(36.4535 36.5385)" cx="0.000000" cy="0.000000" r="1.000000" id="paint_radial_1023_465_0" gradientUnits="userSpaceOnUse">
+			<stop offset="0.150000" stop-color="#21A038"/>
+			<stop offset="1.000000" stop-color="#21A038" stop-opacity="0.000000"/>
+		</radialGradient>
+		<radialGradient gradientTransform="translate(123.942 18.2689) rotate(0) scale(36.4535 36.5385)" cx="0.000000" cy="0.000000" r="1.000000" id="paint_radial_1023_466_0" gradientUnits="userSpaceOnUse">
+			<stop offset="0.150000" stop-color="#21A038"/>
+			<stop offset="1.000000" stop-color="#21A038" stop-opacity="0.000000"/>
+		</radialGradient>
+		<radialGradient gradientTransform="translate(94.7771 -8.01086e-05) rotate(0) scale(51.0349 43.8462)" cx="0.000000" cy="0.000000" r="1.000000" id="paint_radial_1023_467_0" gradientUnits="userSpaceOnUse">
+			<stop offset="0.200000" stop-color="#0087CD"/>
+			<stop offset="0.900000" stop-color="#0087CD" stop-opacity="0.000000"/>
+		</radialGradient>
+		<radialGradient gradientTransform="translate(69.2613 -0.000278473) rotate(0) scale(32.8081 25.5769)" cx="0.000000" cy="0.000000" r="1.000000" id="paint_radial_1023_468_0" gradientUnits="userSpaceOnUse">
+			<stop offset="0.100000" stop-color="#01A7FA"/>
+			<stop offset="1.000000" stop-color="#00ADEE" stop-opacity="0.000000"/>
+		</radialGradient>
+	</defs>
+	<rect id="SberSpasibo_New 1" rx="-0.220930" width="130.790695" height="37.558140" transform="translate(0.220930 0.220930)" fill="#FFFFFF" fill-opacity="0"/>
+	<g clip-path="url(#clip1023_455)">
+		<mask id="mask1023_457" mask-type="alpha" maskUnits="userSpaceOnUse" x="0.000000" y="0.000000" width="131.232422" height="38.000000">
+			<path id="Vector" d="M131.23 19C131.23 29.49 122.89 38 112.61 38C112.61 38 0 38 0 38L0 19C0 8.5 8.33 0 18.61 0C18.61 0 112.61 0 112.61 0C122.89 0 131.23 8.5 131.23 19Z" fill="#606060" fill-opacity="1.000000" fill-rule="nonzero"/>
+		</mask>
+		<g mask="url(#mask1023_457)">
+			<path id="Vector" d="M131.22 0L-0.01 0L-0.01 38L131.22 38L131.22 0Z" fill="#4EDEA3" fill-opacity="1.000000" fill-rule="nonzero"/>
+			<path id="Vector" d="M51.03 -29.24L-21.88 -29.24L-21.88 43.84L51.03 43.84L51.03 -29.24Z" fill="url(#paint_radial_1023_461_0)" fill-opacity="1.000000" fill-rule="nonzero"/>
+			<path id="Vector" d="M76.55 -2.2L3.64 -2.2L3.64 70.88L76.55 70.88L76.55 -2.2Z" fill="url(#paint_radial_1023_462_0)" fill-opacity="1.000000" fill-rule="nonzero"/>
+			<path id="Vector" d="M51.03 -6.11e-5L-43.75 -6.11e-5L-43.75 73.07L51.03 73.07L51.03 -6.11e-5Z" fill="url(#paint_radial_1023_463_0)" fill-opacity="1.000000" fill-rule="nonzero"/>
+			<path id="Vector" d="M116.64 -6.11e-5L43.74 -6.11e-5L43.74 73.07L116.64 73.07L116.64 -6.11e-5Z" fill="url(#paint_radial_1023_464_0)" fill-opacity="1.000000" fill-rule="nonzero"/>
+			<path id="Vector" d="M145.81 0L72.9 0L72.9 73.07L145.81 73.07L145.81 0Z" fill="url(#paint_radial_1023_465_0)" fill-opacity="1.000000" fill-rule="nonzero"/>
+			<path id="Vector" d="M160.39 -18.27L87.48 -18.27L87.48 54.8L160.39 54.8L160.39 -18.27Z" fill="url(#paint_radial_1023_466_0)" fill-opacity="1.000000" fill-rule="nonzero"/>
+			<path id="Vector" d="M145.81 -43.85L43.74 -43.85L43.74 43.84L145.81 43.84L145.81 -43.85Z" fill="url(#paint_radial_1023_467_0)" fill-opacity="1.000000" fill-rule="nonzero"/>
+			<path id="Vector" d="M102.06 -25.58L36.45 -25.58L36.45 25.57L102.06 25.57L102.06 -25.58Z" fill="url(#paint_radial_1023_468_0)" fill-opacity="1.000000" fill-rule="nonzero"/>
+		</g>
+		<path id="Vector" d="M18.61 18.37L14.78 15.96L14.78 18.86L18.61 21.27L27.79 14.49C27.47 13.77 27.06 13.1 26.58 12.48L18.61 18.37Z" fill="#FFFFFF" fill-opacity="1.000000" fill-rule="nonzero"/>
+		<path id="Vector" d="M28.68 18.66C28.68 18.04 28.63 17.43 28.52 16.85L26.35 18.45C26.36 18.52 26.36 18.59 26.36 18.65C26.36 22.94 22.88 26.42 18.61 26.42C14.34 26.42 10.87 22.94 10.87 18.65C10.87 14.37 14.34 10.89 18.61 10.89C20.23 10.89 21.73 11.39 22.98 12.25L24.94 10.8C23.21 9.4 21.01 8.56 18.61 8.56C13.05 8.56 8.54 13.08 8.54 18.65C8.54 24.23 13.05 28.75 18.61 28.75C24.17 28.75 28.68 24.23 28.68 18.66Z" fill="#FFFFFF" fill-opacity="1.000000" fill-rule="nonzero"/>
+		<path id="Vector" d="M48.23 24.53C47.47 25.43 45.5 26.42 42.9 26.42C38.01 26.4 34.75 23.5 34.75 18.64C34.75 14.1 37.97 10.89 42.95 10.89C45.31 10.89 47.05 11.62 47.93 12.25L47.93 15.99C47.02 14.66 45.2 13.37 42.95 13.37C39.66 13.37 37.65 15.5 37.65 18.66C37.65 21.58 39.43 23.89 42.88 23.95C45.5 23.95 47.35 22.75 48.23 21.22L48.23 24.53L48.23 24.53Z" fill="#FFFFFF" fill-opacity="1.000000" fill-rule="nonzero"/>
+		<path id="Vector" d="M57.75 17.65L53.07 17.65L53.07 26.19L50.56 26.19L50.56 15.43L60.26 15.43L60.26 26.19L57.75 26.19L57.75 17.65Z" fill="#FFFFFF" fill-opacity="1.000000" fill-rule="nonzero"/>
+		<path id="Vector" d="M63.57 16.18C64.27 15.65 65.56 15.22 67.41 15.22C70.54 15.22 72.09 16.29 72.09 19.09L72.09 26.19L69.73 26.19L69.73 24.25C69.21 25.5 67.9 26.36 66.18 26.36C64.02 26.36 62.73 25.13 62.73 23.02C62.73 20.57 64.51 19.88 67.15 19.88L69.58 19.88L69.58 19.41C69.58 17.88 68.85 17.41 67.41 17.41C65.43 17.41 64.3 18.18 63.57 19.32L63.57 16.18ZM69.58 22.4L69.58 21.52L67.45 21.52C65.97 21.52 65.26 21.8 65.26 22.76C65.26 23.58 65.86 24.1 66.98 24.1C68.68 24.1 69.47 23.13 69.58 22.4Z" fill="#FFFFFF" fill-opacity="1.000000" fill-rule="nonzero"/>
+		<path id="Vector" d="M79.96 26.42C76.53 26.42 74.26 24.53 74.26 20.77C74.26 17.07 76.57 15.22 79.99 15.19C81.43 15.21 82.71 15.65 83.42 16.18L83.42 19.32C82.69 18.18 81.56 17.41 79.99 17.39C77.93 17.39 76.81 18.48 76.81 20.66L76.81 20.98C76.81 23.2 78.01 24.23 80.03 24.23C81.81 24.23 82.99 23.48 83.53 22.53L83.53 25.11C83.06 25.71 81.7 26.42 79.96 26.42Z" fill="#FFFFFF" fill-opacity="1.000000" fill-rule="nonzero"/>
+		<path id="Vector" d="M85.84 15.43L88.33 15.43L88.33 22.72L93.48 15.43L95.86 15.43L95.86 26.19L93.38 26.19L93.38 18.81L88.33 26.04L88.22 26.19L85.84 26.19L85.84 15.43Z" fill="#FFFFFF" fill-opacity="1.000000" fill-rule="nonzero"/>
+		<path id="Vector" d="M108.38 12.1C107.95 12.33 106.73 12.53 104.97 12.68C101.53 13 100.76 14.35 100.48 17.43C101.32 16.23 102.63 15.43 104.56 15.43C107.2 15.43 109.39 16.76 109.39 20.66C109.39 24.46 107.37 26.4 103.98 26.4C100.33 26.4 98.29 24.23 98.29 19.26C98.29 13.32 99.92 10.93 103.61 10.33C105.27 10.05 107.5 9.97 108.38 9.51L108.38 12.1L108.38 12.1ZM103.81 24.12C105.5 24.12 106.77 23.22 106.77 20.87C106.77 18.64 105.72 17.67 103.91 17.67C102.03 17.67 100.87 18.68 100.87 20.68C100.87 22.68 101.85 24.12 103.81 24.12Z" fill="#FFFFFF" fill-opacity="1.000000" fill-rule="nonzero"/>
+		<path id="Vector" d="M110.95 20.77C110.95 17.04 113.21 15.19 116.55 15.19C119.88 15.21 122.05 17.11 122.05 20.85C122.05 24.57 119.79 26.4 116.47 26.42C113.12 26.42 110.95 24.53 110.95 20.77ZM113.51 20.83C113.51 23.2 114.62 24.23 116.51 24.23C118.42 24.23 119.49 23.13 119.49 20.85L119.49 20.79C119.49 18.42 118.36 17.39 116.47 17.39C114.56 17.41 113.51 18.51 113.51 20.77L113.51 20.83L113.51 20.83Z" fill="#FFFFFF" fill-opacity="1.000000" fill-rule="nonzero"/>
+	</g>
+</svg>

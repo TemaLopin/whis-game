@@ -5,7 +5,7 @@ import { ReactComponent as RubleIcon } from '../../../../shared/assets/icons/Rub
 import { ReactComponent as OneNumberIcon } from '../../../../shared/assets/icons/OneNumber.svg'
 
 import Robot from '../../../../shared/assets/images/robot.png'
-import SberThank from '../../../../shared/assets/images/sber-thank.png'
+import SberThank from '../../../../shared/assets/icons/sber.svg'
 
 import { Image } from 'react-bootstrap'
 import DynamicEcho from '../../../../shared/ui/dynamic-echo/DynamicEcho'

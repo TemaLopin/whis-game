@@ -1,13 +1,24 @@
 import clsx from 'clsx'
 import s from './style.module.scss'
 import { Collapse } from 'react-bootstrap'
-import { useState } from 'react'
+import {useRef, useState} from 'react'
 
 const QuestionAnswer = () => {
+  let initialQuantity = 4;
   const [openId, setOpenId] = useState(0)
-
+  const [quaShow, setQuaShow] = useState(initialQuantity)
+  const refBtn = useRef<HTMLButtonElement>(null);
   const handleSelect = (id: number) => {
     setOpenId(openId === id ? -1 : id)
+  }
+
+  const showMoreHandler = (length: number) => {
+    if(refBtn.current){
+      refBtn.current.textContent = length > quaShow ? 'Скрыть' : 'Показать еще'
+      setQuaShow(length > quaShow ? length : initialQuantity);
+      refBtn.current.classList.toggle(s.active)
+    }
+
   }
 
   return (
@@ -16,7 +27,7 @@ const QuestionAnswer = () => {
         <p className={s.main_text}>вопрос-ответ</p>
         <p className={s.sub_text}>Ответы на часто задаваемые вопросы</p>
         {new Array(5).fill(false).map((q_a, id) => (
-          <div className={s.questions}>
+            id < quaShow && <div className={s.questions} key={id}>
             <div
               className={s.qa_title}
               aria-controls='q_a'
@@ -46,7 +57,7 @@ const QuestionAnswer = () => {
             </Collapse>
           </div>
         ))}
-        <p className={s.show_more}>Показать еще </p>
+        <button className={s.show_more} ref={refBtn} onClick={() => showMoreHandler(5)}>Показать еще </button>
       </div>
     </div>
   )

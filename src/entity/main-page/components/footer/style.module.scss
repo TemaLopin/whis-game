@@ -5,9 +5,15 @@
 
 .footer img {
   width: 186px;
-  height: 77;
+  height: 77px;
 
   margin: 25px 80px 25px 0px;
+  @media (max-width: 768px) {
+    width: 145px;
+    height: 66px;
+    margin: 6px 0 24px 0;
+    object-fit: contain;
+  }
 }
 
 .links {
@@ -16,19 +22,26 @@
   flex-wrap: wrap;
   justify-content: space-between;
   width: 100%;
+
+  @media (max-width: 768px) {
+    gap: 24px 12px;
+  }
 }
 
 .links a {
-  font-size: var(--font-size-14);
+  font-size: 16px;
   line-height: var(--line-height-28-6);
   font-weight: 700;
-
   margin-right: 30px;
-
   text-transform: uppercase;
   text-decoration: none;
 
   color: var(--purple-color);
+
+  @media (max-width: 768px) {
+    margin-right: 0;
+    font-size: 14px;
+  }
 }
 
 .footer_description {

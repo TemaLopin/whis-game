@@ -4,12 +4,14 @@ import Pedigree from '../../../../shared/assets/images/pedigree-logo.png'
 import s from './style.module.scss'
 import {Image} from 'react-bootstrap'
 import Navigation from "../navigation";
+import {useParams} from "react-router-dom";
 
 const Header = () => {
+    const pathUrl = useParams();
     return (
         <div className={s.header}>
             <Image src={Whiskas}/>
-            <Navigation/>
+            {!pathUrl['*'] && <Navigation/>}
             <Image src={Pedigree}/>
         </div>
     )

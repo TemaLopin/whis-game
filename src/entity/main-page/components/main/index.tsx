@@ -3,7 +3,7 @@ import {ReactComponent as OneNumberIcon} from '../../../../shared/assets/icons/O
 
 import ManWithCatImg from '../../../../shared/assets/images/man-with-cat.png'
 import WomanWithCat from '../../../../shared/assets/images/woman-with-dog.png'
-import SberThank from '../../../../shared/assets/images/sber-thank.png'
+import SberThank from '../../../../shared/assets/icons/sber.svg'
 import s from './style.module.scss'
 import clsx from 'clsx'
 import {Image} from 'react-bootstrap'
@@ -74,7 +74,7 @@ const Main = () => {
         };
     }, [isOpen]);
     return (
-        <div className={s.main}>
+        <div className={s.main} id="home">
             <Header/>
             <div className={clsx(s.images_background)}>
                 <Image src={ManWithCatImg}/>
