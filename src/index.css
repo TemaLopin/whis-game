@@ -110,7 +110,6 @@ calc(13px +
 18px
 
 ;
-
     --line-height-50-4:
 
 24.2px
@@ -155,6 +154,10 @@ a {
     background: var(--background);
 }
 
-.home{
+.home {
     overflow: hidden;
+}
+button{
+    background: transparent;
+    border: none;
 }

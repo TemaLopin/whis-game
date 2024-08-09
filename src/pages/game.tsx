@@ -7,22 +7,44 @@ import QuantityText from "../entity/game/components/quantity-text";
 import ButtonStart from "../entity/game/components/button-start";
 import ButtonComplete from "../entity/game/components/button-complete";
 import Characteristics from "../entity/game/components/characteristics";
-
+import {createContext, useEffect, useState} from "react";
+export const GameContext = createContext({});
 const Game = () => {
 
+    const descItem: string[] = ['Выберите по одной характеристике', 'в каждой строке. Когда все четыре', 'характеристики выбраны, нажмите', 'кнопку «Это про меня!»'];
+    const descItemDesktop: string[] = ['Выберите по одной характеристике', 'в каждой строке. Когда все четыре характеристики', ' выбраны, нажмите кнопку «Это про меня!»'];
+    const [width, setWidth] = useState(window.innerWidth);
 
+    useEffect(() => {
+        const handleResizeWindow = () => setWidth(window.innerWidth);
+        window.addEventListener("resize", handleResizeWindow);
+        return () => {
+            window.removeEventListener("resize", handleResizeWindow);
+        };
+    }, []);
 
-    const descItem: string[] = ['Выберите по одной характеристике', 'в каждой строке. Когда все четыре', 'характеристики выбраны, нажмите',  'кнопку «Это про меня!»']
+    const [answer, setAnswer] = useState([]);
+    const [activeClass, setActiveClass] = useState(2)
+    const [selects, setSelects] = useState(['?', '?', '?', '?']);
     return (
         <GameWrapper>
             <Header/>
-            <BodyInfoStart>
-                <DescriptionGame items={descItem}/>
-                <SelectsBlock />
-                <QuantityText text="ЕЩЁ четыре СЕРДЕЧка!" />
-                <ButtonComplete />
-                <Characteristics />
-            </BodyInfoStart>
+            <GameContext.Provider value={{
+                setAnswer,
+                answer,
+                selects,
+                setSelects,
+                activeClass,
+                setActiveClass
+            }}>
+                <BodyInfoStart>
+                    <DescriptionGame items={width < 768 ? descItem : descItemDesktop}/>
+                    <SelectsBlock/>
+                    <QuantityText text="ЕЩЁ четыре СЕРДЕЧка!"/>
+                    <ButtonComplete/>
+                    <Characteristics/>
+                </BodyInfoStart>
+            </GameContext.Provider>
         </GameWrapper>
     )
 }

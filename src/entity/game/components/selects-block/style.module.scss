@@ -1,8 +1,23 @@
-.wrapper{
+.wrapper {
   display: grid;
   justify-content: center;
   justify-items: center;
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: 36px;
-  margin-bottom: 8px;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 30px;
+  margin-bottom: 14px;
+  max-width: 605px;
+  min-height: 100px;
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    min-height: 86px;
+    gap: 12px 35px;
+  }
+
+  svg {
+    min-width: 132px;
+  }
+
+  p {
+    font-size: 43px !important;
+  }
 }

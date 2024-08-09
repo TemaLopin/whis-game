@@ -32,6 +32,7 @@
     padding: 38px 34px;
     flex-direction: column;
     width: max-content;
+    z-index: 333;
     &.active {
       opacity: 1;
       top: 140px;

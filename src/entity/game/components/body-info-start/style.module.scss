@@ -1,8 +1,10 @@
 .body{
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: auto;
   padding-top: 10px;
+  z-index: 1;
 }
