@@ -10,7 +10,7 @@ const SelectsBlock = () => {
             {selects.map((select: string, ind: number) => {
                 return <SelectCharacteristic
                     key={ind}
-                    select={select}
+                    item={select}
                     bg="rgb(98, 25, 109)"
                     selectAsk={true}
                 />

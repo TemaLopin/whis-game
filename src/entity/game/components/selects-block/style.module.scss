@@ -13,8 +13,16 @@
     gap: 12px 35px;
   }
 
+  button{
+    width: 152px;
+
+    @media (max-width: 768px){
+      width: 132px;
+    }
+  }
   svg {
     min-width: 132px;
+    opacity: 1 !important;
   }
 
   p {

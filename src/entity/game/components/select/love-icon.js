@@ -1,4 +1,4 @@
-const LoveIcon = ({color, isActive}) => {
+const LoveIcon = ({color}) => {
     return <svg viewBox="0 0 152.685 100"
                 fill="none"
                 xmlnsSvg="http://www.w3.org/2000/svg">
@@ -6,22 +6,22 @@ const LoveIcon = ({color, isActive}) => {
         <mask id="mask_883_628" fill={color}>
             <path id="Union"
                   d="M76.3425 15.5026C69.1255 6.45849 48.0876 -7.86128 19.843 5.344C-15.7976 22.0072 3.64282 58.805 23.3146 71.7652C42.787 84.5941 62.9397 94.7018 76.1409 99.8437L76.1409 100C76.208 99.9741 76.2751 99.9481 76.3425 99.922C76.4099 99.9481 76.4771 99.9741 76.5442 100L76.5442 99.8437C89.7451 94.7018 109.898 84.5941 129.37 71.7652C149.042 58.805 168.483 22.0072 132.842 5.344C104.597 -7.86128 83.5593 6.45849 76.3425 15.5026Z"
-                  clip-rule="evenodd"
+                  clipRule="evenodd"
                   fill=""
-                  fill-opacity={!isActive ? "1" : "0.3"}
-                  fill-rule="evenodd"/>
+                  fillOpacity="1"
+                  fillRule="evenodd"/>
         </mask>
         <path id="Union"
               d="M76.3425 15.5026C69.1255 6.45849 48.0876 -7.86128 19.843 5.344C-15.7976 22.0072 3.64282 58.805 23.3146 71.7652C42.787 84.5941 62.9397 94.7018 76.1409 99.8437L76.1409 100C76.208 99.9741 76.2751 99.9481 76.3425 99.922C76.4099 99.9481 76.4771 99.9741 76.5442 100L76.5442 99.8437C89.7451 94.7018 109.898 84.5941 129.37 71.7652C149.042 58.805 168.483 22.0072 132.842 5.344C104.597 -7.86128 83.5593 6.45849 76.3425 15.5026Z"
-              clip-rule="evenodd"
+              clipRule="evenodd"
               fill={color}
-              fill-opacity={!isActive ? "1" : "0.3"}
-              fill-rule="evenodd"/>
+              fillOpacity="1"
+              fillRule="evenodd"/>
         <path id="Union" d=""
-              clip-rule="evenodd"
+              clipRule="evenodd"
               fill={color}
-              fill-opacity={!isActive ? "1" : "0.3"}
-              fill-rule="evenodd"/>
+              fillOpacity="1"
+              fillRule="evenodd"/>
     </svg>
 
 }

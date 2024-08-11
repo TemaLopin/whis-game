@@ -3,32 +3,30 @@ import SelectCharacteristic from "../select";
 import {useContext, useState} from "react";
 import {GameContext} from "../../../../pages/game";
 
+ export const characteristics = [
+    {title: 'ЛЮБЛЮ ПОЛЕЖАТЬ', category: 1},
+    {title: 'ЖИВУ УМЕРЕННО АКТИВНО', category: 1},
+    {title: 'ВСЕГДА В ДВИЖЕНИИ', category: 1},
+    {title: 'ПРЕДПОЧИТАЮ УЕДИНЕНИЕ', category: 2},
+    {title: 'ОБЩАЮСЬ В МЕРУ', category: 2},
+    {title: 'ЛЮБЛЮ ОБЩЕНИЕ', category: 2},
+    {title: 'ДУМАЮ НЕ СПЕША', category: 3},
+    {title: 'Вникаю в своём темпе', category: 3},
+    {title: 'схватываю НА ЛЕТУ', category: 3},
+    {title: 'Сдерживаю эмоции', category: 4},
+    {title: 'Действую по настроению', category: 4},
+    {title: 'Даю волю чувствам', category: 4}
+];
 const Characteristics = () => {
-    const {activeClass}: any = useContext(GameContext)
-    const characteristics = [
-        {title: 'ЛЮБЛЮ ПОЛЕЖАТЬ'},
-        {title: 'ЖИВУ УМЕРЕННО АКТИВНО'},
-        {title: 'ВСЕГДА В ДВИЖЕНИИ'},
-        {title: 'ПРЕДПОЧИТАЮ УЕДИНЕНИЕ'},
-        {title: 'ОБЩАЮСЬ В МЕРУ'},
-        {title: 'ЛЮБЛЮ ОБЩЕНИЕ'},
-        {title: 'ДУМАЮ НЕ СПЕША'},
-        {title: 'Вникаю в своём темпе'},
-        {title: 'схватываю НА ЛЕТУ'},
-        {title: 'Сдерживаю эмоции'},
-        {title: 'Действую по настроению'},
-        {title: 'Даю волю чувствам'}
-    ];
-
+    const {indSelect}: any = useContext(GameContext)
 
     return <div className={s.bg}>
         <div className={s.body}>
-            {characteristics.map(({title}, ind) => {
+            {characteristics.map((item, ind, arr) => {
                 return <SelectCharacteristic
-                    select={title}
+                    item={item}
                     key={ind}
-                    ind={ind}
-                    isActive={ind > activeClass}/>
+                    isActive={ind > indSelect}/>
             })}
         </div>
     </div>

@@ -24,8 +24,14 @@ const Game = () => {
     }, []);
 
     const [answer, setAnswer] = useState([]);
-    const [activeClass, setActiveClass] = useState(2)
-    const [selects, setSelects] = useState(['?', '?', '?', '?']);
+    const [indSelect, setIndSelect] = useState(2)
+    const [categorySelect, setCategorySelect] = useState(1);
+    const [selects, setSelects] = useState([
+        {title: '?', category: 1},
+        {title: '?', category: 2},
+        {title: '?', category: 3},
+        {title: '?', category: 4}
+        ]);
     return (
         <GameWrapper>
             <Header/>
@@ -34,8 +40,10 @@ const Game = () => {
                 answer,
                 selects,
                 setSelects,
-                activeClass,
-                setActiveClass
+                indSelect,
+                setIndSelect,
+                categorySelect,
+                setCategorySelect
             }}>
                 <BodyInfoStart>
                     <DescriptionGame items={width < 768 ? descItem : descItemDesktop}/>

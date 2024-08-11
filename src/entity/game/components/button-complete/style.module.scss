@@ -2,6 +2,7 @@
   position: relative;
   color: rgb(143, 49, 157);
   font-size: 15px;
+  cursor: not-allowed !important;
   font-weight: 700;
   line-height: 0.95;
   letter-spacing: calc(15px / 10);
@@ -35,5 +36,14 @@
     top: 9px;
     height: 268%;
     background: url("../../../../shared/assets/icons/button-pulse.svg") 0 0 / cover no-repeat;
+  }
+}
+
+.button_active{
+  cursor: pointer !important;
+  color: rgb(255, 255, 255);
+  background: linear-gradient(180.00deg, rgb(215, 0, 174),rgb(133, 2, 108) 100%);
+  &::after{
+    opacity: 1;
   }
 }

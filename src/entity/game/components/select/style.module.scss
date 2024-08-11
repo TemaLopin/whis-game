@@ -5,7 +5,7 @@
   justify-content: center;
   min-height: 77px;
   width: 173%;
-
+  padding: 0;
   @media (max-width: 768px) {
     width: 100%;
   }
@@ -15,6 +15,7 @@
     top: -10px;
     width: 100%;
     height: 100%;
+
     @media (min-width: 769px){
       height: 105%;
     }
@@ -55,6 +56,15 @@
 }
 
 .select_item_active{
+  @media (max-width: 768px){
+    min-height: 93px;
+  }
+  svg{
+    width: 110%;
+    height: 115%;
+    top: -15px;
+    min-height: 101px;
+  }
   p.title{
     font-size: 15px !important;
     font-weight: 700;
@@ -67,4 +77,46 @@
 .select_item_none{
   pointer-events: none;
   cursor: not-allowed;
+  svg{
+    opacity: 0.3;
+  }
+
+}
+.select_item_toggle{
+  pointer-events: all;
+  cursor: pointer;
+
+  svg{
+    opacity: 1;
+  }
+}
+.select_answer{
+  height: 65px;
+  margin-bottom: 12px;
+
+  svg{
+    padding-bottom: 12px;
+  }
+}
+
+.remove_item {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  z-index: 2;
+  top: 10px;
+  right: -5px;
+
+  @media (max-width: 768px){
+    width: 18px;
+    height: 18px;
+  }
+  svg{
+    position: static;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    min-width: max-content;
+  }
+
 }
