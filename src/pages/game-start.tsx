@@ -22,7 +22,7 @@ const GameStart = () => {
           <TitleGame />
         </DynamicEcho>
         <DescriptionGame items={descItem} />
-        <ButtonStart />
+        <ButtonStart title="Вперёд" link='/game/go'/>
       </BodyInfoStart>
       <BottomImage />
     </GameWrapper>

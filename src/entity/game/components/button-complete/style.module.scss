@@ -1,5 +1,7 @@
 .button {
   position: relative;
+  display: block;
+  text-decoration: none;
   color: rgb(143, 49, 157);
   font-size: 15px;
   cursor: not-allowed !important;

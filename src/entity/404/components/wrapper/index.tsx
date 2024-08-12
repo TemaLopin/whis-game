@@ -4,16 +4,20 @@ import clsx from "clsx";
 
 const Wrapper404 = ({children}: { children: ReactNode }) => {
     const [height, setHeight] = useState(window.innerHeight);
+    const [width, setWidth] = useState(window.innerWidth);
 
     useEffect(() => {
-        const handleResizeWindow = () => setHeight(window.innerHeight);
+        const handleResizeWindow = () => {
+            setHeight(window.innerHeight)
+            setWidth(window.innerWidth)
+        };
         window.addEventListener("resize", handleResizeWindow);
         return () => {
             window.removeEventListener("resize", handleResizeWindow);
         };
     }, []);
 
-    return <div className={clsx('background', height > 718 ? s.wrapper : s.wrapper_height)}>
+    return <div className={clsx('background', (width > 996 && height > 718) ? s.wrapper : s.wrapper_height)}>
         {children}
     </div>
 }
