@@ -13,7 +13,7 @@ import useWindowDimensions from '../../../../shared/hooks/useWindowDimensions'
 
 const ModalBlockPulse = () => {
   const { isMobile, width } = useWindowDimensions()
-  console.log("🚀  !@#$ ~ ModalBlockPulse ~ width:", width)
+  console.log('🚀  !@#$ ~ ModalBlockPulse ~ width:', width)
 
   return isMobile ? (
     <div className={s.main_body}>

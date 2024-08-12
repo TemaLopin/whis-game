@@ -52,38 +52,38 @@ const Footer = ({ handler }: any) => {
 }
 
 const Main = () => {
-    const [isOpen, setIsOpen] = useState(false);
-    const modalHandler = () => {
-        setIsOpen(prev => !prev);
-        document.body.classList.toggle('noscroll')
+  const [isOpen, setIsOpen] = useState(false)
+  const modalHandler = () => {
+    setIsOpen((prev) => !prev)
+    document.body.classList.toggle('noscroll')
+  }
+  useEffect(() => {
+    if ((isOpen && window.innerWidth > 996) || (isOpen && 'ontouchstart' in document.documentElement)) {
+      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth
+      document.body.style.paddingRight = `${scrollbarWidth}px`
+      document.body.classList.add('noscroll')
+    } else {
+      document.body.style.paddingRight = ''
+      document.body.classList.remove('noscroll')
     }
-    useEffect(() => {
-        if ((isOpen && window.innerWidth > 996) || isOpen && "ontouchstart" in document.documentElement) {
-            const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-            document.body.style.paddingRight = `${scrollbarWidth}px`;
-            document.body.classList.add('noscroll')
-        } else {
-            document.body.style.paddingRight = '';
-            document.body.classList.remove('noscroll')
-        }
-        return () => {
-            if (document.body.classList.contains('noscroll') && window.innerWidth > 996) {
-                document.body.style.paddingRight = '';
-                document.body.classList.remove('noscroll')
-            }
-        };
-    }, [isOpen]);
-    return (
-        <div className={s.main} id="home">
-            <Header/>
-            <div className={clsx(s.images_background)}>
-                <Image src={ManWithCatImg}/>
-                <Image src={WomanWithCat}/>
-            </div>
-            <Footer handler={modalHandler}/>
-            {isOpen && <Modal setIsOpen={setIsOpen}/>}
-        </div>
-    )
+    return () => {
+      if (document.body.classList.contains('noscroll') && window.innerWidth > 996) {
+        document.body.style.paddingRight = ''
+        document.body.classList.remove('noscroll')
+      }
+    }
+  }, [isOpen])
+  return (
+    <div className={s.main} id='home'>
+      <Header />
+      <div className={clsx(s.images_background)}>
+        <Image src={ManWithCatImg} />
+        <Image src={WomanWithCat} />
+      </div>
+      <Footer handler={modalHandler} />
+      {isOpen && <Modal setIsOpen={setIsOpen} />}
+    </div>
+  )
 }
 
 export default Main

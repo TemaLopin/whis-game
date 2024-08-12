@@ -1,19 +1,15 @@
-
 .block_image {
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 46px 27px;
-  background: url("../../../../shared/assets/icons/love.svg") 0 0 /cover no-repeat;
-  margin-bottom: 25px;
-  &::after {
-    position: absolute;
-    content: '';
-    background: url("../../../../shared/assets/icons/love-pulse.svg") 0 0 / cover no-repeat;
-    width: 361px;
-    height: 250px;
-  }
+
+  height: 166px;
+  width: 254px;
+
+  position: relative;
+
+  background: url('../../../../shared/assets/icons/love.svg') center no-repeat;
+  background-size: contain;
 }
 
 .title {

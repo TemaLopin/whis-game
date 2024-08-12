@@ -13,10 +13,10 @@ import { Image } from 'react-bootstrap'
 import clsx from 'clsx'
 
 const Promotion = () => {
-  const brands = [Whiskas, Sheba, PerfectFit, Pedigree, NatureTable, KiteKat, Dreamies, Chappi, Cesar]
+  const brands = [Whiskas, Pedigree, KiteKat, Dreamies, Cesar, PerfectFit, Chappi, NatureTable, Sheba]
 
   return (
-    <div className={s.echo} id="aktie">
+    <div className={s.echo} id='aktie'>
       <div className={clsx('container', s.promotion_container)}>
         <p>в акции участвуют:</p>
         <div>

@@ -5,6 +5,7 @@ import BodyInfoStart from '../entity/game/components/body-info-start'
 import TitleGame from '../entity/game/components/title'
 import DescriptionGame from '../entity/game/components/description'
 import BottomImage from '../entity/game/components/bottom-image'
+import DynamicEcho from '../shared/ui/dynamic-echo/DynamicEcho'
 
 const GameStart = () => {
   const descItem: string[] = [
@@ -17,7 +18,9 @@ const GameStart = () => {
     <GameWrapper>
       <Header />
       <BodyInfoStart>
-        <TitleGame />
+        <DynamicEcho type='heart'>
+          <TitleGame />
+        </DynamicEcho>
         <DescriptionGame items={descItem} />
         <ButtonStart />
       </BodyInfoStart>

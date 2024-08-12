@@ -1,5 +1,7 @@
 $--purple-echo: url('../../assets/images/purple-figure.png');
-$--yellow-echo: url('../../assets/images/purple-figure.png');
+$--yellow-echo: url('../../assets/images/yellow-figure.png');
+$--rainbow-echo: url('../../assets/images/rainbow-figure.png');
+$--rainbow-heart: url('../../assets/images/rainbow-heart.png');
 
 .pulse {
   position: relative;
@@ -22,28 +24,16 @@ $--yellow-echo: url('../../assets/images/purple-figure.png');
   top: 0px;
   bottom: 0px;
 
-  animation-delay: 0s;
+  opacity: 0;
 
-  animation: pulse 4s linear infinite;
-}
-
-.pulse::after {
-  animation-delay: 1s;
-}
-.pulse::before {
-  animation-delay: 2s;
-}
-.second_pulse::after {
-  animation-delay: 3s;
-}
-.second_pulse::before {
-  animation-delay: 4s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 4s;
 }
 
 @keyframes pulse {
   0% {
     opacity: 1;
-    transform: scale(1);
   }
   25% {
     opacity: 0.75;
@@ -55,24 +45,80 @@ $--yellow-echo: url('../../assets/images/purple-figure.png');
     opacity: 0.25;
   }
   100% {
-    transform: scale(1.15, 1.3);
     opacity: 0;
+  }
+}
+
+@keyframes square {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.15, 1.3);
+  }
+}
+@keyframes circle {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.4);
+  }
+}
+
+@keyframes button {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2, 1.6);
+  }
+}
+
+@keyframes echo {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(2);
+  }
+}
+
+@keyframes heart {
+  0% {
+    transform: scale(0.40, 0.38) translateY(-30px);
+  }
+
+  100% {
+    transform: scale(0.6, 0.58) translateY(-30px);
   }
 }
 
 .echo::after,
 .echo::before {
-  content: $--purple-echo;
+  background: $--rainbow-echo no-repeat bottom;
+  background-size: contain;
 
-  display: flex;
-  align-items: center;
+  animation-name: pulse, echo;
+}
+
+.heart::after,
+.heart::before {
+  content: $--rainbow-heart;
   justify-content: center;
+  align-items: center;
+  display: flex;
+
+  animation-name: pulse, heart;
 }
 
 .circle::after,
 .circle::before {
   border: 1px solid;
   border-radius: 50%;
+
+  animation-name: pulse, circle;
 }
 
 .square::after,
@@ -80,7 +126,15 @@ $--yellow-echo: url('../../assets/images/purple-figure.png');
   border: 1px solid;
   border-radius: 40px;
 
+  animation-name: pulse, square;
   box-shadow: inset 0px 0px 5px 1px var(--white-color);
+}
+
+.button::after {
+  border: 1px solid;
+  border-radius: 4px;
+
+  animation-name: pulse, button;
 }
 
 .purple_color::after,
@@ -98,4 +152,17 @@ $--yellow-echo: url('../../assets/images/purple-figure.png');
 .white_color::after,
 .white_color::before {
   border-color: var(--white-color);
+}
+
+.pulse::after {
+  animation-delay: 1s;
+}
+.pulse::before {
+  animation-delay: 2s;
+}
+.second_pulse::after {
+  animation-delay: 3s;
+}
+.second_pulse::before {
+  animation-delay: 4s;
 }
