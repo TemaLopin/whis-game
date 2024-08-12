@@ -1,5 +1,7 @@
+$--arrow-left-double: url('../../../../shared/assets/icons/arrow-left-double.svg');
+
 .header {
-  max-height: 200px;
+  height: 200px;
   width: 100%;
   position: relative;
   display: flex;
@@ -21,4 +23,57 @@
       width: 110px;
     }
   }
+}
+
+.container {
+  position: relative;
+}
+
+.link_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  cursor: pointer;
+
+  top: calc(50% - 20px);
+  left: 40px;
+
+  @media (max-width: 1200px) {
+    bottom: -40px;
+    left: calc(50% - 60px);
+  }
+}
+
+.back_link {
+  background: #62196d;
+
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 12.35px;
+  letter-spacing: 0.1em;
+
+  color: var(--white-color);
+  text-transform: uppercase;
+  text-decoration: none;
+
+  position: relative;
+
+  padding: 15px 10px 15px calc(7px + 40px);
+}
+
+.back_link::before {
+  content: '';
+
+  width: 22px;
+  height: 20px;
+
+  position: absolute;
+  top: 11px;
+  left: 15px;
+
+  background: $--arrow-left-double no-repeat;
+  background-position: center center;
+  background-size: contain;
 }

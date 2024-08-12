@@ -1,0 +1,79 @@
+$--purple-gradient: linear-gradient(180deg, #d700ae 0%, #85026c 100%);
+$-pulse-color: #ff51ff;
+$--dark-purple-color: #62196d;
+
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 50px 50px;
+
+  color: $--dark-purple-color;
+
+  width: 50%;
+}
+
+.title {
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 33.8px;
+
+  color: var(--purple-color);
+
+  text-transform: uppercase;
+  text-align: center;
+
+  margin: 0px auto;
+
+  width: fit-content;
+
+  background: #ffffff;
+
+  border-radius: 12px;
+  padding: 5px 10px;
+
+  box-shadow: 0px 4.22px 4.22px 0px #0000000d;
+}
+
+.sub_title {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+
+  margin-bottom: 20px;
+}
+
+.text {
+  font-size: var(--font-size-18);
+  font-weight: 400;
+  line-height: var(--line-height-28-6);
+
+  text-align: center;
+
+  width: 80%;
+}
+
+.button {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 18.25px;
+  letter-spacing: 0.1em;
+
+  color: var(--white-color);
+  border: 2px solid var(--purple-color);
+  background: $--purple-gradient;
+
+  position: relative;
+  display: block;
+
+  padding: 10px 20px;
+
+  text-transform: uppercase;
+  z-index: 5;
+}
+
+.pulse::after {
+  border-color: $-pulse-color;
+  box-shadow: inset 0px 0px 5px 1px $-pulse-color;
+}

@@ -1,0 +1,26 @@
+.body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 50%;
+}
+
+.border {
+  height: fit-content;
+  width: fit-content;
+
+  padding: 3px;
+  border-radius: 16px;
+
+  background: linear-gradient(90deg, #ff51ff 19.44%, #ffffff 50.42%, #ffff22 80.79%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+.map {
+  height: 250px;
+  width: 350px;
+
+  border-radius: 16px;
+}

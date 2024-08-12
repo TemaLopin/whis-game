@@ -10,10 +10,11 @@ import SberThank from '../../../../shared/assets/icons/sber.svg'
 import { Image } from 'react-bootstrap'
 import DynamicEcho from '../../../../shared/ui/dynamic-echo/DynamicEcho'
 import useWindowDimensions from '../../../../shared/hooks/useWindowDimensions'
+import { Link } from 'react-router-dom'
 
 const ModalBlockPulse = () => {
   const { isMobile, width } = useWindowDimensions()
-  console.log("🚀  !@#$ ~ ModalBlockPulse ~ width:", width)
+  console.log('🚀  !@#$ ~ ModalBlockPulse ~ width:', width)
 
   return isMobile ? (
     <div className={s.main_body}>
@@ -35,7 +36,9 @@ const ModalBlockPulse = () => {
         </p>
       </div>
 
-      <button className={s.start_button}>НАЧАТЬ*</button>
+      <Link to={'/game'} className={s.start_button}>
+        НАЧАТЬ*
+      </Link>
     </div>
   ) : (
     <DynamicEcho>
@@ -56,7 +59,9 @@ const ModalBlockPulse = () => {
           </p>
         </div>
 
-        <button className={s.start_button}>НАЧАТЬ*</button>
+        <Link to={'/game'} className={s.start_button}>
+          НАЧАТЬ*
+        </Link>
       </div>
     </DynamicEcho>
   )

@@ -5,7 +5,7 @@ $--echo: url('../../../../shared/assets/images/echo/purple-echo-2.png');
   position: relative;
 
   padding: 100px 0px 0;
-  @media (max-width: 600px){
+  @media (max-width: 600px) {
     padding-top: 20px;
   }
 }
@@ -38,7 +38,7 @@ $--echo: url('../../../../shared/assets/images/echo/purple-echo-2.png');
   // margin-bottom: 50px;
   margin-bottom: 150px;
 
-  @media (max-width: 600px){
+  @media (max-width: 600px) {
     margin-bottom: 50px;
   }
 }

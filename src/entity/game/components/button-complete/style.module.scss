@@ -1,4 +1,4 @@
-.button{
+.button {
   position: relative;
   color: rgb(143, 49, 157);
   font-size: 15px;
@@ -8,12 +8,12 @@
   letter-spacing: calc(15px / 10);
   text-align: center;
   padding: 19px 56px 19px 19px;
-  margin-bottom: 15px;
   background: rgb(98, 25, 109);
   border: none;
   z-index: 2;
-  transition: all .3s ease 0s;
-  &::after{
+  transition: all 0.3s ease 0s;
+
+  &::after {
     content: '';
     position: absolute;
     right: 15px;
@@ -21,29 +21,17 @@
     bottom: 0;
     margin: auto;
     width: 29px;
-    background: url("../../../../shared/assets/images/robot-icon.png") 0 0 / cover no-repeat;
+    background: url('../../../../shared/assets/images/robot-icon.png') 0 0 / cover no-repeat;
     height: 28px;
     opacity: 0.4;
   }
-
-  &::before{
-    content: '';
-    position: absolute;
-    inset: 0;
-    margin: auto;
-    width: 136%;
-    left: -42px;
-    top: 9px;
-    height: 268%;
-    background: url("../../../../shared/assets/icons/button-pulse.svg") 0 0 / cover no-repeat;
-  }
 }
 
-.button_active{
+.button_active {
   cursor: pointer !important;
   color: rgb(255, 255, 255);
-  background: linear-gradient(180.00deg, rgb(215, 0, 174),rgb(133, 2, 108) 100%);
-  &::after{
+  background: linear-gradient(180deg, rgb(215, 0, 174), rgb(133, 2, 108) 100%);
+  &::after {
     opacity: 1;
   }
 }
