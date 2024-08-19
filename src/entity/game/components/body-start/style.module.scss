@@ -8,30 +8,38 @@
   z-index: 2;
 
 
-  @media (max-width: 767px) {
+  @media (max-width: 1024px) {
 
     justify-content: center;
   }
 }
 
-.block_image{
+.block_image {
   display: flex;
   margin-top: auto;
-  & + div{
+  align-items: flex-end;
+  & + div {
     margin-top: 0;
+    margin-bottom: auto;
+    p{
+      white-space: nowrap;
+    }
   }
 
   width: 30%;
   height: 102%;
-  &:first-child{
-    margin-left: -3%;
-  }
-  img{
-    width: 100%;
-    object-fit: cover;
+
+  &:first-child {
+    margin-left: -5%;
+    margin-top: 7%;
   }
 
-  &:last-child{
+  img {
+    width: 100%;
+    object-fit: contain;
+  }
+
+  &:last-child {
     width: 25%;
     height: 87%;
     margin-right: -2%;

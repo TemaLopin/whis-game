@@ -58,7 +58,11 @@
 
 .block_image {
   margin-top: auto;
-
+  width: 369px;
+  height: 400px;
+  @media (min-width: 769px){
+    display: flex;
+  }
   img {
     max-width: 100%;
     object-fit: cover;

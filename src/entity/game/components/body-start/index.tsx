@@ -5,7 +5,7 @@ import TitleGame from "../title";
 import DescriptionGame from "../description";
 import ButtonStart from "../button-start";
 import {Image} from "react-bootstrap";
-import whisImage from "../../../../shared/assets/images/whiskas-bottom.png";
+import whisImage from "../../../../shared/assets/images/whiskas-bottom-start.png";
 import useWindowDimensions from "../../../../shared/hooks/useWindowDimensions";
 import pedigreeImage from "../../../../shared/assets/images/pedigree-bottom.png";
 import BottomImage from "../bottom-image";
@@ -20,7 +20,7 @@ const BodyStart = () => {
     ]
     const {width} = useWindowDimensions();
     return <div className={s.body}>
-        {width > 768 && <div className={s.block_image}>
+        {width > 1024 && <div className={s.block_image}>
             <Image src={whisImage}/>
         </div>}
         <BodyInfoStart>
@@ -29,9 +29,9 @@ const BodyStart = () => {
             </DynamicEcho>
             <DescriptionGame items={width > 768 ? descItemDesktop : descItem}/>
             <ButtonStart title="Вперёд" link='/game/go'/>
-            {width < 768 && <BottomImage/>}
+            {width < 1024 && <BottomImage/>}
         </BodyInfoStart>
-        {width > 768 && <div className={s.block_image}>
+        {width > 1024 && <div className={s.block_image}>
             <Image src={pedigreeImage}/>
         </div>}
     </div>

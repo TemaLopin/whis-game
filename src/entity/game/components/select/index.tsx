@@ -12,13 +12,11 @@ const SelectCharacteristic = ({bg = '#fff', selectAsk = false, item}: any) => {
         answer,
         setAnswer,
         setSelects,
-        setIndSelect,
         categorySelect,
-        setCategorySelect,
+        setCategorySelect
     }: any = useContext(GameContext);
 
     const selectCharacteristicHandler = () => {
-
         setSelects((prev: any) => prev.map((sel: any, ind: number, arr: any) => {
             const firstIndexAsk = arr.findIndex((sel: any) => sel.title == '?');
             if (ind === firstIndexAsk) {
@@ -26,14 +24,13 @@ const SelectCharacteristic = ({bg = '#fff', selectAsk = false, item}: any) => {
             }
             return sel;
         }));
+
         setAnswer((prev: any) => [...prev, item]);
-        setCategorySelect(categorySelect + 1);
+        setCategorySelect((prev: any) => prev + 1);
     }
 
 
     const removeSelectHandler = () => {
-        let indSelectCharacteristic = characteristics.findIndex(({title}, i) => title === item?.title && i - 3);
-
         setSelects((prev: any) => prev.map((sel: any) => {
             if (sel.title === item?.title) {
                 return {title: '?', category: item?.category}
@@ -42,27 +39,13 @@ const SelectCharacteristic = ({bg = '#fff', selectAsk = false, item}: any) => {
         }));
 
         setAnswer((prev: any) => prev.filter((ans: any) => ans.title !== item?.title));
-
         setCategorySelect(item?.category);
-        if (indSelectCharacteristic <= 5 && indSelectCharacteristic >= 3) {
-            indSelectCharacteristic = 5
-            return indSelectCharacteristic - 3;
-        } else if (indSelectCharacteristic <= 8 && indSelectCharacteristic >= 6) {
-            indSelectCharacteristic = 8
-            return indSelectCharacteristic - 3;
-        } else if (indSelectCharacteristic <= 11 && indSelectCharacteristic >= 9) {
-            indSelectCharacteristic = 11
-            return indSelectCharacteristic - 3;
-        } else {
-            indSelectCharacteristic = 2
-        }
-        setIndSelect(indSelectCharacteristic);
-
     }
 
     const checkAnswer = bg !== '#fff' && answer?.includes(item);
 
     const isAnswer = answer.some(({category}: any) => category === item?.category);
+    console.log(categorySelect)
 
     return (
         <>

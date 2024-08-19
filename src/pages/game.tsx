@@ -8,6 +8,8 @@ import ButtonComplete from '../entity/game/components/button-complete'
 import Characteristics from '../entity/game/components/characteristics'
 import {createContext, useEffect, useState} from 'react'
 import DynamicEcho from '../shared/ui/dynamic-echo/DynamicEcho'
+import {useLocation} from "react-router-dom";
+import useWindowDimensions from "../shared/hooks/useWindowDimensions";
 
 export const GameContext = createContext({})
 
@@ -39,36 +41,39 @@ export const lastCharacteristics = [
 ]
 
 const Game = () => {
-    const descItem: string[] = [
+    const {pathname} = useLocation();
+    const descItem: string[] = pathname !== '/game/last-selects' ? [
         'Выберите по одной характеристике',
         'в каждой строке. Когда все четыре',
         'характеристики выбраны, нажмите',
         'кнопку «Это про меня!»',
-    ]
-    const descItemDesktop: string[] = [
+    ] : [
+        'ВЫБЕРИТЕ В КАЖДОЙ СТРОЧКЕ ПО ОДНОЙ',
+        'ХАРАКТЕРИСТИКЕ, БЛИЗКОЙ ВАШЕМУ ПИТОМЦУ.',
+        'КОГДА ТРИ ХАРАКТЕРИСТИКИ ВЫБРАНЫ,',
+        'НАЖМИТЕ «ГОТОВО!»',
+    ];
+
+    const descItemDesktop: string[] = pathname !== '/game/last-selects' ? [
         'Выберите по одной характеристике',
         'в каждой строке. Когда все четыре характеристики',
         ' выбраны, нажмите кнопку «Это про меня!»',
-    ]
-    const [width, setWidth] = useState(window.innerWidth)
+    ] : [
+        'ВЫБЕРИТЕ В КАЖДОЙ СТРОЧКЕ ПО ОДНОЙ ХАРАКТЕРИСТИКЕ',
+        'Выберите , БЛИЗКОЙ ВАШЕМУ ПИТОМЦУ. КОГДА',
+        'ТРИ ХАРАКТЕРИСТИКИ ВЫБРАНЫ, НАЖМИТЕ «ГОТОВО!»',
+    ];
+    const {width} = useWindowDimensions();
 
-    useEffect(() => {
-        const handleResizeWindow = () => setWidth(window.innerWidth)
-        window.addEventListener('resize', handleResizeWindow)
-        return () => {
-            window.removeEventListener('resize', handleResizeWindow)
-        }
-    }, [])
+    const selectsGame = pathname !== '/game/last-selects' ?
+        [{title: '?', category: 1}, {title: '?', category: 2}, {title: '?', category: 3}, {title: '?', category: 4}] :
+        [{title: '?', category: 1}, {title: '?', category: 2}, {title: '?', category: 3}];
 
+    const pathBtn = pathname !== '/game/last-selects' ? '/game/past-pet' : '/game/advice';
     const [answer, setAnswer] = useState([])
     const [indSelect, setIndSelect] = useState(2)
     const [categorySelect, setCategorySelect] = useState(1)
-    const [selects, setSelects] = useState([
-        {title: '?', category: 1},
-        {title: '?', category: 2},
-        {title: '?', category: 3},
-        {title: '?', category: 4},
-    ])
+    const [selects, setSelects] = useState(selectsGame)
     return (
         <GameWrapper>
             <Header/>
@@ -85,11 +90,12 @@ const Game = () => {
                 }}
             >
                 <BodyInfoStart>
-                    <DescriptionGame items={width < 768 ? descItem : descItemDesktop}/>
+                    <DescriptionGame
+                        items={width < 768 ?  descItem : descItemDesktop}/>
                     <SelectsBlock/>
-                    <QuantityText text='ЕЩЁ четыре СЕРДЕЧка!'/>
+                    <QuantityText/>
                     <DynamicEcho type='button'>
-                        <ButtonComplete/>
+                        <ButtonComplete link={pathBtn}/>
                     </DynamicEcho>
                     <Characteristics/>
                 </BodyInfoStart>

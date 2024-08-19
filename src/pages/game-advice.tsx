@@ -49,7 +49,7 @@ const GameAdvice = () => {
                 <div className={'wrapper-advice'}>
                     <DescriptionGame items={width < 768 ? descItem : descItemDesktop}/>
                     <DynamicEcho type='button'>
-                        <ButtonComplete text={"УЗНАТЬ"} isAdvice={true}/>
+                        <ButtonComplete text={"УЗНАТЬ"} link={"/game/analysis"} />
                     </DynamicEcho>
                 </div>
             </BottomWrapper>
