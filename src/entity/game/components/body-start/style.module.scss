@@ -1,0 +1,39 @@
+.body {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  color: rgb(255, 255, 255);
+  z-index: 2;
+
+
+  @media (max-width: 767px) {
+
+    justify-content: center;
+  }
+}
+
+.block_image{
+  display: flex;
+  margin-top: auto;
+  & + div{
+    margin-top: 0;
+  }
+
+  width: 30%;
+  height: 102%;
+  &:first-child{
+    margin-left: -3%;
+  }
+  img{
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &:last-child{
+    width: 25%;
+    height: 87%;
+    margin-right: -2%;
+  }
+}

@@ -1,12 +1,16 @@
 $--echo: url('../../../../shared/assets/images/echo/purple-echo-2.png');
 $--echo-2: url('../../../../shared/assets/images/echo/yellow-echo-2.png');
 
+$--echo-3: url('../../../../shared/assets/images/echo/purple-echo-1.png');
+$--echo-4: url('../../../../shared/assets/images/echo/yellow-echo-1.png');
+
 .wrapper {
   position: relative;
   overflow: hidden;
   height: 100vh;
   display: flex;
   flex-direction: column;
+
   &::after {
     content: '';
     position: absolute;
@@ -44,6 +48,113 @@ $--echo-2: url('../../../../shared/assets/images/echo/yellow-echo-2.png');
   }
 }
 
-.wrapper_game{
+.wrapper_game {
+
   height: 100%;
+  justify-content: space-between;
+}
+
+
+.wrapper_analysis {
+  position: relative;
+
+  &::after, &::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    background-image: $--echo-3;
+    background-size: contain;
+    width: 100%;
+    height: 85%;
+    background-repeat: no-repeat;
+    @media (max-width: 1024px) {
+      content: none;
+    }
+  }
+
+  &::after {
+    background-image: $--echo-4;
+    right: 0;
+    background-position: bottom right;
+  }
+
+  &::before {
+    left: 0;
+    background-position: top left;
+  }
+}
+
+.echo {
+  z-index: 1;
+  position: relative;
+}
+
+.echo::after {
+  content: '';
+  position: absolute;
+  top: 0px;
+  padding: 20px;
+  width: 100%;
+  height: 65%;
+  z-index: 1;
+}
+
+.subwrapper {
+  position: relative;
+  overflow: hidden;
+  @media (min-width: 996px) {
+    height: 100vh;
+
+  }
+
+  &::after, &::before {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    background-image: $--echo;
+    background-size: contain;
+    width: 438px;
+    height: 438px;
+    background-repeat: no-repeat;
+
+    z-index: 1;
+    @media (min-width: 1024px) {
+      transform: rotate(-90deg);
+    }
+    @media (max-width: 1024px) {
+      top: 0;
+      margin: auto;
+      width: 14%;
+      height: 38%;
+    }
+  }
+
+  &::after {
+    background-image: $--echo-2;
+    right: 12%;
+    background-position: bottom right;
+    @media (min-width: 1024px) {
+      transform: rotate(90deg);
+    }
+    @media (max-width: 1024px) {
+      top: -20%;
+      right: 0;
+    }
+  }
+
+  &::before {
+    left: 12%;
+    background-position: top left;
+    @media (max-width: 1024px) {
+      top: 15%;
+      left: 0;
+    }
+  }
+}
+
+.wrapper_analysis_h{
+  @media (max-width: 996px){
+    height: 100vh;
+  }
+
 }

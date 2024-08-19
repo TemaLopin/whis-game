@@ -72,7 +72,7 @@ $--echo-2: url('../../../../shared/assets/images/echo/yellow-echo-1.png');
     object-fit: cover;
   }
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1025px) {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
   @media (max-width: 1000px) {
@@ -127,7 +127,7 @@ $--echo-2: url('../../../../shared/assets/images/echo/yellow-echo-1.png');
   line-height: 1.2;
   text-transform: uppercase;
   max-width: 230px;
-  @media (max-width: 1024px) {
+  @media (max-width: 1025px) {
     font-size: 18px;
   }
   @media (max-width: 769px) {

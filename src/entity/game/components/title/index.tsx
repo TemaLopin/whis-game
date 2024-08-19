@@ -1,9 +1,7 @@
 import s from "./style.module.scss";
-const TitleGame = () => {
+const TitleGame = ({title}: any) => {
     return <div className={s.block_image}>
-        <h1 className={s.title}>найдите ПОХОЖЕГО
-            по характеру
-            ПИТОМЦА
+        <h1 className={s.title}>{title}
         </h1>
     </div>
 }

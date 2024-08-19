@@ -6,25 +6,13 @@ import TitleGame from '../entity/game/components/title'
 import DescriptionGame from '../entity/game/components/description'
 import BottomImage from '../entity/game/components/bottom-image'
 import DynamicEcho from '../shared/ui/dynamic-echo/DynamicEcho'
+import BodyStart from "../entity/game/components/body-start";
 
 const GameStart = () => {
-  const descItem: string[] = [
-    'Искусственный интеллект',
-    'поможет найти питомца,',
-    'подходящего именно вам или стать',
-    'ещё ближе с вашим любимцем',
-  ]
   return (
     <GameWrapper>
       <Header />
-      <BodyInfoStart>
-        <DynamicEcho type='heart'>
-          <TitleGame />
-        </DynamicEcho>
-        <DescriptionGame items={descItem} />
-        <ButtonStart title="Вперёд" link='/game/go'/>
-      </BodyInfoStart>
-      <BottomImage />
+        <BodyStart />
     </GameWrapper>
   )
 }

@@ -10,6 +10,34 @@ import {createContext, useEffect, useState} from 'react'
 import DynamicEcho from '../shared/ui/dynamic-echo/DynamicEcho'
 
 export const GameContext = createContext({})
+
+export const characteristics = [
+    {title: 'ЛЮБЛЮ ПОЛЕЖАТЬ', category: 1},
+    {title: 'ЖИВУ УМЕРЕННО АКТИВНО', category: 1},
+    {title: 'ВСЕГДА В ДВИЖЕНИИ', category: 1},
+    {title: 'ПРЕДПОЧИТАЮ УЕДИНЕНИЕ', category: 2},
+    {title: 'ОБЩАЮСЬ В МЕРУ', category: 2},
+    {title: 'ЛЮБЛЮ ОБЩЕНИЕ', category: 2},
+    {title: 'ДУМАЮ НЕ СПЕША', category: 3},
+    {title: 'Вникаю в своём темпе', category: 3},
+    {title: 'схватываю НА ЛЕТУ', category: 3},
+    {title: 'Сдерживаю эмоции', category: 4},
+    {title: 'Действую по настроению', category: 4},
+    {title: 'Даю волю чувствам', category: 4}
+];
+
+export const lastCharacteristics = [
+    {title: 'ЛЮБЛЮ ПОЛЕЖАТЬ', category: 1},
+    {title: 'ЖИВУ УМЕРЕННО АКТИВНО', category: 1},
+    {title: 'ВСЕГДА В ДВИЖЕНИИ', category: 1},
+    {title: 'ПРЕДПОЧИТАЮ УЕДИНЕНИЕ', category: 2},
+    {title: 'ОБЩАЮСЬ В МЕРУ', category: 2},
+    {title: 'ЛЮБЛЮ ОБЩЕНИЕ', category: 2},
+    {title: 'Реагирует не сразу', category: 3},
+    {title: 'Понимает что к чему', category: 3},
+    {title: 'схватываю с полуслова', category: 3},
+]
+
 const Game = () => {
     const descItem: string[] = [
         'Выберите по одной характеристике',

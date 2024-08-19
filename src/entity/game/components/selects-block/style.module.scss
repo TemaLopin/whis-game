@@ -1,14 +1,12 @@
 .wrapper {
-  display: grid;
+  display: flex;
   justify-content: center;
-  justify-items: center;
-  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  flex-wrap: wrap;
   column-gap: 30px;
   margin-bottom: 14px;
-  max-width: 605px;
   min-height: 100px;
   @media (max-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
     min-height: 86px;
     gap: 12px 35px;
   }

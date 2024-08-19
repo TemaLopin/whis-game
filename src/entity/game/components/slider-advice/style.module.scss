@@ -1,0 +1,97 @@
+.swiper {
+  max-width: 330px;
+
+
+  &::before {
+  }
+
+  img {
+    max-width: 100%;
+    object-fit: cover;
+  }
+
+  svg {
+    width: calc(100% + 22px);
+    margin-left: -11px;
+  }
+
+}
+
+.slide_text {
+  color: rgb(255, 255, 255);
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.2;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.slide {
+  position: relative;
+  max-width: 282px;
+  border-radius: 20px;
+
+  background: url("../../../../shared/assets/images/advice/bg-slide-dog.png") 0 0 / 100% no-repeat;
+
+  margin-top: 45px;
+
+
+}
+
+.block_image{
+  position: relative;
+  width: 182px;
+  height: 120px;
+  margin: 0 auto;
+}
+
+.wrapper{
+  padding: 37px 13px 17px 13px;
+  opacity: 0;
+}
+
+
+
+.btn_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 18px;
+
+  .btn_arrow {
+    width: 31px;
+    height: 35px;
+
+    &:last-child {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.quantity {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: -50px;
+
+  svg {
+    width: 107px;
+    height: 76px;
+  }
+
+  p {
+    position: absolute;
+    color: rgb(98, 25, 109);
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 0;
+    margin-left: -13px;
+    margin-top: -10px;
+  }
+}

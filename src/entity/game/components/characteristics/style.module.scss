@@ -1,19 +1,4 @@
-.bg{
-  position: relative;
-  background: url("../../../../shared/assets/icons/game-botto-bg.svg") 0 0 /  cover no-repeat;
-  width: 171.6%;
-  height: 100%;
 
-  @media (max-width: 768px){
-    width: 161%;
-    background: url("../../../../shared/assets/icons/game-botto-bg_m.svg") 0 0 /  cover no-repeat;
-  }
-
-  @media (max-width: 420px){
-    width: 186%;
-  }
-
-}
 .body {
   display: grid;
   justify-items: center;

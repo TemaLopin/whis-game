@@ -6,19 +6,10 @@ import title from '../../../../shared/assets/images/404.png';
 import whisImage from '../../../../shared/assets/images/whiskas-bottom.png';
 import pedigreeImage from '../../../../shared/assets/images/pedigree-bottom.png';
 import mobileImage from '../../../../shared/assets/images/404-bottom.png';
-import {useEffect, useState} from "react";
+import useWindowDimensions from "../../../../shared/hooks/useWindowDimensions";
 
 const Content404 = () => {
-    const [width, setWidth] = useState(window.innerWidth);
-
-    useEffect(() => {
-        const handleResizeWindow = () => setWidth(window.innerWidth);
-        window.addEventListener("resize", handleResizeWindow);
-        return () => {
-            window.removeEventListener("resize", handleResizeWindow);
-        };
-    }, []);
-
+    const {width} = useWindowDimensions();
 
     return <div className={s.body}>
         <h1 className={s.title}>
