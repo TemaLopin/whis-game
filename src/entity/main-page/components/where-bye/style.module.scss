@@ -51,9 +51,10 @@ $--echo-2: url('../../../../shared/assets/images/echo/yellow-echo-1.png');
   z-index: 2;
 
   margin-bottom: 50px;
-
+  padding-top: 80px;
   @media (max-width: 600px) {
     margin-bottom: -20px;
+    padding-top: 30px;
   }
 }
 

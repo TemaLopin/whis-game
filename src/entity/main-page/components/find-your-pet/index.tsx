@@ -74,7 +74,7 @@ const FindYourPets = () => {
         <div className={clsx('container', s.main_block)}>
           <ModalBlockPulse />
         </div>
-        <div className='container'>
+        <div className='container' id='aktie'>
           <div className={clsx(s.about_block)}>
             <div className={s.about_bye_block}>
               <p className={s.block_title}>Купите</p>

@@ -10,7 +10,7 @@ const Navigation = () => {
     const nav = [
         {link: '/', title: 'главная'},
         {link: '#aktie', title: 'об акции'},
-        {link: '#', title: 'Помогли вместе'},
+        {link: '#helped', title: 'Помогли вместе'},
         {link: '#buy', title: 'где купить?'}
     ];
     const burgerHandler = () => {

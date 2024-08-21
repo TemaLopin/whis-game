@@ -10,14 +10,19 @@
     min-height: 86px;
     gap: 12px 35px;
   }
+  @media (max-width: 520px) {
+    margin-bottom: 8px;
+    gap: 0 35px;
+  }
 
-  button{
+  button {
     width: 152px;
 
-    @media (max-width: 768px){
-      width: 132px;
+    @media (max-width: 768px) {
+      width: 136px;
     }
   }
+
   svg {
     min-width: 132px;
     opacity: 1 !important;

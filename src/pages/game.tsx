@@ -41,7 +41,7 @@ export const lastCharacteristics = [
 ]
 
 const Game = () => {
-  const { pathname } = useLocation()
+  const { pathname, search } = useLocation()
 
   const descItem: string[] =
     pathname !== '/game/last-selects'
@@ -87,7 +87,7 @@ const Game = () => {
           { title: '?', category: 3 },
         ]
 
-  const pathBtn = pathname !== '/game/last-selects' ? '/game/past-pet' : '/game/advice'
+  const pathBtn = pathname !== '/game/last-selects' ? '/game/past-pet' : `/game/advice${search}`
   const [answer, setAnswer] = useState([])
   const [indSelect, setIndSelect] = useState(2)
   const [categorySelect, setCategorySelect] = useState(1)

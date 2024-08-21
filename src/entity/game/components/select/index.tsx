@@ -1,11 +1,11 @@
-import s from './style.module.scss'
-import LoveIcon from './love-icon'
-import { useContext, useState } from 'react'
-import { characteristics, GameContext } from '../../../../pages/game'
-import SelectLove from './select-love'
-import clsx from 'clsx'
-import AnswerIcon from './answer-icon'
-import RemoveIcon from './remove-icon'
+import s from './style.module.scss';
+import LoveIcon from "./love-icon";
+import {useContext} from "react";
+import {GameContext} from "../../../../pages/game";
+import SelectLove from "./select-love";
+import clsx from "clsx";
+import AnswerIcon from "./answer-icon";
+import RemoveIcon from "./remove-icon";
 
 const SelectCharacteristic = ({ bg = '#fff', selectAsk = false, item }: any) => {
   const { answer, setAnswer, setSelects, categorySelect, setCategorySelect }: any = useContext(GameContext)

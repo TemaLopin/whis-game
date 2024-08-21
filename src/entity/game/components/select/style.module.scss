@@ -64,6 +64,13 @@
     height: 115%;
     top: -15px;
     min-height: 101px;
+
+    @media (max-width: 769px){
+      width: 100%;
+      height: 100%;
+      top: -5px;
+      min-height: 82px;
+    }
   }
   p.title{
     font-size: 15px !important;
@@ -71,6 +78,9 @@
     line-height: 1.15;
     color: rgb(98, 25, 109);
     padding: 13px 0;
+    @media (max-width: 520px){
+      font-size: 13px !important;
+    }
   }
 }
 
@@ -104,12 +114,13 @@
   width: 24px;
   height: 24px;
   z-index: 2;
-  top: 10px;
+  top: 2px;
   right: -5px;
 
   @media (max-width: 768px){
     width: 18px;
     height: 18px;
+    top: 10px;
   }
   svg{
     position: static;

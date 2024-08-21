@@ -33,9 +33,9 @@ const GamePet = () => {
                         <Image src={catImg}/>
                     </div>}
                     <div className={'game-wrapper'}>
-                        <ButtonStart title="ДА, КОТ" link='/game/last-selects'/>
-                        <ButtonStart title="ДА, СОБАКА" link='/game/last-selects'/>
-                        <ButtonStart title="НЕТ" link='/game/last-selects'/>
+                        <ButtonStart title="ДА, КОТ" link='/game/last-selects?animal=cat'/>
+                        <ButtonStart title="ДА, СОБАКА" link='/game/last-selects?animal=dog'/>
+                        <ButtonStart title="НЕТ" link='/game/analysis'/>
                     </div>
                     {width > 768 && <div className={'past-pet-img'}>
                         <Image src={dogImg}/>
