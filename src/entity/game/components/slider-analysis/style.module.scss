@@ -16,6 +16,10 @@
       margin: auto;
       bottom: 46%;
       z-index: 2;
+
+      @media (max-width: 520px){
+        bottom: 45.5%;
+      }
       img{
         height: 47px;
         margin-left: -5px;
@@ -23,7 +27,11 @@
       }
     }
   }
-
+  > div:last-child a{
+    @media (max-width: 520px){
+      background: url('../../../../shared/assets/icons/btn-next-game-transparent.svg') 0 0 / cover no-repeat;
+    }
+  }
 }
 
 .slide_text {

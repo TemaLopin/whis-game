@@ -24,7 +24,7 @@ const SliderAnalysis = ({items}: any) => {
         slidesPerView={'auto'}
         coverflowEffect={{
             rotate: 0,
-            stretch: 295,
+            stretch: 320,
             depth: 200,
             modifier: 1,
             slideShadows: true
@@ -44,6 +44,18 @@ const SliderAnalysis = ({items}: any) => {
             })
             nextSlides.map((item: any) => item.style.opacity = '0')
         })}
+        breakpoints={{
+            520: {
+                coverflowEffect: {
+                    rotate: 0,
+                    stretch: 295,
+                    depth: 200,
+                    modifier: 1,
+                    slideShadows: true
+                }
+            }
+        }
+        }
         modules={[Autoplay, EffectCoverflow, Navigation]}
         className={s.swiper}
     >

@@ -1,4 +1,4 @@
-import {EffectCoverflow, Navigation} from 'swiper/modules';
+import {EffectCoverflow, Navigation, Autoplay} from 'swiper/modules';
 import React, {useRef} from 'react';
 import {Swiper, SwiperSlide} from 'swiper/react';
 import {Image} from "react-bootstrap";
@@ -32,6 +32,9 @@ const SliderAdvice = ({items, width}: any) => {
         ref={swiperRef}
         effect={'coverflow'}
         grabCursor={true}
+        autoplay={{
+            delay: 4000,
+        }}
         loop={true}
         centeredSlides={true}
         loadPrevNext={true}
@@ -43,7 +46,7 @@ const SliderAdvice = ({items, width}: any) => {
             modifier: 1,
             slideShadows: false
         }}
-        modules={[EffectCoverflow, Navigation]}
+        modules={[Autoplay, EffectCoverflow, Navigation]}
         className={s.swiper}
     >
         {items.map(({title, image}: any, ind: number) => {
@@ -57,11 +60,11 @@ const SliderAdvice = ({items, width}: any) => {
                         {title}
                     </h4>
                     <MusicIcon/>
-                    <DynamicEcho type='heart'>
+                    {/*<DynamicEcho type='heart'>*/}
                         <div className={s.block_image}>
                             <Image src={image}/>
                         </div>
-                    </DynamicEcho>
+                    {/*</DynamicEcho>*/}
                 </div>
             </SwiperSlide>
         })}

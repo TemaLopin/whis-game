@@ -164,6 +164,11 @@ $--chevron-bg-white: url('../../../../shared/assets/images/chevron-bg-white.png'
   background-size: 5%;
   background-position: center center;
   background-repeat: no-repeat;
+  padding-top: 150px;
+
+  @media (max-width: 600px){
+    padding-top: 75px;
+  }
 }
 
 .right_arrow {

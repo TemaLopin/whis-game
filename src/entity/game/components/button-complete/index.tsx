@@ -9,7 +9,7 @@ const ButtonComplete = ({text = 'ЭТО ПРО МЕНЯ!', link}: any) => {
     const {pathname} = useLocation();
 
     const isFullSelects = selects?.every((select: any) => select?.title !== '?')
-    return <Link to={link}
+    return <Link to={(isFullSelects || pathname === '/game/advice') && link}
                  className={clsx(s.button, (isFullSelects || pathname === '/game/advice')  && s.button_active)}>
         { pathname === '/game/last-selects' ? 'готово!' : text}
     </Link>

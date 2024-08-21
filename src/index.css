@@ -492,6 +492,9 @@ button {
     .game-wrapper {
         gap: 45px 85px;
     }
+    .wrapper-analysis p{
+        top: 10%;
+    }
     .wrapper-top-advice > p {
         font-size: 13px;
     }

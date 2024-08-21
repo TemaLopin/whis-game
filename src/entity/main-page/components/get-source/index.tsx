@@ -6,7 +6,7 @@ const GetSource = () => {
   return (
     <div className={s.echo}>
       <div className='container'>
-        <div className={s.get_source_container}>
+        <div className={s.get_source_container} id={"helped"}>
           <div className={s.source}>
             <Image className={s.source_img} src={BoxWithMoney} />
             <p className={s.source_value}>2 476 753₽</p>

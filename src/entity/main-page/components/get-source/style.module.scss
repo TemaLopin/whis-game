@@ -13,10 +13,7 @@ $--echo: url('../../../../shared/assets/images/echo/yellow-echo-2.png');
   justify-content: space-between;
   align-items: center;
 
-  margin-bottom: 50px;
-  @media (max-width: 600px){
-    margin-bottom: -35px;
-  }
+
 }
 
 .source {
@@ -61,10 +58,10 @@ $--echo: url('../../../../shared/assets/images/echo/yellow-echo-2.png');
   position: relative;
   text-wrap: nowrap;
 
-  padding: 00px 50px 150px 50px;
+  padding: 0px 50px 120px 50px;
 
   @media (max-width: 800px) {
-    padding: 0px 30px 150px 30px;
+    padding: 0px 30px 120px 30px;
   }
 }
 

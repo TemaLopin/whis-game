@@ -16,7 +16,7 @@ const Promotion = () => {
   const brands = [Whiskas, Pedigree, KiteKat, Dreamies, Cesar, PerfectFit, Chappi, NatureTable, Sheba]
 
   return (
-    <div className={s.echo} id='aktie'>
+    <div className={s.echo}>
       <div className={clsx('container', s.promotion_container)}>
         <p>в акции участвуют:</p>
         <div>
