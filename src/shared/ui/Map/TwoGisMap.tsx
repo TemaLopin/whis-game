@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react'
 import DG from '2gis-maps'
+import axios from 'axios'
 
 type MapProps = {
   style?: React.CSSProperties

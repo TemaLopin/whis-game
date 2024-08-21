@@ -7,7 +7,7 @@ const DynamicEcho = ({
   children,
   className,
 }: {
-  type?: 'echo' | 'square' | 'circle' | 'button' | 'heart'
+  type?: 'echo' | 'square' | 'circle' | 'button' | 'heart' | 'small_heart'
   color?: 'yellow' | 'purple' | 'white'
   className?: string
   children: JSX.Element
@@ -19,6 +19,7 @@ const DynamicEcho = ({
       [s.square]: type === 'square',
       [s.button]: type === 'button',
       [s.heart]: type === 'heart',
+      [s.small_heart]: type === 'small_heart',
       [s.yellow_color]: color === 'yellow',
       [s.purple_color]: color === 'purple',
       [s.white_color]: color === 'white',
@@ -27,7 +28,7 @@ const DynamicEcho = ({
   )
 
   return (
-    <div className={clsx(s.pulse, pulse_settings, )}>
+    <div className={clsx(s.pulse, pulse_settings)}>
       <div className={clsx(s.second_pulse, pulse_settings)}>{children}</div>
     </div>
   )

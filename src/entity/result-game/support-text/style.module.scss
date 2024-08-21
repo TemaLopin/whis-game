@@ -13,6 +13,11 @@ $--dark-purple-color: #62196d;
   color: $--dark-purple-color;
 
   width: 50%;
+
+  @media (max-width: 1024px) {
+    width: 100%;
+    padding: 10px;
+  }
 }
 
 .title {

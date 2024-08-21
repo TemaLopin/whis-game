@@ -7,9 +7,7 @@
   color: rgb(255, 255, 255);
   z-index: 2;
 
-
   @media (max-width: 1024px) {
-
     justify-content: center;
   }
 }
@@ -21,7 +19,7 @@
   & + div {
     margin-top: 0;
     margin-bottom: auto;
-    p{
+    p {
       white-space: nowrap;
     }
   }

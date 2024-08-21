@@ -1,61 +1,63 @@
-import {Autoplay, EffectCoverflow, Navigation} from 'swiper/modules';
-import {Swiper, SwiperSlide} from 'swiper/react';
-import {Image} from "react-bootstrap";
+import { Autoplay, EffectCoverflow, Navigation } from 'swiper/modules'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Image } from 'react-bootstrap'
 import s from './style.module.scss'
-import 'swiper/css';
-import 'swiper/css/effect-coverflow';
-import "swiper/css/navigation";
-import ButtonStart from "../button-start";
+import 'swiper/css'
+import 'swiper/css/effect-coverflow'
+import 'swiper/css/navigation'
+import ButtonStart from '../button-start'
 
-
-const SliderAnalysis = ({items}: any) => {
-
-    return <Swiper
-        effect={'coverflow'}
-        grabCursor={true}
-        autoplay={{
-            delay: 3000,
-            reverseDirection: true,
-        }}
-        loop={true}
-        allowSlideNext={false}
-        direction={"vertical"}
-        centeredSlides={true}
-        slidesPerView={'auto'}
-        coverflowEffect={{
-            rotate: 0,
-            stretch: 295,
-            depth: 200,
-            modifier: 1,
-            slideShadows: true
-        }}
-        onSlideChange={((swiper: any) => {
-            let nextSlides: any = [];
-            swiper.slides.map((item: any) => {
-                if (item.classList.contains('swiper-slide-active')) {
-                    let sibling = item.nextElementSibling;
-                    while (sibling) {
-                        nextSlides.push(sibling);
-                        sibling = sibling.nextElementSibling;
-                    }
-                } else {
-                    item.style.opacity = '1';
-                }
-            })
-            nextSlides.map((item: any) => item.style.opacity = '0')
-        })}
-        modules={[Autoplay, EffectCoverflow, Navigation]}
-        className={s.swiper}
+const SliderAnalysis = ({ items }: any) => {
+  return (
+    <Swiper
+      effect={'coverflow'}
+      grabCursor={true}
+      autoplay={{
+        delay: 1000,
+        reverseDirection: true,
+      }}
+      loop={true}
+      allowSlideNext={false}
+      direction={'vertical'}
+      centeredSlides={true}
+      slidesPerView={'auto'}
+      coverflowEffect={{
+        rotate: 0,
+        stretch: 295,
+        depth: 200,
+        modifier: 1,
+        slideShadows: true,
+      }}
+      onSlideChange={(swiper: any) => {
+        let nextSlides: any = []
+        swiper.slides.map((item: any) => {
+          if (item.classList.contains('swiper-slide-active')) {
+            let sibling = item.nextElementSibling
+            while (sibling) {
+              nextSlides.push(sibling)
+              sibling = sibling.nextElementSibling
+            }
+          } else {
+            item.style.opacity = '1'
+          }
+        })
+        nextSlides.map((item: any) => (item.style.opacity = '0'))
+      }}
+      modules={[Autoplay, EffectCoverflow, Navigation]}
+      className={s.swiper}
     >
-        {items.map(({image}: any, ind: number) => {
-            return <SwiperSlide className={s.slide} key={ind}>
-                <div className={s.block_image}>
-                    <Image src={image}/>
-                </div>
-            </SwiperSlide>
-        })}
-        <ButtonStart link={'/game/result-analysis'}/>
+      {items.map(({ image }: any, ind: number) => {
+        return (
+          <SwiperSlide className={s.slide} key={ind}>
+            <div className={s.block_image}>
+              <Image src={image} />
+            </div>
+          </SwiperSlide>
+        )
+      })}
+      <ButtonStart link={'/game/result-analysis'} />
     </Swiper>
+  )
 }
 
-export default SliderAnalysis;
+export default SliderAnalysis

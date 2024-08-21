@@ -1,4 +1,4 @@
-import {Image} from 'react-bootstrap'
+import { Image } from 'react-bootstrap'
 import s from './style.module.scss'
 
 import Auchan from '../../../../shared/assets/images/stores/auchan.png'
@@ -13,31 +13,30 @@ import Pyaterichka from '../../../../shared/assets/images/stores/pyaterichka.png
 import Samokat from '../../../../shared/assets/images/stores/samokat.png'
 import clsx from 'clsx'
 
-
 const WhereBye = () => {
-    const arrEcommerce = [Kuper, Samokat, Megamarket]
-    const arrMagazine = [Magnite, Pyaterichka, Auchan, Metro, Perecrestok, Lenta, Diksi]
+  const arrEcommerce = [Kuper, Samokat, Megamarket]
+  const arrMagazine = [Pyaterichka, Magnite, Auchan, Metro, Perecrestok, Lenta, Diksi]
 
-    return (
-        <div className={s.echo} id="buy">
-            <div className={clsx(s.body, 'container')}>
-                <p className={s.main_text}>Где купить?</p>
-                <p className={s.sub_text}>Во всех магазинах страны*</p>
-                <div className={clsx('container', s.brands)}>
-                    <h3 className={s.title}>В интернет-магазинах</h3>
-                    {arrEcommerce.map((store) => (
-                        <Image className={s.brand_logo} src={store}/>
-                    ))}
-                </div>
-                <div className={clsx('container', s.brands)}>
-                    <h3 className={s.title}>В магазинах твоего города</h3>
-                    {arrMagazine.map((store) => (
-                        <Image className={s.brand_logo} src={store}/>
-                    ))}
-                </div>
-            </div>
+  return (
+    <div className={s.echo} id='buy'>
+      <div className={clsx(s.body, 'container')}>
+        <p className={s.main_text}>Где купить?</p>
+        <p className={s.sub_text}>Во всех магазинах страны*</p>
+        <div className={clsx('container', s.brands)}>
+          <h3 className={s.title}>В интернет-магазинах</h3>
+          {arrEcommerce.map((store) => (
+            <Image className={s.brand_logo} src={store} />
+          ))}
         </div>
-    )
+        <div className={clsx('container', s.brands)}>
+          <h3 className={s.title}>В магазинах твоего города</h3>
+          {arrMagazine.map((store) => (
+            <Image className={s.brand_logo} src={store} />
+          ))}
+        </div>
+      </div>
+    </div>
+  )
 }
 
 export default WhereBye
