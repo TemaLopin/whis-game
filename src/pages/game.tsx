@@ -7,6 +7,7 @@ import QuantityText from '../entity/game/components/quantity-text'
 import ButtonComplete from '../entity/game/components/button-complete'
 import Characteristics from '../entity/game/components/characteristics'
 import { createContext, useEffect, useState } from 'react'
+
 import DynamicEcho from '../shared/ui/dynamic-echo/DynamicEcho'
 import { useLocation } from 'react-router-dom'
 import useWindowDimensions from '../shared/hooks/useWindowDimensions'

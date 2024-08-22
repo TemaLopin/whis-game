@@ -7,57 +7,55 @@ import 'swiper/css/effect-coverflow'
 import 'swiper/css/navigation'
 import ButtonStart from '../button-start'
 
-
-const SliderAnalysis = ({items}: any) => {
-
-    return <Swiper
-        effect={'coverflow'}
-        grabCursor={true}
-        autoplay={{
-            delay: 3000,
-            reverseDirection: true,
-        }}
-        loop={true}
-        allowSlideNext={false}
-        direction={"vertical"}
-        centeredSlides={true}
-        slidesPerView={'auto'}
-        coverflowEffect={{
+const SliderAnalysis = ({ items }: any) => {
+  return (
+    <Swiper
+      effect={'coverflow'}
+      grabCursor={true}
+      autoplay={{
+        delay: 3000,
+        reverseDirection: true,
+      }}
+      loop={true}
+      allowSlideNext={false}
+      direction={'vertical'}
+      centeredSlides={true}
+      slidesPerView={'auto'}
+      coverflowEffect={{
+        rotate: 0,
+        stretch: 320,
+        depth: 200,
+        modifier: 1,
+        slideShadows: true,
+      }}
+      onSlideChange={(swiper: any) => {
+        let nextSlides: any = []
+        swiper.slides.map((item: any) => {
+          if (item.classList.contains('swiper-slide-active')) {
+            let sibling = item.nextElementSibling
+            while (sibling) {
+              nextSlides.push(sibling)
+              sibling = sibling.nextElementSibling
+            }
+          } else {
+            item.style.opacity = '1'
+          }
+        })
+        nextSlides.map((item: any) => (item.style.opacity = '0'))
+      }}
+      breakpoints={{
+        520: {
+          coverflowEffect: {
             rotate: 0,
-            stretch: 320,
+            stretch: 295,
             depth: 200,
             modifier: 1,
-            slideShadows: true
-        }}
-        onSlideChange={((swiper: any) => {
-            let nextSlides: any = [];
-            swiper.slides.map((item: any) => {
-                if (item.classList.contains('swiper-slide-active')) {
-                    let sibling = item.nextElementSibling;
-                    while (sibling) {
-                        nextSlides.push(sibling);
-                        sibling = sibling.nextElementSibling;
-                    }
-                } else {
-                    item.style.opacity = '1';
-                }
-            })
-            nextSlides.map((item: any) => item.style.opacity = '0')
-        })}
-        breakpoints={{
-            520: {
-                coverflowEffect: {
-                    rotate: 0,
-                    stretch: 295,
-                    depth: 200,
-                    modifier: 1,
-                    slideShadows: true
-                }
-            }
-        }
-        }
-        modules={[Autoplay, EffectCoverflow, Navigation]}
-        className={s.swiper}
+            slideShadows: true,
+          },
+        },
+      }}
+      modules={[Autoplay, EffectCoverflow, Navigation]}
+      className={s.swiper}
     >
       {items.map(({ image }: any, ind: number) => {
         return (
@@ -70,7 +68,7 @@ const SliderAnalysis = ({items}: any) => {
       })}
       <ButtonStart link={'/game/result-analysis'} />
     </Swiper>
-  
+  )
 }
 
 export default SliderAnalysis

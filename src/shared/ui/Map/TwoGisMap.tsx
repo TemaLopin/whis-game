@@ -34,6 +34,8 @@ const TwoGisMap: React.FC<MapProps> = ({
 
     DG.marker(center).addTo(map)
 
+
+
     return () => map.remove()
   }, [containerRef, center, zoom, geoclicker, zoomControl, projectDetector, fullscreenControl])
 

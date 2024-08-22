@@ -10,12 +10,12 @@ import SliderAdvice from '../entity/game/components/slider-advice'
 import slideImage from '../shared/assets/images/advice/1.jpeg'
 import BottomWrapper from '../entity/game/components/bottom-wrapper'
 import useWindowDimensions from '../shared/hooks/useWindowDimensions'
-import AdviceWrapper from "../entity/game/components/wrapper/advice";
-import {useLocation} from "react-router-dom";
+import AdviceWrapper from '../entity/game/components/wrapper/advice'
+import { useLocation } from 'react-router-dom'
 
 const GameAdvice = () => {
   const { width } = useWindowDimensions()
-  const {search} = useLocation();
+  const { search } = useLocation()
   const descItemDesktop = ['УЗНАЙТЕ, КАКОГО ПИТОМЦА ПОДОБРАЛ искусственный', 'интеллект ПО ВАШИМ ЧЕРТАМ ХАРАКТЕРА']
   const descItem = ['УЗНАЙТЕ, КАКОГО ПИТОМЦА ПОДОБРАЛ', 'искусственный интеллект ПО ВАШИМ', 'ЧЕРТАМ ХАРАКТЕРА']
   const infoDeskDesktop = ['Листайте советы', 'как стать ещё ближе', 'с вашим питомцем']
@@ -43,9 +43,9 @@ const GameAdvice = () => {
       <BodyAdvice>
         <div className={'wrapper-top-advice'}>
           {search === '?animal=cat' && width > 996 && (
-              <div className={'past-pet-img advice-left'}>
-                <Image src={catImg} />
-              </div>
+            <div className={'past-pet-img advice-left'}>
+              <Image src={catImg} />
+            </div>
           )}
           <DescriptionGame items={width < 996 ? infoDesk : infoDeskDesktop} />
           <div className={'slider-advice'}>

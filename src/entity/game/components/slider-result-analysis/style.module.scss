@@ -11,9 +11,6 @@
 .swiper {
   position: relative;
   width: 100%;
-  //height: 789px;
-  & > div {
-  }
 
   img {
     max-width: 100%;
@@ -35,13 +32,13 @@
 
   svg {
     width: 126px;
-     height: 74px;
+    height: 74px;
   }
 
   p {
     position: absolute;
     color: rgb(98, 25, 109);
-    font-size: 15px;
+    font-size: 12px;
     font-weight: 800;
     text-align: center;
     top: -3px;
@@ -57,8 +54,14 @@
   position: relative;
 
   // width: 240px;
+
+  // width: 240px;
   height: 330px;
   border-radius: 20px;
+
+  width: fit-content;
+
+  margin: 0px auto;
 
   width: fit-content;
 
@@ -82,6 +85,8 @@
   img {
     // width: 100%;
     width: 240px;
+    // width: 100%;
+    width: 240px;
     height: 100%;
     max-width: initial;
     opacity: 0;
@@ -92,6 +97,7 @@
 .slide {
   position: static;
 }
+
 .tags {
   display: grid;
   //position: absolute;
@@ -104,32 +110,17 @@
   width: 200% !important;
   margin-bottom: 28px !important;
   margin-left: -50% !important;
+
   @media (max-width: 600px) {
     grid-template-columns: repeat(2, 1fr);
     margin-left: -40px !important;
     width: 100% !important;
+
     .tag:last-child {
       grid-column: 2 span;
       justify-content: initial;
       width: initial;
     }
-  }
-}
-
-.tag {
-  border-radius: 100px;
-  background: rgb(255, 255, 255);
-  color: rgb(98, 25, 109);
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 120%;
-  text-align: center;
-  text-transform: uppercase;
-  padding: 6px 12px;
-  white-space: nowrap;
-
-  @media (max-width: 600px) {
-    width: max-content !important;
   }
 }
 
