@@ -13,11 +13,11 @@ const Header = () => {
 
   return (
     <div className={s.container}>
-      <div className={s.link_container}>
+      {/* <div className={s.link_container}>
         <a href='javascript:void(0);' className={s.back_link}>
           Назад
         </a>
-      </div>
+      </div> */}
       <div className={s.header}>
         <Image src={Whiskas} />
         {!pathUrl['*'] && <Navigation />}
