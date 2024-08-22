@@ -29,7 +29,7 @@ const ShelterMap = () => {
       console.log('Geolocation is not supported by this browser.')
     }
   }
-console.log('!@#$ currentLocation', currentLocation)
+  console.log('!@#$ currentLocation', currentLocation)
   useEffect(() => {
     getCurrentLocation()
   }, [])

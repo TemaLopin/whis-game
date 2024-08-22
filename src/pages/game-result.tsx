@@ -8,11 +8,11 @@ const ResultGame = () => {
   return (
     <div className='background '>
       <Header />
-      <div className={'result_body'}>
+      <div className={'result_body container'}>
         <PetSlider />
         <PetDescription />
       </div>
-      <div className={'result_body'}>
+      <div className={'result_body container'}>
         <SupportText />
         <ShelterMap />
       </div>
