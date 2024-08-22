@@ -1,5 +1,8 @@
 .swiper {
   //height: 789px;
+
+  perspective: 800px;
+  margin-bottom: 100px;
   img {
     max-width: 100%;
     object-fit: cover;
@@ -15,17 +18,17 @@
       bottom: 46%;
       z-index: 2;
 
-      @media (max-width: 520px){
+      @media (max-width: 520px) {
         bottom: 45.5%;
       }
-      img{
+      img {
         height: 47px;
         margin-left: -5px;
       }
     }
   }
-  > div:last-child a{
-    @media (max-width: 520px){
+  > div:last-child a {
+    @media (max-width: 520px) {
       background: url('../../../../shared/assets/icons/btn-next-game-transparent.svg') 0 0 / cover no-repeat;
     }
   }
