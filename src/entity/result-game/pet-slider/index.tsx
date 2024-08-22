@@ -1,6 +1,5 @@
 import clsx from 'clsx'
 import s from './style.module.scss'
-import { Swiper, SwiperSlide } from 'swiper/react'
 
 // import img from '../../../entity/result-game/pet/index.tsx'
 import Asya from '../../../shared/assets/images/pets/Ася.jpg'
@@ -34,41 +33,50 @@ import Cherry from '../../../shared/assets/images/pets/Черри.jpg'
 import Sheriff from '../../../shared/assets/images/pets/Шериф.jpg'
 import Sherbet from '../../../shared/assets/images/pets/Щербет.jpg'
 
-import { EffectFlip, Virtual, Pagination, Navigation } from 'swiper/modules'
+import { Autoplay, EffectCoverflow, Navigation } from 'swiper/modules'
+import { Swiper, SwiperSlide } from 'swiper/react'
+
+import 'swiper/css'
+import 'swiper/css/pagination'
+import 'swiper/css/navigation'
+
 import { Image } from 'react-bootstrap'
 import { useRef, useState } from 'react'
+import useWindowDimensions from '../../../shared/hooks/useWindowDimensions'
+import SelectLoveIcon from '../../game/components/select/select-love'
 const PetSlider = () => {
-  const pets = [
-    Asya,
-    Bruno,
-    Cheesecake,
-    Glen,
-    Django,
-    Jack,
-    Slice,
-    Marshmallow,
-    Irma,
-    Kiwi,
-    Crete,
-    Kutuzov,
-    LilyValley,
-    Luke,
-    Mosaic,
-    Morzhik,
-    Nora,
-    Ringo,
-    Ron,
-    Ryzhik,
-    Seraphim,
-    SourCream,
-    Tai,
-    Tahir,
-    Ursula,
-    Harvey,
-    Hummus,
-    Cherry,
-    Sheriff,
-    Sherbet,
+  const { width } = useWindowDimensions()
+  const petsImages = [
+    { image: Asya },
+    { image: Bruno },
+    { image: Cheesecake },
+    { image: Glen },
+    { image: Django },
+    { image: Jack },
+    { image: Slice },
+    { image: Marshmallow },
+    { image: Irma },
+    { image: Kiwi },
+    { image: Crete },
+    { image: Kutuzov },
+    { image: LilyValley },
+    { image: Luke },
+    { image: Mosaic },
+    { image: Morzhik },
+    { image: Nora },
+    { image: Ringo },
+    { image: Ron },
+    { image: Ryzhik },
+    { image: Seraphim },
+    { image: SourCream },
+    { image: Tai },
+    { image: Tahir },
+    { image: Ursula },
+    { image: Harvey },
+    { image: Hummus },
+    { image: Cherry },
+    { image: Sheriff },
+    { image: Sherbet },
   ]
 
   const [swiperRef, setSwiperRef] = useState(null)
@@ -91,23 +99,31 @@ const PetSlider = () => {
   // }
 
   return (
-    <div>
+    <div style={{position: 'relative'}}>
+      <div className={s.quantity}>
+        <SelectLoveIcon />
+        <p>Эшли</p>
+      </div>
       <Swiper
-        modules={[Virtual, Navigation, Pagination]}
-        onSwiper={(value: any) => console.log('!@#$ value', value)}
-        slidesPerView={3}
-        centeredSlides={true}
         spaceBetween={30}
-        pagination={{
-          type: 'fraction',
+        centeredSlides={true}
+        autoplay={{
+          delay: 2000,
+          disableOnInteraction: false,
         }}
-        navigation={true}
-        virtual
+        pagination={{
+          clickable: true,
+        }}
+        loop={true}
+        navigation={width > 600}
+        modules={[Autoplay, Navigation]}
         className={s.pet_swiper}
       >
-        {pets.map((item, virtualIndex) => (
-          <SwiperSlide className={s.image} key={virtualIndex} virtualIndex={virtualIndex}>
-            <img src={item} alt={item} />
+        {petsImages.map(({ image }, index) => (
+          <SwiperSlide className={s.slider} key={index}>
+            <div className={s.image_container}>
+              <Image className={s.image} src={image} />
+            </div>
           </SwiperSlide>
         ))}
       </Swiper>

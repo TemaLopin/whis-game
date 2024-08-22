@@ -13,13 +13,7 @@ const Footer = () => {
     <div className={clsx(s.footer)}>
       <div className='container'>
         {isMobile && <Image src={BankRus} />}
-        <div className={s.links}>
-          <a href='#'>Конфиденциальность</a>
-          <a href='#'>Юридические условия</a>
-          <a href='#'>Владелец сайта</a>
-          <a href='#'>Задать вопрос о продукте</a>
-          <a href='#'>Пользовательское соглашение</a>
-        </div>
+
         <div className={s.footer_description}>
           {!isMobile && <Image src={BankRus} />}
           <div className={s.footer_text}>

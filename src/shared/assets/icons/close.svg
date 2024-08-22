@@ -3,6 +3,6 @@
 			Created with Pixso.
 	</desc>
 	<defs/>
-	<path id="Line 3" d="M3 1.5L17.14 15.64" stroke="#D2D2D2" stroke-opacity="1.000000" stroke-width="3.000000" stroke-linecap="round"/>
-	<path id="Line 4" d="M3 15.64L17.14 1.5" stroke="#D2D2D2" stroke-opacity="1.000000" stroke-width="3.000000" stroke-linecap="round"/>
+	<path id="Line 3" d="M3 1.5L17.14 15.64" stroke="#D2D2D2" strokeOpacity="1.000000" strokeWidth="3.000000" stroke-linecap="round"/>
+	<path id="Line 4" d="M3 15.64L17.14 1.5" stroke="#D2D2D2" strokeOpacity="1.000000" strokeWidth="3.000000" stroke-linecap="round"/>
 </svg>

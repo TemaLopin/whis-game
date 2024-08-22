@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react'
 import DG from '2gis-maps'
+import axios from 'axios'
 
 type MapProps = {
   style?: React.CSSProperties
@@ -32,6 +33,8 @@ const TwoGisMap: React.FC<MapProps> = ({
     const map = DG.map('map-container', options)
 
     DG.marker(center).addTo(map)
+
+
 
     return () => map.remove()
   }, [containerRef, center, zoom, geoclicker, zoomControl, projectDetector, fullscreenControl])

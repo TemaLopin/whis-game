@@ -3,12 +3,12 @@
 			Created with Pixso.
 	</desc>
 	<defs>
-		<filter id="filter_883_639_dd" x="504.705444" y="0.000000" width="740.609741" height="95.038086" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+		<filter id="filter_883_639_dd" x="504.705444" y="0.000000" width="740.609741" height="95.038086" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
 			<feFlood flood-opacity="0" result="BackgroundImageFix"/>
 			<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
 			<feGaussianBlur stdDeviation="3.33333" result="effect_layerBlur_1"/>
 		</filter>
-		<filter id="filter_883_642_dd" x="1225.286377" y="0.000000" width="740.609619" height="95.038086" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+		<filter id="filter_883_642_dd" x="1225.286377" y="0.000000" width="740.609619" height="95.038086" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
 			<feFlood flood-opacity="0" result="BackgroundImageFix"/>
 			<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
 			<feGaussianBlur stdDeviation="3.33333" result="effect_layerBlur_1"/>
@@ -16,11 +16,11 @@
 	</defs>
 	<path id="bg_hearts" d="M0 395.54C0 183.484 553.207 11.5784 1235.62 11.5784C1918.04 11.5784 2471.24 183.484 2471.24 395.54C2471.24 607.596 1918.04 779.502 1235.62 779.502C553.207 779.502 0 607.596 0 395.54Z" clip-rule="evenodd" fill="#62196D" fill-opacity="1.000000" fill-rule="evenodd"/>
 	<g filter="url(#filter_883_639_dd)">
-		<path id="Vector 44" d="M515.05 83.57C628.67 56.69 931.8 8.7 1235.3 11.63" stroke="#F129CC" stroke-opacity="1.000000" stroke-width="3.000000"/>
+		<path id="Vector 44" d="M515.05 83.57C628.67 56.69 931.8 8.7 1235.3 11.63" stroke="#F129CC" strokeOpacity="1.000000" strokeWidth="3.000000"/>
 	</g>
-	<path id="Vector 45" d="M515.05 83.57C628.67 56.69 931.8 8.7 1235.3 11.63" stroke="#F129CC" stroke-opacity="1.000000" stroke-width="3.000000"/>
+	<path id="Vector 45" d="M515.05 83.57C628.67 56.69 931.8 8.7 1235.3 11.63" stroke="#F129CC" strokeOpacity="1.000000" strokeWidth="3.000000"/>
 	<g filter="url(#filter_883_642_dd)">
-		<path id="Vector 44" d="M1955.55 83.57C1841.92 56.69 1538.8 8.7 1235.3 11.63" stroke="#FFFF22" stroke-opacity="1.000000" stroke-width="3.000000"/>
+		<path id="Vector 44" d="M1955.55 83.57C1841.92 56.69 1538.8 8.7 1235.3 11.63" stroke="#FFFF22" strokeOpacity="1.000000" strokeWidth="3.000000"/>
 	</g>
-	<path id="Vector 45" d="M1955.55 83.57C1841.92 56.69 1538.8 8.7 1235.3 11.63" stroke="#FFFF22" stroke-opacity="1.000000" stroke-width="3.000000"/>
+	<path id="Vector 45" d="M1955.55 83.57C1841.92 56.69 1538.8 8.7 1235.3 11.63" stroke="#FFFF22" strokeOpacity="1.000000" strokeWidth="3.000000"/>
 </svg>

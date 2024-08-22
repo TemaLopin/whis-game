@@ -2,7 +2,7 @@
   <path
     d='M2 2L8.67157 8.67157C10.2337 10.2337 12.7663 10.2337 14.3284 8.67157L21 2'
     stroke='white'
-    stroke-width='3'
+    strokeWidth='3'
     stroke-linecap='round'
   />
 </svg>

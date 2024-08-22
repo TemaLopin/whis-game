@@ -1,5 +1,4 @@
 .swiper {
-
   //height: 789px;
   img {
     max-width: 100%;
@@ -7,9 +6,8 @@
     height: 100%;
   }
 
-
-  & > div{
-    &:last-child{
+  & > div {
+    &:last-child {
       position: absolute;
       left: 0;
       right: 0;
@@ -23,7 +21,6 @@
       img{
         height: 47px;
         margin-left: -5px;
-
       }
     }
   }
@@ -50,36 +47,29 @@
   height: 391px;
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     inset: 0;
     border-radius: 20px;
     border: 3px solid transparent;
     background: linear-gradient(rgb(255, 81, 255), rgb(255, 255, 255), rgb(255, 255, 34)) border-box; /*3*/
-    -webkit-mask:
-            linear-gradient(#fff 0 0) padding-box,
-            linear-gradient(#fff 0 0);
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
   }
-
 }
 
-.block_image{
+.block_image {
   background: rgb(98, 25, 109);
   border-radius: 22px;
   height: 100%;
-  img{
+
+  img {
     opacity: 0;
   }
-
 }
+
 .wrapper {
   padding: 37px 13px 17px 13px;
   opacity: 0;
 }
-
-
-
-
-

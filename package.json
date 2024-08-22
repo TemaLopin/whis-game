@@ -12,11 +12,15 @@
     "@types/react-dom": "^18.3.0",
     "2gis-maps": "^3.7.4",
     "2gis-maps-react": "^0.0.4",
+    "axios": "^1.7.4",
     "bootstrap": "^5.3.3",
     "clsx": "^2.1.1",
+    "dotenv": "^16.4.5",
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.4",
     "react-dom": "^18.3.1",
+    "react-input-mask": "^2.0.4",
+    "react-query": "^3.39.3",
     "react-router-dom": "^6.26.0",
     "react-router-hash-link": "^2.4.3",
     "react-scripts": "5.0.1",
@@ -49,6 +53,7 @@
     ]
   },
   "devDependencies": {
+    "@types/react-input-mask": "^3.0.5",
     "sass": "^1.77.8",
     "sass-loader": "^16.0.0",
     "webpack": "^5.93.0"

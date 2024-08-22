@@ -1,9 +1,9 @@
 const ArrowIcon = () => {
     return <svg viewBox="0 0 34 26.1123" fill="none" xmlnsSvg="http://www.w3.org/2000/svg" >
         <defs/>
-        <path id="Vector 48" d="M32.5 12.55L1.5 12.55" stroke="#FFFFFF" strokeOpacity="1.000000" stroke-width="3.000000" strokeLinecap="round"/>
-        <path id="Vector 49" d="M12.71 24.55L1.5 12.55" stroke="#FFFFFF" strokeOpacity="1.000000" stroke-width="3.000000" strokeLinecap="round"/>
-        <path id="Vector 50" d="M11.78 1.55L1.5 12.55" stroke="#FFFFFF" strokeOpacity="1.000000" stroke-width="3.000000" strokeLinecap="round"/>
+        <path id="Vector 48" d="M32.5 12.55L1.5 12.55" stroke="#FFFFFF" strokeOpacity="1.000000" strokeWidth="3.000000" strokeLinecap="round"/>
+        <path id="Vector 49" d="M12.71 24.55L1.5 12.55" stroke="#FFFFFF" strokeOpacity="1.000000" strokeWidth="3.000000" strokeLinecap="round"/>
+        <path id="Vector 50" d="M11.78 1.55L1.5 12.55" stroke="#FFFFFF" strokeOpacity="1.000000" strokeWidth="3.000000" strokeLinecap="round"/>
     </svg>
 
 }

@@ -87,11 +87,21 @@ $--rainbow-heart: url('../../assets/images/rainbow-heart.png');
 
 @keyframes heart {
   0% {
-    transform: scale(0.40, 0.38) translateY(-30px);
+    transform: scale(0.4, 0.38) translateY(-30px);
   }
 
   100% {
     transform: scale(0.6, 0.58) translateY(-30px);
+  }
+}
+
+@keyframes small_heart {
+  0% {
+    transform: scale(0.29, 0.3) translateY(-30px);
+  }
+
+  100% {
+    transform: scale(0.37, 0.4) translateY(-30px);
   }
 }
 
@@ -111,6 +121,16 @@ $--rainbow-heart: url('../../assets/images/rainbow-heart.png');
   display: flex;
 
   animation-name: pulse, heart;
+}
+
+.small_heart::after,
+.small_heart::before {
+  content: $--rainbow-heart;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+
+  animation-name: pulse, small_heart;
 }
 
 .circle::after,

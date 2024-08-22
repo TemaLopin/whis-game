@@ -3,12 +3,12 @@
 			Created with Pixso.
 	</desc>
 	<defs>
-		<filter id="filter_1023_127_dd" x="584.839355" y="287.839600" width="397.321289" height="849.321045" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+		<filter id="filter_1023_127_dd" x="584.839355" y="287.839600" width="397.321289" height="849.321045" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
 			<feFlood flood-opacity="0" result="BackgroundImageFix"/>
 			<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
 			<feGaussianBlur stdDeviation="8.05348" result="effect_layerBlur_1"/>
 		</filter>
-		<filter id="filter_1023_130_dd" x="235.839355" y="287.839600" width="397.321289" height="849.321045" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+		<filter id="filter_1023_130_dd" x="235.839355" y="287.839600" width="397.321289" height="849.321045" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
 			<feFlood flood-opacity="0" result="BackgroundImageFix"/>
 			<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
 			<feGaussianBlur stdDeviation="8.05348" result="effect_layerBlur_1"/>
