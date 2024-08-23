@@ -52,7 +52,7 @@ const Footer = ({ handler }: any) => {
 }
 
 const Main = () => {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(true)
   const modalHandler = () => {
     setIsOpen((prev) => !prev)
     document.body.classList.toggle('noscroll')

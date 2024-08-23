@@ -66,7 +66,7 @@ const SliderAnalysis = ({ items }: any) => {
           </SwiperSlide>
         )
       })}
-      <ButtonStart link={'/game/result-analysis'} />
+      <ButtonStart />
     </Swiper>
   )
 }
