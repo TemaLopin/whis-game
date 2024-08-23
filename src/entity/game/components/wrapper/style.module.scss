@@ -50,7 +50,7 @@ $--echo-6: url('../../../../shared/assets/images/echo/yellow-echo-3.png');
 }
 
 .wrapper_game {
-
+  overflow-y: auto;
   height: 100%;
   justify-content: space-between;
 }
@@ -161,7 +161,9 @@ $--echo-6: url('../../../../shared/assets/images/echo/yellow-echo-3.png');
 }
 
 .wrapper_cat{
-
+  @media (min-width: 768px){
+    overflow-y: auto;
+  }
   &::after {
     content: '';
     position: absolute;
@@ -210,6 +212,9 @@ $--echo-6: url('../../../../shared/assets/images/echo/yellow-echo-3.png');
 
 
 .wrapper_dog{
+  @media (min-width: 768px){
+    overflow-y: auto;
+  }
 
   &::after {
     content: '';

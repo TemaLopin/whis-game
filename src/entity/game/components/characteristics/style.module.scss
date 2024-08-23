@@ -6,9 +6,9 @@
   margin: 0 auto;
   grid-template-columns: repeat(3, 1fr);
   max-width: 400px;
-  padding: 65px 16px 0 ;
+  padding: 65px 16px 24px;
   @media (max-width: 768px){
-    padding: 47px 16px 0;
+    padding: 47px 16px 24px;
     gap: 6px 7px;
   }
   @media (max-width: 380px){
