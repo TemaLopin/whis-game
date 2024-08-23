@@ -42,7 +42,7 @@ export const questionAnswer = [
       {
         title: 'Забота сближает',
         description:
-          'Принять участие в Акции вправе Участники Программы – Держатели Карт Банка и/или владельцы Платёжного счёта, достигшие 18 лет, являющиеся дееспособными, проживающие на территории Российской Федерации. Подробная информация о Карте Банка размещена на Сайте Банка (<a href="https://www.sberbank.ru">https://www.sberbank.ru</a>).',
+          'Принять участие в Акции вправе Участники Программы – Держатели Карт Банка и/или владельцы Платёжного счёта, достигшие 18 лет, являющиеся дееспособными, проживающие на территории Российской Федерации. Подробная информация о Карте Банка размещена на Сайте Банка (<a href="https://www.sberbank.ru" target="_blank">https://www.sberbank.ru</a>).',
       },
     ],
   },
@@ -68,8 +68,8 @@ export const questionAnswer = [
       {
         title: 'Забота сближает',
         description: `Для получения Поощрения Участнику Акции необходимо:
-1) Ознакомиться с Правилами Акции в Карточке Акции (по ссылке <a href='https://spasibosberbank.ru/partners/stocks/zabota-sblizhaet'>https://spasibosberbank.ru/partners/stocks/zabota-sblizhaet</a>) 
-или авторизоваться  по ссылке <a href='https://wad2024.ru'>https://wad2024.ru</a> и ознакомиться с Правилами Акции на Сайте Акции
+1) Ознакомиться с Правилами Акции в Карточке Акции (по ссылке <a href='https://spasibosberbank.ru/partners/stocks/zabota-sblizhaet' target="_blank">https://spasibosberbank.ru/partners/stocks/zabota-sblizhaet</a>) 
+или авторизоваться  по ссылке <a href='https://wad2024.ru' target="_blank">https://wad2024.ru</a> и ознакомиться с Правилами Акции на Сайте Акции
 2) В период проведения  Акции Приобрести продукцию под товарными знаками WHISKAS®, SHEBA®, PERFECT FIT™, NATURE’S TABLE™, DREAMIES™, KITEKAT™, PEDIGREE®, CESAR®, CHAPPI™ с использованием Инструментов доступа по Счёту Карты Банка и/или Платежному счёту.`,
       },
     ],
@@ -109,7 +109,7 @@ export const questionAnswer = [
         description: `С деятельностью Благотворительного фонда «Банк еды "Русь"» вы можете ознакомиться самостоятельно на сайте. ПЕРЕЙТИ НА САЙТ фонда.
 Ссылка на сайт (для клика):
 <ul>
-<li> Благотворительный фонд «Банк еды "Русь"». <a href='https://foodbankrus.ru/'>foodbankrus.ru</a></li>
+<li> Благотворительный фонд «Банк еды "Русь"». <a href='https://foodbankrus.ru/' target="_blank">foodbankrus.ru</a></li>
 </ul>
  `,
       },

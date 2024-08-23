@@ -37,7 +37,6 @@ const QuestionAnswer = () => {
   useEffect(() => showMoreHandler(), [])
 
   if (data.length === 0) return <></>
-  console.log('🚀  !@#$ ~ QuestionAnswer ~ data:', data)
 
   return (
     <div className={s.echo}>

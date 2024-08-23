@@ -35,7 +35,7 @@ const GameAnalysis = () => {
 
   useEffect(() => {
     console.log('!@#$ ')
-    setTimeout(() => navigate('/game/result/0'), 5000)
+    setTimeout(() => navigate('/game/result-analysis'), 5000)
   }, [])
 
   return (
