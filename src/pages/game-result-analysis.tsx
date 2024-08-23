@@ -7,7 +7,7 @@ import dogRes from '../shared/assets/images/dog-res.jpeg'
 import ashlyDog from '../shared/assets/images/ashly.jpeg'
 import SliderResultAnalysis from '../entity/game/components/slider-result-analysis'
 import DynamicEcho from '../shared/ui/dynamic-echo/DynamicEcho'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import useWindowDimensions from '../shared/hooks/useWindowDimensions'
 import TitleGame from '../entity/game/components/title'
 import GameAnalysisWrapper from '../entity/game/components/wrapper/analysis'
@@ -60,6 +60,7 @@ const GameResultAnalysis = () => {
       tags: ['ЛАСКОВАЯ', 'РАДУЕТСЯ ВНИМАНИЮ И ЛАСКЕ', 'прилично ходит на поводке'],
     },
   ]
+
   return (
     <GameAnalysisWrapper>
       <Header />

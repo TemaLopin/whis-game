@@ -13,7 +13,7 @@ const SliderAnalysis = ({ items }: any) => {
       effect={'coverflow'}
       grabCursor={true}
       autoplay={{
-        delay: 3000,
+        delay: 1000,
         reverseDirection: true,
       }}
       loop={true}
@@ -66,7 +66,7 @@ const SliderAnalysis = ({ items }: any) => {
           </SwiperSlide>
         )
       })}
-      <ButtonStart link={'/game/result-analysis'} />
+      <ButtonStart />
     </Swiper>
   )
 }

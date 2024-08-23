@@ -12,7 +12,6 @@
       content: none;
     }
   }
-
 }
 
 .body {
@@ -66,7 +65,7 @@
   @media (max-width: 800px) {
     width: 90%;
   }
-  @media (max-width: 520px){
+  @media (max-width: 520px) {
     margin-bottom: 8px;
     padding: 16px;
   }
@@ -109,8 +108,6 @@
 .q_a_section {
   font-size: var(--font-size-16);
   line-height: var(--line-height-26);
-
-
 }
 
 .article {
@@ -120,7 +117,7 @@
   font-weight: 700;
 
   color: #929394;
-  @media (max-width: 768px){
+  @media (max-width: 768px) {
     font-size: var(--font-size-14);
     line-height: 1.4;
   }
@@ -133,7 +130,7 @@
 
   color: #929394;
 
-  @media (max-width: 768px){
+  @media (max-width: 768px) {
     font-size: var(--font-size-14);
     line-height: 1.2;
   }
@@ -152,10 +149,10 @@
   margin-top: 10px;
 
   &::after {
-    transition: all .3s ease 0s;
+    transition: all 0.3s ease 0s;
     content: '';
     position: absolute;
-    background: url("../../../../shared/assets/icons/DownArrow.svg") 0 0 / cover no-repeat;
+    background: url('../../../../shared/assets/icons/DownArrow.svg') 0 0 / cover no-repeat;
     width: 23px;
     height: 11px;
     bottom: 0;
@@ -169,4 +166,8 @@
       transform: rotate(180deg);
     }
   }
+}
+
+.collapse {
+  width: 100%;
 }

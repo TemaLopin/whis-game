@@ -6,7 +6,7 @@ import { useMemo } from 'react'
 
 const GetSource = () => {
   const { data } = useSoursCount()
-  const { amount } = data
+  const { amount = 0 } = data
 
   const stringCount = useMemo(() => amount.toLocaleString('ru-RU'), [amount])
 

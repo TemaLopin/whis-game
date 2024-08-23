@@ -9,7 +9,7 @@ const Characteristics = () => {
   const data = pathname === '/game/last-selects' ? lastCharacteristics : characteristics
   return (
     <BottomWrapper>
-      <div className={s.body}>
+      <div data-animch={10} className={s.body}>
         {data.map((item, ind, arr) => {
           return <SelectCharacteristic item={item} key={ind} />
         })}
