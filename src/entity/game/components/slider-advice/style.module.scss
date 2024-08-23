@@ -30,6 +30,13 @@
   border-radius: 20px;
   background: url('../../../../shared/assets/images/advice/bg-slide-dog.png') 0 0 / 100% no-repeat;
   margin-top: 50px;
+
+}
+
+.slide_cat {
+
+  background: url("../../../../shared/assets/images/advice/bg-slide-cat.png") 0 0 / 100% no-repeat;
+
 }
 
 .block_image {
@@ -42,6 +49,13 @@
 .wrapper {
   padding: 37px 13px 17px 13px;
   opacity: 0;
+  min-height: 401px;
+  display: flex;
+  flex-direction: column;
+
+  div:last-child {
+    margin-top: auto;
+  }
 }
 
 .btn_wrapper {

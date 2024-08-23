@@ -2,8 +2,8 @@
   position: relative;
   background: url("../../../../shared/assets/icons/game-botto-bg.svg") 0 0 /  cover no-repeat;
   width: 171.6%;
-  height: 100%;
 
+  margin-top: auto;
   @media (max-width: 768px){
     width: 161%;
     background: url("../../../../shared/assets/icons/game-botto-bg_m.svg") 0 0 /  cover no-repeat;

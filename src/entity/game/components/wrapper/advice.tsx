@@ -9,7 +9,7 @@ const AdviceWrapper = ({children}: { children: ReactNode }) => {
     const {search} = useLocation();
 
     return <div className={clsx('background', s.wrapper, search === '?animal=cat' ? s.wrapper_cat : s.wrapper_dog )}
-                style={{minHeight: height}}>
+                style={{height:  height > 800 ? '100vh' : `100%`}}>
         {children}
     </div>
 }

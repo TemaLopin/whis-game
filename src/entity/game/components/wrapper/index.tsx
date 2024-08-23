@@ -9,7 +9,7 @@ const GameWrapper = ({children}: { children: ReactNode }) => {
     const {pathname} = useLocation();
     return <div className={clsx('background', s.wrapper,(pathname === '/game/go'  || pathname === '/game/last-selects' ||
         (pathname === '/game/advice'  && isMobile))  && s.wrapper_game)}
-    style={{minHeight: height}}>
+    style={{height:  height > 800 ? '100vh' : `100%`}}>
         {children}
     </div>
 }

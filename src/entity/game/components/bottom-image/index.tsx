@@ -3,7 +3,7 @@ import {Image} from "react-bootstrap";
 import mobileImage from "../../../../shared/assets/images/404-bottom.png";
 const BottomImage = () => {
     return (
-        <div className={s.block_ima}>
+        <div className={s.block_image}>
             <Image src={mobileImage}/>
         </div>
     )

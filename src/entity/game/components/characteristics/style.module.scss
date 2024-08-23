@@ -14,4 +14,10 @@
   @media (max-width: 380px){
     gap: 6px 0px;
   }
+
+  button svg{
+    filter: drop-shadow(0px 0px 10px rgba(176, 34, 198, 1));
+    stroke: rgb(167, 38, 142);
+    stroke-width: 3px;
+  }
 }

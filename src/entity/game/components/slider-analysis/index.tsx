@@ -13,7 +13,7 @@ const SliderAnalysis = ({ items }: any) => {
       effect={'coverflow'}
       grabCursor={true}
       autoplay={{
-        delay: 3000,
+        delay: 200,
         reverseDirection: true,
       }}
       loop={true}

@@ -1,6 +1,6 @@
 const SelectLoveIcon = () => {
   return (
-    <svg viewBox='0 0 177 124' fill='none' xmlnsSvg='http://www.w3.org/2000/svg'>
+    <svg viewBox='15 10 152 109' fill='none' xmlnsSvg='http://www.w3.org/2000/svg'>
       <defs>
         <filter
           id='filter_883_89_dd'
