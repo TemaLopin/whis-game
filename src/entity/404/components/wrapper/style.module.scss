@@ -5,6 +5,9 @@ $--echo-2: url('../../../../shared/assets/images/echo/yellow-echo-2.png');
   position: relative;
   overflow: hidden;
   height: 100vh;
+  @media (max-width: 1024px){
+    overflow-y: auto;
+  }
 
   &::after {
     content: '';

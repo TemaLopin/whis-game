@@ -21,12 +21,12 @@ export const characteristics = [
   { title: 'ПРЕДПОЧИТАЮ УЕДИНЕНИЕ', category: 2 },
   { title: 'ОБЩАЮСЬ В МЕРУ', category: 2 },
   { title: 'ЛЮБЛЮ ОБЩЕНИЕ', category: 2 },
-  { title: 'ДУМАЮ НЕ СПЕША', category: 3 },
-  { title: 'Вникаю в своём темпе', category: 3 },
-  { title: 'схватываю НА ЛЕТУ', category: 3 },
-  { title: 'Сдерживаю эмоции', category: 4 },
-  { title: 'Действую по настроению', category: 4 },
-  { title: 'Даю волю чувствам', category: 4 },
+  { title: 'Спокойный', category: 3 },
+  { title: 'Адаптивный', category: 3 },
+  { title: 'Экспрессивный', category: 3 },
+  { title: 'ценю привычное', category: 4 },
+  { title: 'интересуюсь новым', category: 4 },
+  { title: 'радуюсь открытиям', category: 4 },
 ]
 
 export const lastCharacteristics = [

@@ -1,9 +1,7 @@
 .swiper {
   max-width: 330px;
-
-  &::before {
-  }
-
+  width: 100%;
+  overflow: hidden;
   img {
     max-width: 100%;
     object-fit: cover;
@@ -11,7 +9,7 @@
 
   svg {
     width: calc(100% + 22px);
-    margin-left: -11px;
+    //margin-left: -11px;
   }
 }
 
@@ -25,18 +23,17 @@
 }
 
 .slide {
+  display: flex;
   position: relative;
-  max-width: 282px;
+  width: 282px;
   border-radius: 20px;
   background: url('../../../../shared/assets/images/advice/bg-slide-dog.png') 0 0 / 100% no-repeat;
   margin-top: 50px;
-
+  height: 400px;
 }
 
 .slide_cat {
-
   background: url("../../../../shared/assets/images/advice/bg-slide-cat.png") 0 0 / 100% no-repeat;
-
 }
 
 .block_image {
@@ -49,10 +46,9 @@
 .wrapper {
   padding: 37px 13px 17px 13px;
   opacity: 0;
-  min-height: 401px;
   display: flex;
   flex-direction: column;
-
+  height: 100%;
   div:last-child {
     margin-top: auto;
   }
@@ -64,10 +60,16 @@
   justify-content: center;
   gap: 30px;
   margin-top: 18px;
-
+  margin-left: -4px;
   .btn_arrow {
-    width: 31px;
-    height: 35px;
+    padding: 0;
+
+    svg{
+      width: 31px;
+      height: 35px;
+      margin-left: 0;
+    }
+
 
     &:last-child {
       transform: rotate(180deg);

@@ -1,5 +1,5 @@
 import s from './style.module.scss'
-import {ReactNode, useEffect, useState} from "react";
+import {ReactNode} from "react";
 import clsx from "clsx";
 import useWindowDimensions from "../../../../shared/hooks/useWindowDimensions";
 import {useLocation} from "react-router-dom";

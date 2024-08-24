@@ -1,4 +1,4 @@
-import {EffectCoverflow, Navigation} from 'swiper/modules'
+import {Autoplay, EffectCoverflow, Navigation} from 'swiper/modules'
 import React, {useRef} from 'react'
 import {Swiper, SwiperSlide} from 'swiper/react'
 import {Image} from 'react-bootstrap'
@@ -32,17 +32,22 @@ const SliderAdvice = ({items, width, search}: any) => {
             effect={'coverflow'}
             grabCursor={true}
             loop={true}
+            autoplay={{
+                delay: 3000,
+                disableOnInteraction: false,
+            }}
             centeredSlides={true}
             slidesPerView={'auto'}
             coverflowEffect={{
                 rotate: 0,
                 stretch: 205,
-                depth: 400,
+                depth: 390,
                 modifier: 1,
                 slideShadows: false,
             }}
-            modules={[EffectCoverflow, Navigation]}
+            modules={[EffectCoverflow, Navigation, Autoplay]}
             className={s.swiper}
+
         >
             {items.map(({title, image}: any, ind: number) => {
                 return (

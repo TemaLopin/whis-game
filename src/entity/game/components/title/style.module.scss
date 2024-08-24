@@ -1,23 +1,33 @@
+.title_block{
+  margin-bottom: 30px;
+}
 .block_image {
   display: flex;
   justify-content: center;
   align-items: center;
-
-  height: 166px;
-  width: 254px;
-
+  width: 348px;
+  height: 208px;
   position: relative;
+  background: url('../../../../shared/assets/icons/love.svg') 0 0 / 100% no-repeat;
 
-  background: url('../../../../shared/assets/icons/love.svg') center no-repeat;
-  background-size: contain;
+  @media (max-width: 768px) {
+    height: 166px;
+    width: 281px;
+  }
+
 }
 
 .title {
   color: rgb(167, 38, 142);
-  font-size: 19px;
+  font-size: 24px;
+  margin-bottom: 0;
   font-weight: 800;
   line-height: 1.2;
   text-align: center;
   text-transform: uppercase;
-  max-width: 227px;
+  max-width: 274px;
+  @media (max-width: 768px) {
+    font-size: 19px;
+    max-width: 227px;
+  }
 }

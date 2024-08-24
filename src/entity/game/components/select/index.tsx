@@ -66,7 +66,7 @@ const SelectCharacteristic = ({ bg = '#fff', selectAsk = false, item }: any) => 
             </div>
           )}
           {checkAnswer ? <SelectLove /> : <LoveIcon color={bg} />}
-          <p className={bg !== '#fff' ? s.title : s.title_ask}>{item?.title}</p>
+          <p className={clsx(bg !== '#fff' ? s.title : s.title_ask, item?.title === '?' && s.title_x)}>{item?.title}</p>
         </button>
       )}
     </>

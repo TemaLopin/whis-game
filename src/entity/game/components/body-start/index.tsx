@@ -24,11 +24,9 @@ const BodyStart = () => {
             <Image src={whisImage}/>
         </div>}
         <BodyInfoStart>
-            <DynamicEcho type='heart'>
-                <TitleGame title={"найдите ПОХОЖЕГО по характеру ПИТОМЦА"}/>
-            </DynamicEcho>
+            <TitleGame title={"найдите ПОХОЖЕГО по характеру ПИТОМЦА"}/>
             <DescriptionGame items={width > 768 ? descItemDesktop : descItem}/>
-            <ButtonStart title="Вперёд" link='/game/go'/>
+            <ButtonStart title={width < 768 ? "Вперёд" : "Далее"} link='/game/go'/>
             {width < 1024 && <BottomImage/>}
         </BodyInfoStart>
         {width > 1024 && <div className={s.block_image}>

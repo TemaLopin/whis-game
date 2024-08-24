@@ -1,5 +1,5 @@
 const LoveIcon = ({color}) => {
-    return <svg viewBox="0 0 152.685 100"
+    return <svg viewBox="0 -2 152.685 100"
                 fill="none"
                 xmlnsSvg="http://www.w3.org/2000/svg">
 

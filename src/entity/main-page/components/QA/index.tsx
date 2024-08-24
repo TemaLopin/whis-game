@@ -52,7 +52,7 @@ const QuestionAnswer = () => {
               onClick={() => handleSelect(id)}
             >
               <p className={s.title}>{question}</p>
-              <p className={s.plus}>+</p>
+              <p className={s.plus}>{openId === id ? '-' : '+'}</p>
             </div>
             <Collapse className={s.collapse} in={openId === id}>
               <div id={`q_a-${id}`}>

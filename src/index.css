@@ -207,9 +207,9 @@ button {
     font-size: 14px;
 }
 
-.past-pet p span {
-    font-size: 20px;
-}
+/*.past-pet p span {*/
+/*    font-size: 20px;*/
+/*}*/
 
 .game-wrapper div {
     display: flex;
@@ -236,6 +236,7 @@ button {
 
 .wrapper-result-analysis .swiper-slide img {
     opacity: 0.6 !important;
+    padding: 3px;
 }
 
 .wrapper-result-analysis div:last-child > a {
@@ -318,7 +319,7 @@ button {
 }
 
 .past-pet-img {
-    margin-top: -50px;
+    margin-top: -19%;
 }
 
 .past-pet-img img {
@@ -328,19 +329,22 @@ button {
 }
 
 .slider-advice {
-    margin-left: 16px;
+    margin-left: 4px;
 }
+
 
 .advice-right {
     position: absolute;
     right: 0;
     top: 40px;
+    margin-top: 0;
 }
 
 .advice-left {
     position: absolute;
     left: 0;
     top: 40px;
+    margin-top: 0;
 }
 
 .slider-advice .swiper-slide-active > div {
@@ -398,6 +402,19 @@ button {
     .past-pet-img:last-child {
         padding-right: 60px;
     }
+}
+
+@media (min-width: 768px) {
+    .past-pet{
+        margin-top: -10px;
+    }
+    .past-pet-img:first-child {
+        padding-left: 16px;
+    }
+
+ .wrapper-result-analysis{
+     margin-top: 83px;
+ }
 }
 
 @media (max-width: 1240px) {
