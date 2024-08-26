@@ -115,7 +115,6 @@
   }
 
   & ~ .select_item_toggle {
-    transition: all .1s ease 0s;
     animation: topChange 500ms linear;
     opacity: 1;
   }
