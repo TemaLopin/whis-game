@@ -8,7 +8,9 @@ import AnswerIcon from './answer-icon'
 import RemoveIcon from './remove-icon'
 
 const SelectCharacteristic = ({ bg = '#fff', selectAsk = false, item }: any) => {
-  const { answer, setAnswer, setSelects, categorySelect, setCategorySelect }: any = useContext(GameContext)
+  const { answer, setAnswer, selects, setSelects, categorySelect, setCategorySelect }: any = useContext(GameContext)
+  console.log('🚀  !@#$ ~ SelectCharacteristic ~ categorySelect:', categorySelect)
+  console.log('🚀  !@#$ ~ SelectCharacteristic ~ selects:', selects)
 
   const selectCharacteristicHandler = () => {
     setSelects((prev: any) =>
@@ -66,7 +68,12 @@ const SelectCharacteristic = ({ bg = '#fff', selectAsk = false, item }: any) => 
             </div>
           )}
           {checkAnswer ? <SelectLove /> : <LoveIcon color={bg} />}
-          <p className={clsx(bg !== '#fff' ? s.title : s.title_ask, item?.title === '?' && s.title_x)}>{item?.title}</p>
+          <p
+            style={{ animationDelay: `${Math.random() * 1000}ms` }}
+            className={clsx(bg !== '#fff' ? s.title : s.title_ask, item?.title === '?' && s.title_x)}
+          >
+            {item?.title}
+          </p>
         </button>
       )}
     </>

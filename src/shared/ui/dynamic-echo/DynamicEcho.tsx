@@ -8,7 +8,7 @@ const DynamicEcho = ({
   className,
 }: {
   type?: 'echo' | 'square' | 'circle' | 'button' | 'heart' | 'small_heart'
-  color?: 'yellow' | 'purple' | 'white'
+  color?: 'orange' | 'purple' | 'white'
   className?: string
   children: JSX.Element
 }) => {
@@ -20,7 +20,7 @@ const DynamicEcho = ({
       [s.button]: type === 'button',
       [s.heart]: type === 'heart',
       [s.small_heart]: type === 'small_heart',
-      [s.yellow_color]: color === 'yellow',
+      [s.orange_color]: color === 'orange',
       [s.purple_color]: color === 'purple',
       [s.white_color]: color === 'white',
     },

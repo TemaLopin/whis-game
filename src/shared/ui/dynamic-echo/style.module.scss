@@ -163,10 +163,19 @@ $--rainbow-heart: url('../../assets/images/rainbow-heart.png');
   box-shadow: inset 0px 0px 5px 1px var(--purple-color);
 }
 
-.yellow_color::after,
-.yellow_color::before {
+.button.purple_color::after {
+  border-color: #ff51ff;
+  box-shadow: inset 0px 0px 5px 1px #ff51ff;
+}
+
+.orange_color::after,
+.orange_color::before {
   border-color: var(--orange-color);
   box-shadow: inset 0px 0px 5px 1px var(--orange-color);
+}
+
+.button.orange_color::after {
+  // box-shadow: inset 0px 0px 5px 1px $-pulse-color;
 }
 
 .white_color::after,
