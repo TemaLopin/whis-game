@@ -106,11 +106,21 @@
 }
 
 .select_answer {
-  height: 65px;
+  display: none;
+  height: 0px;
   margin-bottom: 12px;
-
+  transition: height .3s ease 0s;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
   svg {
     padding-bottom: 12px;
+  }
+
+  & ~ .select_item_toggle {
+    transition: all .1s ease 0s;
+    animation: topChange 1s lineтar;
+    opacity: 1;
   }
 }
 
@@ -150,5 +160,14 @@
   }
   50% {
     opacity: 0;
+  }
+}
+
+@keyframes topChange {
+  0% {
+    margin-top: 80px;
+  }
+  100% {
+    margin-top: 0px;
   }
 }

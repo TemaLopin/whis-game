@@ -2,15 +2,12 @@
   max-width: 330px;
   width: 100%;
   overflow: hidden;
+
   img {
     max-width: 100%;
     object-fit: cover;
   }
 
-  svg {
-    width: calc(100% + 22px);
-    //margin-left: -11px;
-  }
 }
 
 .slide_text {
@@ -20,6 +17,10 @@
   line-height: 1.2;
   text-align: center;
   text-transform: uppercase;
+  & + svg {
+    width: calc(100% + 26px);
+    margin-left: -13px;
+  }
 }
 
 .slide {
@@ -27,13 +28,30 @@
   position: relative;
   width: 282px;
   border-radius: 20px;
-  background: url('../../../../shared/assets/images/advice/bg-slide-dog.png') 0 0 / 100% no-repeat;
   margin-top: 50px;
   height: 400px;
+  background-color: #FBB311;
+  padding: 3px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    border: 3px solid transparent;
+    background: linear-gradient(to right, #FF51FF, rgb(255, 255, 255) 50.5%, #FFFF22 100%) border-box;
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+
+  //@media (max-width: 520px) {
+  //  height: 43vh;
+  //}
 }
 
 .slide_cat {
-  background: url("../../../../shared/assets/images/advice/bg-slide-cat.png") 0 0 / 100% no-repeat;
+  background-color: #A7268E;
 }
 
 .block_image {
@@ -49,6 +67,7 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+
   div:last-child {
     margin-top: auto;
   }
@@ -61,10 +80,11 @@
   gap: 30px;
   margin-top: 18px;
   margin-left: -4px;
+
   .btn_arrow {
     padding: 0;
 
-    svg{
+    svg {
       width: 31px;
       height: 35px;
       margin-left: 0;

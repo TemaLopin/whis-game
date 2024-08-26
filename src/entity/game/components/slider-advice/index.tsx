@@ -32,10 +32,10 @@ const SliderAdvice = ({items, width, search}: any) => {
             effect={'coverflow'}
             grabCursor={true}
             loop={true}
-            autoplay={{
-                delay: 3000,
-                disableOnInteraction: false,
-            }}
+            // autoplay={{
+            //     delay: 3000,
+            //     disableOnInteraction: false,
+            // }}
             centeredSlides={true}
             slidesPerView={'auto'}
             coverflowEffect={{
