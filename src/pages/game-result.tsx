@@ -6,7 +6,7 @@ import SupportText from '../entity/result-game/support-text'
 import clsx from 'clsx'
 
 const ResultGame = () => {
-  const isDog = false
+  const isDog = true
 
   const tags = [
     'Люблю полежать',
