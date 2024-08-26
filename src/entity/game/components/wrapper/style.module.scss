@@ -12,6 +12,7 @@ $--echo-6: url('../../../../shared/assets/images/echo/yellow-echo-3.png');
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  height: 100vh;
   &::after {
     content: '';
     position: absolute;

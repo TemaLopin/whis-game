@@ -13,13 +13,14 @@
   @media (max-width: 520px) {
     margin-bottom: 8px;
     gap: 0 35px;
+    margin-top: 8px;
   }
 
   button {
-    width: 152px;
-
+    width: 151px;
+    height: 97px;
     @media (max-width: 768px) {
-      width: 138px;
+      height: 103px;
     }
   }
 

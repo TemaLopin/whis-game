@@ -2,9 +2,10 @@
   position: relative;
   background: url('../../../../shared/assets/icons/game-botto-bg.svg') 0 0 / cover no-repeat;
   width: 171.6%;
-  min-height: 400px;
-  // !@#$ CHECK NA ADECVATNOST
   margin-top: auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
   @media (max-width: 768px) {
     width: 161%;
     background: url('../../../../shared/assets/icons/game-botto-bg_m.svg') 0 0 / cover no-repeat;
@@ -12,5 +13,8 @@
 
   @media (max-width: 420px) {
     width: 186%;
+  }
+  @media (min-width: 1920px) and (max-width: 1921px){
+    margin-left: 17px;
   }
 }

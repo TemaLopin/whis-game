@@ -20,16 +20,16 @@ const BodyStart = () => {
     ]
     const {width} = useWindowDimensions();
     return <div className={s.body}>
-        {width > 1024 && <div className={s.block_image}>
+        {width > 1025 && <div className={s.block_image}>
             <Image src={whisImage}/>
         </div>}
         <BodyInfoStart>
             <TitleGame title={"найдите ПОХОЖЕГО по характеру ПИТОМЦА"}/>
             <DescriptionGame items={width > 768 ? descItemDesktop : descItem}/>
             <ButtonStart title={width < 768 ? "Вперёд" : "Далее"} link='/game/go'/>
-            {width < 1024 && <BottomImage/>}
+            {width < 1025 && <BottomImage/>}
         </BodyInfoStart>
-        {width > 1024 && <div className={s.block_image}>
+        {width > 1025 && <div className={s.block_image}>
             <Image src={pedigreeImage}/>
         </div>}
     </div>
