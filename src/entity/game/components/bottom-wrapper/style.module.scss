@@ -1,16 +1,16 @@
-.bg{
+.bg {
   position: relative;
-  background: url("../../../../shared/assets/icons/game-botto-bg.svg") 0 0 /  cover no-repeat;
+  background: url('../../../../shared/assets/icons/game-botto-bg.svg') 0 0 / cover no-repeat;
   width: 171.6%;
-
+  min-height: 400px;
+  // !@#$ CHECK NA ADECVATNOST
   margin-top: auto;
-  @media (max-width: 768px){
+  @media (max-width: 768px) {
     width: 161%;
-    background: url("../../../../shared/assets/icons/game-botto-bg_m.svg") 0 0 /  cover no-repeat;
+    background: url('../../../../shared/assets/icons/game-botto-bg_m.svg') 0 0 / cover no-repeat;
   }
 
-  @media (max-width: 420px){
+  @media (max-width: 420px) {
     width: 186%;
   }
-
 }

@@ -87,11 +87,11 @@ $--rainbow-heart: url('../../assets/images/rainbow-heart.png');
 
 @keyframes heart {
   0% {
-    transform: scale(0.4, 0.38) translateY(-30px);
+    transform: scale(0.55, 0.50) translateY(-30px);
   }
 
   100% {
-    transform: scale(0.6, 0.58) translateY(-30px);
+    transform: scale(0.70, 0.70) translateY(-30px);
   }
 }
 
@@ -120,6 +120,8 @@ $--rainbow-heart: url('../../assets/images/rainbow-heart.png');
   align-items: center;
   display: flex;
 
+  // opacity: 1;
+  //  transform: scale(0.55, 0.55) translateY(-30px);
   animation-name: pulse, heart;
 }
 
@@ -163,8 +165,13 @@ $--rainbow-heart: url('../../assets/images/rainbow-heart.png');
   box-shadow: inset 0px 0px 5px 1px var(--purple-color);
 }
 
-.yellow_color::after,
-.yellow_color::before {
+.button.purple_color::after {
+  border-color: #ff51ff;
+  box-shadow: inset 0px 0px 5px 1px #ff51ff;
+}
+
+.orange_color::after,
+.orange_color::before {
   border-color: var(--orange-color);
   box-shadow: inset 0px 0px 5px 1px var(--orange-color);
 }

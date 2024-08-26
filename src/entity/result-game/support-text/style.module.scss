@@ -8,20 +8,19 @@ $--dark-purple-color: #62196d;
   align-items: center;
   justify-content: space-between;
 
-  padding: 50px 50px;
-
   color: $--dark-purple-color;
-
+  border-right: 1px solid #0004;
   width: 50%;
 
   @media (max-width: 1024px) {
     width: 100%;
     padding: 10px;
+    border-right: none;
   }
 }
 
 .title {
-  font-size: 26px;
+  font-size: 24px;
   font-weight: 800;
   line-height: 33.8px;
 

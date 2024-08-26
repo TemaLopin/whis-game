@@ -7,8 +7,8 @@ import clsx from 'clsx'
 import AnswerIcon from './answer-icon'
 import RemoveIcon from './remove-icon'
 
-const SelectCharacteristic = ({bg = '#fff', selectAsk = false, item}: any) => {
-    const {answer, setAnswer, setSelects, categorySelect, setCategorySelect}: any = useContext(GameContext)
+const SelectCharacteristic = ({ bg = '#fff', selectAsk = false, item }: any) => {
+  const { answer, setAnswer, setSelects, categorySelect, setCategorySelect }: any = useContext(GameContext)
 
     const selectCharacteristicHandler = () => {
         setSelects((prev: any) =>
@@ -56,21 +56,26 @@ const SelectCharacteristic = ({bg = '#fff', selectAsk = false, item}: any) => {
 
                         !selectAsk && item?.category === categorySelect && s.select_item_toggle,
 
-                        checkAnswer && s.select_item_active
-                    )}
-                    onClick={!selectAsk ? selectCharacteristicHandler : undefined}
-                >
-                    {checkAnswer && (
-                        <div className={s.remove_item} onClick={removeSelectHandler}>
-                            <RemoveIcon/>
-                        </div>
-                    )}
-                    {checkAnswer ? <SelectLove/> : <LoveIcon color={bg}/>}
-                    <p className={clsx(bg !== '#fff' ? s.title : s.title_ask, item?.title === '?' && s.title_x)}>{item?.title}</p>
-                </button>
-            )}
-        </>
-    )
+            checkAnswer && s.select_item_active
+          )}
+          onClick={!selectAsk ? selectCharacteristicHandler : undefined}
+        >
+          {checkAnswer && (
+            <div className={s.remove_item} onClick={removeSelectHandler}>
+              <RemoveIcon />
+            </div>
+          )}
+          {checkAnswer ? <SelectLove /> : <LoveIcon color={bg} />}
+          <p
+            style={{ animationDelay: `${Math.random() * 1000}ms` }}
+            className={clsx(bg !== '#fff' ? s.title : s.title_ask, item?.title === '?' && s.title_x)}
+          >
+            {item?.title}
+          </p>
+        </button>
+      )}
+    </>
+  )
 }
 
 export default SelectCharacteristic

@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 import s from './style.module.scss'
-
+import { ReactComponent as Heart } from '../../../shared/assets/icons/heart.svg'
 // import img from '../../../entity/result-game/pet/index.tsx'
 import Asya from '../../../shared/assets/images/pets/Ася.jpg'
 import Bruno from '../../../shared/assets/images/pets/Бруно.jpg'
@@ -99,9 +99,9 @@ const PetSlider = () => {
   // }
 
   return (
-    <div style={{position: 'relative'}}>
+    <div style={{ position: 'relative' }}>
       <div className={s.quantity}>
-        <SelectLoveIcon />
+        <Heart />
         <p>Эшли</p>
       </div>
       <Swiper
