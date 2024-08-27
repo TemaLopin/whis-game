@@ -35,7 +35,7 @@ const SelectCharacteristic = ({ bg = '#fff', selectAsk = false, item }: any) => 
 
     const onPawSelect = () => {
       setIsVisible(false)
-    //   setTimeout(handleSelectAnswer, 0)
+      setTimeout(handleSelectAnswer, 0)
     }
 
     setTimeout(onPawSelect, 2000)

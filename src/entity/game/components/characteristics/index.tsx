@@ -9,36 +9,36 @@ import paw from '../../../../shared/assets/images/paw.png'
 import clsx from 'clsx'
 
 const Characteristics = () => {
-  const root = document.getElementById('root-game')
-
   const [height, setHeight] = useState(0)
   const [firstRender, setFirstRender] = useState(true)
 
+  const root = document.getElementById('root-game')
   const ref = useRef<HTMLDivElement>(null)
+
+  const { isVisible, position }: any = useContext(GameContext)
+  const { clientWidth = 0 } = root || {}
+  const isLeftSidePaw = clientWidth / 2 > position.x
 
   const { pathname } = useLocation()
   const data = pathname === '/game/last-selects' ? lastCharacteristics : characteristics
-  const { isVisible, position }: any = useContext(GameContext)
 
   const getPosition = () => {
-    const { clientWidth = 0 } = root || {}
-
     const paddingTop = clientWidth < 768 ? 30 : 25
 
     const prefMargin = 30
 
     const scrollY = -height - paddingTop
-    const scrollX = clientWidth / 2 + position.x + prefMargin
 
-    const isLeftSide = clientWidth / 2 > position.x
+    const fromLeft = clientWidth / 2 + position.x + prefMargin
+    const fromRight = -clientWidth / 2 - (clientWidth - position.x) - prefMargin
+    const scrollX = isLeftSidePaw ? fromLeft : fromRight
 
-    const deg = '30deg'
-    const rotate = `rotate(${deg})`
+    const deg = isLeftSidePaw ? 30 : -30
 
     const x = `${isVisible ? scrollX : 0}px`
     const y = `${isVisible ? scrollY : -100}px`
 
-    return `translate(${x}, ${y}) ${rotate}`
+    return `translate(${x}, ${y}) rotate(${deg}deg)`
   }
 
   useEffect(() => {
@@ -56,7 +56,11 @@ const Characteristics = () => {
             <SelectCharacteristic item={item} key={ind} />
           ))}
         </div>
-        <Image src={paw} className={clsx(s.paw)} style={{ transform: getPosition() }} />
+        <Image
+          src={paw}
+          className={clsx(s.paw)}
+          style={{ transform: getPosition(), [isLeftSidePaw ? 'left' : 'right']: '-175px' }}
+        />
       </div>
     </BottomWrapper>
   )
