@@ -3,7 +3,7 @@ import closeIcon from '../../../../shared/assets/icons/close.svg'
 import { Image } from 'react-bootstrap'
 
 import InputMask from 'react-input-mask'
-import { useState } from 'react'
+import { Dispatch, SetStateAction, useState } from 'react'
 import useSendPhone from '../../../../shared/api/hooks/useSendPhone'
 
 type Value = {
@@ -12,7 +12,7 @@ type Value = {
   has18: boolean
 }
 
-const Modal = ({ setIsOpen }: any) => {
+const Modal = ({ setIsOpen }: { setIsOpen: Dispatch<SetStateAction<boolean>> }) => {
   const { mutate: sendPhone } = useSendPhone()
   const [value, setValue] = useState<Value>({
     phoneNumber: '',
@@ -52,15 +52,7 @@ const Modal = ({ setIsOpen }: any) => {
           </p>
           <InputMask
             value={value?.phoneNumber}
-            onChange={({ target }) => {
-              handleChange({ phoneNumber: String(target.value) })
-              console.log('!@#$ target', { target })
-            }}
-            // beforeMaskedStateChange={({ previousState, nextState }) => {
-            //   console.log('!@#$ state', previousState)
-            //   return {}
-            // }}
-            // onChange={({ target: { value } }) => }
+            onChange={({ target }) => handleChange({ phoneNumber: String(target.value) })}
             mask='+7 (999) 999-99-99'
             type='text'
             placeholder='Введите номер'

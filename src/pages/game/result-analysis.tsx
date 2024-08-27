@@ -1,16 +1,15 @@
-import Header from '../entity/main-page/components/header'
-import BodyAdvice from '../entity/game/components/body-advice'
-import DescriptionGame from '../entity/game/components/description'
-import GameWrapper from '../entity/game/components/wrapper'
-import catRes from '../shared/assets/images/cat-res.jpeg'
-import dogRes from '../shared/assets/images/dog-res.jpeg'
-import ashlyDog from '../shared/assets/images/ashly.jpeg'
-import SliderResultAnalysis from '../entity/game/components/slider-result-analysis'
-import DynamicEcho from '../shared/ui/dynamic-echo/DynamicEcho'
-import { Link, useNavigate } from 'react-router-dom'
-import useWindowDimensions from '../shared/hooks/useWindowDimensions'
-import TitleGame from '../entity/game/components/title'
-import GameAnalysisWrapper from '../entity/game/components/wrapper/analysis'
+import Header from '../../entity/main-page/components/header'
+import BodyAdvice from '../../entity/game/components/body-advice'
+import DescriptionGame from '../../entity/game/components/description'
+import catRes from '../../shared/assets/images/cat-res.jpeg'
+import dogRes from '../../shared/assets/images/dog-res.jpeg'
+import ashlyDog from '../../shared/assets/images/ashly.jpeg'
+import SliderResultAnalysis from '../../entity/game/components/slider-result-analysis'
+import DynamicEcho from '../../shared/ui/dynamic-echo/DynamicEcho'
+import { Link } from 'react-router-dom'
+import useWindowDimensions from '../../shared/hooks/useWindowDimensions'
+import TitleGame from '../../entity/game/components/title'
+import GameAnalysisWrapper from '../../entity/game/components/wrapper/analysis'
 import { useState } from 'react'
 
 const GameResultAnalysis = () => {
@@ -71,7 +70,7 @@ const GameResultAnalysis = () => {
               <TitleGame title={'ВАМ ПОДОШЛО НЕСКОЛЬКО ПИТОМЦЕВ'} />
             </DynamicEcho>
           )}
-          <DescriptionGame items={width > 660 ? descItem : descMobile} />
+          <DescriptionGame texts={width > 660 ? descItem : descMobile} />
           <SliderResultAnalysis items={slides} setIdSlide={setIdSlide} />
           <DynamicEcho type='button'>
             <Link to={`/game/result/${idSlide}`}>ПОЗНАКОМИТЬСЯ</Link>

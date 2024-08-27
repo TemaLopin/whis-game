@@ -1,19 +1,20 @@
 import { Route, Routes } from 'react-router-dom'
 import MainPage from './pages/main'
 import Error404 from './pages/404'
-import GameStart from './pages/game-start'
+import GameStart from './pages/game/start'
 import Game from './pages/game'
-import ResultGame from './pages/game-result'
-import GamePet from './pages/game-pet'
-import GameAdvice from './pages/game-advice'
+import ResultGame from './pages/game/result'
+import GamePet from './pages/game/pet'
+import GameAdvice from './pages/game/advice'
 
 import 'swiper/css'
 import 'swiper/css/effect-flip'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
-import GameAnalysis from './pages/game-analysis'
-import GameResultAnalysis from './pages/game-result-analysis'
-import { QueryClient, QueryClientProvider } from 'react-query'
+import GameAnalysis from './pages/game/analysis'
+import GameResultAnalysis from './pages/game/result-analysis'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+
 
 export const queryClient = new QueryClient({
   defaultOptions: {

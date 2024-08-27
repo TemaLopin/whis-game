@@ -2,14 +2,14 @@ import s from './style.module.scss'
 import { useLocation } from 'react-router-dom'
 import clsx from 'clsx'
 
-const DescriptionAnalyze = ({ items }: any) => {
+const DescriptionAnalyze = ({ texts }: { texts: string[] }) => {
   const { search } = useLocation()
   return (
     <p className={clsx(s.description, search === '?animal=cat' && s.description_cat)}>
-      {items.map((item: string, ind: number) => {
+      {texts.map((text, ind: number) => {
         return (
           <div key={ind}>
-            <span>{item}</span>
+            <span>{text}</span>
             <br />
           </div>
         )

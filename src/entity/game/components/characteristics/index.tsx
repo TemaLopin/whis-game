@@ -15,7 +15,7 @@ const Characteristics = () => {
   const root = document.getElementById('root-game')
   const ref = useRef<HTMLDivElement>(null)
 
-  const { isVisible, position }: any = useContext(GameContext)
+  const { isVisible, position } = useContext(GameContext)
   const { clientWidth = 0 } = root || {}
   const isLeftSidePaw = clientWidth / 2 > position.x
 

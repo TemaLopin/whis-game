@@ -6,10 +6,15 @@ import 'swiper/css'
 import 'swiper/css/effect-coverflow'
 import 'swiper/css/navigation'
 import ArrowIcon from '../slider-advice/arrow-icon'
-import React, { useRef } from 'react'
+import React, { FC, useRef } from 'react'
 import SelectLove from '../select/select-love'
 
-const SliderResultAnalysis = ({ items, setIdSlide }: any) => {
+type Props = {
+  items: { id: number; name: string; image: string; tags: string[] }[]
+  setIdSlide: React.Dispatch<React.SetStateAction<number>>
+}
+
+const SliderResultAnalysis: FC<Props> = ({ items, setIdSlide }) => {
   const swiperRef = useRef<any>(null)
   const goToNextSlide = () => {
     if (swiperRef.current && swiperRef.current.swiper) {
@@ -42,9 +47,9 @@ const SliderResultAnalysis = ({ items, setIdSlide }: any) => {
         modules={[EffectCoverflow, Navigation]}
         className={s.swiper}
       >
-        {items.map(({ image, name, tags, id }: any) => {
+        {items.map(({ image, name, tags, id }) => {
           return (
-            <SwiperSlide className={s.slide} key={id} id={id}>
+            <SwiperSlide className={s.slide} key={id} id={name}>
               <div className={s.block_image}>
                 <Image src={image} />
                 <div className={s.quantity}>
@@ -54,7 +59,7 @@ const SliderResultAnalysis = ({ items, setIdSlide }: any) => {
               </div>
 
               <div className={s.tags}>
-                {tags.map((tag: any, ind: number) => {
+                {tags.map((tag, ind) => {
                   return (
                     ind <= 2 && (
                       <div className={s.tag} key={ind}>

@@ -1,5 +1,5 @@
 import { Autoplay, EffectCoverflow, Navigation } from 'swiper/modules'
-import React, { useRef } from 'react'
+import React, { FC, useRef } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Image } from 'react-bootstrap'
 import s from './style.module.scss'
@@ -12,7 +12,13 @@ import SelectLove from '../select/select-love'
 import DynamicEcho from '../../../../shared/ui/dynamic-echo/DynamicEcho'
 import clsx from 'clsx'
 
-const SliderAdvice = ({ items, width, search }: any) => {
+type SliderAdviceProps = {
+  items: { title: string; image: string }[]
+  width: number
+  search?: string
+}
+
+const SliderAdvice: FC<SliderAdviceProps> = ({ items, width, search }) => {
   const swiperRef = useRef<any>(null)
   const goToNextSlide = () => {
     if (swiperRef.current && swiperRef.current.swiper) {
@@ -44,7 +50,7 @@ const SliderAdvice = ({ items, width, search }: any) => {
       modules={[EffectCoverflow, Navigation, Autoplay]}
       className={s.swiper}
     >
-      {items.map(({ title, image }: any, ind: number) => {
+      {items.map(({ title, image }, ind: number) => {
         return (
           <SwiperSlide className={clsx(s.slide, search === '?animal=cat' && s.slide_cat)} key={ind}>
             <div className={s.wrapper}>

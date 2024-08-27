@@ -1,8 +1,8 @@
-import { Header } from '../entity/main-page'
-import ShelterMap from '../entity/result-game/map'
-import PetSlider from '../entity/result-game/pet-slider'
-import PetDescription from '../entity/result-game/pet-description'
-import SupportText from '../entity/result-game/support-text'
+import { Header } from '../../entity/main-page'
+import ShelterMap from '../../entity/result-game/map'
+import PetSlider from '../../entity/result-game/pet-slider'
+import PetDescription from '../../entity/result-game/pet-description'
+import SupportText from '../../entity/result-game/support-text'
 import clsx from 'clsx'
 
 const ResultGame = () => {
@@ -26,7 +26,7 @@ const ResultGame = () => {
           <div className={'tags'}>
             {tags
               .sort((a, b) => a.length - b.length)
-              .map((tag: any, ind: number) => {
+              .map((tag, ind: number) => {
                 return (
                   <div className={'tag'} key={ind}>
                     {tag}

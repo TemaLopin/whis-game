@@ -6,8 +6,11 @@ import 'swiper/css'
 import 'swiper/css/effect-coverflow'
 import 'swiper/css/navigation'
 import ButtonStart from '../button-start'
+import { FC } from 'react'
 
-const SliderAnalysis = ({ items }: any) => {
+type SliderAnalysisProps = { items: { id: number; image: string; imageAlt: string }[] }
+
+const SliderAnalysis: FC<SliderAnalysisProps> = ({ items }) => {
   return (
     <Swiper
       effect={'coverflow'}
@@ -29,7 +32,8 @@ const SliderAnalysis = ({ items }: any) => {
         slideShadows: true,
       }}
       onSlideChange={(swiper: any) => {
-        let nextSlides: any = []
+        let nextSlides: any[] = []
+
         swiper.slides.map((item: any) => {
           if (item.classList.contains('swiper-slide-active')) {
             let sibling = item.nextElementSibling
@@ -41,7 +45,7 @@ const SliderAnalysis = ({ items }: any) => {
             item.style.opacity = '1'
           }
         })
-        nextSlides.map((item: any) => (item.style.opacity = '0'))
+        nextSlides.forEach((item) => (item.style.opacity = '0'))
       }}
       breakpoints={{
         520: {
@@ -57,13 +61,15 @@ const SliderAnalysis = ({ items }: any) => {
       modules={[Autoplay, EffectCoverflow, Navigation]}
       className={s.swiper}
     >
-      {items.map(({ image, imageAlt }: any, ind: number) => {
-        return ind < 16 && (
-          <SwiperSlide className={s.slide} key={ind}>
-            <div className={s.block_image}>
-              <Image src={image} alt={imageAlt} />
-            </div>
-          </SwiperSlide>
+      {items.map(({ image, imageAlt }, ind: number) => {
+        return (
+          ind < 16 && (
+            <SwiperSlide className={s.slide} key={ind}>
+              <div className={s.block_image}>
+                <Image src={image} alt={imageAlt} />
+              </div>
+            </SwiperSlide>
+          )
         )
       })}
       <ButtonStart />

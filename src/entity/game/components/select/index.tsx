@@ -1,6 +1,6 @@
 import s from './style.module.scss'
 import LoveIcon from './love-icon'
-import { useContext } from 'react'
+import { FC, useContext } from 'react'
 import { GameContext } from '../../../../pages/game'
 import SelectLove from './select-love'
 import clsx from 'clsx'
@@ -8,7 +8,13 @@ import AnswerIcon from './answer-icon'
 import RemoveIcon from './remove-icon'
 import { isVisible } from '@testing-library/user-event/dist/utils'
 
-const SelectCharacteristic = ({ bg = '#fff', selectAsk = false, item }: any) => {
+type SelectCharacteristicProps = {
+  bg?: string
+  selectAsk?: boolean
+  item: { title: string; category: number }
+}
+
+const SelectCharacteristic: FC<SelectCharacteristicProps> = ({ bg = '#fff', selectAsk = false, item }) => {
   const {
     answer,
     setAnswer,
@@ -18,7 +24,8 @@ const SelectCharacteristic = ({ bg = '#fff', selectAsk = false, item }: any) => 
     setPosition,
     setIsVisible,
     isVisible,
-  }: any = useContext(GameContext)
+    selects,
+  } = useContext(GameContext)
 
   const selectCharacteristicHandler = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     if (selectAsk || isVisible) return
@@ -31,14 +38,15 @@ const SelectCharacteristic = ({ bg = '#fff', selectAsk = false, item }: any) => 
     setIsVisible(true)
 
     document.body.style.overflowY = 'hidden'
+
     const handleSelectAnswer = () => {
-      setSelects((prev: any) =>
-        prev.map((sel: any, ind: number, arr: any) => {
-          const firstIndexAsk = arr.findIndex((sel: any) => sel.title == '?')
-          return ind === firstIndexAsk ? item : sel
-        })
-      )
-      setAnswer((prev: any) => [...prev, item])
+      const newSelects = selects.map((sel, ind: number, arr) => {
+        const firstIndexAsk = arr.findIndex(({ title }) => title == '?')
+        return ind === firstIndexAsk ? item : sel
+      })
+
+      setSelects(newSelects)
+      setAnswer((prev) => [...prev, item])
       document.body.style.overflowY = 'auto'
     }
 
@@ -53,16 +61,19 @@ const SelectCharacteristic = ({ bg = '#fff', selectAsk = false, item }: any) => 
   const removeSelectHandler = () => {
     if (isVisible) return
 
-    setSelects((prev: any) =>
-      prev.map((sel: any) => (sel.title === item?.title ? { title: '?', category: item?.category } : sel))
-    )
+    const newSelects = selects.map((sel) => {
+      return sel.title === item?.title ? { title: '?', category: item?.category } : sel
+    })
+    setSelects(newSelects)
 
-    setAnswer((prev: any) => prev.filter((ans: any) => ans.title !== item?.title))
+    const newAnswer = answer.filter((sel) => sel.category !== item?.category)
+    setAnswer(newAnswer)
+
     setCategorySelect(item?.category)
   }
 
   const checkAnswer = bg !== '#fff' && answer?.includes(item)
-  const isAnswer = answer.some(({ category }: any) => category === item?.category)
+  const isAnswer = answer.some(({ category }) => category === item?.category)
 
   return (
     <>

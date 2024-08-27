@@ -5,16 +5,16 @@ import { GameContext } from '../../../../pages/game'
 
 const SelectsBlock = () => {
   const [firstRender, setFirstRender] = useState(true)
-
-  const { selects }: any = useContext(GameContext)
+  const { selects } = useContext(GameContext)
 
   useEffect(() => {
-    setTimeout(() => setFirstRender(false), 2000)
+    const timer = setTimeout(() => setFirstRender(false), 2000)
+    return () => clearTimeout(timer)
   }, [])
 
   return (
     <div data-animch={firstRender ? '3' : '1'} className={s.wrapper}>
-      {selects.map((select: string, ind: number) => {
+      {selects.map((select, ind: number) => {
         return <SelectCharacteristic key={ind} item={select} bg='rgb(98, 25, 109)' selectAsk={true} />
       })}
     </div>
