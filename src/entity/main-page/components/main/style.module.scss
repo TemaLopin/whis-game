@@ -22,7 +22,7 @@
   display: grid;
   justify-items: center;
   justify-content: center;
-  align-items: end;
+  align-items: center;
 
   position: relative;
 
@@ -30,7 +30,7 @@
 
   box-sizing: border-box;
   grid-template-columns: 40% 20% 40%;
-
+  margin-top: -4%;
   @media (max-width: 1024px) {
     top: 0px;
   }
@@ -68,21 +68,42 @@
 
 .images_background {
   width: 100%;
-  min-height: 300px;
-
-  margin-top: 50px;
-
+  min-height: 492px;
+  margin-top: -35px;
   position: relative;
   z-index: 0;
-
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  @media (max-width: 1380px){
+    margin-top: 45px;
+  }
+  @media (max-width: 1024px){
+    margin-top: -35px;
+  }
+  @media (max-width: 768px) {
+    margin-top: 0;
+    min-height: 55vh;
+    margin-bottom: 32px;
+  }
 
   img {
-    width: 50%;
-    margin-top: -150px;
+
+    margin-top: -175px;
     padding-top: 30px;
+    object-fit: cover;
+    overflow: hidden;
+    @media (max-width: 520px) {
+      width: 50%;
+      height: 274px;
+      object-position: left;
+    }
+
+    &:last-child {
+      @media (max-width: 520px) {
+        object-position: right;
+      }
+    }
   }
 }
 
@@ -92,18 +113,23 @@
   position: absolute;
 
   width: 100%;
-  height: 100%;
+  height: 90%;
 
   background-image: var(--main-heart-with-text);
   background-repeat: no-repeat;
   background-position: center top;
-  background-size: 40%;
+  background-size: 518px;
 
+  @media (max-width: 1240px){
+    height: 100%;
+    background-size: 40%;
+  }
   @media (max-width: 1000px) {
     background-size: 50%;
   }
-  @media (max-width: 500px) {
-    background-size: 70%;
+  @media (max-width: 520px) {
+    background-size: 85%;
+
   }
 }
 
@@ -125,6 +151,9 @@
   background-color: #fff;
   @media (max-width: 768px) {
     padding: 9px 13px;
+  }
+  @media (max-width: 1300px) {
+    margin-bottom: 30px;
   }
 }
 
@@ -174,6 +203,10 @@
   line-height: var(--line-height-28-6);
 
   color: var(--white-color);
+
+  @media (max-width: 1300px) {
+    margin-bottom: 23px;
+  }
 }
 
 .learn_more {
@@ -190,6 +223,9 @@
   margin-bottom: 10px;
 
   position: relative;
+  @media (min-width: 1301px){
+    align-self: end;
+  }
 }
 
 .learn_more::after {
@@ -197,14 +233,13 @@
   font-size: var(--font-size-32);
   font-weight: 700;
   line-height: var(--line-height-19-8);
-
   color: var(--white-color);
-
   position: absolute;
-
   height: 9.5px;
-  width: 100%;
-
+  width: 19px;
+  left: 0;
+  right: 0;
+  margin: auto;
   bottom: 20px;
-  text-align: center;
+
 }

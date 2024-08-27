@@ -4,16 +4,47 @@ $--products: url('../../../../shared/assets/images/products.png');
 $--pets: url('../../../../shared/assets/images/pets-circle.png');
 $--robot: url('../../../../shared/assets/images/robot.png');
 $--chevron-bg-white: url('../../../../shared/assets/images/chevron-bg-white.png');
+$--echo-7: url('../../../../shared/assets/images/echo/purple-echo-1.png');
 
 .echo_bg {
+  position: relative;
   padding: 50px 0px;
 
   background-image: var(--yellow-echo-1);
   background-repeat: no-repeat;
   background-position: right bottom;
-  background-size: 30%, 300px;
+  background-position: right bottom -91px;
+  background-size: 268px;
+  @media (max-width: 1240px){
+    background-position: right bottom 110px;
+    background-size: 175px;
+  }
   @media (max-width: 620px) {
     padding-bottom: 20px;
+    background-position: right bottom 32px;
+    background-size: 135px;
+  }
+  @media (max-width: 520px){
+    background-position: right bottom 96px;
+    background-size: 119px;
+  }
+
+  &::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -140px;
+    top: 0;
+    background-image: $--echo-7;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    margin: auto;
+    width: 165px;
+    height: 420px;
+    @media (max-width: 996px){
+        content: none;
+    }
   }
 }
 
@@ -31,7 +62,7 @@ $--chevron-bg-white: url('../../../../shared/assets/images/chevron-bg-white.png'
 }
 
 .main_body {
-  padding: 40px 50px;
+  padding: 82px 95px 44px;
   border-radius: 40px;
 
   width: fit-content;
@@ -46,7 +77,9 @@ $--chevron-bg-white: url('../../../../shared/assets/images/chevron-bg-white.png'
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-
+  @media (max-width: 1240px){
+    padding: 72px 65px 44px;
+  }
   @media (max-width: 600px) {
     padding-top: 50px;
     padding: 30px;
@@ -61,11 +94,11 @@ $--chevron-bg-white: url('../../../../shared/assets/images/chevron-bg-white.png'
   width: 100%;
 
   position: absolute;
-  top: -160px;
+  top: -135px;
 
   img {
-    height: 200px;
-    width: 200px;
+    height: 207px;
+    width: 207px;
   }
 
   @media (max-width: 1300px) {
@@ -98,7 +131,7 @@ $--chevron-bg-white: url('../../../../shared/assets/images/chevron-bg-white.png'
   line-height: var(--line-height-52-8);
 
   z-index: 2;
-  margin: 0px;
+  margin: 0px 0 9px;
 }
 
 .main_text p {
@@ -205,7 +238,7 @@ $--chevron-bg-white: url('../../../../shared/assets/images/chevron-bg-white.png'
 .about_block > div {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+
   align-items: center;
 
   width: 45%;
@@ -213,8 +246,8 @@ $--chevron-bg-white: url('../../../../shared/assets/images/chevron-bg-white.png'
 
   position: relative;
 
-  padding: 50px 36px 10px 36px;
-
+  padding: 64px 36px 10px 36px;
+  height: 368px;
   margin-left: 10px;
   margin-right: 10px;
 
@@ -226,6 +259,9 @@ $--chevron-bg-white: url('../../../../shared/assets/images/chevron-bg-white.png'
   @media (max-width: 1000px) {
     padding: 10px 12px 10px 12px;
   }
+  @media (max-width: 768px){
+    min-height: 252px;
+  }
 }
 
 .about_block span {
@@ -235,7 +271,7 @@ $--chevron-bg-white: url('../../../../shared/assets/images/chevron-bg-white.png'
   line-height: var(--line-height-28-6);
 
   text-align: center;
-
+ max-width: 285px;
   color: $--gray-color;
 }
 
@@ -273,10 +309,17 @@ $--chevron-bg-white: url('../../../../shared/assets/images/chevron-bg-white.png'
   font-weight: 800;
   line-height: var(--line-height-34-2);
 
-  margin: 10px 0px;
+  margin: 0 0px 10px;
   text-transform: uppercase;
 
   color: var(--purple-color);
+
+  & + div{
+    margin-bottom: 21px;
+    & + div{
+      margin-bottom: 16px;
+    }
+  }
 }
 
 .ruble {
@@ -291,9 +334,6 @@ $--chevron-bg-white: url('../../../../shared/assets/images/chevron-bg-white.png'
 
   height: 70px;
   width: 70px;
-
-  margin: 10px 0px;
-
   background-color: var(--orange-color);
 
   @media (max-width: 600px) {
@@ -316,11 +356,12 @@ $--chevron-bg-white: url('../../../../shared/assets/images/chevron-bg-white.png'
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 23px;
 }
 
 .sber img {
-  height: 50px;
-  width: 170px;
+  height: 55px;
+  width: 192px;
 
   @media (max-width: 600px) {
     width: 103px;
