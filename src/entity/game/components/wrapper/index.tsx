@@ -7,7 +7,7 @@ import useWindowDimensions from "../../../../shared/hooks/useWindowDimensions";
 const GameWrapper = ({children}: { children: ReactNode }) => {
     const {isMobile, height} = useWindowDimensions()
     const {pathname} = useLocation();
-    return <div className={clsx('background', s.wrapper,(pathname === '/game/go'  || pathname === '/game/last-selects' ||
+    return <div id={'root-game'} className={clsx('background', s.wrapper,(pathname === '/game/go'  || pathname === '/game/last-selects' ||
         (pathname === '/game/advice'  && isMobile))  && s.wrapper_game)}
     style={{height:  height > 800 ? '100vh' : `100%`}}>
         {children}

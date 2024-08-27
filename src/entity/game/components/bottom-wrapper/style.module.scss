@@ -1,20 +1,24 @@
 .bg {
   position: relative;
-  background: url('../../../../shared/assets/icons/game-botto-bg.svg') 0 0 / cover no-repeat;
-  width: 171.6%;
+
+  background-color: #62196d;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+
+  width: 200%;
   margin-top: auto;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  @media (max-width: 768px) {
-    width: 161%;
-    background: url('../../../../shared/assets/icons/game-botto-bg_m.svg') 0 0 / cover no-repeat;
-  }
 
-  @media (max-width: 420px) {
-    width: 186%;
-  }
-  @media (min-width: 1920px) and (max-width: 1921px){
-    margin-left: 17px;
+  margin-top: 50px;
+
+  // @media (min-width: 1920px) and (max-width: 1921px) {
+  //   margin-left: 17px;
+  // }
+
+  @media (max-width: 1024px) {
+      border-top-left-radius: 40%;
+  border-top-right-radius: 40%;
   }
 }

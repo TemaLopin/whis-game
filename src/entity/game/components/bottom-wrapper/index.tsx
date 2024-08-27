@@ -1,17 +1,9 @@
-import s from "./style.module.scss";
-import {ReactNode, useEffect, useRef, useState} from "react";
+import { Outlet } from 'react-router-dom'
+import s from './style.module.scss'
+import { ReactNode, useEffect, useMemo, useRef, useState } from 'react'
 
-const BottomWrapper = ({children}: { children: ReactNode }) => {
-    const [height, setHeight] = useState(0)
-    const ref = useRef<HTMLDivElement>(null)
-    useEffect(() => {
-        if (ref.current) {
-            setHeight(ref?.current?.scrollHeight)
-        }
-    }, [])
-    return <div className={s.bg} style={{height: height}} ref={ref}>
-        {children}
-    </div>
+const BottomWrapper = ({ children }: { children: ReactNode }) => {
+  return <div className={s.bg}>{children}</div>
 }
 
 export default BottomWrapper
