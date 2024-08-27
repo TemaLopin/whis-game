@@ -6,13 +6,22 @@ import SelectLove from './select-love'
 import clsx from 'clsx'
 import AnswerIcon from './answer-icon'
 import RemoveIcon from './remove-icon'
+import { isVisible } from '@testing-library/user-event/dist/utils'
 
 const SelectCharacteristic = ({ bg = '#fff', selectAsk = false, item }: any) => {
-  const { answer, setAnswer, setSelects, categorySelect, setCategorySelect, setPosition, setIsVisible }: any =
-    useContext(GameContext)
+  const {
+    answer,
+    setAnswer,
+    setSelects,
+    categorySelect,
+    setCategorySelect,
+    setPosition,
+    setIsVisible,
+    isVisible,
+  }: any = useContext(GameContext)
 
   const selectCharacteristicHandler = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    if (selectAsk) return
+    if (selectAsk || isVisible) return
 
     const offsetWidth = e.currentTarget.offsetWidth
     const x = e.clientX
@@ -42,6 +51,8 @@ const SelectCharacteristic = ({ bg = '#fff', selectAsk = false, item }: any) => 
   }
 
   const removeSelectHandler = () => {
+    if (isVisible) return
+
     setSelects((prev: any) =>
       prev.map((sel: any) => (sel.title === item?.title ? { title: '?', category: item?.category } : sel))
     )

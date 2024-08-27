@@ -51,7 +51,7 @@ const Characteristics = () => {
   return (
     <BottomWrapper>
       <div style={{ height }} ref={ref}>
-        <div data-animch={firstRender ? '3' : '1'} className={s.body}>
+        <div data-animch={firstRender ? '3' : undefined} className={s.body}>
           {data.map((item, ind) => (
             <SelectCharacteristic item={item} key={ind} />
           ))}
