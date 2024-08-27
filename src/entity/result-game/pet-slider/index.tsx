@@ -1,4 +1,3 @@
-import clsx from 'clsx'
 import s from './style.module.scss'
 import { ReactComponent as Heart } from '../../../shared/assets/icons/heart.svg'
 // import img from '../../../entity/result-game/pet/index.tsx'
@@ -33,7 +32,7 @@ import Cherry from '../../../shared/assets/images/pets/Черри.jpg'
 import Sheriff from '../../../shared/assets/images/pets/Шериф.jpg'
 import Sherbet from '../../../shared/assets/images/pets/Щербет.jpg'
 
-import { Autoplay, EffectCoverflow, Navigation } from 'swiper/modules'
+import { Autoplay, Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 import 'swiper/css'
@@ -41,9 +40,7 @@ import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 
 import { Image } from 'react-bootstrap'
-import { useRef, useState } from 'react'
 import useWindowDimensions from '../../../shared/hooks/useWindowDimensions'
-import SelectLoveIcon from '../../game/components/select/select-love'
 const PetSlider = () => {
   const { width } = useWindowDimensions()
   const petsImages = [
@@ -79,25 +76,6 @@ const PetSlider = () => {
     { image: Sherbet },
   ]
 
-  const [swiperRef, setSwiperRef] = useState(null)
-  const appendNumber = useRef(500)
-  const prependNumber = useRef(1)
-  // Create array with 500 slides
-
-  // const prepend = () => {
-  //   setSlides([`Slide ${prependNumber.current - 2}`, `Slide ${prependNumber.current - 1}`, ...slides])
-  //   prependNumber.current = prependNumber.current - 2
-  //   swiperRef.slideTo(swiperRef.activeIndex + 2, 0)
-  // }
-
-  // const append = () => {
-  //   setSlides([...slides, 'Slide ' + ++appendNumber.current])
-  // }
-
-  // const slideTo = (index: number) => {
-  //   swiperRef.slideTo(index - 1, 0)
-  // }
-
   return (
     <div style={{ position: 'relative' }}>
       <div className={s.quantity}>
@@ -107,10 +85,6 @@ const PetSlider = () => {
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
-        autoplay={{
-          delay: 2000,
-          disableOnInteraction: false,
-        }}
         pagination={{
           clickable: true,
         }}

@@ -158,15 +158,18 @@ $--chevron-bg-white: url('../../../../shared/assets/images/chevron-bg-white.png'
 
   position: relative;
 
+  max-width: 1024px;
+  margin: 0 auto;
+
   height: fit-content;
 
   background-image: $--chevron-bg-white;
   background-size: 5%;
-  background-position: center center;
+  background-position: 50% 65%;
   background-repeat: no-repeat;
   padding-top: 150px;
 
-  @media (max-width: 600px){
+  @media (max-width: 600px) {
     padding-top: 75px;
   }
 }
@@ -221,7 +224,7 @@ $--chevron-bg-white: url('../../../../shared/assets/images/chevron-bg-white.png'
   background-color: var(--white-color);
 
   @media (max-width: 1000px) {
-    padding: 50px 12px 10px 12px;
+    padding: 10px 12px 10px 12px;
   }
 }
 

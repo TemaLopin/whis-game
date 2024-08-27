@@ -12,8 +12,6 @@ $--echo: url('../../../../shared/assets/images/echo/yellow-echo-2.png');
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-
-
 }
 
 .source {
@@ -89,7 +87,7 @@ $--echo: url('../../../../shared/assets/images/echo/yellow-echo-2.png');
 .description span {
   font-size: var(--font-size-20);
   line-height: var(--line-height-28-6);
-  color: var(#929394);
+  color: #929394;
   font-weight: 400;
 
   z-index: 2;

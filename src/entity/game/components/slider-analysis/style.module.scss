@@ -3,10 +3,15 @@
 
   perspective: 800px;
   margin-bottom: 100px;
+
+  position: relative;
+  top: -50px;
+
   img {
     max-width: 100%;
     object-fit: cover;
     height: 100%;
+    border-radius: 20px;
   }
 
   & > div {
@@ -55,7 +60,7 @@
     inset: 0;
     border-radius: 20px;
     border: 3px solid transparent;
-    background: linear-gradient(to right, #FF51FF, rgb(255, 255, 255) 50.5%, #FFFF22 100%) border-box;
+    background: linear-gradient(to right, #ff51ff, rgb(255, 255, 255) 50.5%, #ffff22 100%) border-box;
     -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;

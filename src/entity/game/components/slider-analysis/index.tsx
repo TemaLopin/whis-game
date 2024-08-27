@@ -57,11 +57,11 @@ const SliderAnalysis = ({ items }: any) => {
       modules={[Autoplay, EffectCoverflow, Navigation]}
       className={s.swiper}
     >
-      {items.map(({ image }: any, ind: number) => {
-        return (
+      {items.map(({ image, imageAlt }: any, ind: number) => {
+        return ind < 16 && (
           <SwiperSlide className={s.slide} key={ind}>
             <div className={s.block_image}>
-              <Image src={image} />
+              <Image src={image} alt={imageAlt} />
             </div>
           </SwiperSlide>
         )

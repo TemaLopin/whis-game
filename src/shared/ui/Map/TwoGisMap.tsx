@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import DG from '2gis-maps'
 import axios from 'axios'
+import RedMapIcon from '../../assets/images/red-map-icon.png'
 
 type MapProps = {
   style?: React.CSSProperties
@@ -13,6 +14,19 @@ type MapProps = {
   geoclicker?: boolean
   zoomControl?: boolean
   fullscreenControl?: boolean
+}
+
+type Place = {
+  id: string
+  type: string
+  lat: number
+  lon: number
+  is_advertising: boolean
+}
+
+type PlacesResponse = {
+  result: { items: Place[]; total: number }
+  mete: { api_version: string; code: string; issue_date: string }
 }
 
 const TwoGisMap: React.FC<MapProps> = ({
@@ -32,25 +46,33 @@ const TwoGisMap: React.FC<MapProps> = ({
 
     const map = DG.map('map-container', options)
 
-    DG.marker(center).addTo(map)
+    const myLocationIcon = DG.icon({
+      iconUrl: RedMapIcon,
+      iconSize: [32, 32],
+      iconAnchor: [16, 32],
+    })
 
+    DG.marker(center, { icon: myLocationIcon }).addTo(map)
 
+    const getPlaces = async () => {
+      try {
+        const { data } = await axios.get<PlacesResponse>(
+          `https://catalog.api.2gis.com/3.0/markers?q=кафе&sort_point=${center.join(',')}&key=${
+            process.env.REACT_APP_GIS_KEY
+          }`
+        )
 
+        const { result } = data
+
+        result.items.map(({ lat, lon, type }) => DG.marker([lat, lon]).addTo(map).bindPopup(type))
+      } catch (error) {
+        console.error('Error fetching places:', error)
+      }
+    }
+
+    // getPlaces()
     return () => map.remove()
   }, [containerRef, center, zoom, geoclicker, zoomControl, projectDetector, fullscreenControl])
-
-  // const openFullscreen = () => {
-  //   const mapContainer = document.getElementById('map-container')
-  //   if (mapContainer) {
-  //     if (mapContainer.requestFullscreen) {
-  //       mapContainer.requestFullscreen()
-  //     } else if (mapContainer.webkitRequestFullscreen) {
-  //       mapContainer.webkitRequestFullscreen()
-  //     } else if (mapContainer.msRequestFullscreen) {
-  //       mapContainer.msRequestFullscreen()
-  //     }
-  //   }
-  // }
 
   return <div id='map-container' ref={containerRef} style={style} className={className}></div>
 }
