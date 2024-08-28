@@ -1,6 +1,9 @@
 .footer {
   background-color: var(--white-color);
   padding: 35px 0px;
+  @media (max-width: 724px){
+    padding: 41px 0 24px;
+  }
 }
 
 .footer img {
@@ -52,13 +55,19 @@
 }
 
 .footer_text {
-  font-size: var(--font-size-14);
+  font-size: 13px;
   font-weight: 400;
-  line-height: var(--line-height-19-8);
+  line-height: 140%;
+  @media (max-width: 768px){
+    font-size: 12px;
+  }
 }
 
 .footer_text p {
   color: #2e2e2e;
+  &:last-child{
+    margin-bottom: 0;
+  }
 }
 
 .footer_text a {

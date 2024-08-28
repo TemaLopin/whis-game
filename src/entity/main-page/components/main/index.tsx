@@ -53,6 +53,7 @@ const Footer = ({ handler }: { handler: () => void }) => {
 
 const Main = () => {
   const [isOpen, setIsOpen] = useState(false)
+  const {height} = useWindowDimensions();
   const modalHandler = () => {
     setIsOpen((prev) => !prev)
     document.body.classList.toggle('noscroll')
@@ -75,7 +76,7 @@ const Main = () => {
   }, [isOpen])
 
   return (
-    <div className={s.main} id='home'>
+    <div className={s.main} id='home' style={{height: height > 870 ? '100vh' : '100%'}}>
       <Header />
       <div className={clsx(s.images_background)}>
         <Image src={ManWithCatImg} />

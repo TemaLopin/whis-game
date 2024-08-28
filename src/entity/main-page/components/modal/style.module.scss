@@ -48,6 +48,9 @@
     background: rgb(231, 231, 231);
     margin-bottom: 6px;
     border: none;
+    &::placeholder{
+      color: rgb(146, 147, 148);
+    }
     @media (max-width: 768px) {
       font-size: 12px;
       margin-bottom: 2px;
@@ -66,6 +69,7 @@
   @media (max-width: 769px) {
     top: 24px;
     right: 24px;
+    padding: 0;
     img {
       width: 20px;
       height: 16px;
@@ -100,12 +104,17 @@
   display: flex;
   gap: 25px;
 
+
+
   input {
     position: absolute;
     opacity: 0;
-    width: 22px;
-    height: 22px;
-
+    width: 26px;
+    height: 26px;
+    @media (max-width: 768px){
+      width: 22px;
+      height: 22px;
+    }
     &:checked {
       & + label {
         &::before {
@@ -117,14 +126,24 @@
     }
 
     & + label {
-      display: inline-flex;
-      user-select: none;
 
+      user-select: none;
+      padding-left: 40px;
+      @media (max-width: 768px){
+        padding-left: 35px;
+      }
+      position: relative;
+      a{
+        color: rgb(146, 147, 148);
+      }
       &::before {
         content: '';
+        position: absolute;
+        left: 0;
+
         display: inline-block;
-        width: 22px;
-        height: 22px;
+        width: 26px;
+        height: 26px;
         flex-shrink: 0;
         flex-grow: 0;
         border-radius: 8px;
@@ -133,6 +152,10 @@
         background-repeat: no-repeat;
         background-position: center center;
         background-size: 50% 50%;
+        @media (max-width: 768px){
+          width: 22px;
+          height: 22px;
+        }
       }
     }
   }

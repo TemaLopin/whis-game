@@ -2,7 +2,6 @@ import { Image } from 'react-bootstrap'
 import s from './style.module.scss'
 
 import Auchan from '../../../../shared/assets/images/stores/auchan.png'
-import Diksi from '../../../../shared/assets/images/stores/diksi.png'
 import Kuper from '../../../../shared/assets/images/stores/kuper.png'
 import Lenta from '../../../../shared/assets/images/stores/lenta.png'
 import Magnite from '../../../../shared/assets/images/stores/magnite.png'
@@ -15,7 +14,7 @@ import clsx from 'clsx'
 
 const WhereBye = () => {
   const arrEcommerce = [Kuper, Samokat, Megamarket]
-  const arrMagazine = [Pyaterichka, Magnite, Auchan, Metro, Perecrestok, Lenta, Diksi]
+  const arrMagazine = [Magnite, Pyaterichka, Auchan, Metro, Perecrestok, Lenta]
 
   return (
     <div className={s.echo} id='buy'>
@@ -30,10 +29,11 @@ const WhereBye = () => {
         </div>
         <div className={clsx('container', s.brands)}>
           <h3 className={s.title}>В магазинах твоего города</h3>
-          {arrMagazine.map((store) => (
-            <Image className={s.brand_logo} src={store} />
+          {arrMagazine.map((store, ind) => (
+            <Image className={s.brand_logo} src={store} key={ind}/>
           ))}
         </div>
+        <p className={s.info}>* Во всех магазинах, где представлена продукция, участвующая в акции</p>
       </div>
     </div>
   )

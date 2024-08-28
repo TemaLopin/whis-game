@@ -5,6 +5,7 @@ import { Image } from 'react-bootstrap'
 import InputMask from 'react-input-mask'
 import { Dispatch, SetStateAction, useState } from 'react'
 import useSendPhone from '../../../../shared/api/hooks/useSendPhone'
+import {Link} from "react-router-dom";
 
 type Value = {
   phoneNumber: string
@@ -65,7 +66,7 @@ const Modal = ({ setIsOpen }: { setIsOpen: Dispatch<SetStateAction<boolean>> }) 
               id='top'
             />
             <label htmlFor='top'>
-              Я соглашаюсь с Правилами Акции и даю согласие на обработку своих персональных данных Организатором Акции
+              Я соглашаюсь с <Link to={"#"}>Правилами Акции</Link> и даю согласие на обработку своих <Link to={"#"}>персональных данных</Link> Организатором Акции
             </label>
           </div>
           <div className={s.wrapper}>
