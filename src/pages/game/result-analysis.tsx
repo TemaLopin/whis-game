@@ -31,9 +31,11 @@ const GameResultAnalysis = () => {
   const slides = data.map((item, id) => ({
     id,
     name: item.nickname,
-    image: petsImages[id],
+    image: item.photo.split(',').map((img) => process.env.REACT_APP_IMAGE_URL + img)[0],
     tags: item.tagsPreview.split(','),
   }))
+
+  console.log('!@#$ slides', slides)
 
   return (
     <GameAnalysisWrapper>

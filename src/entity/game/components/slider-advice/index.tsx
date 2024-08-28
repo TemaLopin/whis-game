@@ -13,7 +13,7 @@ import DynamicEcho from '../../../../shared/ui/dynamic-echo/DynamicEcho'
 import clsx from 'clsx'
 
 type SliderAdviceProps = {
-  items: { title: string; image: string }[]
+  items: { title: string; image: string; icon: string }[]
   width: number
   type?: string
 }
@@ -50,7 +50,7 @@ const SliderAdvice: FC<SliderAdviceProps> = ({ items, width, type }) => {
       modules={[EffectCoverflow, Navigation, Autoplay]}
       className={s.swiper}
     >
-      {items.map(({ title, image }, ind: number) => {
+      {items.map(({ title, image, icon }, ind: number) => {
         return (
           <SwiperSlide className={clsx(s.slide, type === 'cat' && s.slide_cat)} key={ind}>
             <div className={s.wrapper}>
@@ -59,7 +59,7 @@ const SliderAdvice: FC<SliderAdviceProps> = ({ items, width, type }) => {
                 <p>{`0${++ind}`}</p>
               </div>
               <h4 className={s.slide_text}>{title}</h4>
-              {type !== 'cat' && <MusicIcon />}
+              {type !== 'cat' && <Image src={icon} />}
               <DynamicEcho type='small_heart'>
                 <div className={s.block_image}>
                   <Image src={image} className={s.masked_image} />

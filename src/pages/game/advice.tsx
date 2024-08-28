@@ -30,7 +30,8 @@ const GameAdvice = () => {
   const infoDesk = ['Листайте советы как стать', 'ещё ближе с вашим питомцем']
 
   const slides = data.map((item, index) => ({
-    image: petsImages[index],
+    icon: process.env.REACT_APP_IMAGE_URL + item.bgImg,
+    image: process.env.REACT_APP_IMAGE_URL + item.photo,
     title: item.description,
   }))
 
