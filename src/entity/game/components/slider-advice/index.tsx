@@ -59,11 +59,10 @@ const SliderAdvice: FC<SliderAdviceProps> = ({ items, width, type }) => {
                 <p>{`0${++ind}`}</p>
               </div>
               <h4 className={s.slide_text}>{title}</h4>
-              {type !== 'cat' && <Image src={icon} />}
+              <Image style={{ height: 100, objectFit: 'contain' }} src={icon} />
               <DynamicEcho type='small_heart'>
                 <div className={s.block_image}>
                   <Image src={image} className={s.masked_image} />
-                  {/* <Image src={test} /> */}
                 </div>
               </DynamicEcho>
             </div>
