@@ -8,13 +8,10 @@ import useWindowDimensions from '../../shared/hooks/useWindowDimensions'
 import TitleGame from '../../entity/game/components/title'
 import GameAnalysisWrapper from '../../entity/game/components/wrapper/analysis'
 import { useState } from 'react'
-
-import { useQueryClient } from '@tanstack/react-query'
-
 import { SendAnswerGameRes } from '../../shared/api/endpoints'
+import petsImages from './components/pets-images'
 
 const GameResultAnalysis = () => {
-  const client = useQueryClient()
   const data = JSON.parse(localStorage.getItem('pets') || '[]') as SendAnswerGameRes
 
   const descItem = [
@@ -31,50 +28,12 @@ const GameResultAnalysis = () => {
   const [idSlide, setIdSlide] = useState(0)
   const { width } = useWindowDimensions()
 
-  console.log('!@#$ data', data)
-
-  console.log('🚀  !@#$ ~ GameResultAnalysis ~ client:', client)
-
   const slides = data.map((item, id) => ({
     id,
     name: item.nickname,
-    image: item.photo,
+    image: petsImages[id],
     tags: item.tagsPreview.split(','),
   }))
-
-  // const slides = [
-  //   {
-  //     id: 1,
-  //     name: 'Василич',
-  //     image: dogRes,
-  //     tags: ['ЛАСКОВАЯ', 'РАДУЕТСЯ ВНИМАНИЮ И ЛАСКЕ', 'прилично ходит на поводке'],
-  //   },
-  //   { id: 2, name: 'ЭШЛИ', image: ashlyDog, tags: ['ЛАСКОВАЯ', 'РАДУЕТСЯ ВНИМАНИЮ И ЛАСКЕ', 'ищет семью'] },
-  //   {
-  //     id: 3,
-  //     name: 'ландыш',
-  //     image: catRes,
-  //     tags: ['нуждается в любви', 'мечтает о заботе', 'прилично ходит на поводке'],
-  //   },
-  //   {
-  //     id: 4,
-  //     name: 'ЭШЛИ',
-  //     image: ashlyDog,
-  //     tags: ['ЛАСКОВАЯ', 'РАДУЕТСЯ ВНИМАНИЮ И ЛАСКЕ', 'прилично ходит на поводке'],
-  //   },
-  //   {
-  //     id: 5,
-  //     name: 'Василич',
-  //     image: dogRes,
-  //     tags: ['ЛАСКОВАЯ', 'РАДУЕТСЯ ВНИМАНИЮ И ЛАСКЕ', 'прилично ходит на поводке'],
-  //   },
-  //   {
-  //     id: 6,
-  //     name: 'ландыш',
-  //     image: catRes,
-  //     tags: ['ЛАСКОВАЯ', 'РАДУЕТСЯ ВНИМАНИЮ И ЛАСКЕ', 'прилично ходит на поводке'],
-  //   },
-  // ]
 
   return (
     <GameAnalysisWrapper>

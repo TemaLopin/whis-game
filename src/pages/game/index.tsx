@@ -83,7 +83,7 @@ const Game = () => {
   }
 
   useEffect(() => {
-    const findNullSelect = selects.find(({ title }) => title == '?')
+    const findNullSelect = selects.find(({ title }) => title === '?')
     setCategorySelect(findNullSelect?.category ?? 1)
   }, [answer])
 

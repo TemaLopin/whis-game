@@ -1,7 +1,7 @@
 import s from './style.module.scss'
 import { ReactNode } from 'react'
 import clsx from 'clsx'
-import { useLocation, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import useWindowDimensions from '../../../../shared/hooks/useWindowDimensions'
 
 const AdviceWrapper = ({ children }: { children: ReactNode }) => {

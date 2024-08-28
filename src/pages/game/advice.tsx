@@ -7,12 +7,12 @@ import { Image } from 'react-bootstrap'
 import dogImg from '../../shared/assets/images/past-pet/dog.png'
 import catImg from '../../shared/assets/images/past-pet/cat.png'
 import SliderAdvice from '../../entity/game/components/slider-advice'
-import slideImage from '../../shared/assets/images/advice/1.jpeg'
 import BottomWrapper from '../../entity/game/components/bottom-wrapper'
 import useWindowDimensions from '../../shared/hooks/useWindowDimensions'
 import AdviceWrapper from '../../entity/game/components/wrapper/advice'
-import { useLocation, useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import useAdvice from '../../shared/api/hooks/useAdvice'
+import petsImages from './components/pets-images'
 
 const GameAdvice = () => {
   const { width } = useWindowDimensions()
@@ -29,8 +29,8 @@ const GameAdvice = () => {
   const infoDeskDesktop = ['Листайте советы', 'как стать ещё ближе', 'с вашим питомцем']
   const infoDesk = ['Листайте советы как стать', 'ещё ближе с вашим питомцем']
 
-  const slides = data.map((item) => ({
-    image: item.photo,
+  const slides = data.map((item, index) => ({
+    image: petsImages[index],
     title: item.description,
   }))
 

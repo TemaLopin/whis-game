@@ -1,7 +1,7 @@
 import clsx from 'clsx'
 import s from './style.module.scss'
 import { Collapse } from 'react-bootstrap'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { questionAnswer } from './constants'
 
 let initialQuantityLength = 4

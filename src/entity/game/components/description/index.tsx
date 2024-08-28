@@ -1,5 +1,5 @@
 import s from './style.module.scss'
-import { useLocation, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import clsx from 'clsx'
 
 const DescriptionGame = ({ texts }: { texts: string[] }) => {

@@ -1,5 +1,5 @@
 import { Autoplay, EffectCoverflow, Navigation } from 'swiper/modules'
-import React, { FC, useRef } from 'react'
+import { FC, useRef } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Image } from 'react-bootstrap'
 import s from './style.module.scss'

@@ -1,6 +1,5 @@
 import s from './style.module.scss'
 import BodyInfoStart from '../body-info-start'
-import DynamicEcho from '../../../../shared/ui/dynamic-echo/DynamicEcho'
 import TitleGame from '../title'
 import DescriptionGame from '../description'
 import ButtonStart from '../button-start'

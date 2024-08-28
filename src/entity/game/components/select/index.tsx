@@ -1,6 +1,6 @@
 import s from './style.module.scss'
 import LoveIcon from './love-icon'
-import { Dispatch, FC, SetStateAction, useContext } from 'react'
+import { FC, useContext } from 'react'
 import { GameContext } from '../../../../pages/game'
 import SelectLove from './select-love'
 import clsx from 'clsx'
@@ -19,10 +19,9 @@ type SelectCharacteristicProps = {
   bg?: string
   selectAsk?: boolean
   item: Data
-  setData?: Dispatch<SetStateAction<Data[]>>
 }
 
-const SelectCharacteristic: FC<SelectCharacteristicProps> = ({ bg = '#fff', selectAsk = false, item, setData }) => {
+const SelectCharacteristic: FC<SelectCharacteristicProps> = ({ bg = '#fff', selectAsk = false, item }) => {
   const {
     answer,
     setAnswer,
@@ -50,7 +49,7 @@ const SelectCharacteristic: FC<SelectCharacteristicProps> = ({ bg = '#fff', sele
 
     const handleSelectAnswer = () => {
       const newSelects = selects.map((sel, ind: number, arr) => {
-        const firstIndexAsk = arr.findIndex(({ title }) => title == '?')
+        const firstIndexAsk = arr.findIndex(({ title }) => title === '?')
         return ind === firstIndexAsk ? item : sel
       })
 

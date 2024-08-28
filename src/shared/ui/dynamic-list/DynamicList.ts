@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 
 function DynamicList() {
   let arr = new Array(24).fill(1).map((it, ind) => ind)

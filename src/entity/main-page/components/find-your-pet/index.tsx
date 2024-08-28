@@ -13,8 +13,7 @@ import useWindowDimensions from '../../../../shared/hooks/useWindowDimensions'
 import { Link } from 'react-router-dom'
 
 const ModalBlockPulse = () => {
-  const { isMobile, width } = useWindowDimensions()
-  console.log('🚀  !@#$ ~ ModalBlockPulse ~ width:', width)
+  const { isMobile } = useWindowDimensions()
 
   return isMobile ? (
     <div className={s.main_body}>

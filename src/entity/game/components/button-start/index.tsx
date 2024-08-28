@@ -1,8 +1,8 @@
 import s from './style.module.scss'
-import { Button, Image } from 'react-bootstrap'
+import { Image } from 'react-bootstrap'
 import robot from '../../../../shared/assets/images/robot-icon.png'
 
-import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import DynamicEcho from '../../../../shared/ui/dynamic-echo/DynamicEcho'
 import clsx from 'clsx'
 import { FC } from 'react'

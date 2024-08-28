@@ -1,6 +1,6 @@
 // @ts-nocheck
 
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import DG from '2gis-maps'
 import axios from 'axios'
 import RedMapIcon from '../../assets/images/red-map-icon.png'
