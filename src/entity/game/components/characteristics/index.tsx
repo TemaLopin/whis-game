@@ -15,12 +15,9 @@ const Characteristics = () => {
   const root = document.getElementById('root-game')
   const ref = useRef<HTMLDivElement>(null)
 
-  const { isVisible, position } = useContext(GameContext)
+  const { isVisible, position, answersData } = useContext(GameContext)
   const { clientWidth = 0 } = root || {}
   const isLeftSidePaw = clientWidth / 2 > position.x
-
-  const { pathname } = useLocation()
-  const data = pathname === '/game/last-selects' ? lastCharacteristics : characteristics
 
   const getPosition = () => {
     const paddingTop = clientWidth < 768 ? 30 : 25
@@ -52,9 +49,12 @@ const Characteristics = () => {
     <BottomWrapper>
       <div style={{ height }} ref={ref}>
         <div data-animch={firstRender ? '3' : undefined} className={s.body}>
-          {data.map((item, ind) => (
-            <SelectCharacteristic item={item} key={ind} />
-          ))}
+          {answersData
+            .sort((a, b) => a.category - b.category)
+            .sort((a, b) => Number(b.visible) - Number(a.visible))
+            .map((answer, ind) => (
+              <SelectCharacteristic item={answer} key={ind} />
+            ))}
         </div>
         <Image
           src={paw}

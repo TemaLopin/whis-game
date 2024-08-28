@@ -1,8 +1,16 @@
-import { Dispatch } from 'react'
+import { Dispatch, SetStateAction } from 'react'
 
 export type Answer = {
   title: string
   category: number
+}
+
+export type AnswerData = {
+  title: string
+  category: number
+  key?: string
+  level?: string
+  visible?: boolean
 }
 
 export type GameContextT = {
@@ -18,4 +26,6 @@ export type GameContextT = {
   setPosition: Dispatch<React.SetStateAction<{ x: number; y: number; offsetWidth: number }>>
   isVisible: boolean
   setIsVisible: Dispatch<React.SetStateAction<boolean>>
+  answersData: AnswerData[]
+  setAnswersData: Dispatch<SetStateAction<AnswerData[]>>
 }

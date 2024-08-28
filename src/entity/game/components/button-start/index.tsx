@@ -24,10 +24,10 @@ const ButtonStart: FC<ButtonStartProps> = ({ title, link }) => {
   return (
     <div className={s.wrapper}>
       <DynamicEcho type='echo'>
-        <Button onClick={handleClick} className={clsx(s.button_start, pathname === '/game/analysis' && s.button_robot)}>
+        <button onClick={handleClick} className={clsx(s.button_start, pathname === '/game/analysis' && s.button_robot)}>
           {pathname === '/game' && <Image src={robot} />}
           {pathname !== '/game/analysis' ? <span className={s.btn_text}>{title}</span> : <Image src={robot} />}
-        </Button>
+        </button>
       </DynamicEcho>
     </div>
   )

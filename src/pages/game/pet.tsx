@@ -36,8 +36,8 @@ const GamePet = () => {
             </div>
           )}
           <div className={'game-wrapper'}>
-            <ButtonStart title='ДА, КОТ' link='/game/last-selects?animal=cat' />
-            <ButtonStart title='ДА, СОБАКА' link='/game/last-selects?animal=dog' />
+            <ButtonStart title='ДА, КОТ' link='/game/last-selects/cat' />
+            <ButtonStart title='ДА, СОБАКА' link='/game/last-selects/dog' />
             <ButtonStart title='НЕТ' link='/game/analysis' />
           </div>
           {width > 768 && (

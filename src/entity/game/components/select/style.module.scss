@@ -104,19 +104,11 @@
 }
 
 .select_answer {
-  height: 0px;
+  height: 65px;
   margin-bottom: 12px;
-  transition: height 0.3s ease 0s;
-  opacity: 0;
-  pointer-events: none;
-  visibility: hidden;
+
   svg {
     padding-bottom: 12px;
-  }
-
-  & ~ .select_item_toggle {
-    animation: topChange 500ms linear;
-    opacity: 1;
   }
 }
 
@@ -147,6 +139,7 @@
 .title_x {
   animation: blink 2s infinite;
 }
+
 @keyframes blink {
   0%,
   100% {

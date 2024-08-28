@@ -15,10 +15,10 @@ import clsx from 'clsx'
 type SliderAdviceProps = {
   items: { title: string; image: string }[]
   width: number
-  search?: string
+  type?: string
 }
 
-const SliderAdvice: FC<SliderAdviceProps> = ({ items, width, search }) => {
+const SliderAdvice: FC<SliderAdviceProps> = ({ items, width, type }) => {
   const swiperRef = useRef<any>(null)
   const goToNextSlide = () => {
     if (swiperRef.current && swiperRef.current.swiper) {
@@ -52,14 +52,14 @@ const SliderAdvice: FC<SliderAdviceProps> = ({ items, width, search }) => {
     >
       {items.map(({ title, image }, ind: number) => {
         return (
-          <SwiperSlide className={clsx(s.slide, search === '?animal=cat' && s.slide_cat)} key={ind}>
+          <SwiperSlide className={clsx(s.slide, type === 'cat' && s.slide_cat)} key={ind}>
             <div className={s.wrapper}>
               <div className={s.quantity}>
                 <SelectLove />
                 <p>{`0${++ind}`}</p>
               </div>
               <h4 className={s.slide_text}>{title}</h4>
-              {search !== '?animal=cat' && <MusicIcon />}
+              {type !== 'cat' && <MusicIcon />}
               <DynamicEcho type='small_heart'>
                 <div className={s.block_image}>
                   <Image src={image} className={s.masked_image} />

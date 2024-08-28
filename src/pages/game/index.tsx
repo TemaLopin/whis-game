@@ -9,51 +9,56 @@ import Characteristics from '../../entity/game/components/characteristics'
 import { createContext, useEffect, useState } from 'react'
 
 import DynamicEcho from '../../shared/ui/dynamic-echo/DynamicEcho'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate, useParams } from 'react-router-dom'
 import useWindowDimensions from '../../shared/hooks/useWindowDimensions'
 import useSendGameAnswer from '../../shared/api/hooks/useSendGameAnswer'
 import { getGameText } from './components/utils'
-import { Answer, GameContextT } from './components/types'
+import { Answer, AnswerData, GameContextT } from './components/types'
 
+type SendAnswer = { [key: string]: string }
 export const GameContext = createContext<GameContextT>({} as GameContextT)
 
 export const characteristics = [
-  { title: 'ЛЮБЛЮ ПОЛЕЖАТЬ', category: 1 },
-  { title: 'ЖИВУ УМЕРЕННО АКТИВНО', category: 1 },
-  { title: 'ВСЕГДА В ДВИЖЕНИИ', category: 1 },
-  { title: 'ПРЕДПОЧИТАЮ УЕДИНЕНИЕ', category: 2 },
-  { title: 'ОБЩАЮСЬ В МЕРУ', category: 2 },
-  { title: 'ЛЮБЛЮ ОБЩЕНИЕ', category: 2 },
-  { title: 'Спокойный', category: 3 },
-  { title: 'Адаптивный', category: 3 },
-  { title: 'Экспрессивный', category: 3 },
-  { title: 'ценю привычное', category: 4 },
-  { title: 'интересуюсь новым', category: 4 },
-  { title: 'радуюсь открытиям', category: 4 },
+  { title: 'ЛЮБЛЮ ПОЛЕЖАТЬ', category: 1, key: 'activity', level: 'LOW', visible: true },
+  { title: 'ЖИВУ УМЕРЕННО АКТИВНО', category: 1, key: 'activity', level: 'MEDIUM', visible: true },
+  { title: 'ВСЕГДА В ДВИЖЕНИИ', category: 1, key: 'activity', level: 'HIGH', visible: true },
+  { title: 'ПРЕДПОЧИТАЮ УЕДИНЕНИЕ', category: 2, key: 'socialization', level: 'LOW', visible: true },
+  { title: 'ОБЩАЮСЬ В МЕРУ', category: 2, key: 'socialization', level: 'MEDIUM', visible: true },
+  { title: 'ЛЮБЛЮ ОБЩЕНИЕ', category: 2, key: 'socialization', level: 'HIGH', visible: true },
+  { title: 'Спокойный', category: 3, key: 'curiosity', level: 'LOW', visible: true },
+  { title: 'Адаптивный', category: 3, key: 'curiosity', level: 'MEDIUM', visible: true },
+  { title: 'Экспрессивный', category: 3, key: 'curiosity', level: 'HIGH', visible: true },
+  { title: 'ценю привычное', category: 4, key: 'temperament', level: 'LOW', visible: true },
+  { title: 'интересуюсь новым', category: 4, key: 'temperament', level: 'MEDIUM', visible: true },
+  { title: 'радуюсь открытиям', category: 4, key: 'temperament', level: 'HIGH', visible: true },
 ]
 
 export const lastCharacteristics = [
-  { title: 'ЛЮБЛЮ ПОЛЕЖАТЬ', category: 1 },
-  { title: 'ЖИВУ УМЕРЕННО АКТИВНО', category: 1 },
-  { title: 'ВСЕГДА В ДВИЖЕНИИ', category: 1 },
-  { title: 'ПРЕДПОЧИТАЮ УЕДИНЕНИЕ', category: 2 },
-  { title: 'ОБЩАЮСЬ В МЕРУ', category: 2 },
-  { title: 'ЛЮБЛЮ ОБЩЕНИЕ', category: 2 },
-  { title: 'Реагирует не сразу', category: 3 },
-  { title: 'Понимает что к чему', category: 3 },
-  { title: 'схватываю с полуслова', category: 3 },
+  { title: 'ЛЮБЛЮ ПОЛЕЖАТЬ', category: 1, key: 'activity', level: 'LOW', visible: true },
+  { title: 'ЖИВУ УМЕРЕННО АКТИВНО', category: 1, key: 'activity', level: 'MEDIUM', visible: true },
+  { title: 'ВСЕГДА В ДВИЖЕНИИ', category: 1, key: 'activity', level: 'HIGH', visible: true },
+  { title: 'ПРЕДПОЧИТАЮ УЕДИНЕНИЕ', category: 2, key: 'socialization', level: 'LOW', visible: true },
+  { title: 'ОБЩАЮСЬ В МЕРУ', category: 2, key: 'socialization', level: 'MEDIUM', visible: true },
+  { title: 'ЛЮБЛЮ ОБЩЕНИЕ', category: 2, key: 'socialization', level: 'HIGH', visible: true },
+  { title: 'Реагирует не сразу', category: 3, key: 'curiosity', level: 'LOW', visible: true },
+  { title: 'Понимает что к чему', category: 3, key: 'curiosity', level: 'MEDIUM', visible: true },
+  { title: 'схватываю с полуслова', category: 3, key: 'curiosity', level: 'HIGH', visible: true },
 ]
 
 const Game = () => {
-  const { pathname, search } = useLocation()
+  const navigate = useNavigate()
+  const { pathname } = useLocation()
+  const { type } = useParams()
+
   const { width } = useWindowDimensions()
 
-  const isUserGame = pathname !== '/game/last-selects'
-  const { descItem, descItemDesktop, selectsGame } = getGameText(isUserGame)
+  const isMainGame = !pathname.includes('/game/last-selects/')
+  const { descItem, descItemDesktop, selectsGame } = getGameText(isMainGame)
 
-  const link = isUserGame ? '/game/past-pet' : `/game/advice${search}`
+  const [answer, setAnswer] = useState<AnswerData[]>([])
+  const [answersData, setAnswersData] = useState<AnswerData[]>(isMainGame ? characteristics : lastCharacteristics)
 
-  const [answer, setAnswer] = useState<Answer[]>([])
+  const { mutate: handleSendAnswer } = useSendGameAnswer()
 
   const [indSelect, setIndSelect] = useState(2)
   const [selects, setSelects] = useState<Answer[]>(selectsGame)
@@ -62,9 +67,19 @@ const Game = () => {
   const [position, setPosition] = useState({ x: 0, y: 0, offsetWidth: 0 })
 
   const [isVisible, setIsVisible] = useState(false)
+  const isFullSelects = selects?.every(({ title }) => title !== '?')
 
-  const handleSaveAnswer = () => {
-    // sendAnswer(answer)
+  const handleClick = () => {
+    navigate(isMainGame ? '/game/past-pet' : `/game/advice/${type}`)
+
+    if (isMainGame) {
+      const answers = answer.reduce((acc: SendAnswer, { key = '', level = '' }) => {
+        acc[key] = level
+        return acc
+      }, {})
+
+      handleSendAnswer(answers)
+    }
   }
 
   useEffect(() => {
@@ -85,6 +100,8 @@ const Game = () => {
     setPosition,
     isVisible,
     setIsVisible,
+    answersData,
+    setAnswersData,
   }
 
   return (
@@ -96,7 +113,7 @@ const Game = () => {
           <SelectsBlock />
           <QuantityText />
           <DynamicEcho type='button'>
-            <ButtonComplete text='ЭТО ПРО МЕНЯ!' link={link} />
+            <ButtonComplete text='ЭТО ПРО МЕНЯ!' onClick={handleClick} disabled={!isFullSelects} />
           </DynamicEcho>
           <Characteristics />
         </BodyInfoStart>

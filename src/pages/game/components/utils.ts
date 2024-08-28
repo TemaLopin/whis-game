@@ -2,8 +2,8 @@ import petImages from '../components/pets-images'
 
 export const getPetsImages = () => petImages
 
-export const getGameText = (isUserGame: boolean) => ({
-  descItem: isUserGame
+export const getGameText = (isMainGame: boolean) => ({
+  descItem: isMainGame
     ? [
         'Выберите по одной характеристике',
         'в каждой строке. Когда все четыре',
@@ -17,7 +17,7 @@ export const getGameText = (isUserGame: boolean) => ({
         'НАЖМИТЕ «ГОТОВО!»',
       ],
 
-  descItemDesktop: isUserGame
+  descItemDesktop: isMainGame
     ? [
         'Выберите по одной характеристике',
         'в каждой строке. Когда все четыре характеристики',
@@ -29,7 +29,7 @@ export const getGameText = (isUserGame: boolean) => ({
         'ТРИ ХАРАКТЕРИСТИКИ ВЫБРАНЫ, НАЖМИТЕ «ГОТОВО!»',
       ],
 
-  selectsGame: isUserGame
+  selectsGame: isMainGame
     ? [
         { title: '?', category: 1 },
         { title: '?', category: 2 },

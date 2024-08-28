@@ -1,34 +1,19 @@
 import s from './style.module.scss'
-import { FC, useContext } from 'react'
-import { GameContext } from '../../../../pages/game'
+import { FC } from 'react'
 import clsx from 'clsx'
-import { Link, useLocation, useNavigate } from 'react-router-dom'
 
 type ButtonCompleteProps = {
   text: string
-  link: string
-  onClick?: () => void
+  onClick: () => void
+  disabled?: boolean
 }
 
-const ButtonComplete: FC<ButtonCompleteProps> = ({ text, link, onClick }) => {
-  const { selects } = useContext(GameContext)
-
-  const navigate = useNavigate()
-  const { pathname } = useLocation()
-
-  const isFullSelects = selects?.every(({ title }) => title !== '?')
-
-  const handleClick = () => {
-    if (onClick) onClick()
-    if (link) navigate(link)
-  }
+const ButtonComplete: FC<ButtonCompleteProps> = ({ text, onClick, disabled = false }) => {
+  const handleClick = () => !disabled && onClick()
 
   return (
-    <button
-      onClick={handleClick}
-      className={clsx({ [s.button]: true, [s.button_active]: isFullSelects || pathname === '/game/advice' })}
-    >
-      {pathname === '/game/last-selects' ? 'готово!' : text}
+    <button onClick={handleClick} className={clsx({ [s.button]: true, [s.button_active]: !disabled })}>
+      {text}
     </button>
   )
 }

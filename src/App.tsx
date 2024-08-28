@@ -15,7 +15,6 @@ import GameAnalysis from './pages/game/analysis'
 import GameResultAnalysis from './pages/game/result-analysis'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
-
 export const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -37,10 +36,10 @@ const App = () => {
         <Route path='/game/go' element={<Game />} />
         <Route path='/game/result/:id' element={<ResultGame />} />
         <Route path='/game/past-pet' element={<GamePet />} />
-        <Route path='/game/advice' element={<GameAdvice />} />
+        <Route path='/game/advice/:type' element={<GameAdvice />} />
         <Route path='/game/analysis' element={<GameAnalysis />} />
         <Route path='/game/result-analysis' element={<GameResultAnalysis />} />
-        <Route path='/game/last-selects' element={<Game />} />
+        <Route path='/game/last-selects/:type' element={<Game />} />
       </Routes>
     </QueryClientProvider>
   )
