@@ -21,7 +21,7 @@ const WhereBye = () => {
     <div className={s.echo} id='buy'>
       <div className={clsx(s.body, 'container')}>
         <p className={s.main_text}>Где купить?</p>
-        <p className={s.sub_text}>Во всех магазинах страны*</p>
+        <p className={s.sub_text}>Во всех магазинах страны</p>
         <div className={clsx('container', s.brands)}>
           <h3 className={s.title}>В интернет-магазинах</h3>
           {arrEcommerce.map((store) => (

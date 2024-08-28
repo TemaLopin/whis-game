@@ -36,7 +36,7 @@ const ModalBlockPulse = () => {
       </div>
 
       <Link to={'/game'} className={s.start_button}>
-        НАЧАТЬ*
+        НАЧАТЬ
       </Link>
     </div>
   ) : (
@@ -59,7 +59,7 @@ const ModalBlockPulse = () => {
         </div>
 
         <Link to={'/game'} className={s.start_button}>
-          НАЧАТЬ*
+          НАЧАТЬ
         </Link>
       </div>
     </DynamicEcho>

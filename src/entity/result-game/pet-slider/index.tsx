@@ -41,46 +41,17 @@ import 'swiper/css/navigation'
 
 import { Image } from 'react-bootstrap'
 import useWindowDimensions from '../../../shared/hooks/useWindowDimensions'
-const PetSlider = () => {
+import { PetInfo } from '../../../pages/game/components/types'
+const PetSlider = ({ data }: { data: PetInfo }) => {
   const { width } = useWindowDimensions()
-  const petsImages = [
-    { image: Asya },
-    { image: Bruno },
-    { image: Cheesecake },
-    { image: Glen },
-    { image: Django },
-    { image: Jack },
-    { image: Slice },
-    { image: Marshmallow },
-    { image: Irma },
-    { image: Kiwi },
-    { image: Crete },
-    { image: Kutuzov },
-    { image: LilyValley },
-    { image: Luke },
-    { image: Mosaic },
-    { image: Morzhik },
-    { image: Nora },
-    { image: Ringo },
-    { image: Ron },
-    { image: Ryzhik },
-    { image: Seraphim },
-    { image: SourCream },
-    { image: Tai },
-    { image: Tahir },
-    { image: Ursula },
-    { image: Harvey },
-    { image: Hummus },
-    { image: Cherry },
-    { image: Sheriff },
-    { image: Sherbet },
-  ]
+
+  const petsImages = data?.photo.split(', ').map((item) => process.env.REACT_APP_IMAGE_URL + item)
 
   return (
-    <div style={{ position: 'relative' }}>
+    <div style={{ position: 'relative', display: 'flex' }}>
       <div className={s.quantity}>
         <Heart />
-        <p>Эшли</p>
+        <p>{data?.name}</p>
       </div>
       <Swiper
         spaceBetween={30}
@@ -93,7 +64,7 @@ const PetSlider = () => {
         modules={[Autoplay, Navigation]}
         className={s.pet_swiper}
       >
-        {petsImages.map(({ image }, index) => (
+        {petsImages.map((image, index) => (
           <SwiperSlide className={s.slider} key={index}>
             <div className={s.image_container}>
               <Image className={s.image} src={image} />

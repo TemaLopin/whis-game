@@ -1,4 +1,5 @@
 import { Dispatch, SetStateAction } from 'react'
+import { SendAnswerGameRes } from '../../../shared/api/endpoints'
 
 export type Answer = {
   title: string
@@ -12,6 +13,8 @@ export type AnswerData = {
   level?: string
   visible?: boolean
 }
+
+export type PetInfo = SendAnswerGameRes & { id: number; name: string; image: string; tags: string[] }
 
 export type GameContextT = {
   setAnswer: Dispatch<React.SetStateAction<Answer[]>>

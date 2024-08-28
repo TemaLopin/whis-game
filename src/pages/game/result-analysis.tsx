@@ -12,7 +12,7 @@ import { SendAnswerGameRes } from '../../shared/api/endpoints'
 import petsImages from './components/pets-images'
 
 const GameResultAnalysis = () => {
-  const data = JSON.parse(localStorage.getItem('pets') || '[]') as SendAnswerGameRes
+  const data = JSON.parse(localStorage.getItem('pets') || '[]') as SendAnswerGameRes[]
 
   const descItem = [
     'Искусственный интеллект проанализировал',
@@ -29,13 +29,14 @@ const GameResultAnalysis = () => {
   const { width } = useWindowDimensions()
 
   const slides = data.map((item, id) => ({
+    ...item,
     id,
     name: item.nickname,
-    image: item.photo.split(',').map((img) => process.env.REACT_APP_IMAGE_URL + img)[0],
-    tags: item.tagsPreview.split(','),
+    image: item.photo.split(', ').map((img) => process.env.REACT_APP_IMAGE_URL + img)[0],
+    tags: item.tagsPreview.split(', '),
   }))
 
-  console.log('!@#$ slides', slides)
+  const handleSelectPet = () => localStorage.setItem('current_pet', JSON.stringify(slides[idSlide]))
 
   return (
     <GameAnalysisWrapper>
@@ -50,7 +51,9 @@ const GameResultAnalysis = () => {
           <DescriptionGame texts={width > 660 ? descItem : descMobile} />
           <SliderResultAnalysis items={slides} setIdSlide={setIdSlide} />
           <DynamicEcho type='button'>
-            <Link to={`/game/result/${idSlide}`}>ПОЗНАКОМИТЬСЯ</Link>
+            <Link onClick={handleSelectPet} to={`/game/result/${idSlide}`}>
+              ПОЗНАКОМИТЬСЯ
+            </Link>
           </DynamicEcho>
         </div>
       </BodyAdvice>

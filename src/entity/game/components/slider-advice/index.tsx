@@ -6,7 +6,7 @@ import s from './style.module.scss'
 import 'swiper/css'
 import 'swiper/css/effect-coverflow'
 import 'swiper/css/navigation'
-import MusicIcon from './music-icon'
+
 import ArrowIcon from './arrow-icon'
 import SelectLove from '../select/select-love'
 import DynamicEcho from '../../../../shared/ui/dynamic-echo/DynamicEcho'

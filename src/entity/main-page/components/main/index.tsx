@@ -22,8 +22,8 @@ const Footer = ({ handler }: { handler: () => void }) => {
           <OneNumberIcon /> <RubleIcon />
         </div>
         <div className={s.footer_text}>
-          <p>с каждой Пачки*</p> <p> отправим в приюты </p>
-          <p> для кошек и собак**</p>
+          <p>с каждой Пачки</p> <p> отправим в приюты </p>
+          <p> для кошек и собак</p>
         </div>
       </div>
       {width > 1300 ? (

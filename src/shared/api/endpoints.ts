@@ -18,8 +18,7 @@ export type SendAnswerGameRes = {
   tagsPreview: string
   tagsDetailed: string
   __v: number
-}[]
-
+}
 export type AdviceRecommendationRes = {
   _id: string
   photo: string
@@ -41,7 +40,7 @@ export const sendPhone = async (phoneNumber: string) => {
 }
 
 export const sendGameAnswer = async (answer: GameAnswer) => {
-  const { data } = await http.post<SendAnswerGameRes>('/match-pets', answer)
+  const { data } = await http.post<SendAnswerGameRes[]>('/match-pets', answer)
   return data
 }
 

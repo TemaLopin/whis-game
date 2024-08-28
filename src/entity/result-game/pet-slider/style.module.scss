@@ -30,6 +30,11 @@
   }
 }
 
+.slider {
+  display: flex !important;
+  align-items: 'centre';
+}
+
 .slider div {
   display: flex;
   align-items: center;

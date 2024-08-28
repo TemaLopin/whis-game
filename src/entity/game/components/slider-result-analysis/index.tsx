@@ -8,9 +8,10 @@ import 'swiper/css/navigation'
 import ArrowIcon from '../slider-advice/arrow-icon'
 import React, { FC, useRef } from 'react'
 import SelectLove from '../select/select-love'
+import { SendAnswerGameRes } from '../../../../shared/api/endpoints'
 
 type Props = {
-  items: { id: number; name: string; image: string; tags: string[] }[]
+  items: (SendAnswerGameRes & { id: number; name: string; image: string; tags: string[] })[]
   setIdSlide: React.Dispatch<React.SetStateAction<number>>
 }
 
@@ -28,6 +29,7 @@ const SliderResultAnalysis: FC<Props> = ({ items, setIdSlide }) => {
     }
   }
 
+
   return (
     <div className={s.container}>
       <Swiper
@@ -44,6 +46,7 @@ const SliderResultAnalysis: FC<Props> = ({ items, setIdSlide }) => {
           slideShadows: false,
         }}
         onSlideChange={(swiper: any) => setIdSlide(swiper.realIndex)}
+        
         modules={[EffectCoverflow, Navigation]}
         className={s.swiper}
       >
