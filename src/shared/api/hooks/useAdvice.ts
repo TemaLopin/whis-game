@@ -5,13 +5,9 @@ const useAdvice = ({ type }: { type: string }) => {
   const { data, refetch } = useQuery({
     queryKey: ['advice'],
     queryFn: async () => {
-      const answers = JSON.parse(localStorage.getItem('answers') || '{}') as any
+      const answers = JSON.parse(localStorage.getItem('answers') || '{}')
 
-      const res = await Promise.all([
-        await getAdviceRecommendations(type, answers),
-        await getAdviceRecommendations(type, answers),
-        await getAdviceRecommendations(type, answers),
-      ])
+      const res = await getAdviceRecommendations(type, answers)
 
       return res
     },

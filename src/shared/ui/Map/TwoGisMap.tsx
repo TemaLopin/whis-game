@@ -56,11 +56,16 @@ const TwoGisMap: React.FC<MapProps> = ({
 
     const getPlaces = async () => {
       try {
-        const { data } = await axios.get<PlacesResponse>(
-          `https://catalog.api.2gis.com/3.0/markers?q=приют&sort_point=${center.join(',')}&key=${
-            process.env.REACT_APP_GIS_KEY
-          }`
-        )
+        const { data } = await axios.get<PlacesResponse>(`https://catalog.api.2gis.com/3.0/markers`, {
+          params: {
+            key: process.env.REACT_APP_GIS_KEY,
+            q: 'приют',
+            // locale: 'ru_RU',
+            // // search_nearby: true,
+            // f: 'json',
+            // format: 'json',
+          },
+        })
 
         const { result } = data
 

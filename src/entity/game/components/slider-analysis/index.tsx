@@ -16,7 +16,7 @@ const SliderAnalysis: FC<SliderAnalysisProps> = ({ items }) => {
       effect={'coverflow'}
       grabCursor={true}
       autoplay={{
-        delay: 100,
+        delay: 0,
         reverseDirection: true,
       }}
       loop={true}

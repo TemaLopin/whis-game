@@ -27,7 +27,7 @@ export type AdviceRecommendationRes = {
   property: number
   frailty: number
   type: string
-}
+}[]
 
 export const getSourceDonate = async () => {
   const { data } = await http.get<{ amount: number; date: string }>('/donations/current')

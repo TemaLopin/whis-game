@@ -9,14 +9,14 @@ import { PetInfo } from './components/types'
 const ResultGame = () => {
   const data = JSON.parse(localStorage.getItem('current_pet') || '{}') as PetInfo
 
-  const isDog = true
+  const isDog = data?.type === 'dog'
 
   const tags = [...data.tagsPreview.split(','), ...data.tagsDetailed.split(',')]
 
   return (
-    <div className='background pb50'>
+    <div className='background pb50 '>
       <Header />
-      <div className={clsx('container', 'result_body', isDog ? 'dog_bg' : 'cat_bg')}>
+      <div className={clsx('result_body', isDog ? 'dog_bg' : 'cat_bg')}>
         <div className={'result-left'}>
           <PetSlider data={data} />
           <div className={'tags'}>
@@ -33,7 +33,7 @@ const ResultGame = () => {
         </div>
         <PetDescription data={data} isDog={isDog} />
       </div>
-      <div className={clsx('container', 'result_body', isDog ? 'dog_bg' : 'cat_bg')}>
+      <div className={clsx('result_body', isDog ? 'dog_bg' : 'cat_bg')}>
         <SupportText isDog={isDog} />
         <ShelterMap />
       </div>

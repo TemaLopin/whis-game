@@ -40,15 +40,15 @@ export const characteristics = [
 ]
 
 export const lastCharacteristics = [
-  { title: 'ЛЮБЛЮ ПОЛЕЖАТЬ', category: 1, key: 'activity', level: 'LOW', visible: true },
-  { title: 'ЖИВУ УМЕРЕННО АКТИВНО', category: 1, key: 'activity', level: 'MEDIUM', visible: true },
-  { title: 'ВСЕГДА В ДВИЖЕНИИ', category: 1, key: 'activity', level: 'HIGH', visible: true },
-  { title: 'ПРЕДПОЧИТАЮ УЕДИНЕНИЕ', category: 2, key: 'socialization', level: 'LOW', visible: true },
-  { title: 'ОБЩАЮСЬ В МЕРУ', category: 2, key: 'socialization', level: 'MEDIUM', visible: true },
-  { title: 'ЛЮБЛЮ ОБЩЕНИЕ', category: 2, key: 'socialization', level: 'HIGH', visible: true },
+  { title: 'Любит полежать', category: 1, key: 'activity', level: 'LOW', visible: true },
+  { title: 'Живёт умеренно активно', category: 1, key: 'activity', level: 'MEDIUM', visible: true },
+  { title: 'Всегда в движении', category: 1, key: 'activity', level: 'HIGH', visible: true },
+  { title: 'Предпочитает уединение', category: 2, key: 'socialization', level: 'LOW', visible: true },
+  { title: 'Общается в меру', category: 2, key: 'socialization', level: 'MEDIUM', visible: true },
+  { title: 'Любит  общение', category: 2, key: 'socialization', level: 'HIGH', visible: true },
   { title: 'Реагирует не сразу', category: 3, key: 'trainability', level: 'LOW', visible: true },
-  { title: 'Понимает что к чему', category: 3, key: 'trainability', level: 'MEDIUM', visible: true },
-  { title: 'схватываю с полуслова', category: 3, key: 'trainability', level: 'HIGH', visible: true },
+  { title: 'Понимает, что к чему', category: 3, key: 'trainability', level: 'MEDIUM', visible: true },
+  { title: 'Схватывает с полуслова', category: 3, key: 'trainability', level: 'HIGH', visible: true },
 ]
 
 const Game = () => {

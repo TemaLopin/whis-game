@@ -74,9 +74,9 @@ const Modal = ({ setIsOpen }: { setIsOpen: Dispatch<SetStateAction<boolean>> }) 
               </Link>{' '}
               и даю согласие на обработку своих{' '}
               <Link to={downloadPath} target='_blank'>
-                персональных данных
+                персональных данных {' '}
               </Link>
-              Z Организатором Акции
+              Организатором Акции
             </label>
           </div>
           <div className={s.wrapper}>
