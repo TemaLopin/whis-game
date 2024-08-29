@@ -26,7 +26,7 @@
   }
 
   @media (max-width: 600px) {
-    width: 200px;
+    width: 253px;
   }
 }
 
@@ -46,6 +46,7 @@
   border-radius: 16px;
   position: relative;
   margin: 0px auto;
+  min-height: 350px;
 }
 
 .image_container::after {
@@ -76,15 +77,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  top: -120px;
+  top: -40px;
 
   text-transform: uppercase;
 
   z-index: 2;
 
   svg {
-    height: 200px;
-    width: 200px;
+    height: 80px;
+    width: 121px;
   }
 
   p {
@@ -94,7 +95,37 @@
     font-weight: 700;
     text-align: center;
     margin-bottom: 0;
-    margin-left: -13px;
-    margin-top: -10px;
+    margin-left: 2px;
+    margin-top: -2px;
+  }
+}
+
+
+.btn_arrow {
+  width: 31px;
+  height: 35px;
+  padding: 0;
+  position: absolute;
+  top: 0px;
+  bottom: 0;
+  margin: auto;
+  left: 9%;
+  z-index: 2;
+  @media (max-width: 600px){
+    left: -15%;
+  }
+
+  &:last-child {
+    position: absolute;
+    right: 9%;
+    left: initial;
+    transform: rotate(180deg);
+    @media (max-width: 600px){
+      right: -15%;
+    }
+  }
+
+  svg {
+    pointer-events: none;
   }
 }

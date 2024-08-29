@@ -20,6 +20,7 @@ const SliderAnalysis: FC<SliderAnalysisProps> = ({ items }) => {
         reverseDirection: true,
       }}
       loop={true}
+      speed={250}
       allowSlideNext={false}
       direction={'vertical'}
       centeredSlides={true}
