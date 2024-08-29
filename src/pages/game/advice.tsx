@@ -13,6 +13,8 @@ import AdviceWrapper from '../../entity/game/components/wrapper/advice'
 import { useNavigate, useParams } from 'react-router-dom'
 import useAdvice from '../../shared/api/hooks/useAdvice'
 import petsImages from './components/pets-images'
+import DescriptionAdvice from '../../entity/game/components/description-advice'
+import BottomWrapperAdvice from '../../entity/game/components/bottom-wrapper-advice'
 
 const GameAdvice = () => {
   const { width } = useWindowDimensions()
@@ -45,7 +47,7 @@ const GameAdvice = () => {
               <Image src={catImg} />
             </div>
           )}
-          <DescriptionGame texts={width < 996 ? infoDesk : infoDeskDesktop} />
+          <DescriptionAdvice texts={width < 996 ? infoDesk : infoDeskDesktop} />
           <div className={'slider-advice'}>
             <SliderAdvice items={slides} width={width} type={type} />
           </div>
@@ -55,14 +57,14 @@ const GameAdvice = () => {
             </div>
           )}
         </div>
-        <BottomWrapper>
+        <BottomWrapperAdvice>
           <div className={'wrapper-advice'}>
-            <DescriptionGame texts={width < 768 ? descItem : descItemDesktop} />
+            <DescriptionAdvice texts={width < 768 ? descItem : descItemDesktop} />
             <DynamicEcho type='button'>
               <ButtonComplete text={'УЗНАТЬ'} onClick={handleClick} />
             </DynamicEcho>
           </div>
-        </BottomWrapper>
+        </BottomWrapperAdvice>
       </BodyAdvice>
     </AdviceWrapper>
   )

@@ -11,6 +11,7 @@ import ArrowIcon from './arrow-icon'
 import SelectLove from '../select/select-love'
 import DynamicEcho from '../../../../shared/ui/dynamic-echo/DynamicEcho'
 import clsx from 'clsx'
+import useWindowDimensions from '../../../../shared/hooks/useWindowDimensions'
 
 type SliderAdviceProps = {
   items: { title: string; image: string; icon: string }[]
@@ -19,6 +20,7 @@ type SliderAdviceProps = {
 }
 
 const SliderAdvice: FC<SliderAdviceProps> = ({ items, width, type }) => {
+  const { height } = useWindowDimensions()
   const swiperRef = useRef<any>(null)
   const goToNextSlide = () => {
     if (swiperRef.current && swiperRef.current.swiper) {
@@ -59,7 +61,7 @@ const SliderAdvice: FC<SliderAdviceProps> = ({ items, width, type }) => {
                 <p>{`0${++ind}`}</p>
               </div>
               <h4 className={s.slide_text}>{title}</h4>
-              <Image style={{ height: 100, objectFit: 'contain' }} src={icon} />
+              {height > 800 && <Image style={{ height: 100, objectFit: 'contain' }} src={icon} />}
               {/* <DynamicEcho type='small_heart'> */}
               <div className={clsx(s.block_image, type === 'cat' ? s.purple_heart : s.yellow_heart)}>
                 <Image src={image} className={s.masked_image} />

@@ -366,20 +366,24 @@ button {
 .wrapper-advice {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
   max-width: 831px;
   margin: 0 auto;
   height: 100%;
 }
 
 .wrapper-advice > p {
-  margin-top: auto;
-  padding-top: 7%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  /* !@#$  padding-top: 7%; */
   position: static;
 }
 
 .wrapper-advice > div {
   width: max-content;
-  margin: 0 auto 60px;
+  margin: 0 auto;
 }
 
 .wrapper-top-advice {
@@ -400,7 +404,6 @@ button {
 }
 
 .wrapper-top-advice + div {
-  height: initial !important;
 }
 
 @media (min-width: 1240px) {
@@ -573,7 +576,7 @@ button {
   }
 
   .wrapper-top-advice + div {
-    height: initial;
+    /* height: initial; */
     margin-top: auto;
   }
 
@@ -592,10 +595,12 @@ button {
   .wrapper-analysis p {
     top: 10%;
   }
-
+  .wrapper-advice > p {
+    font-size: 13px;
+  }
   .wrapper-top-advice > p {
     font-size: 13px;
-    padding-top: 11%;
+    /* !@#$ padding-top: 11%; */
     gap: 4px;
   }
 
@@ -608,7 +613,7 @@ button {
   }
 
   .wrapper-advice > p {
-    padding-top: 45px;
+    /* !@#$ padding-top: 45px; */
   }
 
   .wrapper-advice > div {

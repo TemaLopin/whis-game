@@ -1,4 +1,4 @@
-.bg {
+.bg_advice {
   position: relative;
 
   background-color: #62196d;
@@ -7,11 +7,14 @@
 
   width: 200%;
   margin-top: auto;
-  overflow: hidden;
+  height: 27% !important;
+
   display: flex;
   flex-direction: column;
 
- margin-top: 50px;
+  // padding-bottom: 20px;
+
+  // !@#$ margin-top: 50px;
 
   // @media (min-width: 1920px) and (max-width: 1921px) {
   //   margin-left: 17px;
