@@ -69,14 +69,14 @@ const Modal = ({ setIsOpen }: { setIsOpen: Dispatch<SetStateAction<boolean>> }) 
             />
             <label htmlFor='top'>
               Я соглашаюсь с{' '}
-              <Link download={'Rules_SberSpasibo.pdf'} to={sberSpasibo} target='_blank'>
+              <Link to={sberSpasibo} target='_blank'>
                 Правилами Акции
               </Link>{' '}
               и даю согласие на обработку своих{' '}
-              <Link download={'Consent_to_processing_of_personal_data.pdf'} to={downloadPath} target='_blank'>
+              <Link to={downloadPath} target='_blank'>
                 персональных данных
-              </Link>Z
-              Организатором Акции
+              </Link>
+              Z Организатором Акции
             </label>
           </div>
           <div className={s.wrapper}>
