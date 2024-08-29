@@ -70,10 +70,9 @@ $--echo: url('../../../../shared/assets/images/echo/purple-echo-2.png');
 
 .promotion_container img {
   width: 104px;
-  height: 86px;
 
   @media (max-width: 600px) {
     width: 58px;
-    height: 46px;
+    // height: 46px;
   }
 }

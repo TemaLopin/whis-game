@@ -57,7 +57,7 @@ const TwoGisMap: React.FC<MapProps> = ({
     const getPlaces = async () => {
       try {
         const { data } = await axios.get<PlacesResponse>(
-          `https://catalog.api.2gis.com/3.0/markers?q=кафе&sort_point=${center.join(',')}&key=${
+          `https://catalog.api.2gis.com/3.0/markers?q=приют&sort_point=${center.join(',')}&key=${
             process.env.REACT_APP_GIS_KEY
           }`
         )
@@ -70,7 +70,7 @@ const TwoGisMap: React.FC<MapProps> = ({
       }
     }
 
-    // getPlaces()
+    getPlaces()
     return () => map.remove()
   }, [containerRef, center, zoom, geoclicker, zoomControl, projectDetector, fullscreenControl])
 

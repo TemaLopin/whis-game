@@ -8,7 +8,7 @@ import { PetInfo } from './components/types'
 
 const ResultGame = () => {
   const data = JSON.parse(localStorage.getItem('current_pet') || '{}') as PetInfo
-  console.log('🚀  !@#$ ~ ResultGame ~ data:', data)
+
   const isDog = true
 
   const tags = [...data.tagsPreview.split(','), ...data.tagsDetailed.split(',')]

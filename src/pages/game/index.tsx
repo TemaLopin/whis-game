@@ -18,6 +18,12 @@ import { Answer, AnswerData, GameContextT } from './components/types'
 type SendAnswer = { [key: string]: string }
 export const GameContext = createContext<GameContextT>({} as GameContextT)
 
+const types: { [key: string]: string } = {
+  LOW: '1',
+  MEDIUM: '2',
+  HIGH: '3',
+}
+
 export const characteristics = [
   { title: 'ЛЮБЛЮ ПОЛЕЖАТЬ', category: 1, key: 'activity', level: 'LOW', visible: true },
   { title: 'ЖИВУ УМЕРЕННО АКТИВНО', category: 1, key: 'activity', level: 'MEDIUM', visible: true },
@@ -40,9 +46,9 @@ export const lastCharacteristics = [
   { title: 'ПРЕДПОЧИТАЮ УЕДИНЕНИЕ', category: 2, key: 'socialization', level: 'LOW', visible: true },
   { title: 'ОБЩАЮСЬ В МЕРУ', category: 2, key: 'socialization', level: 'MEDIUM', visible: true },
   { title: 'ЛЮБЛЮ ОБЩЕНИЕ', category: 2, key: 'socialization', level: 'HIGH', visible: true },
-  { title: 'Реагирует не сразу', category: 3, key: 'curiosity', level: 'LOW', visible: true },
-  { title: 'Понимает что к чему', category: 3, key: 'curiosity', level: 'MEDIUM', visible: true },
-  { title: 'схватываю с полуслова', category: 3, key: 'curiosity', level: 'HIGH', visible: true },
+  { title: 'Реагирует не сразу', category: 3, key: 'trainability', level: 'LOW', visible: true },
+  { title: 'Понимает что к чему', category: 3, key: 'trainability', level: 'MEDIUM', visible: true },
+  { title: 'схватываю с полуслова', category: 3, key: 'trainability', level: 'HIGH', visible: true },
 ]
 
 const Game = () => {
@@ -56,6 +62,7 @@ const Game = () => {
   const { descItem, descItemDesktop, selectsGame } = getGameText(isMainGame)
 
   const [answer, setAnswer] = useState<AnswerData[]>([])
+  console.log('🚀  !@#$ ~ Game ~ answer:', answer)
   const [answersData, setAnswersData] = useState<AnswerData[]>(isMainGame ? characteristics : lastCharacteristics)
 
   const { mutate: handleSendAnswer } = useSendGameAnswer()
@@ -70,16 +77,15 @@ const Game = () => {
   const isFullSelects = selects?.every(({ title }) => title !== '?')
 
   const handleClick = () => {
+    const answers = answer.reduce((acc: SendAnswer, { key = '', level = '' }) => {
+      acc[key] = isMainGame ? level : types[level]
+      return acc
+    }, {})
+
     navigate(isMainGame ? '/game/past-pet' : `/game/advice/${type}`)
 
-    if (isMainGame) {
-      const answers = answer.reduce((acc: SendAnswer, { key = '', level = '' }) => {
-        acc[key] = level
-        return acc
-      }, {})
-
-      handleSendAnswer(answers)
-    }
+    if (isMainGame) handleSendAnswer(answers)
+    else localStorage.setItem('answers', JSON.stringify(answers))
   }
 
   useEffect(() => {
@@ -113,7 +119,11 @@ const Game = () => {
           <SelectsBlock />
           <QuantityText />
           <DynamicEcho type='button'>
-            <ButtonComplete text='ЭТО ПРО МЕНЯ!' onClick={handleClick} disabled={!isFullSelects} />
+            <ButtonComplete
+              text={isMainGame ? 'ЭТО ПРО МЕНЯ!' : 'ГОТОВО!'}
+              onClick={handleClick}
+              disabled={!isFullSelects}
+            />
           </DynamicEcho>
           <Characteristics />
         </BodyInfoStart>

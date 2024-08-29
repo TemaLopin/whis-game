@@ -27,7 +27,7 @@ export type AdviceRecommendationRes = {
   property: number
   frailty: number
   type: string
-}[]
+}
 
 export const getSourceDonate = async () => {
   const { data } = await http.get<{ amount: number; date: string }>('/donations/current')
@@ -49,7 +49,7 @@ export const sendUserCharacteristics = async (answer: GameAnswer) => {
   return data
 }
 
-export const getAdviceRecommendations = async (type: string) => {
-  const { data } = await http.get<AdviceRecommendationRes>(`/random-tips?type=${type}`)
+export const getAdviceRecommendations = async (type: string, answers: any) => {
+  const { data } = await http.get<AdviceRecommendationRes>(`/random-tips?type=${type}`, { params: answers })
   return data
 }
