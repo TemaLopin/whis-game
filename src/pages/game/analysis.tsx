@@ -21,7 +21,7 @@ const GameAnalysis = () => {
   }))
 
   useEffect(() => {
-    const timeout = setTimeout(() => navigate('/game/result-analysis'), 8000)
+    const timeout = setTimeout(() => navigate('/game/result-analysis'), 4000)
     return () => clearTimeout(timeout)
   }, [])
 
