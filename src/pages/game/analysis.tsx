@@ -27,7 +27,7 @@ const GameAnalysis = () => {
 
   return (
     <GameAnalysisWrapper>
-      <Header />
+      <Header hasBackButton={true} />
       <BodyAdvice>
         <div className={'wrapper-analysis'}>
           <DescriptionAnalyze texts={descItem} />

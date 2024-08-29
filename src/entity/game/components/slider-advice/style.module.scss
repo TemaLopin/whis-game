@@ -7,7 +7,6 @@
     max-width: 100%;
     object-fit: cover;
   }
-
 }
 
 .slide_text {
@@ -30,7 +29,7 @@
   border-radius: 20px;
   margin-top: 50px;
   height: 400px;
-  background-color: #FBB311;
+  background-color: #fbb311;
   padding: 3px;
 
   &::before {
@@ -39,7 +38,7 @@
     inset: 0;
     border-radius: 20px;
     border: 3px solid transparent;
-    background: linear-gradient(to right, #FF51FF, rgb(255, 255, 255) 50.5%, #FFFF22 100%) border-box;
+    background: linear-gradient(to right, #ff51ff, rgb(255, 255, 255) 50.5%, #ffff22 100%) border-box;
     -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
@@ -51,7 +50,7 @@
 }
 
 .slide_cat {
-  background-color: #A7268E;
+  background-color: #a7268e;
 }
 
 .block_image {
@@ -59,6 +58,32 @@
   width: 182px;
   height: 120px;
   margin: 0 auto;
+}
+
+.block_image::before {
+  content: '';
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: 1;
+
+  transform: scale(1.07, 1.08);
+}
+
+.yellow_heart::before {
+  background: url('../../../../shared/assets//icons/yellow-heart.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.purple_heart::before {
+  background: url('../../../../shared/assets//icons/purple-heart.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .wrapper {
@@ -89,7 +114,6 @@
       height: 35px;
       margin-left: 0;
     }
-
 
     &:last-child {
       transform: rotate(180deg);
@@ -127,25 +151,14 @@
 .masked_image {
   width: 100%;
   height: 100%;
-  -webkit-mask-image: url('../../../../shared/assets/icons/love-item.svg');
-  mask-image: url('../../../../shared/assets/icons/love-item.svg');
+  -webkit-mask-image: url('../../../../shared/assets/icons/white-heart.svg');
+  mask-image: url('../../../../shared/assets/icons/white-heart.svg');
   -webkit-mask-size: cover;
   mask-size: cover;
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   -webkit-mask-position: center;
   mask-position: center;
-}
 
-.masked_image {
-  width: 100%;
-  height: 100%;
-  -webkit-mask-image: url('../../../../shared/assets/icons/love-item.svg');
-  mask-image: url('../../../../shared/assets/icons/love-item.svg');
-  -webkit-mask-size: cover;
-  mask-size: cover;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  mask-position: center;
+  position: relative;
 }

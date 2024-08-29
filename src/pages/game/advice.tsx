@@ -37,7 +37,7 @@ const GameAdvice = () => {
 
   return (
     <AdviceWrapper>
-      <Header />
+      <Header hasBackButton={true} />
       <BodyAdvice>
         <div className={'wrapper-top-advice'}>
           {type === 'cat' && width > 996 && (
