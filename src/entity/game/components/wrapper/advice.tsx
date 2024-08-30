@@ -7,11 +7,11 @@ import useWindowDimensions from '../../../../shared/hooks/useWindowDimensions'
 const AdviceWrapper = ({ children }: { children: ReactNode }) => {
   const { height } = useWindowDimensions()
   const { type } = useParams()
-
+console.log(document.body.scrollHeight, document.documentElement.clientHeight)
   return (
     <div
       className={clsx('background', s.wrapper, type === 'cat' ? s.wrapper_cat : s.wrapper_dog)}
-      style={{ height: height >= 675 ? '100vh' : `100%` }}
+      // style={{ height: document.body.scrollHeight > document.documentElement.clientHeight  ? '100vh' : `100%` }}
     >
       {children}
     </div>

@@ -3,7 +3,7 @@ $--echo-2: url('../../../../shared/assets/images/echo/yellow-echo-2.png');
 
 .wrapper {
   position: relative;
-  overflow: hidden;
+  overflow-y: auto;
   height: 100vh;
   @media (max-width: 1024px){
     overflow-y: auto;

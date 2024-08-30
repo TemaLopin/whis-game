@@ -30,7 +30,7 @@ const GamePet = () => {
       <div className={'past-pet'}>
         <DescriptionGame texts={width > 768 ? description : descriptionMobile} />
         <div className={'past-pet-wrapper'}>
-          {width > 768 && (
+          {width > 996 && (
             <div className={'past-pet-img'}>
               <Image src={catImg} />
             </div>
@@ -40,12 +40,12 @@ const GamePet = () => {
             <ButtonStart title='ДА, СОБАКА' link='/game/last-selects/dog' />
             <ButtonStart title='НЕТ' link='/game/analysis' />
           </div>
-          {width > 768 && (
+          {width > 996 && (
             <div className={'past-pet-img'}>
               <Image src={dogImg} />
             </div>
           )}
-          {width < 769 && (
+          {width < 996 && (
             <div className={'past-pet-img'}>
               <Image src={mobileImg} />
             </div>

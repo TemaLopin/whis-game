@@ -13,8 +13,16 @@ $--arrow-left-double: url('../../../../shared/assets/icons/arrow-left-double.svg
     z-index: 4;
     width: 240px;
     height: 180px;
+    @media (max-width: 1024px){
+      width: 180px;
+      height: 100%;
+    }
     @media (max-width: 520px) {
       width: 85px;
+      height: 100%;
+    }
+    @media (max-height: 630px){
+      width: 125px;
       height: 100%;
     }
   }
@@ -49,6 +57,10 @@ $--arrow-left-double: url('../../../../shared/assets/icons/arrow-left-double.svg
   @media (max-width: 1200px) {
     bottom: -20px;
     left: calc(50% - 55px);
+  }
+  @media (max-height: 780px) and (max-width: 1240px) {
+    left: 12%;
+    bottom: initial;
   }
 
   @media (max-width: 600px) {
@@ -85,7 +97,9 @@ $--arrow-left-double: url('../../../../shared/assets/icons/arrow-left-double.svg
   height: 15px;
 
   position: absolute;
-  top: 11px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
   left: 15px;
 
   background: $--arrow-left-double no-repeat;
@@ -93,7 +107,7 @@ $--arrow-left-double: url('../../../../shared/assets/icons/arrow-left-double.svg
   background-size: contain;
 
   @media (max-width: 1200px) {
-    top: 8px;
+
     left: 11px;
   }
 }

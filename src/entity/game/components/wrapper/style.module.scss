@@ -162,8 +162,13 @@ $--echo-6: url('../../../../shared/assets/images/echo/yellow-echo-3.png');
 }
 
 .wrapper_cat{
-  @media (min-width: 769px){
-    overflow-y: auto;
+  //@media (min-width: 769px){
+  //  overflow-y: auto;
+  //}
+  & > div + div{
+    @media (max-height: 650px) and (max-width: 1440px){
+      margin-top: 30px;
+    }
   }
   @media (max-height: 750px){
       overflow: hidden;
@@ -216,9 +221,9 @@ $--echo-6: url('../../../../shared/assets/images/echo/yellow-echo-3.png');
 
 
 .wrapper_dog{
-  @media (min-width: 769px){
-    overflow-y: auto;
-  }
+  //@media (min-width: 769px){
+  //  overflow-y: auto;
+  //}
   @media (max-height: 750px){
     overflow: hidden;
   }
