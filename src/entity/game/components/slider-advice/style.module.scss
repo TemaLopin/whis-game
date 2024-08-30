@@ -97,6 +97,10 @@
   @media (max-width: 769px) and (max-height: 750px) {
     width: 77%;
   }
+  @media (max-width: 380px) and (max-height: 700px) {
+    width: 54%;
+    height: 86px;
+  }
 }
 
 .block_image::before {
