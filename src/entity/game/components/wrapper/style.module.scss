@@ -165,6 +165,9 @@ $--echo-6: url('../../../../shared/assets/images/echo/yellow-echo-3.png');
   @media (min-width: 769px){
     overflow-y: auto;
   }
+  @media (max-height: 750px){
+      overflow: hidden;
+  }
   &::after {
     content: '';
     position: absolute;
@@ -215,6 +218,9 @@ $--echo-6: url('../../../../shared/assets/images/echo/yellow-echo-3.png');
 .wrapper_dog{
   @media (min-width: 769px){
     overflow-y: auto;
+  }
+  @media (max-height: 750px){
+    overflow: hidden;
   }
 
   &::after {
