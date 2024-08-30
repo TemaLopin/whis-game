@@ -37,7 +37,7 @@ const ShelterMap = () => {
   return (
     <div className={s.body}>
       <div className={s.border}>
-        <TwoGisMap className={s.map} center={currentLocation} zoom={15} />
+        <TwoGisMap className={s.map} center={currentLocation} zoom={8} />
       </div>
     </div>
   )

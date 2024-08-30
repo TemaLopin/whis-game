@@ -32,7 +32,7 @@ const GameResultAnalysis = () => {
     ...item,
     id,
     name: item.nickname,
-    image: item.photo.split(', ').map((img) => process.env.REACT_APP_IMAGE_URL + img)[0],
+    image: (item.photo ?? '').split(', ').map((img) => process.env.REACT_APP_IMAGE_URL + img)[0],
     tags: item.tagsPreview.split(', '),
   }))
 
@@ -40,7 +40,7 @@ const GameResultAnalysis = () => {
 
   return (
     <GameAnalysisWrapper>
-      <Header />
+      <Header hasBackButton={true} />
       <BodyAdvice>
         <div className={'wrapper-result-analysis'}>
           {width < 660 && (

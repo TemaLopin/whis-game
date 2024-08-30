@@ -5,6 +5,10 @@ import { Image } from 'react-bootstrap'
 import BankRus from '../../../../shared/assets/images/bank-rus.png'
 import useWindowDimensions from '../../../../shared/hooks/useWindowDimensions'
 
+import sberSpasibo from '../../../../shared/download/Rules_SberSpasibo.pdf'
+import download from '../../../../shared/download/Consent_to_processing_of_personal_data.pdf'
+import { Link } from 'react-router-dom'
+
 const Footer = () => {
   const { width } = useWindowDimensions()
   const isMobile = width <= 1300
@@ -20,12 +24,18 @@ const Footer = () => {
             <p>
               Акция «Забота сближает». Период проведения акции: с 01.09.2024 по 30.11.2024. Информацию об организаторе
               акции, правилах ее проведения, призах, сроках, месте и порядке их получения можно узнать на сайте
-              wad2024.ru. <a href='#'>Полные правила акции</a>
+              wad2024.ru.{' '}
+              <Link target='_blank' to={sberSpasibo}>
+                Полные правила акции
+              </Link>
             </p>
             <p>
               Акция «Забота сближает. 1 рубль с пачки — в приюты». Период проведения акции с 01.09.2024 по 31.12.2024.
               Информацию об организаторе акции, правилах её проведения, условиях перечисления денежных средств в
-              благотворительный фонд можно узнать на сайте wad2024.ru. <a href='#'>Полные правила акции</a>
+              благотворительный фонд можно узнать на сайте wad2024.ru.{' '}
+              <Link target='_blank' to={download}>
+                Полные правила акции
+              </Link>
             </p>
             <p>
               В процессе игры применяется технология искусственного интеллекта. Результаты игры не являются
