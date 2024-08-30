@@ -11,7 +11,7 @@ const AdviceWrapper = ({ children }: { children: ReactNode }) => {
   return (
     <div
       className={clsx('background', s.wrapper, type === 'cat' ? s.wrapper_cat : s.wrapper_dog)}
-      style={{ height: height >= 707 ? '100vh' : `100%` }}
+      style={{ height: height >= 675 ? '100vh' : `100%` }}
     >
       {children}
     </div>
