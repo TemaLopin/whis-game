@@ -6,7 +6,7 @@ import BankRus from '../../../../shared/assets/images/bank-rus.png'
 import useWindowDimensions from '../../../../shared/hooks/useWindowDimensions'
 
 import sberSpasibo from '../../../../shared/download/Rules_SberSpasibo.pdf'
-import download from '../../../../shared/download/Consent_to_processing_of_personal_data.pdf'
+import rules from '../../../../shared/download/Rules.pdf'
 import { Link } from 'react-router-dom'
 
 const Footer = () => {
@@ -33,7 +33,7 @@ const Footer = () => {
               Акция «Забота сближает. 1 рубль с пачки — в приюты». Период проведения акции с 01.09.2024 по 31.12.2024.
               Информацию об организаторе акции, правилах её проведения, условиях перечисления денежных средств в
               благотворительный фонд можно узнать на сайте wad2024.ru.{' '}
-              <Link target='_blank' to={download}>
+              <Link target='_blank' to={rules}>
                 Полные правила акции
               </Link>
             </p>

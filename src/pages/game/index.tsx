@@ -62,7 +62,7 @@ const Game = () => {
   const { descItem, descItemDesktop, selectsGame } = getGameText(isMainGame)
 
   const [answer, setAnswer] = useState<AnswerData[]>([])
-  console.log('🚀  !@#$ ~ Game ~ answer:', answer)
+
   const [answersData, setAnswersData] = useState<AnswerData[]>(isMainGame ? characteristics : lastCharacteristics)
 
   const { mutate: handleSendAnswer } = useSendGameAnswer()
