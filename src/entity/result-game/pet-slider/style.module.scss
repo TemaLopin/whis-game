@@ -97,9 +97,11 @@
     margin-bottom: 0;
     margin-left: 2px;
     margin-top: -2px;
+
+    width: 30%;
+    text-wrap: wrap;
   }
 }
-
 
 .btn_arrow {
   width: 31px;
@@ -111,7 +113,7 @@
   margin: auto;
   left: 9%;
   z-index: 2;
-  @media (max-width: 600px){
+  @media (max-width: 600px) {
     left: -15%;
   }
 
@@ -120,7 +122,7 @@
     right: 9%;
     left: initial;
     transform: rotate(180deg);
-    @media (max-width: 600px){
+    @media (max-width: 600px) {
       right: -15%;
     }
   }

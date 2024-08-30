@@ -40,7 +40,7 @@ const GameResultAnalysis = () => {
 
   return (
     <GameAnalysisWrapper>
-      <Header />
+      <Header hasBackButton={true} />
       <BodyAdvice>
         <div className={'wrapper-result-analysis'}>
           {width < 660 && (

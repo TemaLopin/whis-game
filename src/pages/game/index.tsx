@@ -112,7 +112,7 @@ const Game = () => {
 
   return (
     <GameWrapper>
-      <Header hasBackButton={!isMainGame} />
+      <Header hasBackButton={true} />
       <GameContext.Provider value={context}>
         <BodyInfoStart>
           <DescriptionGame texts={width < 768 ? descItem : descItemDesktop} />

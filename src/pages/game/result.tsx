@@ -15,7 +15,7 @@ const ResultGame = () => {
 
   return (
     <div className='background pb50 '>
-      <Header />
+      <Header hasBackButton={true} />
       <div className={clsx('result_body', isDog ? 'dog_bg' : 'cat_bg')}>
         <div className={'result-left'}>
           <PetSlider data={data} />
