@@ -6,24 +6,16 @@ import 'swiper/css'
 import 'swiper/css/effect-coverflow'
 import 'swiper/css/navigation'
 import ButtonStart from '../button-start'
-import { FC, useLayoutEffect, useState } from 'react'
+import { createElement, FC, useLayoutEffect, useState } from 'react'
 
 type SliderAnalysisProps = { items: { id: number; image: string; imageAlt: string }[] }
 
 const SliderAnalysis: FC<SliderAnalysisProps> = ({ items }) => {
-  const [firstRender, setFirstRender] = useState(true)
-
-  useLayoutEffect(() => {
-    setFirstRender(false)
-  }, [])
-
-  if (firstRender) return <></>
-
   return (
     <Swiper
       effect={'coverflow'}
       grabCursor={true}
-      // allowTouchMove={false}
+      allowTouchMove={false}
       autoplay={{
         delay: 0,
         reverseDirection: true,
