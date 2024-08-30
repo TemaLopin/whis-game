@@ -126,6 +126,7 @@
     @media (max-width: 769px) {
     }
   }
+
   @media (max-height: 700px) and (max-width: 768px) {
     padding: 25px 13px 17px 17px;
   }
@@ -139,9 +140,12 @@
   margin-top: 18px;
   margin-left: -4px;
 
+
   .btn_arrow {
     padding: 0;
-
+    @media (max-width: 520px) {
+      left: -88% !important;
+    }
     svg {
       width: 31px;
       height: 35px;
@@ -150,12 +154,39 @@
 
     &:last-child {
       transform: rotate(180deg);
+      @media (max-width: 520px) {
+        left: 0 !important;
+        right: -88% !important;
+      }
     }
   }
 
-  @media (max-width: 1000px) {
-    display: none !important;
+  @media (max-height: 850px) {
+    .btn_arrow {
+      position: absolute;
+      left: -35%;
+      right: 0;
+      margin: auto;
+      top: 14%;
+      bottom: 0;
+      width: 31px;
+      height: 35px;
+      z-index: 2;
+
+      svg {
+        width: 31px;
+        height: 35px;
+        margin-left: 0;
+      }
+
+      &:last-child {
+        right: -35%;
+        left: 0;
+        transform: rotate(180deg);
+      }
+    }
   }
+
 }
 
 .quantity {

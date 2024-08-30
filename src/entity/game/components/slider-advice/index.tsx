@@ -35,7 +35,7 @@ const SliderAdvice: FC<SliderAdviceProps> = ({ items, type }) => {
   }
   console.log('!@#$ width', width)
   return (
-    <Swiper
+    <><Swiper
       ref={swiperRef}
       effect={'coverflow'}
       grabCursor={true}
@@ -71,17 +71,17 @@ const SliderAdvice: FC<SliderAdviceProps> = ({ items, type }) => {
           </SwiperSlide>
         )
       })}
-      {(width > 1000 && height > 900) && (
-        <div className={s.btn_wrapper}>
-          <button className={s.btn_arrow} onClick={goToPrevSlide}>
-            <ArrowIcon />
-          </button>
-          <button className={s.btn_arrow} onClick={goToNextSlide}>
-            <ArrowIcon />
-          </button>
-        </div>
-      )}
+
     </Swiper>
+        <div className={s.btn_wrapper}>
+            <button className={s.btn_arrow} onClick={goToPrevSlide}>
+                <ArrowIcon />
+            </button>
+            <button className={s.btn_arrow} onClick={goToNextSlide}>
+                <ArrowIcon />
+            </button>
+        </div>
+      </>
   )
 }
 
