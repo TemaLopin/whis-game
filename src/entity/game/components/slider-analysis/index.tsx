@@ -15,8 +15,9 @@ const SliderAnalysis: FC<SliderAnalysisProps> = ({ items }) => {
     <Swiper
       effect={'coverflow'}
       grabCursor={true}
+      allowTouchMove={false}
       autoplay={{
-        delay: 0,
+        delay: 200,
         reverseDirection: true,
       }}
       loop={true}
