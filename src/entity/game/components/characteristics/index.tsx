@@ -25,8 +25,8 @@ const Characteristics = () => {
 
     const scrollY = -height - paddingTop
 
-    const fromLeft = clientWidth / 2 + position.x + prefMargin
-    const fromRight = -clientWidth / 2 - (clientWidth - position.x) - prefMargin
+    const fromLeft = clientWidth / 2 + position.x + prefMargin - 30
+    const fromRight = -clientWidth / 2 - (clientWidth - position.x) - prefMargin + 30
     const scrollX = isLeftSidePaw ? fromLeft : fromRight
 
     const deg = isLeftSidePaw ? 30 : -30

@@ -70,7 +70,7 @@
     inset: 0;
     border-radius: 20px;
     border: 3px solid transparent;
-    background: linear-gradient(to right, #FF51FF, rgb(255, 255, 255) 50.5%, #FFFF22 100%) border-box;
+    background: linear-gradient(to right, #ff51ff, rgb(255, 255, 255) 50.5%, #ffff22 100%) border-box;
     -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
@@ -106,7 +106,7 @@
   margin-left: -50% !important;
   @media (max-width: 600px) {
     grid-template-columns: repeat(2, 1fr);
-    margin-left: -40px !important;
+    margin-left: 0px !important;
     width: 100% !important;
     .tag:last-child {
       grid-column: 2 span;

@@ -49,7 +49,7 @@ const GameAdvice = () => {
           )}
           <DescriptionAdvice texts={width < 996 ? infoDesk : infoDeskDesktop} />
           <div className={'slider-advice'}>
-            <SliderAdvice items={slides} width={width} type={type} />
+            <SliderAdvice items={slides} type={type} />
           </div>
           {type === 'dog' && width > 996 && (
             <div className={'past-pet-img advice-right'}>

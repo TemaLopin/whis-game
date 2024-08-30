@@ -38,9 +38,16 @@ const SelectCharacteristic: FC<SelectCharacteristicProps> = ({ bg = '#fff', sele
   const selectCharacteristicHandler = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     if (selectAsk || isVisible) return
 
+    const button = e.currentTarget
+    const buttonRect = button.getBoundingClientRect()
+
+    const centerX = buttonRect.left + buttonRect.width / 2
+    const centerY = buttonRect.top + buttonRect.height / 2
+
     const offsetWidth = e.currentTarget.offsetWidth
-    const x = e.clientX
-    const y = e.clientY
+
+    const x = centerX
+    const y = centerY
 
     setPosition({ x, y, offsetWidth })
     setIsVisible(true)
@@ -68,7 +75,7 @@ const SelectCharacteristic: FC<SelectCharacteristicProps> = ({ bg = '#fff', sele
 
     const onPawSelect = () => {
       setIsVisible(false)
-      setTimeout(handleSelectAnswer, 0)
+      handleSelectAnswer()
     }
 
     setTimeout(onPawSelect, 1000)

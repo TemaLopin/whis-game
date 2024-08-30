@@ -15,12 +15,12 @@ import useWindowDimensions from '../../../../shared/hooks/useWindowDimensions'
 
 type SliderAdviceProps = {
   items: { title: string; image: string; icon: string }[]
-  width: number
+
   type?: string
 }
 
-const SliderAdvice: FC<SliderAdviceProps> = ({ items, width, type }) => {
-  const { height } = useWindowDimensions()
+const SliderAdvice: FC<SliderAdviceProps> = ({ items, type }) => {
+  const { height, width } = useWindowDimensions()
   const swiperRef = useRef<any>(null)
   const goToNextSlide = () => {
     if (swiperRef.current && swiperRef.current.swiper) {
@@ -33,7 +33,7 @@ const SliderAdvice: FC<SliderAdviceProps> = ({ items, width, type }) => {
       swiperRef.current.swiper.slidePrev()
     }
   }
-
+  console.log('!@#$ width', width)
   return (
     <Swiper
       ref={swiperRef}
@@ -71,7 +71,7 @@ const SliderAdvice: FC<SliderAdviceProps> = ({ items, width, type }) => {
           </SwiperSlide>
         )
       })}
-      {width > 996 && (
+      {(width > 1000 && height > 900) && (
         <div className={s.btn_wrapper}>
           <button className={s.btn_arrow} onClick={goToPrevSlide}>
             <ArrowIcon />
