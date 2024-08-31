@@ -17,7 +17,7 @@ const SliderAnalysis: FC<SliderAnalysisProps> = ({ items }) => {
       grabCursor={true}
       allowTouchMove={false}
       autoplay={{
-        delay: 0,
+        delay: 200,
         reverseDirection: true,
       }}
       loop={true}
