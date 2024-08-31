@@ -28,8 +28,8 @@ const SliderAnalysis: FC<SliderAnalysisProps> = ({ items }) => {
       slidesPerView={'auto'}
       coverflowEffect={{
         rotate: 0,
-        stretch: 0,
-        depth: 0,
+        stretch: 320,
+        depth: 200,
         modifier: 1,
         slideShadows: true,
       }}
