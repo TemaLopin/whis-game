@@ -21,7 +21,7 @@ const SliderAnalysis: FC<SliderAnalysisProps> = ({ items }) => {
         reverseDirection: true,
       }}
       loop={true}
-      speed={1000}
+      speed={200}
       allowSlideNext={false}
       direction={'vertical'}
       centeredSlides={true}
@@ -29,7 +29,7 @@ const SliderAnalysis: FC<SliderAnalysisProps> = ({ items }) => {
       coverflowEffect={{
         rotate: 0,
         stretch: 320,
-        depth: 200,
+        depth: 180,
         modifier: 1,
         slideShadows: true,
       }}

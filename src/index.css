@@ -311,7 +311,7 @@ button {
     position: relative;
     z-index: 1;
     display: flex;
-    overflow: hidden;
+    overflow-x: hidden;
     flex-direction: column;
     height: calc(100% - 100px);
     margin-top: -40px;
