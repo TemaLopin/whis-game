@@ -311,6 +311,7 @@ button {
     position: relative;
     z-index: 1;
     display: flex;
+    overflow: hidden;
     flex-direction: column;
     height: calc(100% - 100px);
     margin-top: -40px;
@@ -785,7 +786,10 @@ button {
     }
 }
 
-@media (max-height: 750px) {
+@media (max-height: 750px) and (min-width: 1024px){
+    .wrapper-result-analysis > p{
+        font-size: 20px;
+    }
     .wrapper-top-advice + div {
         padding: 0;
     }

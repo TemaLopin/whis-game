@@ -10,26 +10,29 @@
   margin-bottom: 45px;
   margin-top: 45px;
 
-  @media (max-width: 768px){
+  @media (max-width: 768px) {
     font-size: 14px;
   }
-  @media (max-width: 520px){
+  @media (max-width: 520px) {
     margin-top: 20px;
     margin-bottom: 16px;
   }
-  span{
+
+  span {
     display: inline;
     border-radius: 12px;
     padding: 2px 11px;
     background: rgb(255, 255, 255);
-
+    @media (max-width: 768px) {
+      padding: 1px 11px;
+    }
   }
 }
 
-.description_cat{
+.description_cat {
   left: initial !important;
   right: 8% !important;
-  @media (max-width: 1240px){
-      right: 3% !important;
+  @media (max-width: 1240px) {
+    right: 3% !important;
   }
 }
