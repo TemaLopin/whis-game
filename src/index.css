@@ -312,13 +312,13 @@ button {
 }
 
 .past-pet {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    overflow-x: hidden;
-    flex-direction: column;
-    height: calc(100% - 100px);
-    margin-top: -40px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  overflow-x: hidden;
+  flex-direction: column;
+  height: calc(100% - 100px);
+  margin-top: -40px;
 }
 
 .past-pet-wrapper {
@@ -681,10 +681,12 @@ button {
     justify-content: center;
     margin-top: auto;
     margin-bottom: 0;
+    width: 100%;
   }
 
   .past-pet-img img {
     max-width: 100%;
+    width: 100%;
   }
 
   .wrapper-analysis p {
