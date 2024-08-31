@@ -9,7 +9,7 @@ const GameAnalysisWrapper = ({ children }: { children: ReactNode }) => {
   const { pathname } = useLocation()
   return (
     <div className={clsx('background', s.wrapper_game, s.wrapper_analysis)} style={{ minHeight: height }}>
-      <div className={clsx('analysis-wrapper', s.subwrapper, pathname === '/game/analysis' && 'analysis-wrapper_h')}>
+      <div className={clsx('analysis-wrapper', s.subwrapper, pathname === '/game/analysis' && 'analysis-wrapper_h', pathname === '/game/result-analysis' && 'result_wrapper_analysis')}>
         {children}
       </div>
     </div>
