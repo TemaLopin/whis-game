@@ -7,7 +7,7 @@ import { PetInfo } from '../../../pages/game/components/types'
 const PetDescription = ({ isDog, data }: { data: PetInfo; isDog: boolean }) => {
   return (
     <div className={s.body}>
-      <p className={s.title}>Как помочь {data.nickname}?</p>
+      <p className={s.title}>как помочь животному?</p>
       <div>
         <p className={clsx(s.text, isDog ? 'black_color' : 'white_color')}>
           Узнайте на сайте фонда-партнёра, как подарить питомцу любящий дом
