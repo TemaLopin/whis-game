@@ -5,12 +5,23 @@ import s from './style.module.scss'
 import { Image } from 'react-bootstrap'
 import Navigation from '../navigation'
 import { Link, useNavigate, useParams } from 'react-router-dom'
+import ym from 'react-yandex-metrika'
 
 /* eslint-disable  */
 
 const Header = ({ hasBackButton = false }: { hasBackButton?: boolean }) => {
   const navigate = useNavigate()
   const pathUrl = useParams()
+
+  const handleClickMetric = (name: string) => {
+    ym('reachGoal', 'header_button_click', {
+      header: {
+        button: {
+          click: name,
+        },
+      },
+    })
+  }
 
   return (
     <div className={s.container}>
@@ -20,11 +31,11 @@ const Header = ({ hasBackButton = false }: { hasBackButton?: boolean }) => {
         </div>
       )}
       <div className={s.header}>
-        <Link to={'/'}>
+        <Link onClick={() => handleClickMetric('logo')} to={'/'}>
           <Image src={Whiskas} />
         </Link>
         {!pathUrl['*'] && <Navigation />}
-        <Link to={'/'}>
+        <Link onClick={() => handleClickMetric('logo')} to={'/'}>
           <Image src={Pedigree} />
         </Link>
       </div>

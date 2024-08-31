@@ -11,6 +11,7 @@ import useWindowDimensions from '../../../../shared/hooks/useWindowDimensions'
 import Header from '../header'
 import { useEffect, useState } from 'react'
 import Modal from '../modal'
+import ym from 'react-yandex-metrika'
 
 const Footer = ({ handler }: { handler: () => void }) => {
   const { width } = useWindowDimensions()
@@ -57,6 +58,14 @@ const Main = () => {
   const modalHandler = () => {
     setIsOpen((prev) => !prev)
     document.body.classList.toggle('noscroll')
+
+    ym('reachGoal', 'main_sberThanks_click', {
+      main: {
+        sberThanks: {
+          click: 'Нажми и получай бонусы',
+        },
+      },
+    })
   }
   useEffect(() => {
     if ((isOpen && window.innerWidth > 996) || (isOpen && 'ontouchstart' in document.documentElement)) {

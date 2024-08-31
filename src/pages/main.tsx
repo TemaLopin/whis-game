@@ -3,7 +3,7 @@ import BottomImages from '../entity/main-page/components/bottom-images'
 
 const MainPage = () => {
   return (
-    <div className={'background home'}>
+    <div id={'landing'} className={'background home'}>
       <Main />
       <FindYourPets />
       <Promotion />

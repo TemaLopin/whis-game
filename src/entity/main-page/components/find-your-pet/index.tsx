@@ -11,12 +11,29 @@ import { Image } from 'react-bootstrap'
 import DynamicEcho from '../../../../shared/ui/dynamic-echo/DynamicEcho'
 import useWindowDimensions from '../../../../shared/hooks/useWindowDimensions'
 import { Link } from 'react-router-dom'
+import ym from 'react-yandex-metrika'
+import { useEffect, useRef, useState } from 'react'
 
 const ModalBlockPulse = () => {
+  const [isVisible, setIsVisible] = useState(false)
+
+  const ref = useRef<HTMLDivElement>(null)
+  console.log('🚀  !@#$ ~ ModalBlockPulse ~ ref:', ref)
+
   const { isMobile } = useWindowDimensions()
 
+  const handleClick = () => {
+    ym('reachGoal', 'main_start_click', {
+      main: {
+        start: {
+          click: 'Начать',
+        },
+      },
+    })
+  }
+
   return isMobile ? (
-    <div className={s.main_body}>
+    <div ref={ref} className={s.main_body}>
       <div className={s.robot_img}>
         <DynamicEcho type='circle'>
           <Image src={Robot} />
@@ -28,17 +45,19 @@ const ModalBlockPulse = () => {
         <span> искусственного интеллекта</span>
       </div>
       <div className={s.sub_text}>
-        <p>Подберите питомца со схожими чертами характера вместе с <span>искусственным интеллектом </span>
-          или узнайте, как сблизиться со своим любимцем</p>
+        <p>
+          Подберите питомца со схожими чертами характера вместе с <span>искусственным интеллектом </span>
+          или узнайте, как сблизиться со своим любимцем
+        </p>
       </div>
 
-      <Link to={'/game'} className={s.start_button}>
+      <Link onClick={handleClick} to={'/game'} className={s.start_button}>
         НАЧАТЬ
       </Link>
     </div>
   ) : (
     <DynamicEcho>
-      <div className={s.main_body}>
+      <div ref={ref} className={s.main_body}>
         <div className={s.robot_img}>
           <Image src={Robot} />
         </div>

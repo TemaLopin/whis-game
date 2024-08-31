@@ -19,7 +19,8 @@ const GameAdvice = () => {
   const navigate = useNavigate()
   const { type = '' } = useParams()
 
-  const { data = [] } = useAdvice({ type: type === 'dog' ? 'P' : 'W' })
+  const answers = JSON.parse(localStorage.getItem('answers') || '{}')
+  const { data = [] } = useAdvice({ answers, type: type === 'dog' ? 'P' : 'W' })
 
   const handleClick = () => navigate('/game/analysis')
 
