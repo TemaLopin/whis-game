@@ -1,6 +1,6 @@
 const LoveIcon = ({ color }) => {
   return (
-    <svg viewBox='0 -2 152.685 100' fill='none' xmlnsSvg='http://www.w3.org/2000/svg'>
+    <svg viewBox='-1 -2 155.685  105' fill='none' xmlnsSvg='http://www.w3.org/2000/svg'>
       <mask id='mask_883_628' fill={color}>
         <path
           id='Union'

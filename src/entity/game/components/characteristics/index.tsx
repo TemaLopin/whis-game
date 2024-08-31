@@ -4,10 +4,14 @@ import { GameContext } from '../../../../pages/game'
 import BottomWrapper from '../bottom-wrapper'
 import { useContext, useEffect, useRef, useState } from 'react'
 import { Image } from 'react-bootstrap'
-import paw from '../../../../shared/assets/images/paw.png'
+import catPaw from '../../../../shared/assets/images/cat-paw.png'
+import dogPaw from '../../../../shared/assets/images/dog-paw.png'
 import clsx from 'clsx'
+import { useParams } from 'react-router-dom'
 
 const Characteristics = () => {
+  const { type } = useParams()
+
   const [height, setHeight] = useState(0)
   const [firstRender, setFirstRender] = useState(true)
 
@@ -56,7 +60,7 @@ const Characteristics = () => {
             ))}
         </div>
         <Image
-          src={paw}
+          src={type === 'dog' ? dogPaw : catPaw}
           className={clsx(s.paw)}
           style={{ transform: getPosition(), [isLeftSidePaw ? 'left' : 'right']: '-175px' }}
         />

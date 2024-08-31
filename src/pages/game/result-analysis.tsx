@@ -9,7 +9,6 @@ import TitleGame from '../../entity/game/components/title'
 import GameAnalysisWrapper from '../../entity/game/components/wrapper/analysis'
 import { useState } from 'react'
 import { SendAnswerGameRes } from '../../shared/api/endpoints'
-import petsImages from './components/pets-images'
 
 const GameResultAnalysis = () => {
   const data = JSON.parse(localStorage.getItem('pets') || '[]') as SendAnswerGameRes[]

@@ -41,11 +41,7 @@ const TwoGisMap: React.FC<MapProps> = ({
 }) => {
   const [firstRender, setFirstRender] = useState(true)
   const zoom = useRef(defaultZoom)
-  // const [zoom, setZoom] = useState(defaultZoom)
-  // const location = useRef({
-  //   lat: center[1],
-  //   lng: center[0],
-  // })
+
   const containerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -86,9 +82,6 @@ const TwoGisMap: React.FC<MapProps> = ({
             fields:
               'items.ads,items.name,items.stop_factors,items.reviews,items.schedule,items.context,items.name_ex,items.timezone_offset,items.flags,items.has_exchange,items.temporary_unavailable_atm_services,search_attributes',
             r: 255134575,
-            // // search_nearby: true,
-            // f: 'json',
-            // format: 'json',
           },
         })
 

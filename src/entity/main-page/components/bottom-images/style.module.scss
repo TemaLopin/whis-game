@@ -9,29 +9,31 @@
 
   &::after {
     content: '';
-    background: url("../../../../shared/assets/images/echo/bottom-main.svg") 0 0 / cover no-repeat;
+    background: url('../../../../shared/assets/images/echo/bottom-main.svg') 0 0 / cover no-repeat;
     width: 100%;
     height: 244%;
     position: absolute;
     bottom: 0;
-    left: 0;
+    left: -1px;
     right: 0;
     margin: auto;
 
     @media (max-width: 1025px) {
       height: 205%;
+      left: 0px;
     }
     @media (max-width: 768px) {
       width: 154%;
       height: 220%;
-      left: -27%;
+      left: calc(-27% - 1px);
     }
     @media (max-width: 620px) {
       height: 196%;
+      left: -27%;
     }
     @media (max-width: 440px) {
       width: 147%;
-      left: -24%;
+      left: calc(-24% + 2px);
       height: 210%;
     }
   }
@@ -58,4 +60,3 @@
     object-fit: cover;
   }
 }
-

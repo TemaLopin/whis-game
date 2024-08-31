@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import clsx from 'clsx'
 import s from './style.module.scss'
 import { Image } from 'react-bootstrap'
