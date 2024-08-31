@@ -106,15 +106,29 @@
   width: 200% !important;
   margin-bottom: 28px !important;
   margin-left: -50% !important;
-  @media (max-width: 600px) {
-    grid-template-columns: repeat(2, 1fr);
-    margin-left: 0px !important;
-    width: 100% !important;
-    .tag:last-child {
-      grid-column: 2 span;
-      justify-content: initial;
-      width: initial;
+  @media (max-width: 600px){
+    width: 100vw !important;
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: -30% !important;
+    max-width: 384px;
+    .tag{
+      display: flex;
+      &:last-child{
+        margin: 0;
+      }
     }
+  }
+  @media (max-width: 380px){
+    margin-left: -28% !important;
+  }
+  @media (max-width: 370px){
+    margin-left: -25% !important;
+  }
+  @media (max-width: 350px){
+    margin-left: -21% !important;
   }
 }
 
