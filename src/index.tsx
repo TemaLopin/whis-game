@@ -12,11 +12,9 @@ const metricId = process.env.REACT_APP_YANDEX_METRIC_ID
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <YMInitializer accounts={[+(metricId || 0)]} />
-      <App />
-      <DynamicList />
-    </BrowserRouter>
-  </React.StrictMode>
+  <BrowserRouter>
+    <YMInitializer accounts={[+(metricId || 0)]} />
+    <App />
+    <DynamicList />
+  </BrowserRouter>
 )

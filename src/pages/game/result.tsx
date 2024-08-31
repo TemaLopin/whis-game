@@ -33,7 +33,7 @@ const ResultGame = () => {
         </div>
         <PetDescription data={data} isDog={isDog} />
       </div>
-      <div className={clsx('result_body', isDog ? 'dog_bg' : 'cat_bg')}>
+      <div className={clsx('result_body', 'result_padding', isDog ? 'dog_bg' : 'cat_bg')}>
         <SupportText isDog={isDog} />
         <ShelterMap />
       </div>
