@@ -12,15 +12,17 @@ import { useNavigate, useParams } from 'react-router-dom'
 import useAdvice from '../../shared/api/hooks/useAdvice'
 import DescriptionAdvice from '../../entity/game/components/description-advice'
 import BottomWrapperAdvice from '../../entity/game/components/bottom-wrapper-advice'
+import { useEffect, useState } from 'react'
+import { AdviceRecommendationRes, getAdviceRecommendations } from '../../shared/api/endpoints'
 
 const GameAdvice = () => {
+  const [data, setData] = useState<AdviceRecommendationRes>([])
   const { width } = useWindowDimensions()
 
   const navigate = useNavigate()
   const { type = '' } = useParams()
 
   const answers = JSON.parse(localStorage.getItem('answers') || '{}')
-  const { data = [] } = useAdvice({ answers, type: type === 'dog' ? 'P' : 'W' })
 
   const handleClick = () => navigate('/game/analysis')
 
@@ -34,6 +36,16 @@ const GameAdvice = () => {
     image: process.env.REACT_APP_IMAGE_URL + item.photo,
     title: item.description,
   }))
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await getAdviceRecommendations(type === 'dog' ? 'P' : 'W', answers)
+        setData(res)
+      } catch (error) {}
+    }
+    fetchData()
+  }, [type])
 
   return (
     <AdviceWrapper>
