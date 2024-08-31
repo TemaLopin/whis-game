@@ -8,6 +8,8 @@ $--dark-purple-color: #62196d;
   align-items: center;
   justify-content: space-between;
 
+  position: relative;
+
   color: $--dark-purple-color;
   border-right: 1px solid #0004;
   width: 50%;
@@ -23,6 +25,14 @@ $--dark-purple-color: #62196d;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+  }
+
+  @media (max-width: 1024px) {
+    > div {
+      position: absolute;
+      top: -80px;
+    }
+    
   }
 }
 
@@ -74,6 +84,10 @@ $--dark-purple-color: #62196d;
 
   max-width: 329px;
   margin-bottom: 20px;
+
+  @media (max-width: 600px) {
+    max-width: 100%;
+  }
 }
 
 .button {
