@@ -558,16 +558,16 @@ button {
     bottom: initial;
     left: 0;
     right: 0;
-    z-index: 2;
+    z-index: 201;
   }
 }
 @media (min-height: 915px) and (max-width: 4440px) {
   .result_wrapper_analysis > div > div {
     bottom: initial;
-    top: 80%;
+    top: 85%;
     left: 0;
     right: 0;
-    z-index: 2;
+    z-index: 201;
   }
 }
 

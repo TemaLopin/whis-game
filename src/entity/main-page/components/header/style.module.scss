@@ -52,7 +52,7 @@ $--arrow-left-double: url('../../../../shared/assets/icons/arrow-left-double.svg
   top: calc(50% - 20px);
   left: 40px;
 
-  z-index: 10;
+  z-index: 202 !important;
 
   @media (max-width: 1200px) {
     bottom: -20px;
