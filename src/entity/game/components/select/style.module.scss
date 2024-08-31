@@ -28,11 +28,12 @@
 
   p {
     position: relative;
-    max-width: 113px;
+    max-width: 100px;
     z-index: 2;
     text-transform: uppercase;
-    font-size: 12px;
+    font-size: 11px;
     user-select: none;
+    margin-bottom: 20px;
     @media (max-width: 768px) {
       font-size: 12px;
     }

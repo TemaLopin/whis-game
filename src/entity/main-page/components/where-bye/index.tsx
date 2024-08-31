@@ -14,7 +14,7 @@ import clsx from 'clsx'
 
 const WhereBye = () => {
   const arrEcommerce = [Kuper, Samokat, Megamarket]
-  const arrMagazine = [Magnite, Pyaterichka, Auchan, Metro, Perecrestok, Lenta]
+  const arrMagazine = [Magnite, Pyaterichka, Metro, Perecrestok, Lenta]
 
   return (
     <div className={s.echo} id='buy'>
@@ -30,7 +30,7 @@ const WhereBye = () => {
         <div className={clsx('container', s.brands)}>
           <h3 className={s.title}>В магазинах твоего города</h3>
           {arrMagazine.map((store, ind) => (
-            <Image className={s.brand_logo} src={store} key={ind}/>
+            <Image className={s.brand_logo} src={store} key={ind} />
           ))}
         </div>
         <p className={s.info}>* Во всех магазинах, где представлена продукция, участвующая в акции</p>

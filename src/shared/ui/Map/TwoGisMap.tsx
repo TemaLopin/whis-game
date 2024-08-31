@@ -107,7 +107,7 @@ const TwoGisMap: React.FC<MapProps> = ({
           getPlaces({ lat, lng })
         })
       },
-      () => console.log('!@#$ ')
+      () => {}
     )
 
     if (!firstRender) return () => map.remove()

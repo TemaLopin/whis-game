@@ -327,6 +327,11 @@ button {
 }
 
 .past-pet-img {
+  display: flex;
+  justify-content: center;
+
+    /* #### CHANGE DISPLAY */
+
   margin-top: -3%;
 }
 

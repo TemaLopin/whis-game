@@ -35,53 +35,55 @@ const SliderAdvice: FC<SliderAdviceProps> = ({ items, type }) => {
   }
   console.log('!@#$ width', width)
   return (
-    <><Swiper
-      ref={swiperRef}
-      effect={'coverflow'}
-      grabCursor={true}
-      loop={true}
-      centeredSlides={true}
-      slidesPerView={'auto'}
-      coverflowEffect={{
-        rotate: 0,
-        stretch: 205,
-        depth: 390,
-        modifier: 1,
-        slideShadows: false,
-      }}
-      modules={[EffectCoverflow, Navigation, Autoplay]}
-      className={s.swiper}
-    >
-      {items.map(({ title, image, icon }, ind: number) => {
-        return (
-          <SwiperSlide className={clsx(s.slide, type === 'cat' && s.slide_cat)} key={ind}>
-            <div className={s.wrapper}>
-              <div className={s.quantity}>
-                <SelectLove />
-                <p>{`0${++ind}`}</p>
+    <>
+      <Swiper
+        ref={swiperRef}
+        effect={'coverflow'}
+        grabCursor={true}
+        loop={true}
+        centeredSlides={true}
+        slidesPerView={'auto'}
+        coverflowEffect={{
+          rotate: 0,
+          stretch: 205,
+          depth: 390,
+          modifier: 1,
+          slideShadows: false,
+        }}
+        modules={[EffectCoverflow, Navigation, Autoplay]}
+        className={s.swiper}
+      >
+        {items.map(({ title, image, icon }, ind: number) => {
+          return (
+            <SwiperSlide className={clsx(s.slide, type === 'cat' && s.slide_cat)} key={ind}>
+              <div className={s.wrapper}>
+                <div className={s.quantity}>
+                  <SelectLove />
+                  <p>{`0${++ind}`}</p>
+                </div>
+                <h4 className={s.slide_text}>{title}</h4>
+                {height > 650 && <Image style={{ height: 100, objectFit: 'contain' }} src={icon} />}
+                {/* <DynamicEcho type='small_heart'> */}
+                <div className={clsx(s.block_image, type === 'cat' ? s.purple_heart : s.yellow_heart)}>
+                  <Image src={image} className={s.masked_image} />
+                </div>
+                {/* </DynamicEcho> */}
               </div>
-              <h4 className={s.slide_text}>{title}</h4>
-              {height > 650 && <Image style={{ height: 100, objectFit: 'contain' }} src={icon} />}
-              {/* <DynamicEcho type='small_heart'> */}
-              <div className={clsx(s.block_image, type === 'cat' ? s.purple_heart : s.yellow_heart)}>
-                <Image src={image} className={s.masked_image} />
-              </div>
-              {/* </DynamicEcho> */}
-            </div>
-          </SwiperSlide>
-        )
-      })}
-
-    </Swiper>
+            </SwiperSlide>
+          )
+        })}
+      </Swiper>
+      {width > 600 && (
         <div className={s.btn_wrapper}>
-            <button className={s.btn_arrow} onClick={goToPrevSlide}>
-                <ArrowIcon />
-            </button>
-            <button className={s.btn_arrow} onClick={goToNextSlide}>
-                <ArrowIcon />
-            </button>
+          <button className={s.btn_arrow} onClick={goToPrevSlide}>
+            <ArrowIcon />
+          </button>
+          <button className={s.btn_arrow} onClick={goToNextSlide}>
+            <ArrowIcon />
+          </button>
         </div>
-      </>
+      )}
+    </>
   )
 }
 
