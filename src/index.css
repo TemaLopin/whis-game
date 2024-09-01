@@ -669,6 +669,7 @@ button {
 
   .past-pet {
     gap: 15px;
+    height: initial;
     justify-content: flex-start !important;
   }
 

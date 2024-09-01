@@ -44,6 +44,22 @@ const TwoGisMap: React.FC<MapProps> = ({
 
   const containerRef = useRef<HTMLDivElement>(null)
 
+  const getPlaceInfo = async ({ lat, lon }: { lat: number; lon: number }) => {
+    try {
+      const res = await axios.get('https://catalog.api.2gis.com/3.0/items', {
+        params: {
+          lat,
+          lon,
+          key: process.env.REACT_APP_GIS_KEY,
+          fields: 'items.contact_groups',
+        },
+      })
+      console.log('🚀  !@#$ ~ getPlaceInfo ~ res:', res)
+    } catch (error) {
+      console.error('Error fetching place info:')
+    }
+  }
+
   useEffect(() => {
     const options: DG.MapOptions = {
       zoom: zoom.current,
@@ -64,7 +80,7 @@ const TwoGisMap: React.FC<MapProps> = ({
 
     DG.marker(center, { icon: myLocationIcon }).addTo(map)
 
-    const getPlaces = async ({ lat: send_lat, lng: send_lng }: { lat: number; lng: number }) => {
+    const getPlacesLocation = async ({ lat: send_lat, lng: send_lng }: { lat: number; lng: number }) => {
       try {
         const { data } = await axios.get<PlacesResponse>(`https://catalog.api.2gis.com/3.0/markers`, {
           params: {
@@ -89,6 +105,7 @@ const TwoGisMap: React.FC<MapProps> = ({
 
         result.items.forEach(({ lat, lon, name }) => {
           DG.marker([lat, lon]).bindPopup(name).addTo(map)
+          // .on('click', () => getPlaceInfo({ lat, lon }))
         })
       } catch (error) {
         console.error('Error fetching places:', error)
@@ -99,12 +116,12 @@ const TwoGisMap: React.FC<MapProps> = ({
       (f, s) => {
         map.on('dragend', (e) => {
           const { lat, lng } = map.getCenter()
-          getPlaces({ lat, lng })
+          getPlacesLocation({ lat, lng })
         })
         map.on('zoomend', (e) => {
           zoom.current = map.getZoom()
           const { lat, lng } = map.getCenter()
-          getPlaces({ lat, lng })
+          getPlacesLocation({ lat, lng })
         })
       },
       () => {}
@@ -112,7 +129,7 @@ const TwoGisMap: React.FC<MapProps> = ({
 
     if (!firstRender) return () => map.remove()
 
-    getPlaces({ lat: center[0], lng: center[1] })
+    getPlacesLocation({ lat: center[0], lng: center[1] })
     setFirstRender(false)
 
     return () => map.remove()

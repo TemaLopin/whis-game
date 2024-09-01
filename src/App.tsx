@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, useLocation } from 'react-router-dom'
 import MainPage from './pages/main'
 import Error404 from './pages/404'
 import GameStart from './pages/game/start'
@@ -14,6 +14,7 @@ import 'swiper/css/navigation'
 import GameAnalysis from './pages/game/analysis'
 import GameResultAnalysis from './pages/game/result-analysis'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { useEffect, useLayoutEffect } from 'react'
 
 export const queryClient = new QueryClient({
   defaultOptions: {
@@ -27,6 +28,12 @@ export const queryClient = new QueryClient({
 })
 
 const App = () => {
+  const { pathname } = useLocation()
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pathname])
+
   return (
     <QueryClientProvider client={queryClient}>
       <Routes>
