@@ -39,8 +39,6 @@ const QuestionAnswer = () => {
 
     setData(newData)
     setShowMore(newLength <= allQuestionLength)
-
-    ym('reachGoal', 'main_faqMore_click', { main: { faqMore: { click: 'Показать еще' } } })
   }
 
   const handleView = () => {
@@ -79,7 +77,13 @@ const QuestionAnswer = () => {
             </Collapse>
           </div>
         ))}
-        <button className={clsx(s.show_more, !showMore && s.active)} onClick={showMoreHandler}>
+        <button
+          className={clsx(s.show_more, !showMore && s.active)}
+          onClick={() => {
+            showMoreHandler()
+            ym('reachGoal', 'main_faqMore_click', { main: { faqMore: { click: 'Показать еще' } } })
+          }}
+        >
           {showMore ? 'Показать еще' : 'Скрыть'}
         </button>
       </div>
