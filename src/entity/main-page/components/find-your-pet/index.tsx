@@ -24,7 +24,7 @@ const ModalBlockPulse = () => {
   const { isMobile } = useWindowDimensions()
 
   const handleClick = () => {
-    ym('reachGoal', 'main_start_click', { main: { start: { click: 'Начать' } } })
+    ym('reachGoal', 'main_start_view', { main: { start: { view: 'Начать' } } })
   }
 
   return isMobile ? (
