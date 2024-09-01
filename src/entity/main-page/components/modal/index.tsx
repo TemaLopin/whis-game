@@ -31,13 +31,7 @@ const Modal = ({ setIsOpen }: { setIsOpen: Dispatch<SetStateAction<boolean>> }) 
     setIsOpen(false)
     document.body.classList.remove('noscroll')
 
-    ym('reachGoal', 'main_sberThanks_close', {
-      main: {
-        sberThanks: {
-          close: 'Закрыть',
-        },
-      },
-    })
+    ym('reachGoal', 'main_sberThanks_close', { main: { sberThanks: { close: 'Закрыть' } } })
   }
 
   const handleSubmit = () => {
@@ -45,13 +39,7 @@ const Modal = ({ setIsOpen }: { setIsOpen: Dispatch<SetStateAction<boolean>> }) 
     setIsOpen(false)
     document.body.classList.remove('noscroll')
 
-    ym('reachGoal', 'main_sberThanks_close', {
-      main: {
-        sberThanks: {
-          success: 'Авторизация',
-        },
-      },
-    })
+    ym('reachGoal', 'main_sberThanks_close', { main: { sberThanks: { success: 'Авторизация' } } })
   }
 
   const activeButton = value.has18 && value.success && value.phoneNumber.length > 2 && !value.phoneNumber.includes('_')

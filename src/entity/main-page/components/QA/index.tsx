@@ -3,6 +3,8 @@ import s from './style.module.scss'
 import { Collapse } from 'react-bootstrap'
 import { useEffect, useState } from 'react'
 import { questionAnswer } from './constants'
+import ym from 'react-yandex-metrika'
+import { InView } from 'react-intersection-observer'
 
 let initialQuantityLength = 4
 
@@ -19,7 +21,12 @@ const QuestionAnswer = () => {
   const [openId, setOpenId] = useState(0)
   const [showMore, setShowMore] = useState(true)
 
-  const handleSelect = (id: number) => setOpenId(openId === id ? -1 : id)
+  const handleSelect = (id: number) => {
+    ym('reachGoal', 'main_faqOpenClose_click', {
+      main: { faqOpenClose: { click: openId === id ? 'Закрыть' : 'Открыть' } },
+    })
+    setOpenId(openId === id ? -1 : id)
+  }
 
   const showMoreHandler = () => {
     const currentLength = data.length
@@ -32,6 +39,12 @@ const QuestionAnswer = () => {
 
     setData(newData)
     setShowMore(newLength <= allQuestionLength)
+
+    ym('reachGoal', 'main_faqMore_click', { main: { faqMore: { click: 'Показать еще' } } })
+  }
+
+  const handleView = () => {
+    ym('reachGoal', 'main_faq_view', { main: { faq: { view: 'Вопрос-ответ' } } })
   }
 
   useEffect(() => showMoreHandler(), [])
@@ -39,7 +52,7 @@ const QuestionAnswer = () => {
   if (data.length === 0) return <></>
 
   return (
-    <div className={s.echo}>
+    <InView triggerOnce onChange={(isView) => isView && handleView()} className={s.echo}>
       <div data-animch='1' className={clsx('container', s.body)}>
         <p className={s.main_text}>вопрос-ответ</p>
         <p className={s.sub_text}>Ответы на часто задаваемые вопросы</p>
@@ -70,7 +83,7 @@ const QuestionAnswer = () => {
           {showMore ? 'Показать еще' : 'Скрыть'}
         </button>
       </div>
-    </div>
+    </InView>
   )
 }
 

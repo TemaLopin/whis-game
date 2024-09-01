@@ -59,13 +59,7 @@ const Main = () => {
     setIsOpen((prev) => !prev)
     document.body.classList.toggle('noscroll')
 
-    ym('reachGoal', 'main_sberThanks_click', {
-      main: {
-        sberThanks: {
-          click: 'Нажми и получай бонусы',
-        },
-      },
-    })
+    ym('reachGoal', 'main_sberThanks_click', { main: { sberThanks: { click: 'Нажми и получай бонусы' } } })
   }
   useEffect(() => {
     if ((isOpen && window.innerWidth > 996) || (isOpen && 'ontouchstart' in document.documentElement)) {

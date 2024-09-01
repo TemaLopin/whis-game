@@ -11,14 +11,20 @@ import Perecrestok from '../../../../shared/assets/images/stores/perecrestok.png
 import Pyaterichka from '../../../../shared/assets/images/stores/pyaterichka.png'
 import Samokat from '../../../../shared/assets/images/stores/samokat.png'
 import clsx from 'clsx'
+import { InView } from 'react-intersection-observer'
+import ym from 'react-yandex-metrika'
 
 const WhereBye = () => {
   const arrEcommerce = [Kuper, Samokat, Megamarket]
   const arrMagazine = [Magnite, Pyaterichka, Metro, Perecrestok, Lenta]
 
+  const handleView = () => {
+    ym('reachGoal', 'main_wtb_view', { main: { wtb: { view: 'Где купить' } } })
+  }
+
   return (
     <div className={s.echo} id='buy'>
-      <div className={clsx(s.body, 'container')}>
+      <InView triggerOnce onChange={(isView) => isView && handleView()} className={clsx(s.body, 'container')}>
         <p className={s.main_text}>Где купить?</p>
         <p className={s.sub_text}>Во всех магазинах страны</p>
         <div className={clsx('container', s.brands)}>
@@ -34,7 +40,7 @@ const WhereBye = () => {
           ))}
         </div>
         <p className={s.info}>* Во всех магазинах, где представлена продукция, участвующая в акции</p>
-      </div>
+      </InView>
     </div>
   )
 }

@@ -14,6 +14,7 @@ import DescriptionAdvice from '../../entity/game/components/description-advice'
 import BottomWrapperAdvice from '../../entity/game/components/bottom-wrapper-advice'
 import { useEffect, useState } from 'react'
 import { AdviceRecommendationRes, getAdviceRecommendations } from '../../shared/api/endpoints'
+import ym from 'react-yandex-metrika'
 
 const GameAdvice = () => {
   const [data, setData] = useState<AdviceRecommendationRes>([])
@@ -24,7 +25,12 @@ const GameAdvice = () => {
 
   const answers = JSON.parse(localStorage.getItem('answers') || '{}')
 
-  const handleClick = () => navigate('/game/analysis')
+  const handleClick = () => {
+    ym('reachGoal', 'gameAdvice_button_click', {
+      gameAdvice: { button: { click: 'Далее' } },
+    })
+    navigate('/game/analysis')
+  }
 
   const descItemDesktop = ['УЗНАЙТЕ, КАКОГО ПИТОМЦА ПОДОБРАЛ искусственный', 'интеллект ПО ВАШИМ ЧЕРТАМ ХАРАКТЕРА']
   const descItem = ['УЗНАЙТЕ, КАКОГО ПИТОМЦА ПОДОБРАЛ', 'искусственный интеллект ПО ВАШИМ', 'ЧЕРТАМ ХАРАКТЕРА']

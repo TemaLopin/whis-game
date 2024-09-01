@@ -14,13 +14,7 @@ const Header = ({ hasBackButton = false }: { hasBackButton?: boolean }) => {
   const pathUrl = useParams()
 
   const handleClickMetric = (name: string) => {
-    ym('reachGoal', 'header_button_click', {
-      header: {
-        button: {
-          click: name,
-        },
-      },
-    })
+    ym('reachGoal', 'header_button_click', { header: { button: { click: name } } })
   }
 
   return (

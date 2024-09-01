@@ -8,6 +8,7 @@ import catPaw from '../../../../shared/assets/images/cat-paw.png'
 import dogPaw from '../../../../shared/assets/images/dog-paw.png'
 import clsx from 'clsx'
 import { useParams } from 'react-router-dom'
+import ym from 'react-yandex-metrika'
 
 const Characteristics = () => {
   const { type } = useParams()
@@ -21,6 +22,10 @@ const Characteristics = () => {
   const { isVisible, position, answersData } = useContext(GameContext)
   const { clientWidth = 0 } = root || {}
   const isLeftSidePaw = clientWidth / 2 > position.x
+
+  const handleClick = (index: number) => {
+    ym('reachGoal', 'gameGo_heart_click', { gameGo: { heart: { click: index + 1 } } })
+  }
 
   const getPosition = () => {
     const paddingTop = clientWidth < 768 ? 30 : 25
@@ -56,7 +61,7 @@ const Characteristics = () => {
             .sort((a, b) => a.category - b.category)
             .sort((a, b) => Number(b.visible) - Number(a.visible))
             .map((answer, ind) => (
-              <SelectCharacteristic item={answer} key={ind} />
+              <SelectCharacteristic onClick={() => handleClick(ind)} item={answer} key={ind} />
             ))}
         </div>
         <Image

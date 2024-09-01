@@ -8,6 +8,7 @@ import whisImage from '../../../../shared/assets/images/whiskas-bottom-start.png
 import useWindowDimensions from '../../../../shared/hooks/useWindowDimensions'
 import pedigreeImage from '../../../../shared/assets/images/pedigree-bottom.png'
 import BottomImage from '../bottom-image'
+import ym from 'react-yandex-metrika'
 
 const BodyStart = () => {
   const descItemDesktop = [
@@ -22,6 +23,11 @@ const BodyStart = () => {
     'ещё ближе с вашим любимцем',
   ]
   const { width } = useWindowDimensions()
+
+  const handleClick = () => {
+    ym('reachGoal', 'game_next_click', { game: { next: { click: 'Далее' } } })
+  }
+
   return (
     <div className={s.body}>
       {width > 1025 && (
@@ -32,7 +38,7 @@ const BodyStart = () => {
       <BodyInfoStart>
         <TitleGame title={'найдите ПОХОЖЕГО по характеру ПИТОМЦА'} />
         <DescriptionGame texts={width > 768 ? descItemDesktop : descItem} />
-        <ButtonStart title={width < 768 ? 'Вперёд' : 'Далее'} link='/game/go' />
+        <ButtonStart onClick={handleClick} title={width < 768 ? 'Вперёд' : 'Далее'} link='/game/go' />
         {width < 1025 && <BottomImage />}
       </BodyInfoStart>
       {width > 1025 && (

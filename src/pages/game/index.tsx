@@ -14,6 +14,7 @@ import useWindowDimensions from '../../shared/hooks/useWindowDimensions'
 import useSendGameAnswer from '../../shared/api/hooks/useSendGameAnswer'
 import { getGameText } from './components/utils'
 import { Answer, AnswerData, GameContextT } from './components/types'
+import ym from 'react-yandex-metrika'
 
 type SendAnswer = { [key: string]: string }
 export const GameContext = createContext<GameContextT>({} as GameContextT)
@@ -25,12 +26,12 @@ const types: { [key: string]: string } = {
 }
 
 export const characteristics = [
-  { title: 'ЛЮБЛЮ ПОЛЕЖАТЬ', category: 1, key: 'activity', level: 'LOW', visible: true },
-  { title: 'ЖИВУ УМЕРЕННО АКТИВНО', category: 1, key: 'activity', level: 'MEDIUM', visible: true },
-  { title: 'ВСЕГДА В ДВИЖЕНИИ', category: 1, key: 'activity', level: 'HIGH', visible: true },
-  { title: 'ПРЕДПОЧИТАЮ УЕДИНЕНИЕ', category: 2, key: 'socialization', level: 'LOW', visible: true },
-  { title: 'ОБЩАЮСЬ В МЕРУ', category: 2, key: 'socialization', level: 'MEDIUM', visible: true },
-  { title: 'ЛЮБЛЮ ОБЩЕНИЕ', category: 2, key: 'socialization', level: 'HIGH', visible: true },
+  { title: 'Люблю полежать', category: 1, key: 'activity', level: 'LOW', visible: true },
+  { title: 'Живу умеренно активно', category: 1, key: 'activity', level: 'MEDIUM', visible: true },
+  { title: 'Всегда в движении', category: 1, key: 'activity', level: 'HIGH', visible: true },
+  { title: 'Предпочитаю уединение', category: 2, key: 'socialization', level: 'LOW', visible: true },
+  { title: 'Общаюсь в меру', category: 2, key: 'socialization', level: 'MEDIUM', visible: true },
+  { title: 'Люблю общение', category: 2, key: 'socialization', level: 'HIGH', visible: true },
   { title: 'Спокойный', category: 3, key: 'curiosity', level: 'LOW', visible: true },
   { title: 'Адаптивный', category: 3, key: 'curiosity', level: 'MEDIUM', visible: true },
   { title: 'Экспрессивный', category: 3, key: 'curiosity', level: 'HIGH', visible: true },
@@ -81,6 +82,14 @@ const Game = () => {
       acc[key] = isMainGame ? level : types[level]
       return acc
     }, {})
+
+    const stringAnswers = answer.map(({ title }) => title).join(' - ')
+
+    const metricAnswer = { button: { click: stringAnswers } }
+
+    isMainGame
+      ? ym('reachGoal', 'gameGo_button_click', { gameGo: metricAnswer })
+      : ym('reachGoal', 'gameLastSelects_button_click', { gameLastSelects: metricAnswer })
 
     navigate(isMainGame ? '/game/past-pet' : `/game/advice/${type}`)
 

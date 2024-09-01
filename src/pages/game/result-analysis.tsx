@@ -9,6 +9,7 @@ import TitleGame from '../../entity/game/components/title'
 import GameAnalysisWrapper from '../../entity/game/components/wrapper/analysis'
 import { useState } from 'react'
 import { SendAnswerGameRes } from '../../shared/api/endpoints'
+import ym from 'react-yandex-metrika'
 
 const GameResultAnalysis = () => {
   const data = JSON.parse(localStorage.getItem('pets') || '[]') as SendAnswerGameRes[]
@@ -35,7 +36,14 @@ const GameResultAnalysis = () => {
     tags: item.tagsPreview.split(', '),
   }))
 
-  const handleSelectPet = () => localStorage.setItem('current_pet', JSON.stringify(slides[idSlide]))
+  const handleSelectPet = () => {
+    const { type, nickname } = slides[idSlide]
+    ym('reachGoal', 'gameResultAnalysis_pet_click', {
+      gameResultAnalysis: { pet: { click: `${idSlide + 1} - ${type} - ${nickname}` } },
+    })
+
+    localStorage.setItem('current_pet', JSON.stringify(slides[idSlide]))
+  }
 
   return (
     <GameAnalysisWrapper>

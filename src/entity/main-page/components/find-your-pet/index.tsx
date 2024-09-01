@@ -13,6 +13,7 @@ import useWindowDimensions from '../../../../shared/hooks/useWindowDimensions'
 import { Link } from 'react-router-dom'
 import ym from 'react-yandex-metrika'
 import { useEffect, useRef, useState } from 'react'
+import { InView } from 'react-intersection-observer'
 
 const ModalBlockPulse = () => {
   const [isVisible, setIsVisible] = useState(false)
@@ -23,13 +24,7 @@ const ModalBlockPulse = () => {
   const { isMobile } = useWindowDimensions()
 
   const handleClick = () => {
-    ym('reachGoal', 'main_start_click', {
-      main: {
-        start: {
-          click: 'Начать',
-        },
-      },
-    })
+    ym('reachGoal', 'main_start_click', { main: { start: { click: 'Начать' } } })
   }
 
   return isMobile ? (
@@ -83,13 +78,17 @@ const ModalBlockPulse = () => {
 }
 
 const FindYourPets = () => {
+  const handleView = () => {
+    ym('reachGoal', 'main_start_view', { main: { start: { view: 'Начать' } } })
+  }
+
   return (
     <div className={clsx('background')}>
       <div className={s.echo_bg}>
         <div className={clsx('container', s.main_block)}>
           <ModalBlockPulse />
         </div>
-        <div className='container' id='aktie'>
+        <InView triggerOnce onChange={(isView) => isView && handleView()} className='container' id='aktie'>
           <div className={clsx(s.about_block)}>
             <div className={s.about_bye_block}>
               <p className={s.block_title}>Купите</p>
@@ -115,7 +114,7 @@ const FindYourPets = () => {
               <span>при оплате покупки картой Сбербанка</span>
             </div>
           </div>
-        </div>
+        </InView>
       </div>
     </div>
   )

@@ -19,9 +19,10 @@ type SelectCharacteristicProps = {
   bg?: string
   selectAsk?: boolean
   item: Data
+  onClick?: () => void
 }
 
-const SelectCharacteristic: FC<SelectCharacteristicProps> = ({ bg = '#fff', selectAsk = false, item }) => {
+const SelectCharacteristic: FC<SelectCharacteristicProps> = ({ bg = '#fff', selectAsk = false, item, onClick }) => {
   const {
     answer,
     setAnswer,
@@ -48,6 +49,8 @@ const SelectCharacteristic: FC<SelectCharacteristicProps> = ({ bg = '#fff', sele
 
     const x = centerX
     const y = centerY
+
+    if (onClick) onClick()
 
     setPosition({ x, y, offsetWidth })
     setIsVisible(true)

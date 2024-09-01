@@ -10,13 +10,15 @@ import { FC } from 'react'
 type ButtonStartProps = {
   title?: string
   link?: string
+  onClick?: () => void
 }
 
-const ButtonStart: FC<ButtonStartProps> = ({ title, link }) => {
+const ButtonStart: FC<ButtonStartProps> = ({ title, link, onClick }) => {
   const navigate = useNavigate()
   const { pathname } = useLocation()
 
   const handleClick = () => {
+    if (onClick) onClick()
     if (!link) return
     navigate(link)
   }

@@ -3,8 +3,23 @@ import s from './style.module.scss'
 import DynamicEcho from '../../../shared/ui/dynamic-echo/DynamicEcho'
 import clsx from 'clsx'
 import { PetInfo } from '../../../pages/game/components/types'
+import ym from 'react-yandex-metrika'
 
 const PetDescription = ({ isDog, data }: { data: PetInfo; isDog: boolean }) => {
+  const handleKnow = () => {
+    const { type, nickname } = data
+    ym('reachGoal', 'gameResult_learn_click', {
+      gameResult: { learn: { click: `${type} - ${nickname}` } },
+    })
+  }
+
+  const handleTakePet = () => {
+    const { type, nickname } = data
+    ym('reachGoal', 'gameResult_take_click', {
+      gameResult: { take: { click: `${type} - ${nickname}` } },
+    })
+  }
+
   return (
     <div className={s.body}>
       <p className={s.title}>как помочь животному?</p>
@@ -17,6 +32,7 @@ const PetDescription = ({ isDog, data }: { data: PetInfo; isDog: boolean }) => {
             target='_blank'
             href={data.profileLink}
             className={clsx(s.button, isDog ? s.purple_button : s.orange_button)}
+            onClick={handleKnow}
           >
             узнать
           </a>
@@ -32,6 +48,7 @@ const PetDescription = ({ isDog, data }: { data: PetInfo; isDog: boolean }) => {
             href='https://fond-nika.ru/opeka_help'
             target='_blank'
             className={clsx(s.button, isDog ? s.purple_button : s.orange_button)}
+            onClick={handleTakePet}
           >
             ВЗЯТЬ <br /> ПОД ОПЕКУ
           </a>

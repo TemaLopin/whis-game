@@ -10,11 +10,16 @@ import dogImg from '../../shared/assets/images/past-pet/dog.png'
 import mobileImg from '../../shared/assets/images/past-pet/cat_dog_mobile.png'
 
 import { Image } from 'react-bootstrap'
+import ym from 'react-yandex-metrika'
 
 const GamePet = () => {
   const description: string[] = ['ЕСТЬ ЛИ У ВАС кот или собака?']
   const descriptionMobile: string[] = ['ЕСТЬ ЛИ У ВАС', 'кот или собака?']
   const [width, setWidth] = useState(window.innerWidth)
+
+  const handleClick = (name: string) => {
+    ym('reachGoal', 'gamePastPet_button_click', { gamePastPet: { button: { click: name } } })
+  }
 
   useEffect(() => {
     const handleResizeWindow = () => setWidth(window.innerWidth)
@@ -36,9 +41,9 @@ const GamePet = () => {
             </div>
           )}
           <div className={'game-wrapper'}>
-            <ButtonStart title='ДА, КОТ' link='/game/last-selects/cat' />
-            <ButtonStart title='ДА, СОБАКА' link='/game/last-selects/dog' />
-            <ButtonStart title='НЕТ' link='/game/analysis' />
+            <ButtonStart onClick={() => handleClick('Кот')} title='ДА, КОТ' link='/game/last-selects/cat' />
+            <ButtonStart onClick={() => handleClick('Собака')} title='ДА, СОБАКА' link='/game/last-selects/dog' />
+            <ButtonStart onClick={() => handleClick('Нет')} title='НЕТ' link='/game/analysis' />
           </div>
           {width > 996 && (
             <div className={'past-pet-img'}>

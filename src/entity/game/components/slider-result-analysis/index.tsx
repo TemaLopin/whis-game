@@ -9,6 +9,8 @@ import ArrowIcon from '../slider-advice/arrow-icon'
 import React, { FC, useRef } from 'react'
 import SelectLove from '../select/select-love'
 import { SendAnswerGameRes } from '../../../../shared/api/endpoints'
+import { InView } from 'react-intersection-observer'
+import ym from 'react-yandex-metrika'
 
 type Props = {
   items: (SendAnswerGameRes & { id: number; name: string; image: string; tags: string[] })[]
@@ -29,6 +31,11 @@ const SliderResultAnalysis: FC<Props> = ({ items, setIdSlide }) => {
     }
   }
 
+  const handleViewSlide = ({ name, type, id }: { name: string; type: string; id: number }) => {
+    ym('reachGoal', 'gameResultAnalysis_pet_view', {
+      gameResultAnalysis: { pet: { view: `${id + 1} - ${type} - ${name}` } },
+    })
+  }
 
   return (
     <div className={s.container}>
@@ -46,20 +53,23 @@ const SliderResultAnalysis: FC<Props> = ({ items, setIdSlide }) => {
           slideShadows: false,
         }}
         onSlideChange={(swiper: any) => setIdSlide(swiper.realIndex)}
-        
         modules={[EffectCoverflow, Navigation]}
         className={s.swiper}
       >
-        {items.map(({ image, name, tags, id }) => {
+        {items.map(({ image, name, tags, id, type }) => {
           return (
             <SwiperSlide className={s.slide} key={id} id={name}>
-              <div className={s.block_image}>
+              <InView
+                triggerOnce
+                onChange={(isView) => isView && handleViewSlide({ name, type, id })}
+                className={s.block_image}
+              >
                 <Image src={image} />
                 <div className={s.quantity}>
                   <SelectLove />
                   <p>{name}</p>
                 </div>
-              </div>
+              </InView>
 
               <div className={s.tags}>
                 {tags.map((tag, ind) => {

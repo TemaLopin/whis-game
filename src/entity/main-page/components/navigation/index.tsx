@@ -23,13 +23,7 @@ const Navigation = () => {
   }
 
   const handleClickMetric = (name: string) => {
-    ym('reachGoal', 'header_button_click', {
-      header: {
-        button: {
-          click: name,
-        },
-      },
-    })
+    ym('reachGoal', 'header_button_click', { header: { button: { click: name } } })
   }
 
   return (

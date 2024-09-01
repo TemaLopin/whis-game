@@ -7,10 +7,15 @@ import useWindowDimensions from '../../../../shared/hooks/useWindowDimensions'
 import sberSpasibo from '../../../../shared/download/Rules_SberSpasibo.pdf'
 import rules from '../../../../shared/download/Rules.pdf'
 import { Link } from 'react-router-dom'
+import ym from 'react-yandex-metrika'
 
 const Footer = () => {
   const { width } = useWindowDimensions()
   const isMobile = width <= 1300
+
+  const handleClick = () => {
+    ym('reachGoal', 'main_rules_click', { main: { rules: { click: 'Полные плавила' } } })
+  }
 
   return (
     <div className={clsx(s.footer)}>
@@ -24,7 +29,7 @@ const Footer = () => {
               Акция «Забота сближает». Период проведения акции: с 01.09.2024 по 30.11.2024. Информацию об организаторе
               акции, правилах ее проведения, призах, сроках, месте и порядке их получения можно узнать на сайте
               wad2024.ru.{' '}
-              <Link target='_blank' to={sberSpasibo}>
+              <Link onClick={handleClick} target='_blank' to={sberSpasibo}>
                 Полные правила акции
               </Link>
             </p>
@@ -32,7 +37,7 @@ const Footer = () => {
               Акция «Забота сближает. 1 рубль с пачки — в приюты». Период проведения акции с 01.09.2024 по 31.12.2024.
               Информацию об организаторе акции, правилах её проведения, условиях перечисления денежных средств в
               благотворительный фонд можно узнать на сайте wad2024.ru.{' '}
-              <Link target='_blank' to={rules}>
+              <Link onClick={handleClick} target='_blank' to={rules}>
                 Полные правила акции
               </Link>
             </p>
