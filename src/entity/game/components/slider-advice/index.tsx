@@ -1,5 +1,5 @@
 import { Autoplay, EffectCoverflow, Navigation } from 'swiper/modules'
-import { FC, useRef } from 'react'
+import { FC, useRef, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Image } from 'react-bootstrap'
 import s from './style.module.scss'
@@ -16,12 +16,13 @@ import { InView } from 'react-intersection-observer'
 import ym from 'react-yandex-metrika'
 
 type SliderAdviceProps = {
-  items: { title: string; image: string; icon: string }[]
+  items: { _id: string; title: string; image: string; icon: string }[]
 
   type?: string
 }
 
 const SliderAdvice: FC<SliderAdviceProps> = ({ items, type }) => {
+  const [idSlide, setIdSlide] = useState(-1)
   const { height, width } = useWindowDimensions()
   const swiperRef = useRef<any>(null)
   const goToNextSlide = () => {
@@ -36,8 +37,8 @@ const SliderAdvice: FC<SliderAdviceProps> = ({ items, type }) => {
     }
   }
 
-  const handleViewSlide = (index: number) => {
-    ym('reachGoal', 'gameAdvice_advice_view', { gameAdvice: { advice: { view: `${index}` } } })
+  const handleViewSlide = (id: string) => {
+    ym('reachGoal', 'gameAdvice_advice_view', { gameAdvice: { advice: { view: id } } })
   }
 
   return (
@@ -56,13 +57,15 @@ const SliderAdvice: FC<SliderAdviceProps> = ({ items, type }) => {
           modifier: 1,
           slideShadows: false,
         }}
+        onSlideChange={(swiper: any) => setIdSlide(swiper.realIndex)}
         modules={[EffectCoverflow, Navigation, Autoplay]}
         className={s.swiper}
       >
-        {items.map(({ title, image, icon }, ind: number) => {
+        {items.map(({ title, image, icon, _id }, ind: number) => {
+          if (idSlide === ind) handleViewSlide(_id)
           return (
             <SwiperSlide className={clsx(s.slide, type === 'cat' && s.slide_cat)} key={ind}>
-              <InView triggerOnce onChange={(isView) => isView && handleViewSlide(ind)} className={s.wrapper}>
+              <div className={s.wrapper}>
                 <div className={s.quantity}>
                   <SelectLove />
                   <p>{`0${++ind}`}</p>
@@ -73,7 +76,7 @@ const SliderAdvice: FC<SliderAdviceProps> = ({ items, type }) => {
                 <div className={clsx(s.block_image, type === 'cat' ? s.purple_heart : s.yellow_heart)}>
                   <Image src={image} className={s.masked_image} />
                 </div>
-              </InView>
+              </div>
             </SwiperSlide>
           )
         })}

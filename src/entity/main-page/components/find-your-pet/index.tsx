@@ -16,15 +16,12 @@ import { useEffect, useRef, useState } from 'react'
 import { InView } from 'react-intersection-observer'
 
 const ModalBlockPulse = () => {
-  const [isVisible, setIsVisible] = useState(false)
-
   const ref = useRef<HTMLDivElement>(null)
-  console.log('🚀  !@#$ ~ ModalBlockPulse ~ ref:', ref)
 
   const { isMobile } = useWindowDimensions()
 
   const handleClick = () => {
-    ym('reachGoal', 'main_start_view', { main: { start: { view: 'Начать' } } })
+    ym('reachGoal', 'main_start_click', { main: { start: { click: 'Начать' } } })
   }
 
   return isMobile ? (
@@ -84,11 +81,11 @@ const FindYourPets = () => {
 
   return (
     <div className={clsx('background')}>
-      <div className={s.echo_bg}>
+      <InView triggerOnce onChange={(isView) => isView && handleView()} className={s.echo_bg}>
         <div className={clsx('container', s.main_block)}>
           <ModalBlockPulse />
         </div>
-        <InView triggerOnce onChange={(isView) => isView && handleView()} className='container' id='aktie'>
+        <div className='container' id='aktie'>
           <div className={clsx(s.about_block)}>
             <div className={s.about_bye_block}>
               <p className={s.block_title}>Купите</p>
@@ -114,8 +111,8 @@ const FindYourPets = () => {
               <span>при оплате покупки картой Сбербанка</span>
             </div>
           </div>
-        </InView>
-      </div>
+        </div>
+      </InView>
     </div>
   )
 }

@@ -61,13 +61,13 @@ const SliderResultAnalysis: FC<Props> = ({ items, setIdSlide, idSlide }) => {
           if (idSlide === id) handleViewSlide({ name, type, id: _id })
           return (
             <SwiperSlide className={s.slide} key={id} id={name}>
-              <InView onChange={(isView) => {}} className={s.block_image}>
+              <div className={s.block_image}>
                 <Image src={image} />
                 <div className={s.quantity}>
                   <SelectLove />
                   <p>{name}</p>
                 </div>
-              </InView>
+              </div>
 
               <div className={s.tags}>
                 {tags.map((tag, ind) => {

@@ -145,7 +145,6 @@ const TwoGisMap: React.FC<MapProps> = ({
             const { text: phone = '' } = phoneInfo
             const address = cur_org?.address_name
 
-            console.log('!@#$ contact?.contacts?', contact?.contacts)
 
             const contactInfo = contact?.contacts?.map((item) => {
               if (item?.type === 'phone') return `<p>${item?.print_text}</p> <br/>`
