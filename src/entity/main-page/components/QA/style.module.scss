@@ -99,7 +99,7 @@
   cursor: pointer;
   height: 32px;
   width: 32px;
-  padding: 7px;
+  padding: 7px 7px 8px;
   font-weight: 700;
   margin: 0px;
   font-size: 26px;
@@ -109,7 +109,7 @@
   @media (max-width: 768px) {
     width: 24px;
     height: 24px;
-    padding: 6px;
+    padding: 6px 6px 7px;
     font-size: 17px;
   }
 }
