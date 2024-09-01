@@ -24,6 +24,33 @@ type Place = {
   is_advertising: boolean
 }
 
+type PlaceInfo = {
+  result: {
+    id: string
+    type: string
+    lat: number
+    lon: number
+    is_advertising: boolean
+    contact_groups: {
+      contacts: {
+        text: string
+        code: string
+        print_text: string
+        type: string
+        value: string
+      }[]
+      schedule: {
+        [day: string]: {
+          working_hours: {
+            from: string
+            to: string
+          }[]
+        }
+      }
+    }
+  }
+}
+
 type PlacesResponse = {
   result: { items: Place[]; total: number }
   mete: { api_version: string; code: string; issue_date: string }
@@ -46,7 +73,7 @@ const TwoGisMap: React.FC<MapProps> = ({
 
   const getPlaceInfo = async ({ lat, lon }: { lat: number; lon: number }) => {
     try {
-      const res = await axios.get('https://catalog.api.2gis.com/3.0/items', {
+      const { data } = await axios.get('https://catalog.api.2gis.com/3.0/items', {
         params: {
           lat,
           lon,
@@ -54,7 +81,7 @@ const TwoGisMap: React.FC<MapProps> = ({
           fields: 'items.contact_groups',
         },
       })
-      console.log('🚀  !@#$ ~ getPlaceInfo ~ res:', res)
+      return data as PlaceInfo
     } catch (error) {
       console.error('Error fetching place info:')
     }
@@ -103,9 +130,26 @@ const TwoGisMap: React.FC<MapProps> = ({
 
         const { result } = data
 
+        let popupString = ''
         result.items.forEach(({ lat, lon, name }) => {
-          DG.marker([lat, lon]).bindPopup(name).addTo(map)
-          // .on('click', () => getPlaceInfo({ lat, lon }))
+          const marker = DG.marker([lat, lon], { title: name })
+          marker.bindPopup('', { keepInView: true })
+
+          marker.on('click', async (e) => {
+            const { result } = await getPlaceInfo({ lat, lon })
+            const { items } = result || {}
+            const [cur_org] = items || []
+            const [contact = { contacts: {} }] = cur_org?.contact_groups || []
+            const [phoneInfo = { text: '' }] = contact?.contacts || {}
+
+            const { text: phone = '' } = phoneInfo
+            const address = cur_org?.address_name
+
+            const popup = e.target.getPopup()
+            const content = popup.setContent(`<p>${name}</p> <br/> <p>${address}</p> <br/> <p>${phone}</p>`)
+          })
+
+          marker.addTo(map)
         })
       } catch (error) {
         console.error('Error fetching places:', error)
