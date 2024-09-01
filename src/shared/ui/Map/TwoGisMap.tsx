@@ -145,8 +145,17 @@ const TwoGisMap: React.FC<MapProps> = ({
             const { text: phone = '' } = phoneInfo
             const address = cur_org?.address_name
 
+            console.log('!@#$ contact?.contacts?', contact?.contacts)
+
+            const contactInfo = contact?.contacts?.map((item) => {
+              if (item?.type === 'phone') return `<p>${item?.print_text}</p> <br/>`
+              if (item?.url) return `<a class="map-popup-link" href=${item?.url} target='_blank'>${
+                item?.text || item?.url
+              }</a>`
+            })
+
             const popup = e.target.getPopup()
-            const content = popup.setContent(`<p>${name}</p> <br/> <p>${address}</p> <br/> <p>${phone}</p>`)
+            const content = popup.setContent(`<p>${name}</p> <br/> <p>${address}</p> <br/> ${contactInfo.join('')}`)
           })
 
           marker.addTo(map)

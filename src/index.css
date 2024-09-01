@@ -214,6 +214,18 @@ button {
 /*    font-size: 20px;*/
 /*}*/
 
+.map-popup-link {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  color: #fff !important;
+
+  margin-bottom: 10px;
+}
+
 .game-wrapper div {
   display: flex;
   flex: 0 1 calc(50% - 140px);
