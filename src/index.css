@@ -795,6 +795,14 @@ button {
   }
 }
 
+@media (max-height: 720px) and (max-width: 540px){
+  .wrapper-top-advice > p{
+    margin-bottom: 0 !important;
+  }
+  .wrapper-top-advice + div{
+    height: 22vh;
+  }
+}
 @media (min-height: 700px) and (max-height: 750px) {
   .slider-advice {
     margin-top: -20px;

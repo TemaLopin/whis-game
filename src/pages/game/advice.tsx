@@ -42,6 +42,7 @@ const GameAdvice = () => {
     icon: process.env.REACT_APP_IMAGE_URL + item.bgImg,
     image: process.env.REACT_APP_IMAGE_URL + item.photo,
     title: item.description,
+    // id: item.id
   }))
 
   useEffect(() => {

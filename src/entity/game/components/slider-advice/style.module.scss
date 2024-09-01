@@ -60,6 +60,10 @@
     height: 47vh;
   }
 
+  @media (max-height: 720px) and (max-width: 540px){
+    height: 45vh;
+  }
+
   &::before {
     content: '';
     position: absolute;
@@ -267,6 +271,7 @@
   position: relative;
 
   @media (max-width: 800px) {
+    width: 98%;
     //width: 80%;
     //height: 80%;
   }

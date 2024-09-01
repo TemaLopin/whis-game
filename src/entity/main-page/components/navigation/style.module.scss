@@ -19,6 +19,10 @@
     }
   }
 
+  @media (max-width: 1240px){
+    padding: 22px 15px;
+    gap: 17px;
+  }
   @media (max-width: 1025px) {
     position: absolute;
     top: -200%;
@@ -33,6 +37,7 @@
     flex-direction: column;
     width: max-content;
     z-index: 333;
+    gap: 28px;
     &.active {
       opacity: 1;
       top: 140px;
