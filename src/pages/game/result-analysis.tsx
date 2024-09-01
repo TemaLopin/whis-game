@@ -56,7 +56,7 @@ const GameResultAnalysis = () => {
             </DynamicEcho>
           )}
           <DescriptionGame texts={width > 660 ? descItem : descMobile} />
-          <SliderResultAnalysis items={slides} setIdSlide={setIdSlide} />
+          <SliderResultAnalysis items={slides} idSlide={idSlide} setIdSlide={setIdSlide} />
           <DynamicEcho type='button'>
             <Link onClick={handleSelectPet} to={`/game/result/${idSlide}`}>
               ПОЗНАКОМИТЬСЯ

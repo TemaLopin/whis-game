@@ -15,9 +15,10 @@ import ym from 'react-yandex-metrika'
 type Props = {
   items: (SendAnswerGameRes & { id: number; name: string; image: string; tags: string[] })[]
   setIdSlide: React.Dispatch<React.SetStateAction<number>>
+  idSlide: number
 }
 
-const SliderResultAnalysis: FC<Props> = ({ items, setIdSlide }) => {
+const SliderResultAnalysis: FC<Props> = ({ items, setIdSlide, idSlide }) => {
   const swiperRef = useRef<any>(null)
   const goToNextSlide = () => {
     if (swiperRef.current && swiperRef.current.swiper) {
@@ -31,9 +32,9 @@ const SliderResultAnalysis: FC<Props> = ({ items, setIdSlide }) => {
     }
   }
 
-  const handleViewSlide = ({ name, type, id }: { name: string; type: string; id: number }) => {
+  const handleViewSlide = ({ name, type, id }: { name: string; type: string; id: string }) => {
     ym('reachGoal', 'gameResultAnalysis_pet_view', {
-      gameResultAnalysis: { pet: { view: `${id + 1} - ${type} - ${name}` } },
+      gameResultAnalysis: { pet: { view: `${id} - ${type} - ${name}` } },
     })
   }
 
@@ -56,14 +57,11 @@ const SliderResultAnalysis: FC<Props> = ({ items, setIdSlide }) => {
         modules={[EffectCoverflow, Navigation]}
         className={s.swiper}
       >
-        {items.map(({ image, name, tags, id, type }) => {
+        {items.map(({ image, name, tags, id, type, _id }) => {
+          if (idSlide === id) handleViewSlide({ name, type, id: _id })
           return (
             <SwiperSlide className={s.slide} key={id} id={name}>
-              <InView
-                triggerOnce
-                onChange={(isView) => isView && handleViewSlide({ name, type, id })}
-                className={s.block_image}
-              >
+              <InView onChange={(isView) => {}} className={s.block_image}>
                 <Image src={image} />
                 <div className={s.quantity}>
                   <SelectLove />
