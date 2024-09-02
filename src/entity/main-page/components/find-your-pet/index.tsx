@@ -24,6 +24,10 @@ const ModalBlockPulse = () => {
     ym('reachGoal', 'main_start_click', { main: { start: { click: 'Начать' } } })
   }
 
+  const handleView = () => {
+    ym('reachGoal', 'main_start_view', { main: { start: { view: 'Начать' } } })
+  }
+
   return isMobile ? (
     <div ref={ref} className={s.main_body}>
       <div className={s.robot_img}>
@@ -42,9 +46,10 @@ const ModalBlockPulse = () => {
           или узнайте, как сблизиться со своим любимцем
         </p>
       </div>
-
       <Link onClick={handleClick} to={'/game'} className={s.start_button}>
-        НАЧАТЬ
+        <InView triggerOnce onChange={(isView) => isView && handleView()}>
+          НАЧАТЬ
+        </InView>
       </Link>
     </div>
   ) : (
@@ -65,9 +70,10 @@ const ModalBlockPulse = () => {
             или узнайте, как сблизиться со своим любимцем
           </p>
         </div>
-
         <Link to={'/game'} className={s.start_button} onClick={handleClick}>
-          НАЧАТЬ
+          <InView triggerOnce onChange={(isView) => isView && handleView()}>
+            НАЧАТЬ
+          </InView>
         </Link>
       </div>
     </DynamicEcho>
@@ -75,13 +81,9 @@ const ModalBlockPulse = () => {
 }
 
 const FindYourPets = () => {
-  const handleView = () => {
-    ym('reachGoal', 'main_start_view', { main: { start: { view: 'Начать' } } })
-  }
-
   return (
     <div className={clsx('background')}>
-      <InView triggerOnce onChange={(isView) => isView && handleView()} className={s.echo_bg}>
+      <div className={s.echo_bg}>
         <div className={clsx('container', s.main_block)}>
           <ModalBlockPulse />
         </div>
@@ -112,7 +114,7 @@ const FindYourPets = () => {
             </div>
           </div>
         </div>
-      </InView>
+      </div>
     </div>
   )
 }
