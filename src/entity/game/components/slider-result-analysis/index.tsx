@@ -1,108 +1,111 @@
-import {EffectCoverflow, Navigation} from 'swiper/modules'
-import {Swiper, SwiperSlide} from 'swiper/react'
-import {Image} from 'react-bootstrap'
+import { EffectCoverflow, Navigation } from 'swiper/modules'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Image } from 'react-bootstrap'
 import s from './style.module.scss'
 import 'swiper/css'
 import 'swiper/css/effect-coverflow'
 import 'swiper/css/navigation'
 import ArrowIcon from '../slider-advice/arrow-icon'
-import React, {FC, useRef} from 'react'
+import React, { FC, useEffect, useRef } from 'react'
 import SelectLove from '../select/select-love'
-import {SendAnswerGameRes} from '../../../../shared/api/endpoints'
-import {InView} from 'react-intersection-observer'
+import { SendAnswerGameRes } from '../../../../shared/api/endpoints'
+import { InView } from 'react-intersection-observer'
 import ym from 'react-yandex-metrika'
 
 type Props = {
-    items: (SendAnswerGameRes & { id: number; name: string; image: string; tags: string[] })[]
-    setIdSlide: React.Dispatch<React.SetStateAction<number>>
-    idSlide: number
+  items: (SendAnswerGameRes & { id: number; name: string; image: string; tags: string[] })[]
+  setIdSlide: React.Dispatch<React.SetStateAction<number>>
+  idSlide: number
 }
 
-const SliderResultAnalysis: FC<Props> = ({items, setIdSlide, idSlide}) => {
-    const swiperRef = useRef<any>(null)
-    const goToNextSlide = () => {
-        if (swiperRef.current && swiperRef.current.swiper) {
-            swiperRef.current.swiper.slideNext()
-        }
+const SliderResultAnalysis: FC<Props> = ({ items, setIdSlide, idSlide }) => {
+  const swiperRef = useRef<any>(null)
+  const goToNextSlide = () => {
+    if (swiperRef.current && swiperRef.current.swiper) {
+      swiperRef.current.swiper.slideNext()
     }
+  }
 
-    const goToPrevSlide = () => {
-        if (swiperRef.current && swiperRef.current.swiper) {
-            swiperRef.current.swiper.slidePrev()
-        }
+  const goToPrevSlide = () => {
+    if (swiperRef.current && swiperRef.current.swiper) {
+      swiperRef.current.swiper.slidePrev()
     }
+  }
 
-    const handleViewSlide = ({name, type, id}: { name: string; type: string; id: string }) => {
-        ym('reachGoal', 'gameResultAnalysis_pet_view', {
-            gameResultAnalysis: {pet: {view: `${id} - ${type} - ${name}`}},
-        })
-    }
+  const handleViewSlide = ({ name, type, id }: { name: string; type: string; id: string }) => {
+    ym('reachGoal', 'gameResultAnalysis_pet_view', {
+      gameResultAnalysis: { pet: { view: `${id} - ${type} - ${name}` } },
+    })
+  }
 
-    const activeSlideHandler = (swiper: any) => {
-        items.map(({id, _id, type, name}) => id === swiper.realIndex && handleViewSlide({
-            name,
-            type,
-            id: _id
-        }))
-    }
+  const activeSlideHandler = (swiper: any) => {
+    items.forEach(({ id, _id, type, name }) => {
+      if (id !== swiper.realIndex) return
+      handleViewSlide({ name, type, id: _id })
+    })
+  }
 
-    return (
-        <div className={s.container}>
-            <Swiper
-                ref={swiperRef}
-                effect={'coverflow'}
-                loop={true}
-                centeredSlides={true}
-                slidesPerView={2}
-                coverflowEffect={{
-                    rotate: 0,
-                    stretch: 55,
-                    depth: 631,
-                    modifier: 1,
-                    slideShadows: false,
-                }}
-                onSlideChange={(swiper: any) => setIdSlide(swiper.realIndex)}
-                onSwiper={((swiper: any) => setTimeout(() => activeSlideHandler(swiper), 1000))}
-                onSlideChangeTransitionEnd={(swiper: any) => {
-                    activeSlideHandler(swiper)
-                }}
-                modules={[EffectCoverflow, Navigation]}
-                className={s.swiper}
-            >
-                {items.map(({image, name, tags, id}) => {
-                    return (
-                        <SwiperSlide className={s.slide} key={id} id={name}>
-                            <div className={s.block_image}>
-                                <Image src={image}/>
-                                <div className={s.quantity}>
-                                    <SelectLove/>
-                                    <p>{name}</p>
-                                </div>
-                            </div>
+  useEffect(() => {
+    const curElem = items[idSlide]
+    if (!curElem) return
 
-                            <div className={s.tags}>
-                                {tags.map((tag, ind) => {
-                                    return (
-                                        ind <= 2 && (
-                                            <div className={s.tag} key={ind}>
-                                                {tag}
-                                            </div>
-                                        )
-                                    )
-                                })}
-                            </div>
-                        </SwiperSlide>
+    const { _id: id, type, name } = curElem
+    handleViewSlide({ name, type, id })
+  }, [idSlide, items])
+
+  return (
+    <div className={s.container}>
+      <Swiper
+        ref={swiperRef}
+        effect={'coverflow'}
+        loop={true}
+        centeredSlides={true}
+        slidesPerView={2}
+        coverflowEffect={{
+          rotate: 0,
+          stretch: 55,
+          depth: 631,
+          modifier: 1,
+          slideShadows: false,
+        }}
+        onSlideChange={(swiper: any) => setIdSlide(swiper?.realIndex)}
+        modules={[EffectCoverflow, Navigation]}
+        className={s.swiper}
+      >
+        {items.map(({ image, name, tags, id }) => {
+          return (
+            <SwiperSlide className={s.slide} key={id} id={name}>
+              <div className={s.block_image}>
+                <Image src={image} />
+                <div className={s.quantity}>
+                  <SelectLove />
+                  <p>{name}</p>
+                </div>
+              </div>
+
+              <div className={s.tags}>
+                {tags.map((tag, ind) => {
+                  return (
+                    ind <= 2 && (
+                      <div className={s.tag} key={ind}>
+                        {tag}
+                      </div>
                     )
+                  )
                 })}
-            </Swiper>
-            <button className={s.btn_arrow} onClick={goToPrevSlide}>
-                <ArrowIcon/>
-            </button>
-            <button className={s.btn_arrow} onClick={goToNextSlide}>
-                <ArrowIcon/>
-            </button>
-        </div>
-    )
+              </div>
+            </SwiperSlide>
+          )
+        })}
+      </Swiper>
+      <button className={s.btn_arrow} onClick={goToPrevSlide}>
+        <ArrowIcon />
+      </button>
+      <button className={s.btn_arrow} onClick={goToNextSlide}>
+        <ArrowIcon />
+      </button>
+    </div>
+  )
 }
 
 export default SliderResultAnalysis
