@@ -145,12 +145,13 @@ const TwoGisMap: React.FC<MapProps> = ({
             const { text: phone = '' } = phoneInfo
             const address = cur_org?.address_name
 
-
             const contactInfo = contact?.contacts?.map((item) => {
               if (item?.type === 'phone') return `<p>${item?.print_text}</p> <br/>`
-              if (item?.url) return `<a class="map-popup-link" href=${item?.url} target='_blank'>${
-                item?.text || item?.url
-              }</a>`
+              if (item?.url) {
+                const text = item?.text || item?.url
+                const link = item?.url
+                return `<a class="map-popup-link" href=${link} target='_blank'>${text}</a>`
+              }
             })
 
             const popup = e.target.getPopup()
@@ -179,13 +180,26 @@ const TwoGisMap: React.FC<MapProps> = ({
       () => {}
     )
 
+    // DG.control.fullscreen({ position: 'topleft' }).addTo(map)
     if (!firstRender) return () => map.remove()
 
     getPlacesLocation({ lat: center[0], lng: center[1] })
     setFirstRender(false)
-
     return () => map.remove()
   })
+
+  // const openFullscreen = () => {
+  //   const mapContainer = document.getElementById('map-container')
+  //   if (mapContainer) {
+  //     if (mapContainer.requestFullscreen) {
+  //       mapContainer.requestFullscreen()
+  //     } else if (mapContainer.webkitRequestFullscreen) {
+  //       mapContainer.webkitRequestFullscreen()
+  //     } else if (mapContainer.msRequestFullscreen) {
+  //       mapContainer.msRequestFullscreen()
+  //     }
+  //   }
+  // }
 
   return <div id='map-container' ref={containerRef} style={style} className={className}></div>
 }
