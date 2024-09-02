@@ -38,6 +38,14 @@ const SliderResultAnalysis: FC<Props> = ({items, setIdSlide, idSlide}) => {
         })
     }
 
+    const activeSlideHandler = (swiper: any) => {
+        items.map(({id, _id, type, name}) => id === swiper.realIndex && handleViewSlide({
+            name,
+            type,
+            id: _id
+        }))
+    }
+
     return (
         <div className={s.container}>
             <Swiper
@@ -54,12 +62,9 @@ const SliderResultAnalysis: FC<Props> = ({items, setIdSlide, idSlide}) => {
                     slideShadows: false,
                 }}
                 onSlideChange={(swiper: any) => setIdSlide(swiper.realIndex)}
+                onSwiper={((swiper: any) => setTimeout(() => activeSlideHandler(swiper), 1000))}
                 onSlideChangeTransitionEnd={(swiper: any) => {
-                    items.map(({id, _id, type, name}) => id === swiper.realIndex && handleViewSlide({
-                        name,
-                        type,
-                        id: _id
-                    }))
+                    activeSlideHandler(swiper)
                 }}
                 modules={[EffectCoverflow, Navigation]}
                 className={s.swiper}

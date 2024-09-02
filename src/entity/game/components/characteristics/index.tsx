@@ -26,7 +26,7 @@ const Characteristics = () => {
   const handleClick = (index: number) => {
     type
       ? ym('reachGoal', 'gameLastSelects_heart_click', { gameLastSelects: { heart: { click: index + 1 } } })
-      : ym('reachGoal', 'gameGo_heart_click', { gameGo: { heart: { click: index + 1 } } })
+      : ym('reachGoal', 'gameGo_heart_click', { gameGo: { heart: { click: index + 1 } } });
   }
 
   const getPosition = () => {
@@ -64,7 +64,7 @@ const Characteristics = () => {
             .sort((a, b) => Number(b.visible) - Number(a.visible))
             .map((answer, ind) => (
               <SelectCharacteristic
-                onClick={() => handleClick((answer.category - 1) * 3 + ind)}
+                onClick={() => handleClick(answer.category)}
                 item={answer}
                 key={ind}
               />

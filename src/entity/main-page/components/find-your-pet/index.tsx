@@ -66,7 +66,7 @@ const ModalBlockPulse = () => {
           </p>
         </div>
 
-        <Link to={'/game'} className={s.start_button}>
+        <Link to={'/game'} className={s.start_button} onClick={handleClick}>
           НАЧАТЬ
         </Link>
       </div>

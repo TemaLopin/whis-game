@@ -29,8 +29,8 @@ const WhereBye = () => {
         <p className={s.sub_text}>Во всех магазинах страны</p>
         <div className={clsx('container', s.brands)}>
           <h3 className={s.title}>В интернет-магазинах</h3>
-          {arrEcommerce.map((store) => (
-            <Image className={s.brand_logo} src={store} />
+          {arrEcommerce.map((store, ind) => (
+            <Image className={s.brand_logo} src={store} key={ind}/>
           ))}
         </div>
         <div className={clsx('container', s.brands)}>

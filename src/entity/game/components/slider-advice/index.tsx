@@ -9,20 +9,17 @@ import 'swiper/css/navigation'
 
 import ArrowIcon from './arrow-icon'
 import SelectLove from '../select/select-love'
-import DynamicEcho from '../../../../shared/ui/dynamic-echo/DynamicEcho'
 import clsx from 'clsx'
 import useWindowDimensions from '../../../../shared/hooks/useWindowDimensions'
-import {InView} from 'react-intersection-observer'
+
 import ym from 'react-yandex-metrika'
 
 type SliderAdviceProps = {
     items: { _id: string; title: string; image: string; icon: string }[]
-
     type?: string
 }
 
 const SliderAdvice: FC<SliderAdviceProps> = ({items, type}) => {
-    const [idSlide, setIdSlide] = useState(-1)
     const {height, width} = useWindowDimensions()
     const swiperRef = useRef<any>(null)
     const goToNextSlide = () => {
@@ -40,7 +37,14 @@ const SliderAdvice: FC<SliderAdviceProps> = ({items, type}) => {
     const handleViewSlide = (id: string) => {
         ym('reachGoal', 'gameAdvice_advice_view', {gameAdvice: {advice: {view: id}}})
     }
-
+    const activeSlideHandler = (swiper: any) => {
+        swiper.slides.map((slide: any) => {
+            if (slide.dataset.index == swiper.realIndex) {
+                const activeSlide = items.find(({title}) => title === slide.textContent)
+                handleViewSlide(activeSlide ? activeSlide._id : '0')
+            }
+        })
+    }
     return (
         <>
             <Swiper
@@ -57,14 +61,11 @@ const SliderAdvice: FC<SliderAdviceProps> = ({items, type}) => {
                     modifier: 1,
                     slideShadows: false,
                 }}
-                onSlideChange={(swiper: any) => setIdSlide(swiper.realIndex)}
+                onSwiper={(swiper: any) => {
+                    setTimeout(() => activeSlideHandler(swiper), 1000)
+                }}
                 onSlideChangeTransitionEnd={(swiper: any) => {
-                    swiper.slides.map((slide: any) => {
-                        if (slide.dataset.index == swiper.realIndex) {
-                            const activeSlide = items.find(({title}) => title === slide.textContent)
-                            handleViewSlide(activeSlide ? activeSlide._id : '0')
-                        }
-                    })
+                    activeSlideHandler(swiper)
                 }}
                 modules={[EffectCoverflow, Navigation, Autoplay]}
                 className={s.swiper}
