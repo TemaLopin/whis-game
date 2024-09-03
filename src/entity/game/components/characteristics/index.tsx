@@ -69,7 +69,11 @@ const Characteristics = () => {
         <Image
           src={type === 'dog' ? dogPaw : catPaw}
           className={clsx(s.paw)}
-          style={{ transform: getPosition(), [isLeftSidePaw ? 'left' : 'right']: '-175px' }}
+          style={{
+            transform: getPosition(),
+            [isLeftSidePaw ? 'left' : 'right']: '-175px',
+            width: type === 'dog' ? 145 : 175,
+          }}
         />
       </div>
     </BottomWrapper>
