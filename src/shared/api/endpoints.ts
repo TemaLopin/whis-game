@@ -17,6 +17,7 @@ export type SendAnswerGameRes = {
   profileLink: string
   tagsPreview: string
   tagsDetailed: string
+  custodyLink: string
   __v: number
 }
 export type AdviceRecommendationRes = {

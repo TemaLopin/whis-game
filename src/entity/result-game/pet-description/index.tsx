@@ -45,7 +45,7 @@ const PetDescription = ({ isDog, data }: { data: PetInfo; isDog: boolean }) => {
 
         <DynamicEcho type='button' color={isDog ? 'purple' : 'orange'} className={s.pulse}>
           <a
-            href='https://fond-nika.ru/opeka_help'
+            href={data?.custodyLink}
             target='_blank'
             className={clsx(s.button, isDog ? s.purple_button : s.orange_button)}
             onClick={handleTakePet}
