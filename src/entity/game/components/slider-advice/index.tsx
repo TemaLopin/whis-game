@@ -67,6 +67,7 @@ const SliderAdvice: FC<SliderAdviceProps> = ({ items, type }) => {
         modules={[EffectCoverflow, Navigation, Autoplay]}
         className={s.swiper}
       >
+
         {items.map(({ title, image, icon, _id }, ind: number) => {
           return (
             <SwiperSlide className={clsx(s.slide, type === 'cat' && s.slide_cat)} key={ind} data-index={ind}>
@@ -76,7 +77,7 @@ const SliderAdvice: FC<SliderAdviceProps> = ({ items, type }) => {
                   <p>{`0${++ind}`}</p>
                 </div>
                 <h4 className={s.slide_text}>{title}</h4>
-                {height > 640 && <Image style={{ height: 100, objectFit: 'contain' }} src={icon} />}
+                {document.documentElement.scrollHeight > 650 && <Image style={{ height: 100, objectFit: 'contain' }} src={icon} />}
 
                 <div className={clsx(s.block_image, type === 'cat' ? s.purple_heart : s.yellow_heart)}>
                   <Image src={image} className={s.masked_image} />
