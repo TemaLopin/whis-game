@@ -48,7 +48,7 @@ $--echo-2: url('../../../../shared/assets/images/echo/yellow-echo-2.png');
 }
 
 .wrapper_height {
-  height: 100%;
+  height: 100vh;
   overflow: hidden;
   @media (max-width: 769px) {
     & > div {
@@ -56,4 +56,5 @@ $--echo-2: url('../../../../shared/assets/images/echo/yellow-echo-2.png');
       padding-top: 15px;
     }
   }
+
 }

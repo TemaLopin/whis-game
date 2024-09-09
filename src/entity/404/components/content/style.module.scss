@@ -57,12 +57,17 @@
 }
 
 .block_image {
+  display: flex;
   margin-top: auto;
   width: 369px;
   height: 400px;
+
   @media (min-width: 769px){
-    display: flex;
+    &:last-child{
+      transform: translateY(29px);
+    }
   }
+
   img {
     max-width: 100%;
     object-fit: cover;
@@ -70,6 +75,7 @@
       width: calc(100% + 26px);
       max-width: initial;
       margin-left: -13px;
+      margin-top: auto;
     }
   }
 }
@@ -79,9 +85,6 @@
   flex-direction: column;
   gap: 23px;
   align-items: center;
-  @media (min-width: 769px) {
-    margin-left: -68px;
-  }
 }
 
 .not_found {
