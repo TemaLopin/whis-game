@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import DG from '2gis-maps'
 import axios from 'axios'
 import RedMapIcon from '../../assets/images/red-map-icon.png'
+import ym from 'react-yandex-metrika'
 
 type MapProps = {
   style?: React.CSSProperties
@@ -156,6 +157,14 @@ const TwoGisMap: React.FC<MapProps> = ({
 
             const popup = e.target.getPopup()
             const content = popup.setContent(`<p>${name}</p> <br/> <p>${address}</p> <br/> ${contactInfo.join('')}`)
+
+            ym('reachGoal', 'gameResult_shelter_click', {
+              gameResult: {
+                shelter: {
+                  click: 'Приют выбран',
+                },
+              },
+            })
           })
 
           marker.addTo(map)
