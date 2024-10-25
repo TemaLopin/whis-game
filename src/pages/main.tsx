@@ -1,3 +1,4 @@
+
 import { FindYourPets, Footer, GetSource, Main, Promotion, QuestionAnswer, WhereBye } from '../entity/main-page'
 import BottomImages from '../entity/main-page/components/bottom-images'
 
