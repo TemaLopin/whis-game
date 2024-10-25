@@ -13,6 +13,7 @@ import Samokat from '../../../../shared/assets/images/stores/samokat.png'
 import clsx from 'clsx'
 import { InView } from 'react-intersection-observer'
 import ym from 'react-yandex-metrika'
+import {Link} from "react-router-dom";
 
 const WhereBye = () => {
   const arrEcommerce = [Kuper, Samokat, Megamarket]
@@ -30,6 +31,7 @@ const WhereBye = () => {
         <div className={clsx('container', s.brands)}>
           <h3 className={s.title}>В интернет-магазинах</h3>
           {arrEcommerce.map((store, ind) => (
+              ind === 0 ? <Link to={`https://kuper.ru/metro/c/tovari-dlya-zhivotnikh/korma-dlya-koshek/b/whiskas?ads_identity.ads_promo_identity.placement_uid=cns3h249u8b43pmgrklg&ads_identity.ads_promo_identity.site_uid=c9qep2jupf8ugo3scn10&sid=1`}><Image className={s.brand_logo} src={store} key={ind}/></Link> :
             <Image className={s.brand_logo} src={store} key={ind}/>
           ))}
         </div>
