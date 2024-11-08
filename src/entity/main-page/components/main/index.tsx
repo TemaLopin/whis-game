@@ -32,15 +32,19 @@ const Footer = ({ handler }: { handler: () => void }) => {
           <div className={s.learn_more}>
             <p>Узнать больше</p>
           </div>
-          <button className={s.get_bonus_button} onClick={handler}>
-            <p>нажми и получай бонусы</p>
+          <button className={s.get_bonus_button}>
+            <p>
+              Акция завершилась <span>31</span>.<span>10</span>
+            </p>
             <Image src={SberThank} />
           </button>
         </>
       ) : (
         <>
           <button className={s.get_bonus_button} onClick={handler}>
-            <p>нажми и получай бонусы</p>
+            <p>
+              Акция завершилась <span>31</span>.<span>10</span>
+            </p>
             <Image src={SberThank} />
           </button>
           <div className={s.learn_more}>
