@@ -9,11 +9,8 @@ import clsx from 'clsx'
 import { Image } from 'react-bootstrap'
 import useWindowDimensions from '../../../../shared/hooks/useWindowDimensions'
 import Header from '../header'
-import { useEffect, useState } from 'react'
-import Modal from '../modal'
-import ym from 'react-yandex-metrika'
 
-const Footer = ({ handler }: { handler: () => void }) => {
+const Footer = () => {
   const { width } = useWindowDimensions()
 
   return (
@@ -41,7 +38,7 @@ const Footer = ({ handler }: { handler: () => void }) => {
         </>
       ) : (
         <>
-          <button className={s.get_bonus_button} onClick={handler}>
+          <button className={s.get_bonus_button}>
             <p>
               Акция завершилась <span>31</span>.<span>10</span>
             </p>
@@ -57,30 +54,7 @@ const Footer = ({ handler }: { handler: () => void }) => {
 }
 
 const Main = () => {
-  const [isOpen, setIsOpen] = useState(false)
   const { height } = useWindowDimensions()
-  const modalHandler = () => {
-    setIsOpen((prev) => !prev)
-    document.body.classList.toggle('noscroll')
-
-    ym('reachGoal', 'main_sberThanks_click', { main: { sberThanks: { click: 'Нажми и получай бонусы' } } })
-  }
-  useEffect(() => {
-    if ((isOpen && window.innerWidth > 996) || (isOpen && 'ontouchstart' in document.documentElement)) {
-      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth
-      document.body.style.paddingRight = `${scrollbarWidth}px`
-      document.body.classList.add('noscroll')
-    } else {
-      document.body.style.paddingRight = ''
-      document.body.classList.remove('noscroll')
-    }
-    return () => {
-      if (document.body.classList.contains('noscroll') && window.innerWidth > 996) {
-        document.body.style.paddingRight = ''
-        document.body.classList.remove('noscroll')
-      }
-    }
-  }, [isOpen])
 
   return (
     <div className={s.main} id='home' style={{ height: height > 870 ? '100vh' : '100%' }}>
@@ -89,8 +63,7 @@ const Main = () => {
         <Image src={ManWithCatImg} />
         <Image src={WomanWithCat} />
       </div>
-      <Footer handler={modalHandler} />
-      {isOpen && <Modal setIsOpen={setIsOpen} />}
+      <Footer />
     </div>
   )
 }
